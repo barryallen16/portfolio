@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="shortcut icon" href="/favicon/favicon.ico" type="image/x-icon" />
+    <link rel="manifest" href="/favicon/site.webmanifest" />
+    <link rel="stylesheet" href="style.css" />
+    <style type="text/tailwindcss">
+      @font-face {
+        font-family: "Brunson";
+        src: url("./fonts/Brunson.ttf") format("truetype");
+      }
+      @theme {
+        --font-sans: "Brunson", sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      class="bg-white/50 backdrop-blur-md mx-8 px-8 py-2 w-[90%] place-self-center rounded-4xl fixed top-10 z-10 flex justify-between items-center border-white/80 border"
+    >
+      <img src="/favicon/favicon-32x32.png" />
+      <div class="flex justify-center items-center gap-4">
+        <a
+          href="https://rxresu.me/rjayadithya16/jayadithya-resume"
+          target="_blank"
+          class="p-2 bg-neutral-900 border-neutral-800 border-2 rounded-lg text-white/40"
+        >
+          resume
+        </a>
+        <a
+          href="mailto:rjayadithya16@gmail.com"
+          class="p-2 bg-neutral-900 border-neutral-800 border-2 rounded-lg"
+          ><img
+            src="https://static.cdnlogo.com/logos/o/14/official-gmail-icon-2020.svg"
+            class="w-4 saturate-0"
+        /></a>
+        <a
+          href="https://www.linkedin.com/in/jayadithya-r/"
+          class="p-2 bg-neutral-900 border-neutral-800 border-2 rounded-lg"
+          ><img
+            src="https://static.cdnlogo.com/logos/l/78/linkedin-icon.svg"
+            class="w-4 saturate-0"
+        /></a>
+        <a
+          href="https://github.com/barryallen16"
+          class="p-2 bg-neutral-900 border-neutral-800 border-2 rounded-lg"
+          ><img
+            src="https://static.cdnlogo.com/logos/g/69/github-icon.svg"
+            class="w-4 invert"
+        /></a>
+      </div>
+    </div>
+    <section class="h-screen w-screen flex flex-col" id="hero">
+      <div class="bg-[#0f0f0f] h-screen flex justify-center items-center">
+        <div
+          class="grid grid-cols-2 gap-4 h-full justify-between items-center mt-8"
+        >
+          <div class="flex flex-col">
+            <h1 class="text-white text-4xl">hi i'm</h1>
+            <h1 class="text-4xl text-white underline decoration-lime-500">
+              jayadithya
+            </h1>
+            <h1 class="text-2xl text-white">AI developer</h1>
+            <p class="text-white font-mono">
+              i build things i wish had existed. <br />
+              i put my movie enthusiasm in my designs.
+            </p>
+            <p class="text-white font-mono">chennai, tamilnadu, india.</p>
+          </div>
+
+          <img
+            src="/images/profile.jpeg"
+            class="h-96 object-bottom rounded-lg"
+          />
+        </div>
+      </div>
+    </section>
+    <section
+      id="skills"
+      class="h-screen w-screen relative grid grid-cols-4 justify-center"
+    >
+      <div class="bg-pink-500">
+        <h1 class="mt-24 text-4xl px-4 text-white">
+          Frontend venuma? <br />Frontend iruku.
+        </h1>
+        <h4
+          class="font-mono px-4 py-2 decoration-dashed underline hover:decoration-solid text-white"
+        >
+          view projects >
+        </h4>
+      </div>
+      <div class="bg-blue-600">
+        <h1 class="mt-24 text-4xl px-4">
+          Backend venuma? <br />Backend iruku.
+        </h1>
+        <h4
+          class="font-mono px-4 py-2 decoration-dashed underline hover:decoration-solid"
+        >
+          view projects >
+        </h4>
+      </div>
+      <div class="bg-lime-500">
+        <h1 class="mt-24 text-4xl text-white px-4">
+          ui/ux venuma? <br />ui/ux iruku.
+        </h1>
+        <h4
+          class="font-mono px-4 py-2 decoration-dashed underline hover:decoration-solid text-white"
+        >
+          view projects >
+        </h4>
+      </div>
+      <div class="bg-yellow-400">
+        <h1 class="mt-24 text-4xl px-4">
+          ai venuma?<br />
+          ai iruku.
+        </h1>
+        <h4
+          class="font-mono px-4 py-2 decoration-dashed underline hover:decoration-solid"
+        >
+          view projects >
+        </h4>
+      </div>
+      <img
+        src="/images/dance-venuma.png"
+        class="w-[50%] absolute bottom-0 left-[25%]"
+      />
+    </section>
+    <section
+      id="showcase"
+      class="w-screen h-screen bg-[#0e0e0e] flex flex-col p-8"
+    >
+      <h1 class="place-self-center text-white text-4xl mb-4">Projects</h1>
+      <div class="grid grid-cols-4 grid-flow-col gap-4">
+        <div
+          class="w-full h-full flex flex-col justify-center items-center p-8 border-2 border-neutral-800 rounded-lg bg-neutral-900 gap-4"
+        >
+          <img src="/images/fitcheck-logo-v3.png" />
+          <p class="font-mono text-white">
+            fashion recommendation project which makes outfits from your
+            existing wabrode
+          </p>
+          <a
+            href="https://github.com/barryallen16/fitcheck"
+            class="p-2 bg-neutral-900 border-neutral-800 border-2 rounded-lg flex gap-4 text-white justify-center items-center"
+            ><img
+              src="https://static.cdnlogo.com/logos/g/69/github-icon.svg"
+              class="w-4 invert"
+            />
+            <p>view on github</p>
+          </a>
+        </div>
+        <div
+          class="w-full h-full flex flex-col justify-center items-center p-8 border-2 border-neutral-800 rounded-lg bg-neutral-900 gap-4"
+        >
+          <img src="/images/mm.png" />
+          <p class="font-mono text-white">
+            a automation project where final direct lines are retrieved from a
+            movie piracy website and stored in database for easy access.
+          </p>
+          <a
+            href="https://github.com/barryallen16/fitcheck"
+            class="p-2 bg-neutral-900 border-neutral-800 border-2 rounded-lg flex gap-4 text-white justify-center items-center"
+            ><img
+              src="https://static.cdnlogo.com/logos/g/69/github-icon.svg"
+              class="w-4 invert"
+            />
+            <p>view on github</p>
+          </a>
+        </div>
+        <div
+          class="w-full h-full flex flex-col justify-center items-center p-8 border-2 border-neutral-800 rounded-lg bg-neutral-900 gap-4"
+        >
+          <img src="/images/ub.png" />
+          <p class="font-mono text-white">
+            a telegram bot that uses selenium to automate the process of getting
+            the final link from shortened links.
+          </p>
+          <a
+            href="https://github.com/barryallen16/unshortenBuddy"
+            class="p-2 bg-neutral-900 border-neutral-800 border-2 rounded-lg flex gap-4 text-white justify-center items-center"
+            ><img
+              src="https://static.cdnlogo.com/logos/g/69/github-icon.svg"
+              class="w-4 invert"
+            />
+            <p>view on github</p>
+          </a>
+        </div>
+        <div
+          class="w-full h-full flex flex-col justify-center items-center p-8 border-2 border-neutral-800 rounded-lg bg-neutral-900 gap-4"
+        >
+          <img src="/images/java.png" />
+          <p class="font-mono text-white">
+            finetuned qwen model for detecting vulnerability in java code with a
+            overall accuracy of 87% on test data.
+          </p>
+          <a
+            href="https://github.com/barryallen16/fitcheck"
+            class="p-2 bg-neutral-900 border-neutral-800 border-2 rounded-lg flex gap-4 text-white justify-center items-center"
+            ><img
+              src="https://static.cdnlogo.com/logos/g/69/github-icon.svg"
+              class="w-4 invert"
+            />
+            <p>view on github</p>
+          </a>
+        </div>
+      </div>
+    </section>
+    <!-- <section
+      class="w-screen h-screen bg-[#0e0e0e] flex items-center justify-center flex-col relative"
+      id="lang"
+    >
+    <img src="/images/vc.png" class="h-full" />
+    <h1 class="text-3xl text-white absolute bottom-0 mb-2">
+      na pesura baseiyeh puriyaleh eh. ena epadi purinjikutu en lifeh epadi
+      improvement panna poringa
+    </h1> -->
+    <!-- </section> -->
+  </body>
+</html>
