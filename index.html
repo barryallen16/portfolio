@@ -10,8 +10,9 @@
       href="./favicon/favicon.ico"
       type="image/x-icon"
     />
-    <link rel="manifest" href="./favicon/site.webmanifest" />
-    <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/ScrollTrigger.min.js"></script>
+  <script src="./logic.js" defer></script>
     <style type="text/tailwindcss">
       @font-face {
         font-family: "Brunson";
@@ -75,12 +76,15 @@
             </p>
             <p class="text-white font-mono">chennai, tamilnadu, india.</p>
           </div>
-
-          <img
-            src="./images/profile.jpeg"
-            class="h-96 object-bottom rounded-lg"
-          />
-        </div>
+<div class="relative">
+  
+  <img
+    src="./images/profile.jpeg"
+    class="h-96 object-bottom rounded-lg "
+  />
+  <div class="absolute inset-0 grid grid-cols-10 grid-rows-10" id="pixelated-container"></div>
+</div>
+  </div>
       </div>
     </section>
     <section
@@ -253,6 +257,16 @@
         </div>
       </div>
     </section>
+    <section
+      id="des-dev"
+      class="w-full h-dvh bg-pink-500 flex flex-col p-8 place-content-end pb-0 relative des-dev-container"
+    >
+      <div class="flex flex-col des-dev-img">
+        <img src="./images/des-na-than.png" class="-translate-x-full des-dev" />
+        <img src="./images/dev-na-than.png" class="translate-x-full des-dev" />
+      </div>
+    </section>
+    <section class="h-dvh bg-red-500"></section>
     <!-- <section
       class="w-screen h-screen bg-[#0e0e0e] flex items-center justify-center flex-col relative"
       id="lang"
@@ -264,4 +278,5 @@
     </h1> -->
     <!-- </section> -->
   </body>
+
 </html>
