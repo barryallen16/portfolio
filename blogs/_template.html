@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Your Title | jayadithya</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="shortcut icon" href="../favicon/favicon.ico" type="image/x-icon" />
+    <style type="text/tailwindcss">
+      @font-face {
+        font-family: "Brunson";
+        src: url("../fonts/Brunson.ttf") format("truetype");
+      }
+      @theme {
+        --font-sans: "Brunson", sans-serif;
+      }
+    </style>
+  </head>
+  <body class="bg-[#0e0e0e] min-h-screen">
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-[#0e0e0e]/80 backdrop-blur-md border-b border-neutral-800">
+      <div class="max-w-3xl mx-auto px-6 py-4 flex items-center justify-between">
+        <a href="../index.html" class="text-white/60 hover:text-white transition-colors font-mono text-sm flex items-center gap-2">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+          </svg>
+          back
+        </a>
+        <a href="../index.html#blog" class="text-white/60 hover:text-white transition-colors font-mono text-sm">
+          all posts
+        </a>
+      </div>
+    </nav>
+
+    <!-- Article -->
+    <article class="max-w-3xl mx-auto px-6 pt-24 pb-16">
+      <!-- Header -->
+      <header class="mb-12">
+        <span class="text-white/40 font-mono text-sm">Month Year</span>
+        <h1 class="text-white text-3xl md:text-4xl mt-2 mb-4 leading-tight">
+          Your Blog Title Here
+        </h1>
+        <div class="flex gap-2 flex-wrap">
+          <!-- Add your tags - options: pink (frontend), blue (backend), lime (ui/ux), yellow (ai) -->
+          <span class="text-xs px-3 py-1 rounded-full bg-pink-500/20 text-pink-400 border border-pink-500/30 font-mono">frontend</span>
+          <span class="text-xs px-3 py-1 rounded-full bg-blue-500/20 text-blue-400 border border-blue-500/30 font-mono">backend</span>
+          <span class="text-xs px-3 py-1 rounded-full bg-lime-500/20 text-lime-400 border border-lime-500/30 font-mono">ui/ux</span>
+          <span class="text-xs px-3 py-1 rounded-full bg-yellow-500/20 text-yellow-400 border border-yellow-500/30 font-mono">ai</span>
+        </div>
+      </header>
+
+      <!-- Content Sections -->
+      <section class="mb-10">
+        <h2 class="text-white text-xl mb-4">Section Title</h2>
+        <p class="text-white/70 leading-relaxed mb-4">
+          Your paragraph text goes here. Write about your project, learnings, or anything interesting.
+        </p>
+      </section>
+
+      <section class="mb-10">
+        <h2 class="text-white text-xl mb-4">Another Section</h2>
+        <p class="text-white/70 leading-relaxed mb-4">
+          More content here...
+        </p>
+        <ul class="text-white/70 leading-relaxed ml-6 mb-4 list-disc space-y-2">
+          <li>Bullet point one</li>
+          <li>Bullet point two</li>
+          <li><strong class="text-white">Bold label:</strong> with description</li>
+        </ul>
+      </section>
+
+      <section class="mb-10">
+        <h2 class="text-white text-xl mb-4">Code Example</h2>
+        <pre class="bg-neutral-900 border border-neutral-800 rounded-lg p-4 overflow-x-auto mb-4">
+<code class="text-lime-400 font-mono text-sm">// Your code here
+const example = "hello world";
+console.log(example);</code></pre>
+      </section>
+
+      <section class="mb-10">
+        <h2 class="text-white text-xl mb-4">Key Takeaways</h2>
+        <blockquote class="border-l-2 border-lime-500 pl-4 text-white/60 italic my-6">
+          Your inspiring quote or key insight goes here.
+        </blockquote>
+      </section>
+
+      <!-- Footer -->
+      <footer class="mt-16 pt-8 border-t border-neutral-800">
+        <a href="../index.html#showcase" class="text-lime-400 hover:text-lime-300 transition-colors font-mono text-sm flex items-center gap-2">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+          </svg>
+          view project
+        </a>
+      </footer>
+    </article>
+  </body>
+</html>
