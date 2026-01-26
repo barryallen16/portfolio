@@ -30,9 +30,15 @@
       <img src="./favicon/favicon-32x32.png" />
       <div class="flex justify-center items-center gap-4">
         <a
+          href="#blog"
+          class="p-2 bg-neutral-900 border-neutral-800 border-2 rounded-lg text-white/40 hover:text-white transition-colors"
+        >
+          blog
+        </a>
+        <a
           href="https://rxresu.me/rjayadithya16/jayadithya-resume"
           target="_blank"
-          class="p-2 bg-neutral-900 border-neutral-800 border-2 rounded-lg text-white/40"
+          class="p-2 bg-neutral-900 border-neutral-800 border-2 rounded-lg text-white/40 hover:text-white transition-colors"
         >
           resume
         </a>
@@ -95,7 +101,7 @@
         <h1 class="mt-28 text-4xl px-4 text-white">
           Frontend venuma? <br />Frontend iruku.
         </h1>
-        <a href="#showcase">
+        <a href="#showcase" data-skill-filter="frontend" class="skill-link">
           <h4
             class="font-mono px-4 py-2 decoration-dashed underline hover:decoration-solid text-white cursor-pointer"
           >
@@ -107,7 +113,7 @@
         <h1 class="mt-28 text-4xl px-4">
           Backend venuma? <br />Backend iruku.
         </h1>
-        <a href="#showcase">
+        <a href="#showcase" data-skill-filter="backend" class="skill-link">
           <h4
             class="font-mono px-4 py-2 decoration-dashed underline hover:decoration-solid cursor-pointer"
           >
@@ -119,7 +125,7 @@
         <h1 class="mt-28 text-4xl text-white px-4">
           ui/ux venuma? <br />ui/ux iruku.
         </h1>
-        <a href="#showcase">
+        <a href="#showcase" data-skill-filter="uiux" class="skill-link">
           <h4
             class="font-mono px-4 py-2 decoration-dashed underline hover:decoration-solid text-white cursor-pointer"
           >
@@ -132,7 +138,7 @@
           ai venuma?<br />
           ai iruku.
         </h1>
-        <a href="#showcase">
+        <a href="#showcase" data-skill-filter="ai" class="skill-link">
           <h4
             class="font-mono px-4 py-2 decoration-dashed underline hover:decoration-solid cursor-pointer"
           >
@@ -147,35 +153,77 @@
     </section>
     <section id="showcase" class="w-screen bg-[#0e0e0e] flex flex-col p-8">
       <h1 class="place-self-center text-white text-4xl mb-4 mt-24">Projects</h1>
+      
+      <!-- Filter Buttons -->
+      <div class="flex flex-wrap justify-center gap-3 mb-8" id="filter-buttons">
+        <button data-filter="all" class="filter-btn active px-4 py-2 rounded-full border-2 border-neutral-700 bg-neutral-800 text-white font-mono text-sm transition-all duration-300 hover:border-white">
+          all
+        </button>
+        <button data-filter="frontend" class="filter-btn px-4 py-2 rounded-full border-2 border-pink-500/50 bg-neutral-800 text-pink-400 font-mono text-sm transition-all duration-300 hover:border-pink-500 hover:bg-pink-500/20">
+          frontend
+        </button>
+        <button data-filter="backend" class="filter-btn px-4 py-2 rounded-full border-2 border-blue-500/50 bg-neutral-800 text-blue-400 font-mono text-sm transition-all duration-300 hover:border-blue-500 hover:bg-blue-500/20">
+          backend
+        </button>
+        <button data-filter="uiux" class="filter-btn px-4 py-2 rounded-full border-2 border-lime-500/50 bg-neutral-800 text-lime-400 font-mono text-sm transition-all duration-300 hover:border-lime-500 hover:bg-lime-500/20">
+          ui/ux
+        </button>
+        <button data-filter="ai" class="filter-btn px-4 py-2 rounded-full border-2 border-yellow-500/50 bg-neutral-800 text-yellow-400 font-mono text-sm transition-all duration-300 hover:border-yellow-500 hover:bg-yellow-500/20">
+          ai
+        </button>
+      </div>
+
       <div
-        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 grid-rows-2 grid-flow-row gap-4"
+        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 grid-flow-row gap-4"
+        id="projects-grid"
       >
         <div
-          class="w-full h-full grid grid-flow-row justify-center items-center p-8 border-2 border-neutral-800 rounded-lg bg-neutral-900 gap-4"
+          class="project-card w-full h-full grid grid-flow-row justify-center items-center p-8 border-2 border-neutral-800 rounded-lg bg-neutral-900 gap-4 transition-all duration-500"
+          data-categories="frontend,ai,uiux"
+          data-project="fitcheck"
         >
           <img src="./images/fitcheck-logo-v3.png" />
           <div class="flex gap-4 flex-col">
+            <div class="flex flex-wrap gap-2">
+              <span class="text-xs px-2 py-1 rounded-full bg-pink-500/20 text-pink-400 border border-pink-500/30">frontend</span>
+              <span class="text-xs px-2 py-1 rounded-full bg-yellow-500/20 text-yellow-400 border border-yellow-500/30">ai</span>
+              <span class="text-xs px-2 py-1 rounded-full bg-lime-500/20 text-lime-400 border border-lime-500/30">ui/ux</span>
+            </div>
             <p class="font-mono text-white">
               fashion recommendation project which makes outfits from your
-              existing wabrode
+              existing wardrobe
             </p>
             <a
               href="https://github.com/barryallen16/fitcheck"
               target="_blank"
-              class="p-2 bg-neutral-900 border-neutral-800 border-2 rounded-lg flex gap-4 text-white justify-center items-center"
+              class="p-2 bg-neutral-900 border-neutral-800 border-2 rounded-lg flex gap-4 text-white justify-center items-center hover:border-neutral-600 transition-colors"
               ><img
                 src="https://static.cdnlogo.com/logos/g/69/github-icon.svg"
                 class="w-4 invert"
               />
               <p>view on github</p>
             </a>
+            <a
+              href="./blogs/fitcheck.html"
+              class="p-2 bg-lime-500/20 border-lime-500/50 border-2 rounded-lg flex gap-2 text-lime-400 justify-center items-center hover:border-lime-500 hover:bg-lime-500/30 transition-colors"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
+              </svg>
+              <p>read blog</p>
+            </a>
           </div>
         </div>
         <div
-          class="w-full h-full grid grid-flow-row justify-center items-center p-8 border-2 border-neutral-800 rounded-lg bg-neutral-900 gap-4"
+          class="project-card w-full h-full grid grid-flow-row justify-center items-center p-8 border-2 border-neutral-800 rounded-lg bg-neutral-900 gap-4 transition-all duration-500"
+          data-categories="backend"
+          data-project="moviemod"
         >
           <img src="./images/mm.png" />
           <div class="flex gap-4 flex-col">
+            <div class="flex flex-wrap gap-2">
+              <span class="text-xs px-2 py-1 rounded-full bg-blue-500/20 text-blue-400 border border-blue-500/30">backend</span>
+            </div>
             <p class="font-mono text-white">
               a automation project where final direct lines are retrieved from a
               movie piracy website and stored in database for easy access.
@@ -183,20 +231,33 @@
             <a
               href="https://github.com/barryallen16/moviemod-scraper"
               target="_blank"
-              class="p-2 bg-neutral-900 border-neutral-800 border-2 rounded-lg flex gap-4 text-white justify-center items-center"
+              class="p-2 bg-neutral-900 border-neutral-800 border-2 rounded-lg flex gap-4 text-white justify-center items-center hover:border-neutral-600 transition-colors"
               ><img
                 src="https://static.cdnlogo.com/logos/g/69/github-icon.svg"
                 class="w-4 invert"
               />
               <p>view on github</p>
             </a>
+            <span
+              class="p-2 bg-neutral-800 border-neutral-700 border-2 rounded-lg flex gap-2 text-neutral-500 justify-center items-center cursor-not-allowed opacity-50"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
+              </svg>
+              <p>blog coming soon</p>
+            </span>
           </div>
         </div>
         <div
-          class="w-full h-full grid grid-flow-row justify-center items-center p-8 border-2 border-neutral-800 rounded-lg bg-neutral-900 gap-4"
+          class="project-card w-full h-full grid grid-flow-row justify-center items-center p-8 border-2 border-neutral-800 rounded-lg bg-neutral-900 gap-4 transition-all duration-500"
+          data-categories="backend"
+          data-project="unshorten"
         >
           <img src="./images/ub.png" />
           <div class="flex gap-4 flex-col">
+            <div class="flex flex-wrap gap-2">
+              <span class="text-xs px-2 py-1 rounded-full bg-blue-500/20 text-blue-400 border border-blue-500/30">backend</span>
+            </div>
             <p class="font-mono text-white">
               a telegram bot that uses selenium to automate the process of
               getting the final link from shortened links.
@@ -204,20 +265,33 @@
             <a
               href="https://github.com/barryallen16/unshortenBuddy"
               target="_blank"
-              class="p-2 bg-neutral-900 border-neutral-800 border-2 rounded-lg flex gap-4 text-white justify-center items-center"
+              class="p-2 bg-neutral-900 border-neutral-800 border-2 rounded-lg flex gap-4 text-white justify-center items-center hover:border-neutral-600 transition-colors"
               ><img
                 src="https://static.cdnlogo.com/logos/g/69/github-icon.svg"
                 class="w-4 invert"
               />
               <p>view on github</p>
             </a>
+            <span
+              class="p-2 bg-neutral-800 border-neutral-700 border-2 rounded-lg flex gap-2 text-neutral-500 justify-center items-center cursor-not-allowed opacity-50"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
+              </svg>
+              <p>blog coming soon</p>
+            </span>
           </div>
         </div>
         <div
-          class="w-full h-full grid grid-flow-row justify-center items-center p-8 border-2 border-neutral-800 rounded-lg bg-neutral-900 gap-4"
+          class="project-card w-full h-full grid grid-flow-row justify-center items-center p-8 border-2 border-neutral-800 rounded-lg bg-neutral-900 gap-4 transition-all duration-500"
+          data-categories="ai"
+          data-project="java-vul"
         >
           <img src="./images/java.png" />
           <div class="flex gap-4 flex-col">
+            <div class="flex flex-wrap gap-2">
+              <span class="text-xs px-2 py-1 rounded-full bg-yellow-500/20 text-yellow-400 border border-yellow-500/30">ai</span>
+            </div>
             <p class="font-mono text-white">
               finetuned qwen model for detecting vulnerability in java code with
               a overall accuracy of 87% on test data.
@@ -225,58 +299,147 @@
             <a
               href="https://huggingface.co/barryallen16/Qwen2.5_7B_java_vul_final"
               target="_blank"
-              class="p-2 bg-neutral-900 border-neutral-800 border-2 rounded-lg flex gap-4 text-white justify-center items-center"
+              class="p-2 bg-neutral-900 border-neutral-800 border-2 rounded-lg flex gap-4 text-white justify-center items-center hover:border-neutral-600 transition-colors"
               ><img
                 src="https://huggingface.co/datasets/huggingface/brand-assets/resolve/main/hf-logo.svg"
                 class="w-4 saturate-0"
               />
               <p>view model on huggingface</p>
             </a>
+            <a
+              href="./blogs/java-vul.html"
+              class="p-2 bg-lime-500/20 border-lime-500/50 border-2 rounded-lg flex gap-2 text-lime-400 justify-center items-center hover:border-lime-500 hover:bg-lime-500/30 transition-colors"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
+              </svg>
+              <p>read blog</p>
+            </a>
           </div>
         </div>
         <div
-          class="w-full h-full grid grid-flow-row justify-center items-center p-8 border-2 border-neutral-800 rounded-lg bg-neutral-900 gap-4"
+          class="project-card w-full h-full grid grid-flow-row justify-center items-center p-8 border-2 border-neutral-800 rounded-lg bg-neutral-900 gap-4 transition-all duration-500"
+          data-categories="frontend,uiux"
+          data-project="memory"
         >
           <img src="./images/memory-logo.svg" />
           <div class="flex gap-4 flex-col">
+            <div class="flex flex-wrap gap-2">
+              <span class="text-xs px-2 py-1 rounded-full bg-pink-500/20 text-pink-400 border border-pink-500/30">frontend</span>
+              <span class="text-xs px-2 py-1 rounded-full bg-lime-500/20 text-lime-400 border border-lime-500/30">ui/ux</span>
+            </div>
             <p class="font-mono text-white">
-              filling up google forms with student forms was reputative and
-              error prone , so i developed a bookmarklet(bookmark which can
-              execute javasricpt). all you need to do is search 'memory' and
+              filling up google forms with student forms was repetitive and
+              error prone, so i developed a bookmarklet (bookmark which can
+              execute javascript). all you need to do is search 'memory' and
               click the result with bookmark icon next to it. and the gform is
               filled
             </p>
             <a
               href="https://barryallen16.github.io/Memory/"
               target="_blank"
-              class="p-2 bg-neutral-900 border-neutral-800 border-2 rounded-lg flex gap-4 text-white justify-center items-center"
+              class="p-2 bg-neutral-900 border-neutral-800 border-2 rounded-lg flex gap-4 text-white justify-center items-center hover:border-neutral-600 transition-colors"
             >
               <p>view landing page</p>
             </a>
+            <span
+              class="p-2 bg-neutral-800 border-neutral-700 border-2 rounded-lg flex gap-2 text-neutral-500 justify-center items-center cursor-not-allowed opacity-50"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
+              </svg>
+              <p>blog coming soon</p>
+            </span>
           </div>
         </div>
+      </div>
+      
+      <!-- No results message -->
+      <div id="no-results" class="hidden text-center py-16">
+        <p class="text-white/50 font-mono text-xl">no projects found in this category... yet!</p>
       </div>
     </section>
     <section
       id="des-dev"
-      class="w-full h-dvh bg-pink-500 flex flex-col p-8 place-content-end pb-0 relative des-dev-container"
+      class="w-full min-h-screen bg-pink-500 flex flex-col p-8 pb-0 relative overflow-hidden"
     >
-      <div class="flex flex-col des-dev-img">
-        <img src="./images/des-na-than.png" class="-translate-x-full des-dev" />
-        <img src="./images/dev-na-than.png" class="translate-x-full des-dev" />
+      <!-- Des/Dev Images -->
+      <div class="flex flex-col mt-auto">
+        <img src="./images/des-img-left-pink.png" class="des-img-left" />
+        <img src="./images/dev-na-than.png" class="des-img-right" />
       </div>
     </section>
-    <section class="h-dvh bg-red-500"></section>
-    <!-- <section
-      class="w-screen h-screen bg-[#0e0e0e] flex items-center justify-center flex-col relative"
-      id="lang"
-    >
-    <img src="./images/vc.png" class="h-full" />
-    <h1 class="text-3xl text-white absolute bottom-0 mb-2">
-      na pesura baseiyeh puriyaleh eh. ena epadi purinjikutu en lifeh epadi
-      improvement panna poringa
-    </h1> -->
-    <!-- </section> -->
+    <!-- Blog Section -->
+    <section id="blog" class="w-full min-h-screen bg-[#0e0e0e] py-16 px-8">
+      <div class="max-w-6xl mx-auto">
+        <h1 class="text-white text-4xl mb-2 text-center">Blog</h1>
+        <p class="text-white/50 font-mono text-center mb-12">thoughts, learnings & project breakdowns</p>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="blog-grid">
+          
+          <!-- Blog Post 1 - FitCheck -->
+          <a href="./blogs/fitcheck.html" class="blog-card group bg-neutral-900 border-2 border-neutral-800 rounded-xl overflow-hidden hover:border-pink-500/50 transition-all duration-300 cursor-pointer">
+            <div class="h-48 bg-gradient-to-br from-pink-500 to-pink-700 flex items-center justify-center relative overflow-hidden">
+              <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors"></div>
+              <span class="text-6xl">👔</span>
+            </div>
+            <div class="p-6">
+              <div class="flex gap-2 mb-3">
+                <span class="text-xs px-2 py-1 rounded-full bg-pink-500/20 text-pink-400 border border-pink-500/30">frontend</span>
+                <span class="text-xs px-2 py-1 rounded-full bg-yellow-500/20 text-yellow-400 border border-yellow-500/30">ai</span>
+                <span class="text-xs px-2 py-1 rounded-full bg-lime-500/20 text-lime-400 border border-lime-500/30">ui/ux</span>
+              </div>
+              <h3 class="text-white text-xl mb-2 group-hover:text-pink-400 transition-colors">Building FitCheck: AI-Powered Fashion from Your Wardrobe</h3>
+              <p class="text-white/60 font-mono text-sm mb-4">The journey of creating a fashion recommendation system that actually understands your style and existing clothes...</p>
+              <div class="flex items-center justify-between">
+                <span class="text-white/40 text-sm font-mono">Dec 2024</span>
+                <span class="text-pink-400 font-mono text-sm group-hover:translate-x-1 transition-transform">read more →</span>
+              </div>
+            </div>
+          </a>
+          
+          <!-- Blog Post 2 - Java Vulnerability -->
+          <a href="./blogs/java-vul.html" class="blog-card group bg-neutral-900 border-2 border-neutral-800 rounded-xl overflow-hidden hover:border-yellow-500/50 transition-all duration-300 cursor-pointer">
+            <div class="h-48 bg-gradient-to-br from-yellow-500 to-yellow-700 flex items-center justify-center relative overflow-hidden">
+              <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors"></div>
+              <span class="text-6xl">🤖</span>
+            </div>
+            <div class="p-6">
+              <div class="flex gap-2 mb-3">
+                <span class="text-xs px-2 py-1 rounded-full bg-yellow-500/20 text-yellow-400 border border-yellow-500/30">ai</span>
+              </div>
+              <h3 class="text-white text-xl mb-2 group-hover:text-yellow-400 transition-colors">How I Fine-tuned Qwen for Java Vulnerability Detection</h3>
+              <p class="text-white/60 font-mono text-sm mb-4">A deep dive into the process of fine-tuning a 7B parameter model to detect security vulnerabilities in Java code...</p>
+              <div class="flex items-center justify-between">
+                <span class="text-white/40 text-sm font-mono">Jan 2025</span>
+                <span class="text-yellow-400 font-mono text-sm group-hover:translate-x-1 transition-transform">read more →</span>
+              </div>
+            </div>
+          </a>
+          
+          <!-- Coming Soon Card -->
+          <article class="blog-card group bg-neutral-900/50 border-2 border-dashed border-neutral-700 rounded-xl overflow-hidden flex items-center justify-center min-h-[400px]">
+            <div class="text-center p-6">
+              <span class="text-4xl mb-4 block">✍️</span>
+              <h3 class="text-white/40 text-xl mb-2">More posts coming soon...</h3>
+              <p class="text-white/30 font-mono text-sm">I'm always learning and building new things</p>
+            </div>
+          </article>
+          
+        </div>
+      </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="w-full bg-neutral-900 border-t border-neutral-800 py-8 px-8">
+      <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+        <p class="text-white/40 font-mono text-sm">© 2025 jayadithya. built with ❤️ and too much coffee.</p>
+        <div class="flex gap-4">
+          <a href="mailto:rjayadithya16@gmail.com" class="text-white/40 hover:text-white transition-colors font-mono text-sm">email</a>
+          <a href="https://www.linkedin.com/in/jayadithya-r/" target="_blank" class="text-white/40 hover:text-white transition-colors font-mono text-sm">linkedin</a>
+          <a href="https://github.com/barryallen16" target="_blank" class="text-white/40 hover:text-white transition-colors font-mono text-sm">github</a>
+        </div>
+      </div>
+    </footer>
   </body>
-
 </html>

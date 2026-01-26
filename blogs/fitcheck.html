@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Building FitCheck | jayadithya</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="shortcut icon" href="../favicon/favicon.ico" type="image/x-icon" />
+    <style type="text/tailwindcss">
+      @font-face {
+        font-family: "Brunson";
+        src: url("../fonts/Brunson.ttf") format("truetype");
+      }
+      @theme {
+        --font-sans: "Brunson", sans-serif;
+      }
+    </style>
+  </head>
+  <body class="bg-[#0e0e0e] min-h-screen">
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-[#0e0e0e]/80 backdrop-blur-md border-b border-neutral-800">
+      <div class="max-w-3xl mx-auto px-6 py-4 flex items-center justify-between">
+        <a href="../index.html" class="text-white/60 hover:text-white transition-colors font-mono text-sm flex items-center gap-2">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+          </svg>
+          back
+        </a>
+        <a href="../index.html#blog" class="text-white/60 hover:text-white transition-colors font-mono text-sm">
+          all posts
+        </a>
+      </div>
+    </nav>
+
+    <!-- Article -->
+    <article class="max-w-3xl mx-auto px-6 pt-24 pb-16">
+      <!-- Header -->
+      <header class="mb-12">
+        <span class="text-white/40 font-mono text-sm">Dec 2024</span>
+        <h1 class="text-white text-3xl md:text-4xl mt-2 mb-4 tracking-wider">
+          Building FitCheck: AI-Powered Fashion from Your Wardrobe
+        </h1>
+        <div class="flex gap-2 flex-wrap">
+          <span class="text-xs px-3 py-1 rounded-full bg-pink-500/20 text-pink-400 border border-pink-500/30 font-mono">frontend</span>
+          <span class="text-xs px-3 py-1 rounded-full bg-yellow-500/20 text-yellow-400 border border-yellow-500/30 font-mono">ai</span>
+          <span class="text-xs px-3 py-1 rounded-full bg-lime-500/20 text-lime-400 border border-lime-500/30 font-mono">ui/ux</span>
+        </div>
+      </header>
+
+      <!-- Content -->
+      <section class="mb-10 font-mono">
+        <h2 class="text-white text-xl mb-4 font-black">The Problem</h2>
+        <p class="text-white/70 leading-relaxed mb-4">
+          Every morning, millions of people face the same dilemma: "What should I wear today?" Despite having closets full of clothes, we often feel like we have nothing to wear.
+        </p>
+      </section>
+
+      <section class="mb-10 font-mono">
+        <h2 class="text-white text-xl mb-4 font-black">The Solution</h2>
+        <p class="text-white/70 leading-relaxed mb-4">
+          FitCheck is an AI-powered fashion recommendation system that analyzes your existing wardrobe and generates outfit combinations based on:
+        </p>
+        <ul class="text-white/70 leading-relaxed ml-6 mb-4 list-disc space-y-2">
+          <li>Color theory and complementary palettes</li>
+          <li>Style matching and occasion appropriateness</li>
+          <li>Weather and seasonal considerations</li>
+          <li>Your personal style preferences learned over time</li>
+        </ul>
+      </section>
+
+      <section class="mb-10 font-mono">
+        <h2 class="text-white text-xl mb-4 font-black">Tech Stack</h2>
+        <ul class="text-white/70 leading-relaxed ml-6 mb-4 list-disc space-y-2">
+          <li><strong class="text-white">Frontend:</strong> React + Tailwind CSS</li>
+          <li><strong class="text-white">AI/ML:</strong> Computer vision for clothing detection</li>
+          <li><strong class="text-white">Backend:</strong> Python FastAPI</li>
+        </ul>
+      </section>
+
+      <section class="mb-10 font-mono">
+        <h2 class="text-white text-xl mb-4 font-black">Lessons Learned</h2>
+        <blockquote class="border-l-2 border-lime-500 pl-4 text-white/60 italic my-6">
+          Building FitCheck taught me that the best AI products are the ones that feel invisible—they just work.
+        </blockquote>
+        <p class="text-white/70 leading-relaxed">
+          The biggest challenge was balancing accuracy with speed. Users don't want to wait 30 seconds for outfit suggestions.
+        </p>
+      </section>
+
+      <!-- Footer -->
+      <footer class="mt-16 pt-8 border-t border-neutral-800">
+        <a href="../index.html#showcase" class="text-lime-400 hover:text-lime-300 transition-colors font-mono text-sm flex items-center gap-2">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+          </svg>
+          view project
+        </a>
+      </footer>
+    </article>
+  </body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fine-tuning Qwen for Java Vulnerability Detection | jayadithya</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="shortcut icon" href="../favicon/favicon.ico" type="image/x-icon" />
+    <style type="text/tailwindcss">
+      @font-face {
+        font-family: "Brunson";
+        src: url("../fonts/Brunson.ttf") format("truetype");
+      }
+      @theme {
+        --font-sans: "Brunson", sans-serif;
+      }
+    </style>
+  </head>
+  <body class="bg-[#0e0e0e] min-h-screen">
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-[#0e0e0e]/80 backdrop-blur-md border-b border-neutral-800">
+      <div class="max-w-3xl mx-auto px-6 py-4 flex items-center justify-between">
+        <a href="../index.html" class="text-white/60 hover:text-white transition-colors font-mono text-sm flex items-center gap-2">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+          </svg>
+          back
+        </a>
+        <a href="../index.html#blog" class="text-white/60 hover:text-white transition-colors font-mono text-sm">
+          all posts
+        </a>
+      </div>
+    </nav>
+
+    <!-- Article -->
+    <article class="max-w-3xl mx-auto px-6 pt-24 pb-16 ">
+      <!-- Header -->
+      <header class="mb-12">
+        <span class="text-white/40 font-mono text-sm">Jan 2025</span>
+        <h1 class="text-white text-3xl md:text-4xl mt-2 mb-4 tracking-wider">
+          Fine-tuning Qwen for Java Vulnerability Detection
+        </h1>
+        <div class="flex gap-2 flex-wrap">
+          <span class="text-xs px-3 py-1 rounded-full bg-yellow-500/20 text-yellow-400 border border-yellow-500/30 font-mono">ai</span>
+        </div>
+      </header>
+
+      <!-- Content -->
+      <section class="mb-10 font-mono">
+        <h2 class="text-white text-xl mb-4 font-black">The Goal</h2>
+        <p class="text-white/70 leading-relaxed mb-4">
+          Security vulnerabilities in code are a massive problem. The goal was to fine-tune a large language model to automatically detect potential security issues in Java code before they make it to production.
+        </p>
+      </section>
+
+      <section class="mb-10 font-mono">
+        <h2 class="text-white text-xl mb-4 font-black">The Dataset</h2>
+        <p class="text-white/70 leading-relaxed mb-4">
+          I curated a dataset of Java code snippets with labeled vulnerabilities including:
+        </p>
+        <ul class="text-white/70 leading-relaxed ml-6 mb-4 list-disc space-y-2">
+          <li>SQL Injection vulnerabilities</li>
+          <li>Cross-Site Scripting (XSS) issues</li>
+          <li>Insecure deserialization</li>
+          <li>Path traversal vulnerabilities</li>
+          <li>Authentication bypasses</li>
+        </ul>
+      </section>
+
+      <section class="mb-10 font-mono">
+        <h2 class="text-white text-xl mb-4 font-black">Fine-tuning Process</h2>
+        <p class="text-white/70 leading-relaxed mb-4">
+          I used the Qwen 2.5 7B model as the base and fine-tuned it using LoRA:
+        </p>
+        <pre class="bg-neutral-900 border border-neutral-800 rounded-lg p-4 overflow-x-auto mb-4">
+<code class="text-lime-400 font-mono text-sm">from transformers import AutoModelForCausalLM
+from peft import LoraConfig, get_peft_model
+
+lora_config = LoraConfig(
+    r=16,
+    lora_alpha=32,
+    target_modules=["q_proj", "v_proj"],
+    lora_dropout=0.05
+)</code></pre>
+      </section>
+
+      <section class="mb-10 font-mono">
+        <h2 class="text-white text-xl mb-4 font-black">Results</h2>
+        <p class="text-white/70 leading-relaxed mb-4">
+          After training for 3 epochs on an A100 GPU:
+        </p>
+        <ul class="text-white/70 leading-relaxed ml-6 mb-4 list-disc space-y-2">
+          <li><strong class="text-white">Accuracy:</strong> 87% on test data</li>
+          <li><strong class="text-white">Precision:</strong> 84%</li>
+          <li><strong class="text-white">Recall:</strong> 89%</li>
+          <li><strong class="text-white">F1 Score:</strong> 86.4%</li>
+        </ul>
+      </section>
+
+      <section class="mb-10 font-mono">
+        <h2 class="text-white text-xl mb-4 font-black">Key Takeaways</h2>
+        <blockquote class="border-l-2 border-lime-500 pl-4 text-white/60 italic my-6">
+          The model works best when given context around the vulnerable code, not just isolated snippets. Context is everything in security analysis.
+        </blockquote>
+      </section>
+
+      <!-- Footer -->
+      <footer class="mt-16 pt-8 border-t border-neutral-800">
+        <a href="../index.html#showcase" class="text-lime-400 hover:text-lime-300 transition-colors font-mono text-sm flex items-center gap-2">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+          </svg>
+          view project
+        </a>
+      </footer>
+    </article>
+  </body>
+</html>
