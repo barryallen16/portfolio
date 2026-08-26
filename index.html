@@ -8,6 +8,10 @@
       name="description"
       content="Jayadithya R — AI developer from Chennai building LLM systems, fine-tuned models and automation tooling."
     />
+    <meta property="og:title" content="Jayadithya R — AI Developer" />
+    <meta property="og:description" content="LLM systems, fine-tuned models and automation tooling. Chennai, India." />
+    <meta property="og:image" content="./images/profile.jpeg" />
+    <meta name="theme-color" content="#0e0e0e" />
     <!-- Fonts: optimized WOFF2 subsets -->
     <link rel="preload" href="./fonts/brunson-display.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="./fonts/geistmono-regular.woff2" as="font" type="font/woff2" crossorigin />
@@ -37,12 +41,16 @@
         --font-sans: "Brunson", ui-sans-serif, system-ui, sans-serif;
         --font-mono: "GeistMono", ui-monospace, SFMono-Regular, monospace;
       }
+      ::selection {
+        background: #a3e635;
+        color: #0e0e0e;
+      }
     </style>
   </head>
   <body class="overflow-x-hidden bg-[#0e0e0e]">
     <!-- Nav -->
     <div
-      class="bg-white/50 backdrop-blur-md mx-auto px-3 sm:px-8 py-2 w-[95%] sm:w-[90%] rounded-4xl fixed top-3 sm:top-8 z-10 flex justify-between items-center border-white/80 border"
+      class="bg-white/50 backdrop-blur-md px-3 sm:px-8 py-2 w-[95%] sm:w-[90%] rounded-4xl fixed top-3 sm:top-8 z-10 left-1/2 -translate-x-1/2 flex justify-between items-center border-white/80 border"
     >
       <a href="#hero" aria-label="home">
         <img src="./favicon/favicon-32x32.png" alt="site logo" class="h-7 w-7 sm:h-auto sm:w-auto" />
@@ -74,7 +82,7 @@
           href="https://www.linkedin.com/in/jayadithya-r/"
           target="_blank"
           aria-label="linkedin"
-          class="p-2 bg-neutral-900 border-neutral-800 border-2 rounded-lg hidden xs:block sm:block"
+          class="p-2 bg-neutral-900 border-neutral-800 border-2 rounded-lg"
           ><img
             src="https://static.cdnlogo.com/logos/l/78/linkedin-icon.svg"
             alt="linkedin"
@@ -112,7 +120,7 @@
             <a
               href="./jayadithya-resume.pdf"
               target="_blank"
-              class="mt-5 sm:mt-6 place-self-start px-4 sm:px-5 py-2 rounded-full border-2 border-lime-500/60 bg-lime-500/10 text-lime-400 font-mono text-xs sm:text-sm hover:bg-lime-500/20 transition-all duration-300 flex items-center gap-2"
+              class="mt-5 sm:mt-6 self-start px-4 sm:px-5 py-2 rounded-full border-2 border-lime-500/60 bg-lime-500/10 text-lime-400 font-mono text-xs sm:text-sm hover:bg-lime-500/20 transition-all duration-300 flex items-center gap-2"
             >
               <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
@@ -120,7 +128,7 @@
               view résumé
             </a>
           </div>
-          <div class="relative">
+          <div class="relative mt-10 md:mt-0">
             <img
               src="./images/profile.jpeg"
               alt="jayadithya"
@@ -136,6 +144,42 @@
             </div>
             <div class="absolute inset-0 grid grid-cols-10 grid-rows-10" id="pixelated-container"></div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- T-Shaped Engineer -->
+    <section id="t-shape" class="w-screen bg-[#0e0e0e] flex flex-col items-center px-4 pt-24 pb-16">
+      <h1 class="text-white text-3xl sm:text-4xl mb-3 text-center">
+        the <span class="underline decoration-lime-500 underline-offset-4">t-shaped</span> engineer
+      </h1>
+      <p class="font-mono text-white/50 text-xs sm:text-sm mb-16 sm:mb-20 text-center max-w-md">
+        broad across the bar. deep down the stem.
+      </p>
+
+      <div class="relative w-full max-w-xl sm:max-w-2xl">
+        <!-- breadth chips sitting on top of the bar -->
+        <div class="absolute -top-9 sm:-top-11 inset-x-0 flex justify-between items-end gap-1">
+          <span class="t-broad font-mono text-[10px] sm:text-xs px-2 sm:px-3 py-1.5 rounded-lg border-2 border-neutral-700 bg-neutral-900 text-white/80 whitespace-nowrap">frontend</span>
+          <span class="t-broad font-mono text-[10px] sm:text-xs px-2 sm:px-3 py-1.5 rounded-lg border-2 border-neutral-700 bg-neutral-900 text-white/80 whitespace-nowrap">ui/ux</span>
+          <span class="t-broad font-mono text-[10px] sm:text-xs px-2 sm:px-3 py-1.5 rounded-lg border-2 border-neutral-700 bg-neutral-900 text-white/80 whitespace-nowrap">backend</span>
+          <span class="t-broad font-mono text-[10px] sm:text-xs px-2 sm:px-3 py-1.5 rounded-lg border-2 border-neutral-700 bg-neutral-900 text-white/80 whitespace-nowrap">scraping</span>
+          <span class="t-broad font-mono text-[10px] sm:text-xs px-2 sm:px-3 py-1.5 rounded-lg border-2 border-neutral-700 bg-neutral-900 text-white/80 whitespace-nowrap">devops</span>
+        </div>
+
+        <!-- horizontal bar of the T -->
+        <div id="t-bar" class="h-1.5 w-full bg-lime-500 rounded-full"></div>
+
+        <!-- vertical stem -->
+        <div class="flex justify-center">
+          <div id="t-stem" class="h-[32vh] sm:h-[38vh] w-1.5 bg-lime-500 rounded-full"></div>
+        </div>
+
+        <!-- deep expertise at the bottom of the stem -->
+        <div class="flex justify-center mt-4">
+          <span id="t-deep" class="px-5 py-2.5 rounded-full bg-lime-500 text-black text-sm sm:text-base whitespace-nowrap">
+            ai / llm systems
+          </span>
         </div>
       </div>
     </section>
@@ -195,7 +239,7 @@
         </a>
       </div>
       <img
-        src="./images/dance-venuma.png"
+        src="./images/dance-venuma.png" loading="lazy"
         alt=""
         aria-hidden="true"
         class="w-[50%] hidden md:block absolute bottom-0 left-[25%]"
@@ -203,7 +247,7 @@
     </section>
 
     <!-- Projects -->
-    <section id="showcase" class="w-screen bg-[#0e0e0e] flex flex-col p-4 sm:p-8">
+    <section id="showcase" class="w-screen bg-[#0e0e0e] flex flex-col p-4 sm:p-8 scroll-mt-24 sm:scroll-mt-32">
       <h1 class="place-self-center text-white text-3xl sm:text-4xl mb-4 mt-16 sm:mt-24">Projects</h1>
 
       <!-- Filter Buttons -->
@@ -235,7 +279,7 @@
           data-categories="ai,backend"
           data-project="java-vul"
         >
-          <img src="./images/vc.png" alt="VulnChecker-Java logo" class="h-20 object-contain" onerror="this.style.display='none'" />
+          <img src="./images/vc.png" loading="lazy" alt="VulnChecker-Java logo" class="h-20 object-contain" onerror="this.style.display='none'" />
           <div class="flex gap-4 flex-col">
             <div class="flex flex-wrap gap-2">
               <span class="text-xs px-2 py-1 rounded-full bg-yellow-500/20 text-yellow-400 border border-yellow-500/30">ai</span>
@@ -277,7 +321,13 @@
           data-categories="backend,ai"
           data-project="kaggle-automation"
         >
-          <img src="./images/kaggle.png" alt="Kaggle Automation logo" class="h-20 object-contain" onerror="this.style.display='none'" />
+          <div class="h-20 flex items-center justify-center">
+            <div class="w-14 h-14 rounded-xl bg-yellow-500/15 border-2 border-yellow-500/40 flex items-center justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 text-yellow-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+              </svg>
+            </div>
+          </div>
           <div class="flex gap-4 flex-col">
             <div class="flex flex-wrap gap-2">
               <span class="text-xs px-2 py-1 rounded-full bg-blue-500/20 text-blue-400 border border-blue-500/30">backend</span>
@@ -308,7 +358,7 @@
           data-categories="frontend,ai,uiux"
           data-project="fitcheck"
         >
-          <img src="./images/fitcheck-logo-v3.png" alt="FitCheck logo" class="h-20 object-contain" />
+          <img src="./images/fitcheck-logo-v3.png" loading="lazy" alt="FitCheck logo" class="h-20 object-contain" />
           <div class="flex gap-4 flex-col">
             <div class="flex flex-wrap gap-2">
               <span class="text-xs px-2 py-1 rounded-full bg-pink-500/20 text-pink-400 border border-pink-500/30">frontend</span>
@@ -339,7 +389,7 @@
           data-categories="backend"
           data-project="moviemod"
         >
-          <img src="./images/mm.png" alt="MoviesMod scraper logo" class="h-20 object-contain" />
+          <img src="./images/mm.png" loading="lazy" alt="MoviesMod scraper logo" class="h-20 object-contain" />
           <div class="flex gap-4 flex-col">
             <div class="flex flex-wrap gap-2">
               <span class="text-xs px-2 py-1 rounded-full bg-blue-500/20 text-blue-400 border border-blue-500/30">backend</span>
@@ -369,7 +419,7 @@
           data-categories="frontend,uiux"
           data-project="memory"
         >
-          <img src="./images/memory-logo.svg" alt="Memory logo" class="h-20 object-contain" />
+          <img src="./images/memory-logo.svg" loading="lazy" alt="Memory logo" class="h-20 object-contain" />
           <div class="flex gap-4 flex-col">
             <div class="flex flex-wrap gap-2">
               <span class="text-xs px-2 py-1 rounded-full bg-pink-500/20 text-pink-400 border border-pink-500/30">frontend</span>
@@ -433,21 +483,21 @@
       class="w-full min-h-[60vh] sm:min-h-screen bg-pink-500 flex flex-col p-4 sm:p-8 pb-0 relative overflow-hidden"
     >
       <div class="flex flex-col mt-auto items-start">
-        <img src="./images/des-img-left-pink.png" alt="" aria-hidden="true" class="des-img-left max-w-[75%] sm:max-w-[55%] lg:max-w-[40%] h-auto self-start" />
-        <img src="./images/dev-na-than.png" alt="" aria-hidden="true" class="des-img-right max-w-[75%] sm:max-w-[55%] lg:max-w-[40%] h-auto self-end" />
+        <img src="./images/des-img-left-pink.png" loading="lazy" alt="" aria-hidden="true" class="des-img-left max-w-[75%] sm:max-w-[55%] lg:max-w-[40%] h-auto self-start" />
+        <img src="./images/dev-na-than.png" loading="lazy" alt="" aria-hidden="true" class="des-img-right max-w-[75%] sm:max-w-[55%] lg:max-w-[40%] h-auto self-end" />
       </div>
     </section>
 
     <!-- Footer -->
     <footer class="w-full bg-neutral-900 border-t border-neutral-800 py-8 px-4 sm:px-8">
-      <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
-        <p class="text-white/40 font-mono text-xs sm:text-sm text-center">© 2026 jayadithya. built with ❤️ and too much coffee.</p>
-        <div class="flex gap-4">
-          <a href="./jayadithya-resume.pdf" target="_blank" class="text-white/40 hover:text-white transition-colors font-mono text-xs sm:text-sm">resume</a>
-          <a href="mailto:rjayadithya16@gmail.com" class="text-white/40 hover:text-white transition-colors font-mono text-xs sm:text-sm">email</a>
-          <a href="https://www.linkedin.com/in/jayadithya-r/" target="_blank" class="text-white/40 hover:text-white transition-colors font-mono text-xs sm:text-sm">linkedin</a>
-          <a href="https://github.com/barryallen16" target="_blank" class="text-white/40 hover:text-white transition-colors font-mono text-xs sm:text-sm">github</a>
-        </div>
+      <div class="max-w-6xl mx-auto flex justify-center items-center gap-4 sm:gap-6">
+        <a href="./jayadithya-resume.pdf" target="_blank" class="text-white/40 hover:text-white transition-colors font-mono text-xs sm:text-sm">resume</a>
+        <span class="text-white/20">·</span>
+        <a href="mailto:rjayadithya16@gmail.com" class="text-white/40 hover:text-white transition-colors font-mono text-xs sm:text-sm">email</a>
+        <span class="text-white/20">·</span>
+        <a href="https://www.linkedin.com/in/jayadithya-r/" target="_blank" class="text-white/40 hover:text-white transition-colors font-mono text-xs sm:text-sm">linkedin</a>
+        <span class="text-white/20">·</span>
+        <a href="https://github.com/barryallen16" target="_blank" class="text-white/40 hover:text-white transition-colors font-mono text-xs sm:text-sm">github</a>
       </div>
     </footer>
   </body>
