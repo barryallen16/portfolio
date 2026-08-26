@@ -8,9 +8,9 @@
       name="description"
       content="Jayadithya R — AI developer from Chennai building LLM systems, fine-tuned models and automation tooling."
     />
-    <!-- Fonts: preload critical WOFF2 subsets (~48KB total) -->
-    <link rel="preload" href="./fonts/geist-regular.woff2" as="font" type="font/woff2" crossorigin />
+    <!-- Fonts: optimized WOFF2 subsets -->
     <link rel="preload" href="./fonts/brunson-display.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="./fonts/geistmono-regular.woff2" as="font" type="font/woff2" crossorigin />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link
       rel="shortcut icon"
@@ -22,24 +22,8 @@
   <script src="./logic.js" defer></script>
     <style type="text/tailwindcss">
       @font-face {
-        font-family: "Geist";
-        src: url("./fonts/geist-regular.woff2") format("woff2");
-        font-weight: 400;
-        font-style: normal;
-        font-display: swap;
-      }
-      @font-face {
-        font-family: "Geist";
-        src: url("./fonts/geist-semibold.woff2") format("woff2");
-        font-weight: 600;
-        font-style: normal;
-        font-display: swap;
-      }
-      @font-face {
-        font-family: "Geist";
-        src: url("./fonts/geist-bold.woff2") format("woff2");
-        font-weight: 700;
-        font-style: normal;
+        font-family: "Brunson";
+        src: url("./fonts/brunson-display.woff2") format("woff2");
         font-display: swap;
       }
       @font-face {
@@ -49,18 +33,9 @@
         font-style: normal;
         font-display: swap;
       }
-      @font-face {
-        font-family: "Brunson";
-        src: url("./fonts/brunson-display.woff2") format("woff2");
-        font-display: swap;
-      }
       @theme {
-        --font-sans: "Geist", ui-sans-serif, system-ui, sans-serif;
+        --font-sans: "Brunson", ui-sans-serif, system-ui, sans-serif;
         --font-mono: "GeistMono", ui-monospace, SFMono-Regular, monospace;
-      }
-      .font-display {
-        font-family: "Brunson", "Geist", sans-serif;
-        letter-spacing: -0.02em;
       }
     </style>
   </head>
@@ -126,7 +101,7 @@
         >
           <div class="flex flex-col">
             <h1 class="text-white text-3xl sm:text-4xl">hi i'm</h1>
-            <h1 class="font-display text-4xl sm:text-5xl text-white underline decoration-lime-500 underline-offset-4">
+            <h1 class="text-4xl sm:text-5xl text-white underline decoration-lime-500 underline-offset-4">
               jayadithya
             </h1>
             <h1 class="text-xl sm:text-2xl text-white mt-1">AI / ML engineer</h1>
@@ -145,11 +120,19 @@
               view résumé
             </a>
           </div>
-          <div class="relative justify-self-center md:justify-self-end mt-10 md:mt-0">
+          <div class="relative">
+            <img
+              src="./images/profile.jpeg"
+              alt="jayadithya"
+              class="h-64 sm:h-80 md:h-96 w-auto object-cover object-bottom rounded-lg"
+              onerror="this.style.display='none';document.getElementById('hero-fallback').style.display='flex';"
+            />
             <div
-              class="h-64 w-52 sm:h-80 sm:w-60 md:h-96 md:w-72 rounded-lg bg-gradient-to-br from-lime-500/70 via-emerald-600/70 to-neutral-800 flex items-center justify-center select-none"
+              id="hero-fallback"
+              style="display: none"
+              class="h-64 sm:h-80 md:h-96 w-52 sm:w-60 md:w-72 rounded-lg bg-gradient-to-br from-lime-500/70 via-emerald-600/70 to-neutral-800 items-center justify-center select-none"
             >
-              <span class="font-display text-white/90 text-[7rem] sm:text-[8rem] md:text-[10rem] leading-none drop-shadow-lg">J</span>
+              <span class="text-white/90 text-[7rem] sm:text-[8rem] md:text-[10rem] leading-none">J</span>
             </div>
             <div class="absolute inset-0 grid grid-cols-10 grid-rows-10" id="pixelated-container"></div>
           </div>
@@ -163,7 +146,7 @@
       class="min-h-screen w-full relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4"
     >
       <div class="bg-pink-500 min-h-[38vh] sm:min-h-[45vh] lg:min-h-0">
-        <h1 class="font-display mt-14 sm:mt-20 lg:mt-28 text-3xl sm:text-4xl px-4 pb-6 text-white">
+        <h1 class="mt-14 sm:mt-20 lg:mt-28 text-3xl sm:text-4xl px-4 pb-6 text-white">
           Frontend venuma? <br />Frontend iruku.
         </h1>
         <a href="#showcase" data-skill-filter="frontend" class="skill-link">
@@ -175,7 +158,7 @@
         </a>
       </div>
       <div class="bg-blue-600 min-h-[38vh] sm:min-h-[45vh] lg:min-h-0">
-        <h1 class="font-display mt-14 sm:mt-20 lg:mt-28 text-3xl sm:text-4xl px-4 pb-6 text-white">
+        <h1 class="mt-14 sm:mt-20 lg:mt-28 text-3xl sm:text-4xl px-4 pb-6 text-white">
           Backend venuma? <br />Backend iruku.
         </h1>
         <a href="#showcase" data-skill-filter="backend" class="skill-link">
@@ -187,7 +170,7 @@
         </a>
       </div>
       <div class="bg-lime-500 min-h-[38vh] sm:min-h-[45vh] lg:min-h-0">
-        <h1 class="font-display mt-14 sm:mt-20 lg:mt-28 text-3xl sm:text-4xl px-4 pb-6 text-white">
+        <h1 class="mt-14 sm:mt-20 lg:mt-28 text-3xl sm:text-4xl px-4 pb-6 text-white">
           ui/ux venuma? <br />ui/ux iruku.
         </h1>
         <a href="#showcase" data-skill-filter="uiux" class="skill-link">
@@ -199,7 +182,7 @@
         </a>
       </div>
       <div class="bg-yellow-400 min-h-[38vh] sm:min-h-[45vh] lg:min-h-0">
-        <h1 class="font-display mt-14 sm:mt-20 lg:mt-28 text-3xl sm:text-4xl px-4 pb-6 text-black">
+        <h1 class="mt-14 sm:mt-20 lg:mt-28 text-3xl sm:text-4xl px-4 pb-6 text-black">
           ai venuma?<br />
           ai iruku.
         </h1>
@@ -221,7 +204,7 @@
 
     <!-- Projects -->
     <section id="showcase" class="w-screen bg-[#0e0e0e] flex flex-col p-4 sm:p-8">
-      <h1 class="font-display place-self-center text-white text-3xl sm:text-4xl mb-4 mt-16 sm:mt-24">Projects</h1>
+      <h1 class="place-self-center text-white text-3xl sm:text-4xl mb-4 mt-16 sm:mt-24">Projects</h1>
 
       <!-- Filter Buttons -->
       <div class="flex flex-wrap justify-center gap-2 sm:gap-3 mb-8 px-2" id="filter-buttons">
@@ -252,7 +235,7 @@
           data-categories="ai,backend"
           data-project="java-vul"
         >
-          <img src="./images/java.png" alt="VulnChecker-Java logo" class="h-20 object-contain" />
+          <img src="./images/vc.png" alt="VulnChecker-Java logo" class="h-20 object-contain" onerror="this.style.display='none'" />
           <div class="flex gap-4 flex-col">
             <div class="flex flex-wrap gap-2">
               <span class="text-xs px-2 py-1 rounded-full bg-yellow-500/20 text-yellow-400 border border-yellow-500/30">ai</span>
@@ -413,13 +396,7 @@
           data-categories="backend"
           data-project="unshorten"
         >
-          <div class="h-20 flex items-center justify-center">
-            <div class="w-14 h-14 rounded-xl bg-blue-500/15 border-2 border-blue-500/40 flex items-center justify-center">
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M13.828 10.172a4 4 0 010 5.656l-3 3a4 4 0 01-5.656-5.656l1.5-1.5M10.172 13.828a4 4 0 010-5.656l3-3a4 4 0 015.656 5.656l-1.5 1.5" />
-              </svg>
-            </div>
-          </div>
+          <img src="./images/ub.png" alt="unshortenBuddy logo" class="h-20 object-contain" />
           <div class="flex gap-4 flex-col">
             <div class="flex flex-wrap gap-2">
               <span class="text-xs px-2 py-1 rounded-full bg-blue-500/20 text-blue-400 border border-blue-500/30">backend</span>
