@@ -1,16 +1,22 @@
 document.addEventListener("DOMContentLoaded", () => {
+  // If gsap failed to load for any reason, keep the site usable
+  // with everything visible and just skip animation.
+  if (typeof window.gsap === "undefined" || typeof window.ScrollTrigger === "undefined") {
+    setupFiltering();
+    return;
+  }
+
   // Register plugins
   gsap.registerPlugin(ScrollTrigger);
 
-  // Respect users who prefer reduced motion — skip all animation,
-  // content stays fully visible in its final state.
+  // Reduced motion: never skip animation entirely (that makes the page
+  // look frozen/broken) — run every effect much faster instead.
   const prefersReducedMotion = window.matchMedia(
     "(prefers-reduced-motion: reduce)"
   ).matches;
 
   if (prefersReducedMotion) {
-    setupFiltering();
-    return;
+    gsap.globalTimeline.timeScale(3);
   }
 
   // ========================================
@@ -66,57 +72,123 @@ document.addEventListener("DOMContentLoaded", () => {
     );
 
   // ========================================
-  // T-Shaped Engineer — bar draws, stem drops, skills pop in one by one
+  // T-Shaped Engineer — scroll-scrubbed pen draw.
+  // Scrolling down traces the T stroke by stroke; scrolling up
+  // un-draws it; scrolling down again redraws it. Fully reversible.
   // ========================================
 
-  const tTl = gsap.timeline({
-    scrollTrigger: {
-      trigger: "#t-shape",
-      start: "top 65%",
-      toggleActions: "play none none reverse",
-    },
-  });
+  const tSvg = document.querySelector("#t-svg");
+  const barPath = document.querySelector("#t-bar-path");
+  const stemPath = document.querySelector("#t-stem-path");
 
-  tTl
-    .from("#t-bar", {
-      scaleX: 0,
-      transformOrigin: "left center",
-      duration: 0.8,
-      ease: "power3.out",
-    })
-    .from(
-      "#t-stem",
-      {
-        scaleY: 0,
-        transformOrigin: "center top",
-        duration: 0.7,
-        ease: "power3.out",
+  if (tSvg && barPath && stemPath) {
+    const barLen = barPath.getTotalLength();
+    const stemLen = stemPath.getTotalLength();
+
+    // ink hidden, waiting to be traced by scroll
+    gsap.set(barPath, { strokeDasharray: barLen, strokeDashoffset: barLen });
+    gsap.set(stemPath, { strokeDasharray: stemLen, strokeDashoffset: stemLen });
+
+    const barGhost = document.querySelector("#t-bar-ghost");
+    const stemGhost = document.querySelector("#t-stem-ghost");
+    const sparkBar = document.querySelector("#t-spark-bar");
+    const sparkStem = document.querySelector("#t-spark-stem");
+    const junction = document.querySelector("#t-junction");
+
+    // ambient: blueprint dots slowly march along their guides
+    if (barGhost && stemGhost) {
+      gsap.to([barGhost, stemGhost], {
+        strokeDashoffset: 120,
+        duration: 8,
+        repeat: -1,
+        ease: "none",
+      });
+    }
+
+    const tTl = gsap.timeline({
+      defaults: { ease: "none" },
+      scrollTrigger: {
+        trigger: "#t-shape",
+        start: "top 65%",
+        end: "+=1100", // the full draw unfolds across ~1100px of scroll
+        scrub: 1,
       },
-      "-=0.2"
-    )
-    .from(
-      ".t-broad",
-      {
-        opacity: 0,
-        y: -16,
-        scale: 0.6,
-        transformOrigin: "center bottom",
-        stagger: 0.14,
-        duration: 0.45,
-        ease: "back.out(2)",
-      },
-      "-=0.25"
-    )
-    .from(
-      "#t-deep",
-      {
-        opacity: 0,
-        scale: 0.5,
-        duration: 0.5,
-        ease: "back.out(2)",
-      },
-      "-=0.1"
-    );
+    });
+
+    // faint blueprint dots surface first...
+    tTl.to([barGhost, stemGhost], { opacity: 1, duration: 0.06 }, 0);
+
+    // ...the glowing tip traces the bar left -> right at constant speed
+    tTl.to(barPath, {
+      strokeDashoffset: 0,
+      duration: 0.36,
+    }, 0.06);
+
+    if (sparkBar && typeof MotionPathPlugin !== "undefined") {
+      gsap.registerPlugin(MotionPathPlugin);
+      tTl
+        .to(sparkBar, { opacity: 1, duration: 0.02 }, 0.06)
+        .to(sparkBar, {
+          motionPath: "#t-bar-path",
+          duration: 0.36,
+        }, 0.06)
+        .to(sparkBar, { opacity: 0, duration: 0.03 }, 0.42);
+    }
+
+    // breadth chips drop onto the bar as it passes under them
+    tTl.from(".t-broad", {
+      opacity: 0,
+      y: -14,
+      stagger: 0.04,
+      duration: 0.08,
+      ease: "back.out(1.7)",
+    }, 0.38);
+
+    // flash where the stem meets the bar...
+    if (junction) {
+      tTl
+        .fromTo(junction, {
+          opacity: 0,
+          scale: 0.3,
+          transformOrigin: "50% 50%",
+        }, {
+          opacity: 0.9,
+          scale: 1,
+          duration: 0.04,
+          ease: "power2.out",
+        }, 0.44)
+        .to(junction, {
+          opacity: 0,
+          scale: 2.4,
+          duration: 0.08,
+          ease: "power2.out",
+        }, 0.48);
+    }
+
+    // ...then the tip pulls the stem downward
+    tTl.to(stemPath, {
+      strokeDashoffset: 0,
+      duration: 0.4,
+    }, 0.46);
+
+    if (sparkStem && typeof MotionPathPlugin !== "undefined") {
+      tTl
+        .to(sparkStem, { opacity: 1, duration: 0.02 }, 0.46)
+        .to(sparkStem, {
+          motionPath: "#t-stem-path",
+          duration: 0.4,
+        }, 0.46)
+        .to(sparkStem, { opacity: 0, duration: 0.03 }, 0.86);
+    }
+
+    // deep expertise lands at the tip of the stem
+    tTl.from("#t-deep", {
+      opacity: 0,
+      scale: 0.5,
+      duration: 0.12,
+      ease: "back.out(2)",
+    }, 0.88);
+  }
 
   // ========================================
   // Project card entrance + hover

@@ -21,8 +21,9 @@
       href="./favicon/favicon.ico"
       type="image/x-icon"
     />
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/gsap.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/ScrollTrigger.min.js"></script>
+  <script src="./vendor/gsap.min.js" defer></script>
+  <script src="./vendor/ScrollTrigger.min.js" defer></script>
+  <script src="./vendor/MotionPathPlugin.min.js" defer></script>
   <script src="./logic.js" defer></script>
     <style type="text/tailwindcss">
       @font-face {
@@ -157,9 +158,9 @@
         broad across the bar. deep down the stem.
       </p>
 
-      <div class="relative w-full max-w-xl sm:max-w-2xl">
+      <div class="relative w-full max-w-xl sm:max-w-2xl flex flex-col items-center">
         <!-- breadth chips sitting on top of the bar -->
-        <div class="absolute -top-9 sm:-top-11 inset-x-0 flex justify-between items-end gap-1">
+        <div class="relative z-10 w-full flex justify-between items-end gap-1 px-1 sm:px-2 mb-2 sm:mb-3">
           <span class="t-broad font-mono text-[10px] sm:text-xs px-2 sm:px-3 py-1.5 rounded-lg border-2 border-neutral-700 bg-neutral-900 text-white/80 whitespace-nowrap">frontend</span>
           <span class="t-broad font-mono text-[10px] sm:text-xs px-2 sm:px-3 py-1.5 rounded-lg border-2 border-neutral-700 bg-neutral-900 text-white/80 whitespace-nowrap">ui/ux</span>
           <span class="t-broad font-mono text-[10px] sm:text-xs px-2 sm:px-3 py-1.5 rounded-lg border-2 border-neutral-700 bg-neutral-900 text-white/80 whitespace-nowrap">backend</span>
@@ -167,20 +168,32 @@
           <span class="t-broad font-mono text-[10px] sm:text-xs px-2 sm:px-3 py-1.5 rounded-lg border-2 border-neutral-700 bg-neutral-900 text-white/80 whitespace-nowrap">devops</span>
         </div>
 
-        <!-- horizontal bar of the T -->
-        <div id="t-bar" class="h-1.5 w-full bg-lime-500 rounded-full"></div>
-
-        <!-- vertical stem -->
-        <div class="flex justify-center">
-          <div id="t-stem" class="h-[32vh] sm:h-[38vh] w-1.5 bg-lime-500 rounded-full"></div>
-        </div>
+        <!-- the T, traced by scroll like a pen drawing it -->
+        <svg
+          id="t-svg"
+          viewBox="0 0 800 500"
+          fill="none"
+          class="w-full h-auto block overflow-visible"
+          style="filter: drop-shadow(0 0 14px rgba(163, 230, 53, 0.3));"
+          aria-hidden="true"
+        >
+          <!-- blueprint dot guides — hidden until scroll surfaces them -->
+          <path id="t-bar-ghost" d="M16 20 H784" stroke="#52525b" stroke-width="10" stroke-linecap="round" stroke-dasharray="0 30" opacity="0" />
+          <path id="t-stem-ghost" d="M400 26 V470" stroke="#52525b" stroke-width="10" stroke-linecap="round" stroke-dasharray="0 30" opacity="0" />
+          <!-- ink -->
+          <path id="t-bar-path" d="M16 20 H784" stroke="#a3e635" stroke-width="16" stroke-linecap="round" />
+          <path id="t-stem-path" d="M400 26 V470" stroke="#a3e635" stroke-width="16" stroke-linecap="round" />
+          <!-- flash where the stem meets the bar -->
+          <circle id="t-junction" cx="400" cy="22" r="14" stroke="#d9f99d" stroke-width="4" fill="none" opacity="0" />
+          <!-- glowing pen tip riding each stroke -->
+          <circle id="t-spark-bar" r="9" cx="0" cy="0" fill="#ecfccb" opacity="0" style="filter: drop-shadow(0 0 10px rgba(163, 230, 53, 1));" />
+          <circle id="t-spark-stem" r="9" cx="0" cy="0" fill="#ecfccb" opacity="0" style="filter: drop-shadow(0 0 10px rgba(163, 230, 53, 1));" />
+        </svg>
 
         <!-- deep expertise at the bottom of the stem -->
-        <div class="flex justify-center mt-4">
-          <span id="t-deep" class="px-5 py-2.5 rounded-full bg-lime-500 text-black text-sm sm:text-base whitespace-nowrap">
-            ai / llm systems
-          </span>
-        </div>
+        <span id="t-deep" class="-mt-2 px-5 py-2.5 rounded-full bg-lime-500 text-black text-sm sm:text-base whitespace-nowrap shadow-lg shadow-lime-500/25">
+          ai / llm systems
+        </span>
       </div>
     </section>
 
@@ -238,12 +251,6 @@
           </h4>
         </a>
       </div>
-      <img
-        src="./images/dance-venuma.png" loading="lazy"
-        alt=""
-        aria-hidden="true"
-        class="w-[50%] hidden md:block absolute bottom-0 left-[25%]"
-      />
     </section>
 
     <!-- Projects -->
@@ -279,7 +286,6 @@
           data-categories="ai,backend"
           data-project="java-vul"
         >
-          <img src="./images/vc.png" loading="lazy" alt="VulnChecker-Java logo" class="h-20 object-contain" onerror="this.style.display='none'" />
           <div class="flex gap-4 flex-col">
             <div class="flex flex-wrap gap-2">
               <span class="text-xs px-2 py-1 rounded-full bg-yellow-500/20 text-yellow-400 border border-yellow-500/30">ai</span>
