@@ -298,4 +298,49 @@ document.addEventListener("DOMContentLoaded", () => {
 
     updateActiveButton("all");
   }
+
+  // ========================================
+  // Agent view — render llms.txt as plain text
+  // ========================================
+
+  const agentLink = document.getElementById("agent-view-link");
+
+  if (agentLink) {
+    agentLink.addEventListener("click", async (e) => {
+      let text = null;
+      try {
+        const res = await fetch("./llms.txt");
+        if (res.ok) text = await res.text();
+      } catch {
+        text = null; // fall through to the raw file below
+      }
+      if (text === null) return; // let the browser open llms.txt directly
+
+      e.preventDefault();
+      const y = window.scrollY;
+      const overlay = document.createElement("div");
+      overlay.className =
+        "fixed inset-0 overflow-y-auto bg-[#0e0e0e] px-4 sm:px-8 py-8 z-20";
+      const inner = document.createElement("div");
+      inner.className = "max-w-3xl mx-auto";
+      const back = document.createElement("button");
+      back.className =
+        "font-mono text-xs sm:text-sm text-white/40 hover:text-white transition-colors mb-6";
+      back.textContent = "< back";
+      back.addEventListener("click", () => {
+        overlay.remove();
+        document.body.style.overflow = "";
+        window.scrollTo(0, y);
+      });
+      const pre = document.createElement("pre");
+      pre.className =
+        "font-mono text-white/80 text-xs sm:text-sm whitespace-pre-wrap break-words";
+      pre.textContent = text;
+      inner.append(back, pre);
+      overlay.appendChild(inner);
+      document.body.appendChild(overlay);
+      document.body.style.overflow = "hidden";
+      window.scrollTo(0, 0);
+    });
+  }
 });
