@@ -307,16 +307,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (agentLink) {
     agentLink.addEventListener("click", async (e) => {
+      // preventDefault must be sync: after an await the browser has
+      // already followed the link and the overlay below never shows.
+      e.preventDefault();
       let text = null;
       try {
         const res = await fetch("./llms.txt");
         if (res.ok) text = await res.text();
       } catch {
-        text = null; // fall through to the raw file below
+        text = null;
       }
-      if (text === null) return; // let the browser open llms.txt directly
+      if (text === null) {
+        window.location.href = "./llms.txt"; // fall back to the raw file
+        return;
+      }
 
-      e.preventDefault();
       const y = window.scrollY;
       const overlay = document.createElement("div");
       overlay.className =
