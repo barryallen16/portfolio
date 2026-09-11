@@ -1,0 +1,37 @@
+# Jayadithya R
+
+> Portfolio of Jayadithya R, an AI/ML engineer in Chennai, India. He builds AI systems bottom-up: tokenizers, data pipelines, open-model inference, products, and human eval.
+
+Live site: https://jayadithya.is-a.dev
+
+## Contact
+
+- Email: rjayadithya11@gmail.com
+- GitHub: https://github.com/barryallen16
+- LinkedIn: https://www.linkedin.com/in/jayadithya-r/
+- Resume (PDF): https://jayadithya.is-a.dev/jayadithya-genai_engineer.pdf
+
+## Projects
+
+- tamil-tokenizer: BPE tokenizer for Tamil written in Rust. It runs 11-16x faster than SentencePiece, has a 32K vocab on Hugging Face, and 23 tests. https://github.com/barryallen16/tamil-tokenizer
+- VulnChecker-Java: LoRA fine-tune of Qwen2.5-Coder for Java vulnerability detection. The 7B model scored 80.39% on a 102-case eval, above the 14B base. https://github.com/barryallen16/VulnChecker-Java
+- sivabharani-comments: pipeline over 2,755 Tamil videos. It ran 1,185,665 transcript chunks through local Gemma 4-bit inference and published the dataset on Hugging Face. https://github.com/barryallen16/sivabharani-comments
+- kaggle-automation: FastAPI control plane that pools Kaggle accounts, shards GPU jobs across them, and watches 12-hour sessions with Telegram alerts. https://github.com/barryallen16/kaggle-automation
+- fitcheck-website: outfit recommender that runs FashionCLIP fully in the browser and builds looks from the user's own wardrobe. https://github.com/barryallen16/fitcheck-website
+- ats-resume-creation-skill: agent skill that writes ATS-friendly resumes as docx and PDF, with an application tracker. The resume on this site came out of it. https://github.com/barryallen16/ats-resume-creation-skill
+- moviemod-scraper: distributed Selenium scraper with domain rotation, multiprocess workers, MySQL dedup, and Telegram alerts. https://github.com/barryallen16/moviemod-scraper
+- Memory: bookmarklet that fuzzy-matches Google Forms fields and autofills them. https://barryallen16.github.io/Memory/
+- unshortenBuddy: Telegram bot that resolves ad-walled short links with headless Chrome and caches results in Postgres. https://github.com/barryallen16/unshortenBuddy
+
+## Experience
+
+- AI Research Intern, Blubridge Technologies, Chennai, 07/2025 - 10/2025. Built operator-fusion passes in MLIR that cut kernel launch overhead around 20%. Lowered dialect ops to LLVM IR with shape inference for dynamic tensors. Added 40+ lit tests wired into CI.
+
+## Education
+
+- B.Tech, Artificial Intelligence and Data Science, Dr. M.G.R. Educational and Research Institute, Chennai, 2026. GPA 8.0/10.
+
+## Blog
+
+- FitCheck breakdown: https://jayadithya.is-a.dev/blogs/fitcheck.html
+- Qwen Java-vuln fine-tune notes: https://jayadithya.is-a.dev/blogs/java-vul.html
