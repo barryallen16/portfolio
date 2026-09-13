@@ -3,6 +3,13 @@
 > Portfolio of Jayadithya R, an AI/ML engineer in Chennai, India. He builds AI systems bottom-up: tokenizers, data pipelines, open-model inference, products, and human eval.
 
 Live site: https://jayadithya.is-a.dev
+Last updated: 2026-09-13
+
+## In short
+
+- Who is Jayadithya R? An AI/ML engineer in Chennai, India working on LLM systems.
+- What does he build? Tamil tokenizers, Qwen fine-tunes for vuln detection, data pipelines, and browser AI apps.
+- How to contact him? rjayadithya11@gmail.com or https://www.linkedin.com/in/jayadithya-r/
 
 ## Contact
 
