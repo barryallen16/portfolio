@@ -13,7 +13,31 @@
       property="og:description"
       content="LLM systems, fine-tuned models and automation tooling. Chennai, India."
     />
+    <meta property="og:type" content="profile" />
+    <meta property="og:url" content="https://jayadithya.is-a.dev/" />
     <meta property="og:image" content="https://jayadithya.is-a.dev/images/profile.webp" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="robots"
+      content="index, follow, max-image-preview:large"
+    />
+    <link rel="canonical" href="https://jayadithya.is-a.dev/" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Jayadithya R",
+        "url": "https://jayadithya.is-a.dev/",
+        "jobTitle": "AI/ML Engineer",
+        "address": { "@type": "PostalAddress", "addressLocality": "Chennai", "addressRegion": "Tamil Nadu", "addressCountry": "IN" },
+        "sameAs": [
+          "https://github.com/barryallen16",
+          "https://www.linkedin.com/in/jayadithya-r/",
+          "https://huggingface.co/barryallen16"
+        ],
+        "knowsAbout": ["LLM systems", "BPE tokenizers", "fine-tuning", "data pipelines", "automation"]
+      }
+    </script>
     <meta name="theme-color" content="#0e0e0e" />
     <!-- Fonts: optimized WOFF2 subsets -->
     <link
@@ -83,6 +107,12 @@
           projects
         </a>
         <a
+          href="#blog"
+          class="p-2 text-xs sm:text-sm bg-neutral-900 border-neutral-800 border-2 rounded-lg text-white/40 hover:text-white transition-colors"
+        >
+          blog
+        </a>
+        <a
           href="./jayadithya-genai_engineer.pdf"
           target="_blank"
           class="p-2 text-xs sm:text-sm bg-neutral-900 border-neutral-800 border-2 rounded-lg text-white/40 hover:text-white transition-colors"
@@ -131,14 +161,14 @@
         >
           <div class="flex flex-col">
             <h1 class="text-white text-3xl sm:text-4xl">hi i'm</h1>
-            <h1
+            <p
               class="text-4xl sm:text-5xl text-white underline decoration-lime-500 underline-offset-4"
             >
               jayadithya
-            </h1>
-            <h1 class="text-xl sm:text-2xl text-white mt-1">
+            </p>
+            <p class="text-xl sm:text-2xl text-white mt-1">
               AI / ML engineer
-            </h1>
+            </p>
             <p class="text-white font-mono mt-4 text-sm sm:text-base">
               i build ai systems bottom-up, from tokenizers and pipelines to inference and eval. <br />
             </p>
@@ -201,13 +231,13 @@
       id="t-shape"
       class="w-screen bg-[#0e0e0e] flex flex-col items-center px-4 pt-24 pb-28 sm:pb-16"
     >
-      <h1 class="text-white text-3xl sm:text-4xl mb-3 text-center">
+      <h2 class="text-white text-3xl sm:text-4xl mb-3 text-center">
         the
         <span class="underline decoration-lime-500 underline-offset-4"
           >t-shaped</span
         >
         engineer
-      </h1>
+      </h2>
       <p
         class="font-mono text-white/50 text-xs sm:text-sm mb-16 sm:mb-20 text-center max-w-md"
       >
@@ -334,11 +364,11 @@
       class="min-h-screen w-full relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4"
     >
       <div class="bg-pink-500 min-h-[38vh] sm:min-h-[45vh] lg:min-h-0">
-        <h1
+        <h2
           class="mt-14 sm:mt-20 lg:mt-28 text-3xl sm:text-4xl px-4 pb-6 text-white"
         >
           Frontend venuma? <br />Frontend iruku.
-        </h1>
+        </h2>
         <a href="#showcase" data-skill-filter="frontend" class="skill-link">
           <h4
             class="font-mono px-4 py-2 decoration-dashed underline hover:decoration-solid text-white cursor-pointer"
@@ -348,11 +378,11 @@
         </a>
       </div>
       <div class="bg-blue-600 min-h-[38vh] sm:min-h-[45vh] lg:min-h-0">
-        <h1
+        <h2
           class="mt-14 sm:mt-20 lg:mt-28 text-3xl sm:text-4xl px-4 pb-6 text-white"
         >
           Backend venuma? <br />Backend iruku.
-        </h1>
+        </h2>
         <a href="#showcase" data-skill-filter="backend" class="skill-link">
           <h4
             class="font-mono px-4 py-2 decoration-dashed underline hover:decoration-solid text-white cursor-pointer"
@@ -362,11 +392,11 @@
         </a>
       </div>
       <div class="bg-lime-500 min-h-[38vh] sm:min-h-[45vh] lg:min-h-0">
-        <h1
+        <h2
           class="mt-14 sm:mt-20 lg:mt-28 text-3xl sm:text-4xl px-4 pb-6 text-white"
         >
           ui/ux venuma? <br />ui/ux iruku.
-        </h1>
+        </h2>
         <a href="#showcase" data-skill-filter="uiux" class="skill-link">
           <h4
             class="font-mono px-4 py-2 decoration-dashed underline hover:decoration-solid text-white cursor-pointer"
@@ -376,12 +406,12 @@
         </a>
       </div>
       <div class="bg-yellow-400 min-h-[38vh] sm:min-h-[45vh] lg:min-h-0">
-        <h1
+        <h2
           class="mt-14 sm:mt-20 lg:mt-28 text-3xl sm:text-4xl px-4 pb-6 text-black"
         >
           ai venuma?<br />
           ai iruku.
-        </h1>
+        </h2>
         <a href="#showcase" data-skill-filter="ai" class="skill-link">
           <h4
             class="font-mono px-4 py-2 decoration-dashed underline hover:decoration-solid text-black/80 cursor-pointer"
@@ -397,11 +427,11 @@
       id="showcase"
       class="w-screen bg-[#0e0e0e] flex flex-col p-4 sm:p-8 scroll-mt-24 sm:scroll-mt-32"
     >
-      <h1
+      <h2
         class="place-self-center text-white text-3xl sm:text-4xl mb-4 mt-16 sm:mt-24"
       >
         Projects
-      </h1>
+      </h2>
 
       <!-- Filter Buttons -->
       <div
@@ -869,12 +899,12 @@
       id="experience"
       class="w-screen bg-[#0e0e0e] flex flex-col items-center px-4 sm:px-8 py-16 sm:py-24"
     >
-      <h1 class="text-white text-3xl sm:text-4xl mb-10 text-center">
+      <h2 class="text-white text-3xl sm:text-4xl mb-10 text-center">
         where i've
         <span class="underline decoration-lime-500 underline-offset-4"
           >worked</span
         >
-      </h1>
+      </h2>
       <div class="w-full max-w-3xl flex flex-col gap-4">
         <div
           class="p-5 sm:p-8 border-2 border-neutral-800 rounded-lg bg-neutral-900"
@@ -917,6 +947,34 @@
             dr. m.g.r. educational and research institute · chennai · 8.0/10
           </p>
         </div>
+      </div>
+    </section>
+
+    <!-- Blog -->
+    <section
+      id="blog"
+      class="w-screen bg-[#0e0e0e] flex flex-col items-center px-4 sm:px-8 py-16 sm:py-24 scroll-mt-24"
+    >
+      <h2 class="text-white text-3xl sm:text-4xl mb-10 text-center">
+        writing
+      </h2>
+      <div class="w-full max-w-3xl flex flex-col gap-4">
+        <a
+          href="./blogs/java-vul.html"
+          class="p-5 sm:p-8 border-2 border-neutral-800 rounded-lg bg-neutral-900 hover:border-neutral-600 transition-colors"
+        >
+          <span class="font-mono text-white/40 text-xs sm:text-sm">Jan 2025 · ai</span>
+          <p class="text-white text-lg sm:text-xl mt-2">Fine-tuning Qwen for Java Vulnerability Detection</p>
+          <p class="font-mono text-white/60 text-sm sm:text-base mt-2">LoRA fine-tune notes — 7B at 80.39% on 102 eval cases, beating my 14B run.</p>
+        </a>
+        <a
+          href="./blogs/fitcheck.html"
+          class="p-5 sm:p-8 border-2 border-neutral-800 rounded-lg bg-neutral-900 hover:border-neutral-600 transition-colors"
+        >
+          <span class="font-mono text-white/40 text-xs sm:text-sm">Dec 2024 · frontend, ai, ui/ux</span>
+          <p class="text-white text-lg sm:text-xl mt-2">Building FitCheck: AI-Powered Fashion from Your Wardrobe</p>
+          <p class="font-mono text-white/60 text-sm sm:text-base mt-2">FashionCLIP fully in the browser, looks built from clothes you own.</p>
+        </a>
       </div>
     </section>
 
@@ -975,6 +1033,12 @@
           target="_blank"
           class="text-white/40 hover:text-white transition-colors font-mono text-xs sm:text-sm"
           >github</a
+        >
+        <span class="text-white/20">·</span>
+        <a
+          href="#blog"
+          class="text-white/40 hover:text-white transition-colors font-mono text-xs sm:text-sm"
+          >blog</a
         >
         <span class="text-white/20">·</span>
         <a
