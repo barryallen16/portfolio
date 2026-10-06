@@ -86,12 +86,41 @@
         background: #a3e635;
         color: #0e0e0e;
       }
+      .pt {
+        display: flex;
+        flex-direction: column;
+        gap: 0.7rem;
+      }
+      .pt-row {
+        display: grid;
+        grid-template-columns: 4.25rem 1fr;
+        gap: 0.75rem;
+        align-items: start;
+      }
+      .pt dt {
+        font-family: "GeistMono", ui-monospace, monospace;
+        font-size: 0.6875rem;
+        letter-spacing: 0.02em;
+        padding-top: 0.22rem;
+        color: rgb(163 230 53 / 0.75);
+      }
+      .pt dd {
+        font-family: "GeistMono", ui-monospace, monospace;
+        font-size: 0.8125rem;
+        line-height: 1.55;
+        color: rgb(255 255 255 / 0.78);
+      }
+      @media (min-width: 640px) {
+        .pt dd {
+          font-size: 0.875rem;
+        }
+      }
     </style>
   </head>
   <body class="overflow-x-hidden bg-[#0e0e0e]">
     <!-- Nav -->
     <div
-      class="bg-white/50 backdrop-blur-md px-3 sm:px-8 py-2 w-[95%] sm:w-[90%] rounded-4xl fixed top-3 sm:top-8 z-10 left-1/2 -translate-x-1/2 flex justify-between items-center border-white/80 border"
+      class="bg-white/50 backdrop-blur-md px-3 sm:px-8 py-2 w-[95%] sm:w-[90%] rounded-4xl fixed top-3 sm:top-8 z-30 left-1/2 -translate-x-1/2 flex justify-between items-center border-white/80 border"
     >
       <a href="#hero" aria-label="home">
         <img
@@ -106,12 +135,6 @@
           class="p-2 text-xs sm:text-sm bg-neutral-900 border-neutral-800 border-2 rounded-lg text-white/40 hover:text-white transition-colors"
         >
           projects
-        </a>
-        <a
-          href="#blog"
-          class="p-2 text-xs sm:text-sm bg-neutral-900 border-neutral-800 border-2 rounded-lg text-white/40 hover:text-white transition-colors"
-        >
-          blog
         </a>
         <a
           href="./jayadithya-genai_engineer.pdf"
@@ -429,10 +452,16 @@
       class="w-screen bg-[#0e0e0e] flex flex-col p-4 sm:p-8 scroll-mt-24 sm:scroll-mt-32"
     >
       <h2
-        class="place-self-center text-white text-3xl sm:text-4xl mb-4 mt-16 sm:mt-24"
+        class="place-self-center text-white text-3xl sm:text-4xl mb-3 mt-16 sm:mt-24"
       >
         Projects
       </h2>
+      <p
+        class="place-self-center font-mono text-white/50 text-xs sm:text-sm mb-8 text-center max-w-md"
+      >
+        every project below answers three questions: what problem it solves,
+        what i gave up to solve it, how it works.
+      </p>
 
       <!-- Filter Buttons -->
       <div
@@ -475,213 +504,319 @@
         class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 grid-flow-row gap-4"
         id="projects-grid"
       >
-        <!-- tamil-tokenizer -->
+<!-- tamil-tokenizer -->
         <div
-          class="project-card w-full h-full grid grid-flow-row justify-center items-center p-5 sm:p-8 border-2 border-neutral-800 rounded-lg bg-neutral-900 gap-4 transition-all duration-500"
+          class="project-card w-full h-full flex flex-col p-5 sm:p-6 border-2 border-neutral-800 rounded-lg bg-neutral-900 gap-5 transition-all duration-500 hover:border-neutral-700"
           data-categories="ai,backend"
           data-project="tamil-tokenizer"
         >
-          <!-- tile icon: pixelarticons "code" (MIT) -->
-          <div class="h-20 flex items-center justify-center">
+          <div class="flex items-center gap-3">
+            <!-- tile icon: pixelarticons "code" (MIT) -->
             <div
-              class="w-14 h-14 rounded-xl bg-blue-500/15 border-2 border-blue-500/40 flex items-center justify-center"
+              class="w-9 h-9 shrink-0 rounded-lg bg-blue-500/15 border border-blue-500/40 grid place-items-center"
             >
-              <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="w-12 h-12 text-blue-400" style="image-rendering:pixelated" aria-hidden="true"><path d="M11 18H9v-4h2v4Zm-4-1H5v-2h2v2Zm12-2v2h-2v-2h2ZM5 15H3v-2h2v2Zm16 0h-2v-2h2v2Zm-8-1h-2v-4h2v4ZM3 13H1v-2h2v2Zm20 0h-2v-2h2v2ZM5 11H3V9h2v2Zm16 0h-2V9h2v2Zm-6-1h-2V6h2v4ZM7 9H5V7h2v2Zm12 0h-2V7h2v2Z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="w-5 h-5 text-blue-400" style="image-rendering:pixelated" aria-hidden="true"><path d="M11 18H9v-4h2v4Zm-4-1H5v-2h2v2Zm12-2v2h-2v-2h2ZM5 15H3v-2h2v2Zm16 0h-2v-2h2v2Zm-8-1h-2v-4h2v4ZM3 13H1v-2h2v2Zm20 0h-2v-2h2v2ZM5 11H3V9h2v2Zm16 0h-2V9h2v2Zm-6-1h-2V6h2v4ZM7 9H5V7h2v2Zm12 0h-2V7h2v2Z"/></svg>
             </div>
+            <h3 class="text-white text-lg sm:text-xl leading-tight">
+              tamil tokenizer
+            </h3>
           </div>
-          <div class="flex gap-4 flex-col">
-            <div class="flex flex-wrap gap-2">
-              <span
-                class="text-xs px-2 py-1 rounded-full bg-yellow-500/20 text-yellow-400 border border-yellow-500/30"
-                >ai</span
-              >
-              <span
-                class="text-xs px-2 py-1 rounded-full bg-blue-500/20 text-blue-400 border border-blue-500/30"
-                >backend</span
-              >
+          <div class="flex flex-wrap gap-2">
+            <span
+              class="text-xs px-2 py-1 rounded-full bg-yellow-500/20 text-yellow-400 border border-yellow-500/30"
+              >ai</span
+            >
+            <span
+              class="text-xs px-2 py-1 rounded-full bg-blue-500/20 text-blue-400 border border-blue-500/30"
+              >backend</span
+            >
+          </div>
+          <dl class="pt">
+            <div class="pt-row">
+              <dt>problem</dt>
+              <dd>
+                general-purpose subword vocabularies shatter tamil into far too
+                many pieces, so tamil corpora cost more tokens and train slower
+                than english ones.
+              </dd>
             </div>
-            <p class="font-mono text-white text-sm sm:text-base">
-              rust bpe tokenizer for tamil — 11-16x faster than
-              sentencepiece, 32k vocab on huggingface, 23 tests guarding
-              every merge.
-            </p>
+            <div class="pt-row">
+              <dt>tradeoff</dt>
+              <dd>
+                hand-writing bpe in rust instead of building on sentencepiece or
+                huggingface tokenizers. that bought the speed and cost me the
+                ready-made training loop.
+              </dd>
+            </div>
+            <div class="pt-row">
+              <dt>solution</dt>
+              <dd>
+                247 tamil character clusters as base tokens, aho-corasick
+                multi-pattern encoding, rayon-parallel bpe training. 11-16x
+                faster than sentencepiece, 32k vocab on huggingface, 23 tests on
+                every merge.
+              </dd>
+            </div>
+          </dl>
+          <div
+            class="mt-auto pt-5 border-t border-neutral-800 flex flex-wrap gap-x-5 gap-y-2"
+          >
             <a
               href="https://github.com/barryallen16/tamil-tokenizer"
               target="_blank"
-              class="p-2 bg-neutral-900 border-neutral-800 border-2 rounded-lg flex gap-4 text-white justify-center items-center hover:border-neutral-600 transition-colors"
+              class="inline-flex items-center gap-2 font-mono text-xs text-white/60 hover:text-white transition-colors"
               ><img
                 src="https://static.cdnlogo.com/logos/g/69/github-icon.svg"
                 alt=""
-                class="w-4 invert"
+                class="w-3.5 invert"
               />
-              <p>view on github</p>
-            </a>
+              source</a
+            >
             <a
               href="https://huggingface.co/barryallen16/tamil-tokenizer-wiki"
               target="_blank"
-              class="p-2 bg-neutral-900 border-neutral-800 border-2 rounded-lg flex gap-4 text-white justify-center items-center hover:border-neutral-600 transition-colors"
+              class="inline-flex items-center gap-2 font-mono text-xs text-white/60 hover:text-white transition-colors"
               ><img
                 src="https://huggingface.co/datasets/huggingface/brand-assets/resolve/main/hf-logo.svg"
                 alt=""
-                class="w-4 saturate-0"
+                class="w-3.5 saturate-0"
               />
-              <p>view tokenizer on huggingface</p>
-            </a>
+              weights</a
+            >
           </div>
         </div>
 
         <!-- sivabharani-comments -->
         <div
-          class="project-card w-full h-full grid grid-flow-row justify-center items-center p-5 sm:p-8 border-2 border-neutral-800 rounded-lg bg-neutral-900 gap-4 transition-all duration-500"
+          class="project-card w-full h-full flex flex-col p-5 sm:p-6 border-2 border-neutral-800 rounded-lg bg-neutral-900 gap-5 transition-all duration-500 hover:border-neutral-700"
           data-categories="ai,backend"
           data-project="sivabharani-comments"
         >
-          <!-- tile icon: pixelarticons "video" (MIT) -->
-          <div class="h-20 flex items-center justify-center">
+          <div class="flex items-center gap-3">
+            <!-- tile icon: pixelarticons "video" (MIT) -->
             <div
-              class="w-14 h-14 rounded-xl bg-yellow-500/15 border-2 border-yellow-500/40 flex items-center justify-center"
+              class="w-9 h-9 shrink-0 rounded-lg bg-yellow-500/15 border border-yellow-500/40 grid place-items-center"
             >
-              <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="w-12 h-12 text-yellow-400" style="image-rendering:pixelated" aria-hidden="true"><path d="M16 19H4v-2h12v2ZM4 17H2V7h2v10Zm14-8h2V7h2v10h-2v-2h-2v2h-2V7h2v2Zm-2-2H4V5h12v2Z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="w-5 h-5 text-yellow-400" style="image-rendering:pixelated" aria-hidden="true"><path d="M16 19H4v-2h12v2ZM4 17H2V7h2v10Zm14-8h2V7h2v10h-2v-2h-2v2h-2V7h2v2Zm-2-2H4V5h12v2Z"/></svg>
             </div>
+            <h3 class="text-white text-lg sm:text-xl leading-tight">
+              sivabharani comments
+            </h3>
           </div>
-          <div class="flex gap-4 flex-col">
-            <div class="flex flex-wrap gap-2">
-              <span
-                class="text-xs px-2 py-1 rounded-full bg-yellow-500/20 text-yellow-400 border border-yellow-500/30"
-                >ai</span
-              >
-              <span
-                class="text-xs px-2 py-1 rounded-full bg-blue-500/20 text-blue-400 border border-blue-500/30"
-                >backend</span
-              >
+          <div class="flex flex-wrap gap-2">
+            <span
+              class="text-xs px-2 py-1 rounded-full bg-yellow-500/20 text-yellow-400 border border-yellow-500/30"
+              >ai</span
+            >
+            <span
+              class="text-xs px-2 py-1 rounded-full bg-blue-500/20 text-blue-400 border border-blue-500/30"
+              >backend</span
+            >
+          </div>
+          <dl class="pt">
+            <div class="pt-row">
+              <dt>problem</dt>
+              <dd>
+                sb us answers subscriber questions inside 2,000+ youtube videos.
+                nobody could search their own name to find the one video where
+                he answered them.
+              </dd>
             </div>
-            <p class="font-mono text-white text-sm sm:text-base">
-              pipeline over 2,755 tamil videos — 1.18m transcript chunks
-              through local gemma 4-bit inference, dataset published on
-              huggingface.
-            </p>
+            <div class="pt-row">
+              <dt>tradeoff</dt>
+              <dd>
+                an llm pass over every transcript chunk instead of search alone.
+                that narrows the index and costs a full run over 1.18m chunks,
+                and youtube's english auto-transcripts were too broken to trust,
+                so the model had to carry the work.
+              </dd>
+            </div>
+            <div class="pt-row">
+              <dt>solution</dt>
+              <dd>
+                2,755 videos scraped, 1,185,665 chunks run through local gemma
+                4-bit inference to keep only the ones naming a person. search a
+                name, get the video and the timestamp. dataset on huggingface.
+              </dd>
+            </div>
+          </dl>
+          <div
+            class="mt-auto pt-5 border-t border-neutral-800 flex flex-wrap gap-x-5 gap-y-2"
+          >
             <a
               href="https://github.com/barryallen16/sivabharani-comments"
               target="_blank"
-              class="p-2 bg-neutral-900 border-neutral-800 border-2 rounded-lg flex gap-4 text-white justify-center items-center hover:border-neutral-600 transition-colors"
+              class="inline-flex items-center gap-2 font-mono text-xs text-white/60 hover:text-white transition-colors"
               ><img
                 src="https://static.cdnlogo.com/logos/g/69/github-icon.svg"
                 alt=""
-                class="w-4 invert"
+                class="w-3.5 invert"
               />
-              <p>view on github</p>
-            </a>
+              source</a
+            >
           </div>
         </div>
 
         <!-- ats-resume-creation-skill -->
         <div
-          class="project-card w-full h-full grid grid-flow-row justify-center items-center p-5 sm:p-8 border-2 border-neutral-800 rounded-lg bg-neutral-900 gap-4 transition-all duration-500"
+          class="project-card w-full h-full flex flex-col p-5 sm:p-6 border-2 border-neutral-800 rounded-lg bg-neutral-900 gap-5 transition-all duration-500 hover:border-neutral-700"
           data-categories="ai"
           data-project="ats-skill"
         >
-          <!-- tile icon: pixelarticons "file-text" (MIT) -->
-          <div class="h-20 flex items-center justify-center">
+          <div class="flex items-center gap-3">
+            <!-- tile icon: pixelarticons "file-text" (MIT) -->
             <div
-              class="w-14 h-14 rounded-xl bg-yellow-500/15 border-2 border-yellow-500/40 flex items-center justify-center"
+              class="w-9 h-9 shrink-0 rounded-lg bg-yellow-500/15 border border-yellow-500/40 grid place-items-center"
             >
-              <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="w-12 h-12 text-yellow-400" style="image-rendering:pixelated" aria-hidden="true"><path d="M18 22H6v-2h12v2ZM6 20H4V4h2v16ZM16 4h-2v4h4V6h2v14h-2V10h-6V4H6V2h10v2Zm0 14H8v-2h8v2Zm0-4H8v-2h8v2Zm-6-4H8V8h2v2Zm8-4h-2V4h2v2Z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="w-5 h-5 text-yellow-400" style="image-rendering:pixelated" aria-hidden="true"><path d="M18 22H6v-2h12v2ZM6 20H4V4h2v16ZM16 4h-2v4h4V6h2v14h-2V10h-6V4H6V2h10v2Zm0 14H8v-2h8v2Zm0-4H8v-2h8v2Zm-6-4H8V8h2v2Zm8-4h-2V4h2v2Z"/></svg>
             </div>
+            <h3 class="text-white text-lg sm:text-xl leading-tight">
+              resume agent skill
+            </h3>
           </div>
-          <div class="flex gap-4 flex-col">
-            <div class="flex flex-wrap gap-2">
-              <span
-                class="text-xs px-2 py-1 rounded-full bg-yellow-500/20 text-yellow-400 border border-yellow-500/30"
-                >ai</span
-              >
+          <div class="flex flex-wrap gap-2">
+            <span
+              class="text-xs px-2 py-1 rounded-full bg-yellow-500/20 text-yellow-400 border border-yellow-500/30"
+              >ai</span
+            >
+          </div>
+          <dl class="pt">
+            <div class="pt-row">
+              <dt>problem</dt>
+              <dd>
+                rewriting the same resume for every job, then fighting word
+                processors to ship a docx and a pdf that parse cleanly.
+              </dd>
             </div>
-            <p class="font-mono text-white text-sm sm:text-base">
-              agent skill that writes ats-friendly resumes — tailored docx +
-              pdf output with an application tracker. this site's resume
-              came out of it.
-            </p>
+            <div class="pt-row">
+              <dt>tradeoff</dt>
+              <dd>
+                generation over hand-editing. formatting stays consistent across
+                applications, and every resume reads like the same person wrote
+                it.
+              </dd>
+            </div>
+            <div class="pt-row">
+              <dt>solution</dt>
+              <dd>
+                an agent skill that reads a job description, writes the tailored
+                content, exports docx and pdf, and logs the application so
+                nothing goes out untracked. this site's resume came out of it.
+              </dd>
+            </div>
+          </dl>
+          <div
+            class="mt-auto pt-5 border-t border-neutral-800 flex flex-wrap gap-x-5 gap-y-2"
+          >
             <a
               href="https://github.com/barryallen16/ats-resume-creation-skill"
               target="_blank"
-              class="p-2 bg-neutral-900 border-neutral-800 border-2 rounded-lg flex gap-4 text-white justify-center items-center hover:border-neutral-600 transition-colors"
+              class="inline-flex items-center gap-2 font-mono text-xs text-white/60 hover:text-white transition-colors"
               ><img
                 src="https://static.cdnlogo.com/logos/g/69/github-icon.svg"
                 alt=""
-                class="w-4 invert"
+                class="w-3.5 invert"
               />
-              <p>view on github</p>
-            </a>
+              source</a
+            >
           </div>
         </div>
 
         <!-- VulnChecker-Java -->
         <div
-          class="project-card w-full h-full grid grid-flow-row justify-center items-center p-5 sm:p-8 border-2 border-neutral-800 rounded-lg bg-neutral-900 gap-4 transition-all duration-500"
+          class="project-card w-full h-full flex flex-col p-5 sm:p-6 border-2 border-neutral-800 rounded-lg bg-neutral-900 gap-5 transition-all duration-500 hover:border-neutral-700"
           data-categories="ai,backend"
           data-project="java-vul"
         >
-          <!-- tile icon: pixelarticons "shield" (MIT) -->
-          <div class="h-20 flex items-center justify-center">
+          <div class="flex items-center gap-3">
+            <!-- tile icon: pixelarticons "shield" (MIT) -->
             <div
-              class="w-14 h-14 rounded-xl bg-blue-500/15 border-2 border-blue-500/40 flex items-center justify-center"
+              class="w-9 h-9 shrink-0 rounded-lg bg-blue-500/15 border border-blue-500/40 grid place-items-center"
             >
-              <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="w-12 h-12 text-blue-400" style="image-rendering:pixelated" aria-hidden="true"><path d="M14 22h-4v-2h4v2Zm-4-4v2H8v-2h2Zm6 2h-2v-2h2v2Zm-8-2H6v-2h2v2Zm10 0h-2v-2h2v2ZM6 16H4v-2h2v2Zm14 0h-2v-2h2v2ZM4 14H2V4h2v10Zm18 0h-2V4h2v10ZM20 4H4V2h16v2Z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="w-5 h-5 text-blue-400" style="image-rendering:pixelated" aria-hidden="true"><path d="M14 22h-4v-2h4v2Zm-4-4v2H8v-2h2Zm6 2h-2v-2h2v2Zm-8-2H6v-2h2v2Zm10 0h-2v-2h2v2ZM6 16H4v-2h2v2Zm14 0h-2v-2h2v2ZM4 14H2V4h2v10Zm18 0h-2V4h2v10ZM20 4H4V2h16v2Z"/></svg>
             </div>
+            <h3 class="text-white text-lg sm:text-xl leading-tight">
+              java vulnerability checker
+            </h3>
           </div>
-          <div class="flex gap-4 flex-col">
-            <div class="flex flex-wrap gap-2">
-              <span
-                class="text-xs px-2 py-1 rounded-full bg-yellow-500/20 text-yellow-400 border border-yellow-500/30"
-                >ai</span
-              >
-              <span
-                class="text-xs px-2 py-1 rounded-full bg-blue-500/20 text-blue-400 border border-blue-500/30"
-                >backend</span
-              >
+          <div class="flex flex-wrap gap-2">
+            <span
+              class="text-xs px-2 py-1 rounded-full bg-yellow-500/20 text-yellow-400 border border-yellow-500/30"
+              >ai</span
+            >
+            <span
+              class="text-xs px-2 py-1 rounded-full bg-blue-500/20 text-blue-400 border border-blue-500/30"
+              >backend</span
+            >
+          </div>
+          <dl class="pt">
+            <div class="pt-row">
+              <dt>problem</dt>
+              <dd>
+                static analyzers miss sql injection, xss and insecure
+                deserialization, and general code models had no idea what a
+                vulnerable java pattern looks like.
+              </dd>
             </div>
-            <p class="font-mono text-white text-sm sm:text-base">
-              end-to-end llm finetuning for java vulnerability detection —
-              qwen2.5-coder hit 80.39% accuracy on 102 eval cases, beating my
-              own 14b run.
-            </p>
+            <div class="pt-row">
+              <dt>tradeoff</dt>
+              <dd>
+                budget on dedup instead of parameters. the 7b beat my 14b run,
+                80.39% against 78.43% on the same 102 cases, which says the
+                merged corpora were dirtier than they needed to be.
+              </dd>
+            </div>
+            <div class="pt-row">
+              <dt>solution</dt>
+              <dd>
+                seven pipeline stages from raw jsonl to conversation-formatted
+                sft, sha256 dedup on normalized lines, lora fine-tune, then a
+                fixed 102-case eval any checkpoint runs through one function
+                call. weights on huggingface.
+              </dd>
+            </div>
+          </dl>
+          <div
+            class="mt-auto pt-5 border-t border-neutral-800 flex flex-wrap gap-x-5 gap-y-2"
+          >
             <a
               href="https://github.com/barryallen16/VulnChecker-Java"
               target="_blank"
-              class="p-2 bg-neutral-900 border-neutral-800 border-2 rounded-lg flex gap-4 text-white justify-center items-center hover:border-neutral-600 transition-colors"
+              class="inline-flex items-center gap-2 font-mono text-xs text-white/60 hover:text-white transition-colors"
               ><img
                 src="https://static.cdnlogo.com/logos/g/69/github-icon.svg"
                 alt=""
-                class="w-4 invert"
+                class="w-3.5 invert"
               />
-              <p>view on github</p>
-            </a>
+              source</a
+            >
             <a
               href="https://huggingface.co/barryallen16/Qwen2.5_7B_java_vul_final"
               target="_blank"
-              class="p-2 bg-neutral-900 border-neutral-800 border-2 rounded-lg flex gap-4 text-white justify-center items-center hover:border-neutral-600 transition-colors"
+              class="inline-flex items-center gap-2 font-mono text-xs text-white/60 hover:text-white transition-colors"
               ><img
                 src="https://huggingface.co/datasets/huggingface/brand-assets/resolve/main/hf-logo.svg"
                 alt=""
-                class="w-4 saturate-0"
+                class="w-3.5 saturate-0"
               />
-              <p>view model on huggingface</p>
-            </a>
+              weights</a
+            >
           </div>
         </div>
 
         <!-- Kaggle Automation -->
         <div
-          class="project-card w-full h-full grid grid-flow-row justify-center items-center p-5 sm:p-8 border-2 border-neutral-800 rounded-lg bg-neutral-900 gap-4 transition-all duration-500"
+          class="project-card w-full h-full flex flex-col p-5 sm:p-6 border-2 border-neutral-800 rounded-lg bg-neutral-900 gap-5 transition-all duration-500 hover:border-neutral-700"
           data-categories="backend,ai"
           data-project="kaggle-automation"
         >
-          <div class="h-20 flex items-center justify-center">
+          <div class="flex items-center gap-3">
             <div
-              class="w-14 h-14 rounded-xl bg-yellow-500/15 border-2 border-yellow-500/40 flex items-center justify-center"
+              class="w-9 h-9 shrink-0 rounded-lg bg-yellow-500/15 border border-yellow-500/40 grid place-items-center"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                class="w-7 h-7 text-yellow-400"
+                class="w-5 h-5 text-yellow-400"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -694,195 +829,376 @@
                 />
               </svg>
             </div>
+            <h3 class="text-white text-lg sm:text-xl leading-tight">
+              kaggle automation
+            </h3>
           </div>
-          <div class="flex gap-4 flex-col">
-            <div class="flex flex-wrap gap-2">
-              <span
-                class="text-xs px-2 py-1 rounded-full bg-blue-500/20 text-blue-400 border border-blue-500/30"
-                >backend</span
-              >
-              <span
-                class="text-xs px-2 py-1 rounded-full bg-yellow-500/20 text-yellow-400 border border-yellow-500/30"
-                >ai</span
-              >
+          <div class="flex flex-wrap gap-2">
+            <span
+              class="text-xs px-2 py-1 rounded-full bg-blue-500/20 text-blue-400 border border-blue-500/30"
+              >backend</span
+            >
+            <span
+              class="text-xs px-2 py-1 rounded-full bg-yellow-500/20 text-yellow-400 border border-yellow-500/30"
+              >ai</span
+            >
+          </div>
+          <dl class="pt">
+            <div class="pt-row">
+              <dt>problem</dt>
+              <dd>
+                kaggle sessions expire after 12 hours, so a training run that
+                outlasts one is gone, and watching that by hand means babysitting
+                a browser tab.
+              </dd>
             </div>
-            <p class="font-mono text-white text-sm sm:text-base">
-              fastapi control plane that pools multiple kaggle accounts, shards
-              large gpu jobs across them, and monitors 12-hour sessions with
-              telegram alerts.
-            </p>
+            <div class="pt-row">
+              <dt>tradeoff</dt>
+              <dd>
+                pooling nineteen accounts and sharding one job across them
+                instead of waiting out a single session. 223 runs' worth of gpu
+                hours, paid for in credential handling and retry logic.
+              </dd>
+            </div>
+            <div class="pt-row">
+              <dt>solution</dt>
+              <dd>
+                a dockerized fastapi control plane on ec2 that pools api keys,
+                shards jobs across accounts, and alerts on the 12-hour cutoff.
+                github actions runs uv sync, ruff and pytest over 12 test suites.
+              </dd>
+            </div>
+          </dl>
+          <div
+            class="mt-auto pt-5 border-t border-neutral-800 flex flex-wrap gap-x-5 gap-y-2"
+          >
             <a
               href="https://github.com/barryallen16/kaggle-automation"
               target="_blank"
-              class="p-2 bg-neutral-900 border-neutral-800 border-2 rounded-lg flex gap-4 text-white justify-center items-center hover:border-neutral-600 transition-colors"
+              class="inline-flex items-center gap-2 font-mono text-xs text-white/60 hover:text-white transition-colors"
               ><img
                 src="https://static.cdnlogo.com/logos/g/69/github-icon.svg"
                 alt=""
-                class="w-4 invert"
+                class="w-3.5 invert"
               />
-              <p>view on github</p>
-            </a>
+              source</a
+            >
           </div>
         </div>
 
         <!-- FitCheck -->
         <div
-          class="project-card w-full h-full grid grid-flow-row justify-center items-center p-5 sm:p-8 border-2 border-neutral-800 rounded-lg bg-neutral-900 gap-4 transition-all duration-500"
+          class="project-card w-full h-full flex flex-col p-5 sm:p-6 border-2 border-neutral-800 rounded-lg bg-neutral-900 gap-5 transition-all duration-500 hover:border-neutral-700"
           data-categories="frontend,ai,uiux"
           data-project="fitcheck"
         >
-          <img
-            src="./images/fitcheck-logo-v3.webp"
-            loading="lazy"
-            alt="FitCheck logo"
-            class="h-20 object-contain justify-self-center"
-          />
-          <div class="flex gap-4 flex-col">
-            <div class="flex flex-wrap gap-2">
-              <span
-                class="text-xs px-2 py-1 rounded-full bg-pink-500/20 text-pink-400 border border-pink-500/30"
-                >frontend</span
-              >
-              <span
-                class="text-xs px-2 py-1 rounded-full bg-yellow-500/20 text-yellow-400 border border-yellow-500/30"
-                >ai</span
-              >
-              <span
-                class="text-xs px-2 py-1 rounded-full bg-lime-500/20 text-lime-400 border border-lime-500/30"
-                >ui/ux</span
-              >
+          <div class="flex items-center gap-3">
+            <img
+              src="./images/fitcheck-logo-v3.webp"
+              loading="lazy"
+              alt="FitCheck logo"
+              class="w-9 h-9 object-contain"
+            />
+            <h3 class="text-white text-lg sm:text-xl leading-tight">fitcheck</h3>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span
+              class="text-xs px-2 py-1 rounded-full bg-pink-500/20 text-pink-400 border border-pink-500/30"
+              >frontend</span
+            >
+            <span
+              class="text-xs px-2 py-1 rounded-full bg-yellow-500/20 text-yellow-400 border border-yellow-500/30"
+              >ai</span
+            >
+            <span
+              class="text-xs px-2 py-1 rounded-full bg-lime-500/20 text-lime-400 border border-lime-500/30"
+              >ui/ux</span
+            >
+          </div>
+          <dl class="pt">
+            <div class="pt-row">
+              <dt>problem</dt>
+              <dd>
+                fashionclip runs in the browser but it can't reason about an
+                outfit, only match an image to a garment. a shopping site needs
+                the reasoning and can't afford a server-side model doing it.
+              </dd>
             </div>
-            <p class="font-mono text-white text-sm sm:text-base">
-              outfit recommender that runs fashionclip entirely in your browser
-              and builds looks from the wardrobe you already own.
-            </p>
+            <div class="pt-row">
+              <dt>tradeoff</dt>
+              <dd>
+                distilling a vision-language teacher into a student that still
+                runs client-side. the student keeps 91.6% of teacher quality and
+                runs 21% faster on 3.14x less vram, and reasoning that came free
+                from the 8b teacher now comes from a 2.9k-example tuning run.
+              </dd>
+            </div>
+            <div class="pt-row">
+              <dt>solution</dt>
+              <dd>
+                qwen3-vl-8b labeled 106k fashion photos, which became 538k
+                caption-and-qa pairs for perception tuning, then 2,923
+                recommendations with written rationales for reasoning tuning.
+                evaluated two ways: a 1,000-image bench and a blind human study
+                over 297 ratings. first-author ieee paper, model and three
+                datasets on huggingface.
+              </dd>
+            </div>
+          </dl>
+          <div
+            class="mt-auto pt-5 border-t border-neutral-800 flex flex-wrap gap-x-5 gap-y-2"
+          >
+            <a
+              href="https://doi.org/10.1109/TQCEBT67648.2026.11681836"
+              target="_blank"
+              class="inline-flex items-center gap-2 font-mono text-xs text-lime-400/80 hover:text-lime-400 transition-colors"
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+                class="w-3.5"
+                aria-hidden="true"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M12 6.03A9 9 0 003 9.74M15 3.75A9 9 0 0120.25 9M12 18v4m-4-8h8m-8 4h5"
+                />
+              </svg>
+              paper</a
+            >
+            <a
+              href="./fitcheck-journal-paper.pdf"
+              target="_blank"
+              class="inline-flex items-center gap-2 font-mono text-xs text-white/60 hover:text-white transition-colors"
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+                class="w-3.5"
+                aria-hidden="true"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M12 3v12m0 0l-4-4m4 4l4-4M4 17v2a2 2 0 002 2h12a2 2 0 002-2v-2"
+                />
+              </svg>
+              pdf</a
+            >
             <a
               href="https://github.com/barryallen16/fitcheck-website"
               target="_blank"
-              class="p-2 bg-neutral-900 border-neutral-800 border-2 rounded-lg flex gap-4 text-white justify-center items-center hover:border-neutral-600 transition-colors"
+              class="inline-flex items-center gap-2 font-mono text-xs text-white/60 hover:text-white transition-colors"
               ><img
                 src="https://static.cdnlogo.com/logos/g/69/github-icon.svg"
                 alt=""
-                class="w-4 invert"
+                class="w-3.5 invert"
               />
-              <p>view on github</p>
-            </a>
+              source</a
+            >
           </div>
         </div>
 
         <!-- MoviesMod Scraper -->
         <div
-          class="project-card w-full h-full grid grid-flow-row justify-center items-center p-5 sm:p-8 border-2 border-neutral-800 rounded-lg bg-neutral-900 gap-4 transition-all duration-500"
+          class="project-card w-full h-full flex flex-col p-5 sm:p-6 border-2 border-neutral-800 rounded-lg bg-neutral-900 gap-5 transition-all duration-500 hover:border-neutral-700"
           data-categories="backend"
           data-project="moviemod"
         >
-          <img
-            src="./images/mm.webp"
-            loading="lazy"
-            alt="MoviesMod scraper logo"
-            class="h-20 object-contain justify-self-center"
-          />
-          <div class="flex gap-4 flex-col">
-            <div class="flex flex-wrap gap-2">
-              <span
-                class="text-xs px-2 py-1 rounded-full bg-blue-500/20 text-blue-400 border border-blue-500/30"
-                >backend</span
-              >
+          <div class="flex items-center gap-3">
+            <img
+              src="./images/mm.webp"
+              loading="lazy"
+              alt="MoviesMod scraper logo"
+              class="w-9 h-9 object-contain"
+            />
+            <h3 class="text-white text-lg sm:text-xl leading-tight">
+              moviemod scraper
+            </h3>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span
+              class="text-xs px-2 py-1 rounded-full bg-blue-500/20 text-blue-400 border border-blue-500/30"
+              >backend</span
+            >
+          </div>
+          <dl class="pt">
+            <div class="pt-row">
+              <dt>problem</dt>
+              <dd>
+                a site that rotates its domain and hands out per-access download
+                tokens, so a scraper works for a week and any link it stores is
+                dead by evening.
+              </dd>
             </div>
-            <p class="font-mono text-white text-sm sm:text-base">
-              distributed selenium scraper for a high-churn website — auto
-              resolves rotated domains, multiprocess workers with retry/backoff,
-              mysql dedup state, docker compose + telegram alerts.
-            </p>
+            <div class="pt-row">
+              <dt>tradeoff</dt>
+              <dd>
+                selenium plus a mysql mirror over a plain http fetch. heavier to
+                run and to maintain, and the stored rows are a snapshot of one
+                afternoon, not a permanent copy.
+              </dd>
+            </div>
+            <div class="pt-row">
+              <dt>solution</dt>
+              <dd>
+                resolves the live domain on each run, multiprocess workers with
+                retry and backoff, mysql dedup so a re-run doesn't duplicate rows,
+                docker compose, and telegram alerts on failure. a stored link
+                that 404s gets re-scraped instead of debugged.
+              </dd>
+            </div>
+          </dl>
+          <div
+            class="mt-auto pt-5 border-t border-neutral-800 flex flex-wrap gap-x-5 gap-y-2"
+          >
             <a
               href="https://github.com/barryallen16/moviemod-scraper"
               target="_blank"
-              class="p-2 bg-neutral-900 border-neutral-800 border-2 rounded-lg flex gap-4 text-white justify-center items-center hover:border-neutral-600 transition-colors"
+              class="inline-flex items-center gap-2 font-mono text-xs text-white/60 hover:text-white transition-colors"
               ><img
                 src="https://static.cdnlogo.com/logos/g/69/github-icon.svg"
                 alt=""
-                class="w-4 invert"
+                class="w-3.5 invert"
               />
-              <p>view on github</p>
-            </a>
+              source</a
+            >
           </div>
         </div>
 
         <!-- Memory -->
         <div
-          class="project-card w-full h-full grid grid-flow-row justify-center items-center p-5 sm:p-8 border-2 border-neutral-800 rounded-lg bg-neutral-900 gap-4 transition-all duration-500"
+          class="project-card w-full h-full flex flex-col p-5 sm:p-6 border-2 border-neutral-800 rounded-lg bg-neutral-900 gap-5 transition-all duration-500 hover:border-neutral-700"
           data-categories="frontend,uiux"
           data-project="memory"
         >
-          <img
-            src="./images/memory-logo.svg"
-            loading="lazy"
-            alt="Memory logo"
-            class="h-20 object-contain justify-self-center"
-          />
-          <div class="flex gap-4 flex-col">
-            <div class="flex flex-wrap gap-2">
-              <span
-                class="text-xs px-2 py-1 rounded-full bg-pink-500/20 text-pink-400 border border-pink-500/30"
-                >frontend</span
-              >
-              <span
-                class="text-xs px-2 py-1 rounded-full bg-lime-500/20 text-lime-400 border border-lime-500/30"
-                >ui/ux</span
-              >
+          <div class="flex items-center gap-3">
+            <img
+              src="./images/memory-logo.svg"
+              loading="lazy"
+              alt="Memory logo"
+              class="w-9 h-9 object-contain"
+            />
+            <h3 class="text-white text-lg sm:text-xl leading-tight">memory</h3>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span
+              class="text-xs px-2 py-1 rounded-full bg-pink-500/20 text-pink-400 border border-pink-500/30"
+              >frontend</span
+            >
+            <span
+              class="text-xs px-2 py-1 rounded-full bg-lime-500/20 text-lime-400 border border-lime-500/30"
+              >ui/ux</span
+            >
+          </div>
+          <dl class="pt">
+            <div class="pt-row">
+              <dt>problem</dt>
+              <dd>
+                filling the same google forms over and over, field by field, for a
+                task that took real minutes each time.
+              </dd>
             </div>
-            <p class="font-mono text-white text-sm sm:text-base">
-              filling google forms was repetitive, so i built a bookmarklet that
-              fuzzy-matches fields and autofills them — even defeating react's
-              controlled-input tracking.
-            </p>
+            <div class="pt-row">
+              <dt>tradeoff</dt>
+              <dd>
+                a bookmarklet instead of an extension. nothing to install and
+                nothing to approve, and it breaks the day google changes how forms
+                set their values.
+              </dd>
+            </div>
+            <div class="pt-row">
+              <dt>solution</dt>
+              <dd>
+                fuzzy-matches labels to values, then writes through react's own
+                value setter so controlled inputs register the change. about a
+                second per form.
+              </dd>
+            </div>
+          </dl>
+          <div
+            class="mt-auto pt-5 border-t border-neutral-800 flex flex-wrap gap-x-5 gap-y-2"
+          >
             <a
               href="https://barryallen16.github.io/Memory/"
               target="_blank"
-              class="p-2 bg-neutral-900 border-neutral-800 border-2 rounded-lg flex gap-4 text-white justify-center items-center hover:border-neutral-600 transition-colors"
+              class="inline-flex items-center gap-2 font-mono text-xs text-white/60 hover:text-white transition-colors"
             >
               <!-- icon: pixelarticons "open" (MIT) -->
-              <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="w-4 text-white/70" style="image-rendering:pixelated" aria-hidden="true"><path d="M17 21H5v-2h12v2ZM5 19H3V7h2v12Zm14 0h-2v-6h2v6Zm-8-6v2H9v-2h2Zm2 0h-2v-2h2v2Zm2-2h-2V9h2v2Zm6 0h-2V7h-2V5h-4V3h8v8Zm-4-2h-2V7h2v2Zm-6-2H5V5h6v2Z"/></svg>
-              <p>view landing page</p>
-            </a>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="w-3.5 text-white/50" style="image-rendering:pixelated" aria-hidden="true"><path d="M17 21H5v-2h12v2ZM5 19H3V7h2v12Zm14 0h-2v-6h2v6Zm-8-6v2H9v-2h2Zm2 0h-2v-2h2v2Zm2-2h-2V9h2v2Zm6 0h-2V7h-2V5h-4V3h8v8Zm-4-2h-2V7h2v2Zm-6-2H5V5h6v2Z"/></svg>
+              landing page</a
+            >
           </div>
         </div>
 
         <!-- unshortenBuddy -->
         <div
-          class="project-card w-full h-full grid grid-flow-row justify-center items-center p-5 sm:p-8 border-2 border-neutral-800 rounded-lg bg-neutral-900 gap-4 transition-all duration-500"
+          class="project-card w-full h-full flex flex-col p-5 sm:p-6 border-2 border-neutral-800 rounded-lg bg-neutral-900 gap-5 transition-all duration-500 hover:border-neutral-700"
           data-categories="backend"
           data-project="unshorten"
         >
-          <img
-            src="./images/ub.webp"
-            loading="lazy"
-            alt="unshortenBuddy logo"
-            class="h-20 object-contain justify-self-center"
-          />
-          <div class="flex gap-4 flex-col">
-            <div class="flex flex-wrap gap-2">
-              <span
-                class="text-xs px-2 py-1 rounded-full bg-blue-500/20 text-blue-400 border border-blue-500/30"
-                >backend</span
-              >
+          <div class="flex items-center gap-3">
+            <img
+              src="./images/ub.webp"
+              loading="lazy"
+              alt="unshortenBuddy logo"
+              class="w-9 h-9 object-contain"
+            />
+            <h3 class="text-white text-lg sm:text-xl leading-tight">
+              unshorten buddy
+            </h3>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span
+              class="text-xs px-2 py-1 rounded-full bg-blue-500/20 text-blue-400 border border-blue-500/30"
+              >backend</span
+            >
+          </div>
+<dl class="pt">
+            <div class="pt-row">
+              <dt>problem</dt>
+              <dd>
+                kaggle sessions expire after 12 hours, so a training run that
+                outlasts one is gone, and watching that by hand means babysitting
+                a browser tab.
+              </dd>
             </div>
-            <p class="font-mono text-white text-sm sm:text-base">
-              telegram bot that walks ad-walled shorteners with headless chrome,
-              caches resolved links in postgres and ships an admin approval
-              workflow.
-            </p>
+            <div class="pt-row">
+              <dt>tradeoff</dt>
+              <dd>
+                headless chrome instead of a plain http request. it follows the
+                ads and timers that a request library can't, at the cost of a
+                browser process per link.
+              </dd>
+            </div>
+            <div class="pt-row">
+              <dt>solution</dt>
+              <dd>
+                a telegram bot that walks the redirect chain in a real browser,
+                caches every resolved link in postgres, and gates access behind
+                admin approval so the instance stays private.
+              </dd>
+            </div>
+          </dl>
+          <div
+            class="mt-auto pt-5 border-t border-neutral-800 flex flex-wrap gap-x-5 gap-y-2"
+          >
             <a
               href="https://github.com/barryallen16/unshortenBuddy"
               target="_blank"
-              class="p-2 bg-neutral-900 border-neutral-800 border-2 rounded-lg flex gap-4 text-white justify-center items-center hover:border-neutral-600 transition-colors"
+              class="inline-flex items-center gap-2 font-mono text-xs text-white/60 hover:text-white transition-colors"
               ><img
                 src="https://static.cdnlogo.com/logos/g/69/github-icon.svg"
                 alt=""
-                class="w-4 invert"
+                class="w-3.5 invert"
               />
-              <p>view on github</p>
-            </a>
+              source</a
+            >
           </div>
         </div>
       </div>
@@ -948,34 +1264,37 @@
             dr. m.g.r. educational and research institute · chennai · 8.0/10
           </p>
         </div>
-      </div>
-    </section>
-
-    <!-- Blog -->
-    <section
-      id="blog"
-      class="w-screen bg-[#0e0e0e] flex flex-col items-center px-4 sm:px-8 py-16 sm:py-24 scroll-mt-24"
-    >
-      <h2 class="text-white text-3xl sm:text-4xl mb-10 text-center">
-        writing
-      </h2>
-      <div class="w-full max-w-3xl flex flex-col gap-4">
-        <a
-          href="./blogs/java-vul.html"
-          class="p-5 sm:p-8 border-2 border-neutral-800 rounded-lg bg-neutral-900 hover:border-neutral-600 transition-colors"
+        <div
+          class="p-5 sm:p-8 border-2 border-neutral-800 rounded-lg bg-neutral-900"
         >
-          <span class="font-mono text-white/40 text-xs sm:text-sm">Jan 2025 · ai</span>
-          <p class="text-white text-lg sm:text-xl mt-2">Fine-tuning Qwen for Java Vulnerability Detection</p>
-          <p class="font-mono text-white/60 text-sm sm:text-base mt-2">LoRA fine-tune notes — 7B at 80.39% on 102 eval cases, beating my 14B run.</p>
-        </a>
-        <a
-          href="./blogs/fitcheck.html"
-          class="p-5 sm:p-8 border-2 border-neutral-800 rounded-lg bg-neutral-900 hover:border-neutral-600 transition-colors"
-        >
-          <span class="font-mono text-white/40 text-xs sm:text-sm">Dec 2024 · frontend, ai, ui/ux</span>
-          <p class="text-white text-lg sm:text-xl mt-2">Building FitCheck: AI-Powered Fashion from Your Wardrobe</p>
-          <p class="font-mono text-white/60 text-sm sm:text-base mt-2">FashionCLIP fully in the browser, looks built from clothes you own.</p>
-        </a>
+          <div class="flex flex-wrap justify-between items-baseline gap-2">
+            <h2 class="text-white text-lg sm:text-xl">
+              first author, ieee tqcebt 2026
+            </h2>
+            <span class="font-mono text-white/40 text-xs sm:text-sm"
+              >2026</span
+            >
+          </div>
+          <p class="font-mono text-white/60 text-xs sm:text-sm mt-1">
+            "FitCheck: Multi-Modular AI Framework for Cross-Cultural Fashion
+            Recommendation" · pune, india
+          </p>
+          <p class="font-mono text-white/60 text-xs sm:text-sm mt-4 flex flex-wrap items-center gap-x-4 gap-y-2">
+            <a
+              href="./fitcheck-journal-paper.pdf"
+              target="_blank"
+              class="text-lime-400/80 hover:text-lime-400 transition-colors"
+              >read the paper (pdf)</a
+            >
+            <span class="text-white/20">·</span>
+            <a
+              href="https://doi.org/10.1109/TQCEBT67648.2026.11681836"
+              target="_blank"
+              class="text-white/60 hover:text-white transition-colors"
+              >doi 10.1109/tqcebt67648.2026.11681836</a
+            >
+          </p>
+        </div>
       </div>
     </section>
 
@@ -1034,12 +1353,6 @@
           target="_blank"
           class="text-white/40 hover:text-white transition-colors font-mono text-xs sm:text-sm"
           >github</a
-        >
-        <span class="text-white/20">·</span>
-        <a
-          href="#blog"
-          class="text-white/40 hover:text-white transition-colors font-mono text-xs sm:text-sm"
-          >blog</a
         >
         <span class="text-white/20">·</span>
         <a
