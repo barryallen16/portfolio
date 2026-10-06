@@ -239,13 +239,45 @@ document.addEventListener("DOMContentLoaded", () => {
     const projectCards = document.querySelectorAll(".project-card");
     const skillLinks = document.querySelectorAll(".skill-link");
     const noResults = document.getElementById("no-results");
+    const showMoreBtn = document.getElementById("show-more-projects");
+
+    // Cards flagged data-extra stay collapsed behind the show-more button
+    // until it's pressed. They also carry the "hidden" class in the markup so
+    // they never flash into view before this script runs; once we're here the
+    // inline display below takes over and the class is no longer needed.
+    const extraCards = Array.from(projectCards).filter((card) => card.dataset.extra);
+    extraCards.forEach((card) => {
+      card.classList.remove("hidden");
+      card.style.display = "none";
+    });
+
+    let activeCategory = "all";
+    let expanded = false;
+
+    function syncShowMore() {
+      if (!showMoreBtn) return;
+      const matching = extraCards.filter(
+        (card) =>
+          activeCategory === "all" ||
+          card.dataset.categories.split(",").includes(activeCategory)
+      );
+      showMoreBtn.textContent = expanded
+        ? "show less"
+        : `show more (${matching.length})`;
+      showMoreBtn.classList.toggle("hidden", matching.length === 0);
+      showMoreBtn.setAttribute("aria-expanded", String(expanded));
+    }
 
     function filterProjects(category) {
+      activeCategory = category;
       let visibleCount = 0;
 
       projectCards.forEach((card) => {
         const categories = card.dataset.categories.split(",");
-        const shouldShow = category === "all" || categories.includes(category);
+        const matchesCategory =
+          category === "all" || categories.includes(category);
+        const shouldShow =
+          matchesCategory && (!card.dataset.extra || expanded);
 
         if (shouldShow) {
           visibleCount++;
@@ -264,6 +296,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       updateActiveButton(category);
+      syncShowMore();
     }
 
     function updateActiveButton(category) {
@@ -299,7 +332,13 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
 
+    showMoreBtn?.addEventListener("click", () => {
+      expanded = !expanded;
+      filterProjects(activeCategory);
+    });
+
     updateActiveButton("all");
+    syncShowMore();
   }
 
   // ========================================

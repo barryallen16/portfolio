@@ -1006,9 +1006,10 @@
 
         <!-- MoviesMod Scraper -->
         <div
-          class="project-card w-full h-full flex flex-col p-5 sm:p-6 border-2 border-neutral-800 rounded-lg bg-neutral-900 gap-5 transition-all duration-500 hover:border-neutral-700"
+          class="project-card w-full h-full flex flex-col p-5 sm:p-6 border-2 border-neutral-800 rounded-lg bg-neutral-900 gap-5 transition-all duration-500 hover:border-neutral-700 hidden"
           data-categories="backend"
           data-project="moviemod"
+          data-extra="true"
         >
           <div class="flex items-center gap-3">
             <img
@@ -1073,9 +1074,10 @@
 
         <!-- Memory -->
         <div
-          class="project-card w-full h-full flex flex-col p-5 sm:p-6 border-2 border-neutral-800 rounded-lg bg-neutral-900 gap-5 transition-all duration-500 hover:border-neutral-700"
+          class="project-card w-full h-full flex flex-col p-5 sm:p-6 border-2 border-neutral-800 rounded-lg bg-neutral-900 gap-5 transition-all duration-500 hover:border-neutral-700 hidden"
           data-categories="frontend,uiux"
           data-project="memory"
+          data-extra="true"
         >
           <div class="flex items-center gap-3">
             <img
@@ -1138,9 +1140,10 @@
 
         <!-- unshortenBuddy -->
         <div
-          class="project-card w-full h-full flex flex-col p-5 sm:p-6 border-2 border-neutral-800 rounded-lg bg-neutral-900 gap-5 transition-all duration-500 hover:border-neutral-700"
+          class="project-card w-full h-full flex flex-col p-5 sm:p-6 border-2 border-neutral-800 rounded-lg bg-neutral-900 gap-5 transition-all duration-500 hover:border-neutral-700 hidden"
           data-categories="backend"
           data-project="unshorten"
+          data-extra="true"
         >
           <div class="flex items-center gap-3">
             <img
@@ -1202,6 +1205,16 @@
           </div>
         </div>
       </div>
+
+      <!-- Show more -->
+      <button
+        id="show-more-projects"
+        aria-expanded="false"
+        aria-controls="projects-grid"
+        class="place-self-center mt-10 px-5 py-2.5 rounded-full border-2 border-lime-500/60 bg-neutral-900 text-lime-400 font-mono text-xs sm:text-sm transition-all duration-300 hover:border-lime-400 hover:bg-lime-500/15"
+      >
+        show more (3)
+      </button>
 
       <!-- No results message -->
       <div id="no-results" class="hidden text-center py-16">
