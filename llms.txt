@@ -34,11 +34,24 @@ Last updated: 2026-09-13
 
 - AI Research Intern, Blubridge Technologies, Chennai, 07/2025 - 10/2025. Built operator-fusion passes in MLIR that cut kernel launch overhead around 20%. Lowered dialect ops to LLVM IR with shape inference for dynamic tensors. Added 40+ lit tests wired into CI.
 
+## Publications
+
+- First author, IEEE TQCEBT 2026: "FitCheck: A Multi-Modular AI Framework for Cross-Cultural Fashion Recommendation via Black-Box Data Distillation". Dr. M.G.R. Educational and Research Institute, Chennai. DOI 10.1109/TQCEBT67648.2026.11681836. Paper PDF: https://jayadithya.is-a.dev/fitcheck-journal-paper.pdf
+
 ## Education
 
 - B.Tech, Artificial Intelligence and Data Science, Dr. M.G.R. Educational and Research Institute, Chennai, 2026. GPA 8.0/10.
 
-## Blog
+## Projects in brief
 
-- FitCheck breakdown: https://jayadithya.is-a.dev/blogs/fitcheck.html
-- Qwen Java-vuln fine-tune notes: https://jayadithya.is-a.dev/blogs/java-vul.html
+Each project below is described by the problem it solves, the tradeoff made, and how it was built.
+
+- tamil-tokenizer — Problem: general-purpose subword vocabularies shatter Tamil into too many pieces, so Tamil corpora cost more tokens and train slower than English ones. Tradeoff: hand-writing BPE in Rust instead of building on SentencePiece or Hugging Face tokenizers. Solution: 247 Tamil character clusters as base tokens, Aho-Corasick encoding, rayon-parallel BPE training. 11-16x faster than SentencePiece, 32K vocab, 23 tests.
+- VulnChecker-Java — Problem: static analyzers miss SQL injection, XSS, and insecure deserialization in Java. Tradeoff: budget on dedup rather than parameters; the 7B beat the 14B (80.39% vs 78.43% on 102 cases). Solution: seven pipeline stages to conversation-formatted SFT, SHA-256 dedup, LoRA fine-tune, fixed 102-case eval harness.
+- sivabharani-comments — Problem: a Tamil YouTuber answers subscriber questions across 2,000+ videos and nobody could find the one answering theirs. Tradeoff: an LLM pass over all 1.18M transcript chunks instead of plain search. Solution: 2,755 videos scraped, chunks filtered through local Gemma 4-bit to keep name mentions. Dataset on Hugging Face.
+- kaggle-automation — Problem: Kaggle sessions expire after 12 hours, killing long training runs. Tradeoff: sharding one job across several accounts, at the cost of coordination and retry handling. Solution: FastAPI control plane, session monitoring, Telegram alerts.
+- fitcheck-website — Problem: full wardrobes, no outfit ideas. Tradeoff: running FashionCLIP in the browser instead of on a server. Solution: client-side FashionCLIP builds combinations from a photographed wardrobe.
+- ats-resume-creation-skill — Problem: rewriting the same resume per job and hand-building docx/pdf output. Tradeoff: generation over hand-editing, at the cost of a consistent voice across applications. Solution: agent skill reads a job description, writes tailored content, exports docx and pdf, tracks applications.
+- moviemod-scraper — Problem: a site that rotates domains and expires download links within hours. Tradeoff: Selenium plus a MySQL mirror over plain HTTP. Solution: live-domain resolution, multiprocess workers, MySQL dedup, Telegram alerts.
+- Memory — Problem: filling the same Google Forms repeatedly by hand. Tradeoff: a bookmarklet over a browser extension, which breaks when Google changes form internals. Solution: fuzzy label matching plus writes through React's value setter.
+- unshortenBuddy — Problem: short links hide destinations behind ad walls and timers. Tradeoff: headless Chrome per link instead of a plain HTTP request. Solution: Telegram bot walks the redirect chain, caches results in Postgres, admin-gated access.

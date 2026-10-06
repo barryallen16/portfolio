@@ -105,12 +105,15 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     }
 
+    // The scrub distance is capped by the section's own height. A fixed
+    // 1100px finishs long after the "ai / llm systems" chip has scrolled
+    // off on short viewports, so the payoff of the draw is never seen.
     const tTl = gsap.timeline({
       defaults: { ease: "none" },
       scrollTrigger: {
         trigger: "#t-shape",
         start: "top 65%",
-        end: "+=1100", // the full draw unfolds across ~1100px of scroll
+        end: () => "+=" + Math.round(Math.min(1100, tSvg.parentElement.offsetHeight * 1.15)),
         scrub: 1,
       },
     });
@@ -246,7 +249,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (shouldShow) {
           visibleCount++;
-          card.style.display = "grid";
+          card.style.display = "flex";
           card.style.opacity = "1";
           card.style.transform = "scale(1)";
         } else {
