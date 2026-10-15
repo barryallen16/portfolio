@@ -16,7 +16,7 @@ Last updated: 2026-09-13
 - Email: rjayadithya11@gmail.com
 - GitHub: https://github.com/barryallen16
 - LinkedIn: https://www.linkedin.com/in/jayadithya-r/
-- Resume (PDF): https://jayadithya.is-a.dev/jayadithya-genai_engineer.pdf
+- Resume (PDF): https://jayadithya.is-a.dev/resume/Jayadithya_R_Master_Resume.pdf
 
 ## Projects
 
