@@ -1311,7 +1311,7 @@
       </div>
     </section>
 
-    <!-- GitHub contributions -->
+    <!-- GitHub stat cards -->
     <section
       id="contributions"
       class="w-screen bg-[#0e0e0e] flex flex-col items-center px-4 sm:px-8 py-16 sm:py-24"
@@ -1323,22 +1323,42 @@
         >
       </h2>
       <p class="font-mono text-white/50 text-xs sm:text-sm mb-8 text-center max-w-md">
-        four years of commits, straight from github. mostly rust, python and
-        typescript.
+        stats, languages and streak — pixel cards redrawn straight from the
+        github api every day.
       </p>
 
+      <!-- cards served live from the profile repo's assets/ folder;
+           its daily workflow refreshes them, so this section never goes stale -->
       <div
-        id="contrib-graph"
-        class="w-full max-w-4xl overflow-x-auto bg-[#101217] border-2 border-neutral-800 rounded-lg p-2 sm:p-4"
+        id="stat-cards"
+        class="w-full max-w-4xl grid grid-cols-1 sm:grid-cols-2 gap-4"
       >
         <img
-          src="./contributions.png"
-          alt="GitHub contribution graph for barryallen16 from 2023 to 2026, showing 989 total contributions"
-          width="845"
-          height="767"
+          src="https://raw.githubusercontent.com/barryallen16/barryallen16/main/assets/stats-dark.svg"
+          alt="GitHub stats for barryallen16: stars earned, commits this year, pull requests, issues and repositories contributed to"
+          width="430"
+          height="323"
           loading="lazy"
           decoding="async"
-          class="block w-full h-auto min-w-[520px] max-w-full mx-auto"
+          class="block w-full h-auto border-2 border-neutral-800 rounded-lg transition-all duration-500 hover:border-neutral-700"
+        />
+        <img
+          src="https://raw.githubusercontent.com/barryallen16/barryallen16/main/assets/top-langs-dark.svg"
+          alt="Most used languages on GitHub for barryallen16, listed with percentages"
+          width="430"
+          height="323"
+          loading="lazy"
+          decoding="async"
+          class="block w-full h-auto border-2 border-neutral-800 rounded-lg transition-all duration-500 hover:border-neutral-700"
+        />
+        <img
+          src="https://raw.githubusercontent.com/barryallen16/barryallen16/main/assets/streak-dark.svg"
+          alt="Contribution streak for barryallen16: total contributions, current streak and longest streak"
+          width="860"
+          height="411"
+          loading="lazy"
+          decoding="async"
+          class="col-span-full block w-full h-auto border-2 border-neutral-800 rounded-lg transition-all duration-500 hover:border-neutral-700"
         />
       </div>
     </section>
