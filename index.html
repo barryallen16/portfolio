@@ -928,21 +928,23 @@
             <div class="pt-row">
               <dt>tradeoff</dt>
               <dd>
-                distilling a vision-language teacher into a student that still
-                runs client-side. the student keeps 91.6% of teacher quality and
-                runs 21% faster on 3.14x less vram, and reasoning that came free
-                from the 8b teacher now comes from a 2.9k-example tuning run.
+                distilling two teachers into a student that still runs
+                client-side. the student keeps 91.6% of the teacher's judged
+                recommendation quality on a 1,000-image bench, generates 39%
+                more tokens per second on 3.14x less vram, and reasoning that
+                came free from the 120b teacher now comes from a 2.9k-example
+                tuning run.
               </dd>
             </div>
             <div class="pt-row">
               <dt>solution</dt>
               <dd>
                 qwen3-vl-8b labeled 106k fashion photos, which became 538k
-                caption-and-qa pairs for perception tuning, then 2,923
-                recommendations with written rationales for reasoning tuning.
-                evaluated two ways: a 1,000-image bench and a blind human study
-                over 297 ratings. first-author ieee paper, model and three
-                datasets on huggingface.
+                caption-and-qa pairs for perception tuning, then gpt-oss-120b
+                wrote 2,923 outfit recommendations with color and silhouette
+                rationales for reasoning tuning. evaluated two ways: a 1,000-image
+                bench and a blind human study over 297 ratings. first-author ieee
+                paper, model and three datasets on huggingface.
               </dd>
             </div>
           </dl>
@@ -1001,6 +1003,17 @@
                 class="w-3.5 invert"
               />
               source</a
+            >
+            <a
+              href="https://huggingface.co/collections/barryallen16/fitcheck"
+              target="_blank"
+              class="inline-flex items-center gap-2 font-mono text-xs text-white/60 hover:text-white transition-colors"
+              ><img
+                src="https://huggingface.co/datasets/huggingface/brand-assets/resolve/main/hf-logo.svg"
+                alt=""
+                class="w-3.5 saturate-0"
+              />
+              models</a
             >
           </div>
         </div>

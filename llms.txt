@@ -3,7 +3,7 @@
 > Portfolio of Jayadithya R, an AI/ML engineer in Chennai, India. He builds AI systems bottom-up: tokenizers, data pipelines, open-model inference, products, and human eval.
 
 Live site: https://jayadithya.is-a.dev
-Last updated: 2026-09-13
+Last updated: 2026-10-19
 
 ## In short
 
@@ -24,7 +24,7 @@ Last updated: 2026-09-13
 - VulnChecker-Java: LoRA fine-tune of Qwen2.5-Coder for Java vulnerability detection. The 7B model scored 80.39% on a 102-case eval, above the 14B base. https://github.com/barryallen16/VulnChecker-Java
 - sivabharani-comments: pipeline over 2,755 Tamil videos. It ran 1,185,665 transcript chunks through local Gemma 4-bit inference and published the dataset on Hugging Face. https://github.com/barryallen16/sivabharani-comments
 - kaggle-automation: FastAPI control plane that pools Kaggle accounts, shards GPU jobs across them, and watches 12-hour sessions with Telegram alerts. https://github.com/barryallen16/kaggle-automation
-- fitcheck-website: outfit recommender that runs FashionCLIP fully in the browser and builds looks from the user's own wardrobe. https://github.com/barryallen16/fitcheck-website
+- fitcheck-website: outfit recommender distilled down to a 2B student that runs client-side. Qwen3-VL-8B labeled 106K IndoFashion images into 538K caption-and-QA pairs for perception tuning; gpt-oss-120b then wrote 2,923 outfit recommendations with color and silhouette rationales for reasoning tuning. The student keeps 91.6% of the teacher's judged recommendation quality, generates 39% more tokens per second, and uses 3.14x less VRAM. First author, IEEE TQCEBT 2026. Code: https://github.com/barryallen16/fitcheck-website · Model and datasets: https://huggingface.co/collections/barryallen16/fitcheck
 - ats-resume-creation-skill: agent skill that writes ATS-friendly resumes as docx and PDF, with an application tracker. The resume on this site came out of it. https://github.com/barryallen16/ats-resume-creation-skill
 - moviemod-scraper: distributed Selenium scraper with domain rotation, multiprocess workers, MySQL dedup, and Telegram alerts. https://github.com/barryallen16/moviemod-scraper
 - Memory: bookmarklet that fuzzy-matches Google Forms fields and autofills them. https://barryallen16.github.io/Memory/
@@ -50,7 +50,7 @@ Each project below is described by the problem it solves, the tradeoff made, and
 - VulnChecker-Java — Problem: static analyzers miss SQL injection, XSS, and insecure deserialization in Java. Tradeoff: budget on dedup rather than parameters; the 7B beat the 14B (80.39% vs 78.43% on 102 cases). Solution: seven pipeline stages to conversation-formatted SFT, SHA-256 dedup, LoRA fine-tune, fixed 102-case eval harness.
 - sivabharani-comments — Problem: a Tamil YouTuber answers subscriber questions across 2,000+ videos and nobody could find the one answering theirs. Tradeoff: an LLM pass over all 1.18M transcript chunks instead of plain search. Solution: 2,755 videos scraped, chunks filtered through local Gemma 4-bit to keep name mentions. Dataset on Hugging Face.
 - kaggle-automation — Problem: Kaggle sessions expire after 12 hours, killing long training runs. Tradeoff: sharding one job across several accounts, at the cost of coordination and retry handling. Solution: FastAPI control plane, session monitoring, Telegram alerts.
-- fitcheck-website — Problem: full wardrobes, no outfit ideas. Tradeoff: running FashionCLIP in the browser instead of on a server. Solution: client-side FashionCLIP builds combinations from a photographed wardrobe.
+- fitcheck-website — Problem: recommenders trained on Western wardrobes fail on Indian ethnic wear, and the models that reason well about outfits are too large to run where a shopper checks them. Tradeoff: black-box distillation from two teachers, Qwen3-VL-8B for perception and gpt-oss-120b for reasoning, into a single Qwen3-VL-2B student. The student keeps 91.6% of the teacher's judged recommendation quality. Solution: 106K labeled images became 538K caption-and-QA pairs, then 2,923 recommendation records carrying color and silhouette rationales. Evaluated on a 1,000-image automated bench and a blind human study of 297 ratings.
 - ats-resume-creation-skill — Problem: rewriting the same resume per job and hand-building docx/pdf output. Tradeoff: generation over hand-editing, at the cost of a consistent voice across applications. Solution: agent skill reads a job description, writes tailored content, exports docx and pdf, tracks applications.
 - moviemod-scraper — Problem: a site that rotates domains and expires download links within hours. Tradeoff: Selenium plus a MySQL mirror over plain HTTP. Solution: live-domain resolution, multiprocess workers, MySQL dedup, Telegram alerts.
 - Memory — Problem: filling the same Google Forms repeatedly by hand. Tradeoff: a bookmarklet over a browser extension, which breaks when Google changes form internals. Solution: fuzzy label matching plus writes through React's value setter.
