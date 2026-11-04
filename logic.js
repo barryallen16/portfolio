@@ -1,23 +1,17 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // If gsap failed to load for any reason, keep the site usable
-  // with everything visible and just skip animation.
+  const prefersReducedMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)"
+  ).matches;
+
+  // If gsap failed to load, keep the site usable with static content
   if (typeof window.gsap === "undefined" || typeof window.ScrollTrigger === "undefined") {
     setupFiltering();
+    setupAgentView();
     return;
   }
 
   // Register plugins
   gsap.registerPlugin(ScrollTrigger);
-
-  // Reduced motion: never skip animation entirely (that makes the page
-  // look frozen/broken) — run every effect much faster instead.
-  const prefersReducedMotion = window.matchMedia(
-    "(prefers-reduced-motion: reduce)"
-  ).matches;
-
-  if (prefersReducedMotion) {
-    gsap.globalTimeline.timeScale(3);
-  }
 
   // ========================================
   // Pixel Animation for Hero Section
@@ -26,17 +20,23 @@ document.addEventListener("DOMContentLoaded", () => {
   const pixelsContainer = document.querySelector("#pixelated-container");
 
   if (pixelsContainer) {
-    for (let i = 0; i < 100; i++) {
+    for (let i = 0; i < 64; i++) {
       const pixel = document.createElement("div");
       pixel.className = "pixel bg-[#0e0e0e]";
       pixelsContainer.appendChild(pixel);
     }
 
-    const pixelTl = gsap.timeline();
+    const pixelTl = gsap.timeline({
+      onComplete: () => {
+        if (pixelsContainer && pixelsContainer.parentNode) {
+          pixelsContainer.remove();
+        }
+      },
+    });
     pixelTl.to(".pixel", {
       opacity: 0,
       duration: 0.1,
-      stagger: { amount: 1, from: "random" },
+      stagger: { amount: 0.5, from: "random" },
     });
   }
 
@@ -44,8 +44,8 @@ document.addEventListener("DOMContentLoaded", () => {
   // Des-Dev Image Animations (slide in from opposite sides)
   // ========================================
 
-  gsap.set(".des-img-left", { xPercent: -120 });
-  gsap.set(".des-img-right", { xPercent: 120 });
+  gsap.set(".des-img-left", { x: () => -window.innerWidth * 0.6 });
+  gsap.set(".des-img-right", { x: () => window.innerWidth * 0.6 });
 
   const desTl = gsap.timeline({
     scrollTrigger: {
@@ -57,14 +57,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
   desTl
     .to(".des-img-left", {
-      xPercent: 0,
+      x: 0,
       duration: 1,
       ease: "power3.out",
     })
     .to(
       ".des-img-right",
       {
-        xPercent: 0,
+        x: 0,
         duration: 1,
         ease: "power3.out",
       },
@@ -72,9 +72,7 @@ document.addEventListener("DOMContentLoaded", () => {
     );
 
   // ========================================
-  // T-Shaped Engineer — scroll-scrubbed pen draw.
-  // Scrolling down traces the T stroke by stroke; scrolling up
-  // un-draws it; scrolling down again redraws it. Fully reversible.
+  // T-Shaped Engineer - scroll-scrubbed pen draw
   // ========================================
 
   const tSvg = document.querySelector("#t-svg");
@@ -105,9 +103,6 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     }
 
-    // The scrub distance is capped by the section's own height. A fixed
-    // 1100px finishs long after the "ai / llm systems" chip has scrolled
-    // off on short viewports, so the payoff of the draw is never seen.
     const tTl = gsap.timeline({
       defaults: { ease: "none" },
       scrollTrigger: {
@@ -118,10 +113,10 @@ document.addEventListener("DOMContentLoaded", () => {
       },
     });
 
-    // faint blueprint dots surface first...
+    // blueprint dots surface first
     tTl.to([barGhost, stemGhost], { opacity: 1, duration: 0.06 }, 0);
 
-    // ...the glowing tip traces the bar left -> right at constant speed
+    // glowing tip traces the bar left to right
     tTl.to(barPath, {
       strokeDashoffset: 0,
       duration: 0.36,
@@ -147,7 +142,7 @@ document.addEventListener("DOMContentLoaded", () => {
       ease: "back.out(1.7)",
     }, 0.38);
 
-    // flash where the stem meets the bar...
+    // flash where the stem meets the bar
     if (junction) {
       tTl
         .fromTo(junction, {
@@ -168,7 +163,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }, 0.48);
     }
 
-    // ...then the tip pulls the stem downward
+    // tip pulls the stem downward
     tTl.to(stemPath, {
       strokeDashoffset: 0,
       duration: 0.4,
@@ -207,9 +202,9 @@ document.addEventListener("DOMContentLoaded", () => {
         toggleActions: "play none none none",
       },
       opacity: 0,
-      y: 40,
-      duration: 0.5,
-      delay: index * 0.08,
+      y: 30,
+      duration: 0.4,
+      delay: (index % 3) * 0.08,
       ease: "power2.out",
     });
   });
@@ -217,18 +212,19 @@ document.addEventListener("DOMContentLoaded", () => {
   projectCards.forEach((card) => {
     card.addEventListener("mouseenter", () => {
       if (card.style.display !== "none") {
-        gsap.to(card, { y: -5, duration: 0.3, ease: "power2.out" });
+        gsap.to(card, { y: -4, duration: 0.25, ease: "power2.out" });
       }
     });
     card.addEventListener("mouseleave", () => {
-      gsap.to(card, { y: 0, duration: 0.3, ease: "power2.out" });
+      gsap.to(card, { y: 0, duration: 0.25, ease: "power2.out" });
     });
   });
 
-  // Recalculate scroll positions once everything (fonts, images) has loaded
+  // Recalculate scroll positions once everything has loaded
   window.addEventListener("load", () => ScrollTrigger.refresh());
 
   setupFiltering();
+  setupAgentView();
 
   // ========================================
   // Project Filtering System
@@ -241,10 +237,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const noResults = document.getElementById("no-results");
     const showMoreBtn = document.getElementById("show-more-projects");
 
-    // Cards flagged data-extra stay collapsed behind the show-more button
-    // until it's pressed. They also carry the "hidden" class in the markup so
-    // they never flash into view before this script runs; once we're here the
-    // inline display below takes over and the class is no longer needed.
     const extraCards = Array.from(projectCards).filter((card) => card.dataset.extra);
     extraCards.forEach((card) => {
       card.classList.remove("hidden");
@@ -281,13 +273,36 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (shouldShow) {
           visibleCount++;
-          card.style.display = "flex";
-          card.style.opacity = "1";
-          card.style.transform = "scale(1)";
+          if (card.style.display === "none") {
+            card.style.display = "flex";
+            if (typeof gsap !== "undefined" && !prefersReducedMotion) {
+              gsap.fromTo(
+                card,
+                { opacity: 0, scale: 0.96 },
+                { opacity: 1, scale: 1, duration: 0.25, ease: "power2.out" }
+              );
+            } else {
+              card.style.opacity = "1";
+              card.style.transform = "none";
+            }
+          }
         } else {
-          card.style.display = "none";
-          card.style.opacity = "0";
-          card.style.transform = "scale(0.8)";
+          if (card.style.display !== "none") {
+            if (typeof gsap !== "undefined" && !prefersReducedMotion) {
+              gsap.to(card, {
+                opacity: 0,
+                scale: 0.96,
+                duration: 0.2,
+                ease: "power2.in",
+                onComplete: () => {
+                  card.style.display = "none";
+                },
+              });
+            } else {
+              card.style.display = "none";
+              card.style.opacity = "0";
+            }
+          }
         }
       });
 
@@ -300,21 +315,28 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function updateActiveButton(category) {
+      const colors = {
+        all: { bg: "rgb(38, 38, 38)", border: "white", text: "white" },
+        frontend: { bg: "rgba(236, 72, 153, 0.3)", border: "rgb(236, 72, 153)", text: "#f472b6" },
+        backend: { bg: "rgba(59, 130, 246, 0.3)", border: "rgb(59, 130, 246)", text: "#60a5fa" },
+        uiux: { bg: "rgba(132, 204, 22, 0.3)", border: "rgb(132, 204, 22)", text: "#a3e635" },
+        ai: { bg: "rgba(234, 179, 8, 0.3)", border: "rgb(234, 179, 8)", text: "#facc15" },
+      };
+
       filterButtons.forEach((btn) => {
         const btnFilter = btn.dataset.filter;
-        btn.style.backgroundColor = "";
-        btn.style.borderColor = "";
+        const isActive = btnFilter === category;
+        btn.classList.toggle("is-active", isActive);
+        btn.setAttribute("aria-pressed", isActive ? "true" : "false");
 
-        if (btnFilter === category) {
-          const colors = {
-            all: { bg: "rgb(38, 38, 38)", border: "white" },
-            frontend: { bg: "rgba(236, 72, 153, 0.3)", border: "rgb(236, 72, 153)" },
-            backend: { bg: "rgba(59, 130, 246, 0.3)", border: "rgb(59, 130, 246)" },
-            uiux: { bg: "rgba(132, 204, 22, 0.3)", border: "rgb(132, 204, 22)" },
-            ai: { bg: "rgba(234, 179, 8, 0.3)", border: "rgb(234, 179, 8)" },
-          };
+        if (isActive && colors[category]) {
           btn.style.backgroundColor = colors[category].bg;
           btn.style.borderColor = colors[category].border;
+          btn.style.color = colors[category].text;
+        } else {
+          btn.style.backgroundColor = "";
+          btn.style.borderColor = "";
+          btn.style.color = "";
         }
       });
     }
@@ -327,8 +349,11 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     skillLinks.forEach((link) => {
-      link.addEventListener("click", () => {
-        setTimeout(() => filterProjects(link.dataset.skillFilter), 500);
+      link.addEventListener("click", (e) => {
+        const targetCategory = link.dataset.skillFilter;
+        if (targetCategory) {
+          filterProjects(targetCategory);
+        }
       });
     });
 
@@ -342,15 +367,14 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // ========================================
-  // Agent view — render llms.txt as plain text
+  // Agent view - accessible modal for llms.txt
   // ========================================
 
-  const agentLink = document.getElementById("agent-view-link");
+  function setupAgentView() {
+    const agentLink = document.getElementById("agent-view-link");
+    if (!agentLink) return;
 
-  if (agentLink) {
     agentLink.addEventListener("click", async (e) => {
-      // preventDefault must be sync: after an await the browser has
-      // already followed the link and the overlay below never shows.
       e.preventDefault();
       let text = null;
       try {
@@ -360,34 +384,58 @@ document.addEventListener("DOMContentLoaded", () => {
         text = null;
       }
       if (text === null) {
-        window.location.href = "./llms.txt"; // fall back to the raw file
+        window.location.href = "./llms.txt";
         return;
       }
 
       const y = window.scrollY;
       const overlay = document.createElement("div");
       overlay.className =
-        "fixed inset-0 overflow-y-auto bg-[#0e0e0e] px-4 sm:px-8 py-8 z-20";
+        "fixed inset-0 overflow-y-auto bg-[#0e0e0e]/95 backdrop-blur-md px-4 sm:px-8 py-8 z-50 flex flex-col items-center";
+      overlay.setAttribute("role", "dialog");
+      overlay.setAttribute("aria-modal", "true");
+      overlay.setAttribute("aria-label", "LLM Agent Instructions");
+
       const inner = document.createElement("div");
-      inner.className = "max-w-3xl mx-auto";
+      inner.className = "w-full max-w-3xl mx-auto my-auto py-8";
+
       const back = document.createElement("button");
       back.className =
-        "font-mono text-xs sm:text-sm text-white/40 hover:text-white transition-colors mb-6";
-      back.textContent = "< back";
-      back.addEventListener("click", () => {
+        "font-mono text-xs sm:text-sm text-lime-400 hover:underline transition-colors mb-6 flex items-center gap-1 cursor-pointer min-h-[44px] min-w-[44px]";
+      back.textContent = "< back to site";
+
+      function closeOverlay() {
         overlay.remove();
         document.body.style.overflow = "";
         window.scrollTo(0, y);
+        document.removeEventListener("keydown", handleKeydown);
+        agentLink.focus();
+      }
+
+      function handleKeydown(evt) {
+        if (evt.key === "Escape") {
+          closeOverlay();
+        }
+      }
+
+      back.addEventListener("click", closeOverlay);
+      overlay.addEventListener("click", (evt) => {
+        if (evt.target === overlay) {
+          closeOverlay();
+        }
       });
+      document.addEventListener("keydown", handleKeydown);
+
       const pre = document.createElement("pre");
       pre.className =
-        "font-mono text-white/80 text-xs sm:text-sm whitespace-pre-wrap break-words";
+        "font-mono text-white/80 text-xs sm:text-sm whitespace-pre-wrap break-words bg-neutral-900 p-6 rounded-xl border border-neutral-800";
       pre.textContent = text;
+
       inner.append(back, pre);
       overlay.appendChild(inner);
       document.body.appendChild(overlay);
       document.body.style.overflow = "hidden";
-      window.scrollTo(0, 0);
+      back.focus();
     });
   }
 });

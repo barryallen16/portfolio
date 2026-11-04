@@ -3,12 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Jayadithya R — AI/ML Engineer</title>
+    <title>Jayadithya R - AI/ML Engineer</title>
     <meta
       name="description"
-      content="Jayadithya R — AI/ML engineer from Chennai building LLM systems, fine-tuned models and automation tooling."
+      content="Jayadithya R - AI/ML engineer from Chennai building LLM systems, fine-tuned models and automation tooling."
     />
-    <meta property="og:title" content="Jayadithya R — AI/ML Engineer" />
+    <meta property="og:title" content="Jayadithya R - AI/ML Engineer" />
     <meta
       property="og:description"
       content="LLM systems, fine-tuned models and automation tooling. Chennai, India."
@@ -86,6 +86,10 @@
         background: #a3e635;
         color: #0e0e0e;
       }
+      :focus-visible {
+        outline: 2px solid #a3e635 !important;
+        outline-offset: 2px !important;
+      }
       .pt {
         display: flex;
         flex-direction: column;
@@ -102,1341 +106,1405 @@
         font-size: 0.6875rem;
         letter-spacing: 0.02em;
         padding-top: 0.22rem;
-        color: rgb(163 230 53 / 0.75);
+        color: rgb(163 230 53 / 0.9);
       }
       .pt dd {
         font-family: "GeistMono", ui-monospace, monospace;
         font-size: 0.8125rem;
         line-height: 1.55;
-        color: rgb(255 255 255 / 0.78);
+        color: rgb(255 255 255 / 0.82);
       }
       @media (min-width: 640px) {
         .pt dd {
           font-size: 0.875rem;
         }
       }
+      .filter-btn {
+        transition: all 0.2s ease;
+      }
+      .filter-btn:active {
+        transform: scale(0.96);
+      }
+      .filter-btn.is-active[data-filter="all"] {
+        background-color: #262626;
+        border-color: #ffffff;
+        color: #ffffff;
+      }
+      .filter-btn.is-active[data-filter="frontend"] {
+        background-color: rgba(236, 72, 153, 0.25);
+        border-color: rgb(236, 72, 153);
+        color: #f472b6;
+      }
+      .filter-btn.is-active[data-filter="backend"] {
+        background-color: rgba(59, 130, 246, 0.25);
+        border-color: rgb(59, 130, 246);
+        color: #60a5fa;
+      }
+      .filter-btn.is-active[data-filter="uiux"] {
+        background-color: rgba(132, 204, 22, 0.25);
+        border-color: rgb(132, 204, 22);
+        color: #a3e635;
+      }
+      .filter-btn.is-active[data-filter="ai"] {
+        background-color: rgba(234, 179, 8, 0.25);
+        border-color: rgb(234, 179, 8);
+        color: #facc15;
+      }
     </style>
   </head>
-  <body class="overflow-x-hidden bg-[#0e0e0e]">
+  <body class="overflow-x-hidden bg-[#0e0e0e] text-white">
     <!-- Nav -->
-    <div
-      class="bg-white/50 backdrop-blur-md px-3 sm:px-8 py-2 w-[95%] sm:w-[90%] rounded-4xl fixed top-3 sm:top-8 z-30 left-1/2 -translate-x-1/2 flex justify-between items-center border-white/80 border"
+    <header
+      class="bg-[#121212]/85 backdrop-blur-md px-3 sm:px-6 py-2.5 w-[95%] sm:w-[90%] max-w-5xl rounded-full fixed top-3 sm:top-6 z-40 left-1/2 -translate-x-1/2 flex justify-between items-center border border-white/10 shadow-lg shadow-black/40"
     >
-      <a href="#hero" aria-label="home">
+      <a
+        href="#hero"
+        aria-label="home"
+        class="p-1 rounded-full flex items-center justify-center min-w-[44px] min-h-[44px] focus-visible:outline-lime-400"
+      >
         <img
           src="./favicon/favicon-32x32.png"
           alt="site logo"
-          class="h-7 w-7 sm:h-auto sm:w-auto"
+          class="h-7 w-7"
         />
       </a>
-      <div class="flex justify-center items-center gap-1.5 sm:gap-4">
+      <nav class="flex justify-center items-center gap-1.5 sm:gap-3" aria-label="Main Navigation">
         <a
           href="#showcase"
-          class="p-2 text-xs sm:text-sm bg-neutral-900 border-neutral-800 border-2 rounded-lg text-white/40 hover:text-white transition-colors"
+          class="px-3 sm:px-4 py-2 text-xs sm:text-sm bg-neutral-900 border border-neutral-700 rounded-full text-white/80 hover:text-white hover:border-neutral-500 transition-colors min-h-[44px] flex items-center justify-center"
         >
           projects
         </a>
         <a
           href="./resume/"
           target="_blank"
-          class="p-2 text-xs sm:text-sm bg-neutral-900 border-neutral-800 border-2 rounded-lg text-white/40 hover:text-white transition-colors"
+          class="px-3 sm:px-4 py-2 text-xs sm:text-sm bg-neutral-900 border border-neutral-700 rounded-full text-white/80 hover:text-white hover:border-neutral-500 transition-colors min-h-[44px] flex items-center justify-center"
         >
           resume
         </a>
         <a
           href="mailto:rjayadithya11@gmail.com"
           aria-label="email"
-          class="p-2 bg-neutral-900 border-neutral-800 border-2 rounded-lg"
-          ><img
-            src="https://static.cdnlogo.com/logos/o/14/official-gmail-icon-2020.svg"
-            alt="gmail"
-            class="w-4 saturate-0"
-        /></a>
+          class="p-2.5 bg-neutral-900 border border-neutral-700 rounded-full text-white/80 hover:text-white hover:border-neutral-500 transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center"
+        >
+          <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+          </svg>
+        </a>
         <a
           href="https://www.linkedin.com/in/jayadithya-r/"
           target="_blank"
+          rel="noopener noreferrer"
           aria-label="linkedin"
-          class="p-2 bg-neutral-900 border-neutral-800 border-2 rounded-lg"
-          ><img
-            src="https://static.cdnlogo.com/logos/l/78/linkedin-icon.svg"
-            alt="linkedin"
-            class="w-4 saturate-0"
-        /></a>
+          class="p-2.5 bg-neutral-900 border border-neutral-700 rounded-full text-white/80 hover:text-white hover:border-neutral-500 transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center"
+        >
+          <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 8.76c-.97 0-1.75-.79-1.75-1.76s.78-1.75 1.75-1.75 1.75.78 1.75 1.75-.78 1.76-1.75 1.76m1.39 9.74v-8.37H5.07v8.37h2.78z"/>
+          </svg>
+        </a>
         <a
           href="https://github.com/barryallen16"
           target="_blank"
+          rel="noopener noreferrer"
           aria-label="github"
-          class="p-2 bg-neutral-900 border-neutral-800 border-2 rounded-lg"
-          ><img
-            src="https://static.cdnlogo.com/logos/g/69/github-icon.svg"
-            alt="github"
-            class="w-4 invert"
-        /></a>
-      </div>
-    </div>
-
-    <!-- Hero -->
-    <section id="hero" class="w-screen flex flex-col">
-      <div
-        class="bg-[#0f0f0f] min-h-screen md:h-screen flex justify-center items-center"
-      >
-        <div
-          class="grid grid-cols-1 md:grid-cols-2 md:gap-4 w-full items-center pt-24 md:pt-16 pb-10 px-6 sm:px-8 mx-auto max-w-7xl"
+          class="p-2.5 bg-neutral-900 border border-neutral-700 rounded-full text-white/80 hover:text-white hover:border-neutral-500 transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center"
         >
-          <div class="flex flex-col">
-            <h1 class="text-white text-3xl sm:text-4xl">hi i'm</h1>
-            <p
-              class="text-4xl sm:text-5xl text-white underline decoration-lime-500 underline-offset-4"
-            >
-              jayadithya
-            </p>
-            <p class="text-xl sm:text-2xl text-white mt-1">
-              AI / ML engineer
-            </p>
-            <p class="text-white font-mono mt-4 text-sm sm:text-base">
-              i build ai systems bottom-up, from tokenizers and pipelines to inference and eval.
-            </p>
-            <p class="text-white font-mono text-sm sm:text-base">
-              chennai, tamil nadu, india.
-            </p>
-            <a
-              href="./resume/"
-              target="_blank"
-              class="mt-5 sm:mt-6 self-start px-4 sm:px-5 py-2 rounded-full border-2 border-lime-500/60 bg-lime-500/10 text-lime-400 font-mono text-xs sm:text-sm hover:bg-lime-500/20 transition-all duration-300 flex items-center gap-2"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="w-4 h-4"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                stroke-width="2"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
-                />
-              </svg>
-              view résumé
-            </a>
-          </div>
-          <div class="relative mt-10 md:mt-0">
-            <img
-              src="./images/profile.webp"
-              alt="jayadithya"
-              class="h-64 sm:h-80 md:h-96 w-auto object-cover object-bottom rounded-lg"
-              onerror="
-                this.style.display = 'none';
-                document.getElementById('hero-fallback').style.display = 'flex';
-              "
-            />
-            <div
-              id="hero-fallback"
-              style="display: none"
-              class="h-64 sm:h-80 md:h-96 w-52 sm:w-60 md:w-72 rounded-lg bg-gradient-to-br from-lime-500/70 via-emerald-600/70 to-neutral-800 items-center justify-center select-none"
-            >
-              <span
-                class="text-white/90 text-[7rem] sm:text-[8rem] md:text-[10rem] leading-none"
-                >J</span
-              >
-            </div>
-            <div
-              class="absolute inset-0 grid grid-cols-10 grid-rows-10"
-              id="pixelated-container"
-            ></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- T-Shaped Engineer -->
-    <section
-      id="t-shape"
-      class="w-screen bg-[#0e0e0e] flex flex-col items-center px-4 pt-24 pb-28 sm:pb-16"
-    >
-      <h2 class="text-white text-3xl sm:text-4xl mb-3 text-center">
-        the
-        <span class="underline decoration-lime-500 underline-offset-4"
-          >t-shaped</span
-        >
-        engineer
-      </h2>
-      <p
-        class="font-mono text-white/50 text-xs sm:text-sm mb-16 sm:mb-20 text-center max-w-md"
-      >
-        broad across the bar. deep down the stem.
-      </p>
-
-      <div
-        class="relative w-full max-w-xl sm:max-w-2xl flex flex-col items-center"
-      >
-        <!-- breadth chips sitting on top of the bar -->
-        <div
-          class="relative z-10 w-full flex justify-between items-end gap-1 px-1 sm:px-2 mb-2 sm:mb-3"
-        >
-          <span
-            class="t-broad font-mono text-[10px] sm:text-xs px-2 sm:px-3 py-1.5 rounded-lg border-2 border-neutral-700 bg-neutral-900 text-white/80 whitespace-nowrap"
-            >frontend</span
-          >
-          <span
-            class="t-broad font-mono text-[10px] sm:text-xs px-2 sm:px-3 py-1.5 rounded-lg border-2 border-neutral-700 bg-neutral-900 text-white/80 whitespace-nowrap"
-            >ui/ux</span
-          >
-          <span
-            class="t-broad font-mono text-[10px] sm:text-xs px-2 sm:px-3 py-1.5 rounded-lg border-2 border-neutral-700 bg-neutral-900 text-white/80 whitespace-nowrap"
-            >backend</span
-          >
-          <span
-            class="t-broad font-mono text-[10px] sm:text-xs px-2 sm:px-3 py-1.5 rounded-lg border-2 border-neutral-700 bg-neutral-900 text-white/80 whitespace-nowrap"
-            >scraping</span
-          >
-          <span
-            class="t-broad font-mono text-[10px] sm:text-xs px-2 sm:px-3 py-1.5 rounded-lg border-2 border-neutral-700 bg-neutral-900 text-white/80 whitespace-nowrap"
-            >devops</span
-          >
-        </div>
-
-        <!-- the T, traced by scroll like a pen drawing it -->
-        <svg
-          id="t-svg"
-          viewBox="0 0 800 500"
-          fill="none"
-          class="w-full h-auto block overflow-visible"
-          style="filter: drop-shadow(0 0 14px rgba(163, 230, 53, 0.3))"
-          aria-hidden="true"
-        >
-          <!-- blueprint dot guides — hidden until scroll surfaces them -->
-          <path
-            id="t-bar-ghost"
-            d="M16 20 H784"
-            stroke="#52525b"
-            stroke-width="10"
-            stroke-linecap="round"
-            stroke-dasharray="0 30"
-            opacity="0"
-          />
-          <path
-            id="t-stem-ghost"
-            d="M400 26 V470"
-            stroke="#52525b"
-            stroke-width="10"
-            stroke-linecap="round"
-            stroke-dasharray="0 30"
-            opacity="0"
-          />
-          <!-- ink -->
-          <path
-            id="t-bar-path"
-            d="M16 20 H784"
-            stroke="#a3e635"
-            stroke-width="16"
-            stroke-linecap="round"
-          />
-          <path
-            id="t-stem-path"
-            d="M400 26 V470"
-            stroke="#a3e635"
-            stroke-width="16"
-            stroke-linecap="round"
-          />
-          <!-- flash where the stem meets the bar -->
-          <circle
-            id="t-junction"
-            cx="400"
-            cy="22"
-            r="14"
-            stroke="#d9f99d"
-            stroke-width="4"
-            fill="none"
-            opacity="0"
-          />
-          <!-- glowing pen tip riding each stroke -->
-          <circle
-            id="t-spark-bar"
-            r="9"
-            cx="0"
-            cy="0"
-            fill="#ecfccb"
-            opacity="0"
-            style="filter: drop-shadow(0 0 10px rgba(163, 230, 53, 1))"
-          />
-          <circle
-            id="t-spark-stem"
-            r="9"
-            cx="0"
-            cy="0"
-            fill="#ecfccb"
-            opacity="0"
-            style="filter: drop-shadow(0 0 10px rgba(163, 230, 53, 1))"
-          />
-        </svg>
-
-        <!-- deep expertise at the bottom of the stem -->
-        <span
-          id="t-deep"
-          class="-mt-2 px-5 py-2.5 rounded-full bg-lime-500 text-black text-sm sm:text-base whitespace-nowrap shadow-lg shadow-lime-500/25"
-        >
-          ai / llm systems
-        </span>
-      </div>
-    </section>
-
-    <!-- Skills -->
-    <section
-      id="skills"
-      class="min-h-screen w-full relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4"
-    >
-      <div class="bg-pink-500 min-h-[38vh] sm:min-h-[45vh] lg:min-h-0">
-        <h2
-          class="mt-14 sm:mt-20 lg:mt-28 text-3xl sm:text-4xl px-4 pb-6 text-white"
-        >
-          Frontend venuma? <br />Frontend iruku.
-        </h2>
-        <a href="#showcase" data-skill-filter="frontend" class="skill-link">
-          <h4
-            class="font-mono px-4 py-2 decoration-dashed underline hover:decoration-solid text-white cursor-pointer"
-          >
-            view projects >
-          </h4>
+          <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+          </svg>
         </a>
-      </div>
-      <div class="bg-blue-600 min-h-[38vh] sm:min-h-[45vh] lg:min-h-0">
-        <h2
-          class="mt-14 sm:mt-20 lg:mt-28 text-3xl sm:text-4xl px-4 pb-6 text-white"
-        >
-          Backend venuma? <br />Backend iruku.
-        </h2>
-        <a href="#showcase" data-skill-filter="backend" class="skill-link">
-          <h4
-            class="font-mono px-4 py-2 decoration-dashed underline hover:decoration-solid text-white cursor-pointer"
-          >
-            view projects >
-          </h4>
-        </a>
-      </div>
-      <div class="bg-lime-500 min-h-[38vh] sm:min-h-[45vh] lg:min-h-0">
-        <h2
-          class="mt-14 sm:mt-20 lg:mt-28 text-3xl sm:text-4xl px-4 pb-6 text-white"
-        >
-          ui/ux venuma? <br />ui/ux iruku.
-        </h2>
-        <a href="#showcase" data-skill-filter="uiux" class="skill-link">
-          <h4
-            class="font-mono px-4 py-2 decoration-dashed underline hover:decoration-solid text-white cursor-pointer"
-          >
-            view projects >
-          </h4>
-        </a>
-      </div>
-      <div class="bg-yellow-400 min-h-[38vh] sm:min-h-[45vh] lg:min-h-0">
-        <h2
-          class="mt-14 sm:mt-20 lg:mt-28 text-3xl sm:text-4xl px-4 pb-6 text-black"
-        >
-          ai venuma?<br />
-          ai iruku.
-        </h2>
-        <a href="#showcase" data-skill-filter="ai" class="skill-link">
-          <h4
-            class="font-mono px-4 py-2 decoration-dashed underline hover:decoration-solid text-black/80 cursor-pointer"
-          >
-            view projects >
-          </h4>
-        </a>
-      </div>
-    </section>
+      </nav>
+    </header>
 
-    <!-- Projects -->
-    <section
-      id="showcase"
-      class="w-screen bg-[#0e0e0e] flex flex-col p-4 sm:p-8 scroll-mt-24 sm:scroll-mt-32"
-    >
-      <h2
-        class="place-self-center text-white text-3xl sm:text-4xl mb-3 mt-16 sm:mt-24"
-      >
-        Projects
-      </h2>
-      <p
-        class="place-self-center font-mono text-white/50 text-xs sm:text-sm mb-8 text-center max-w-md"
-      >
-        every project below answers three questions: what problem it solves,
-        what i gave up to solve it, how it works.
-      </p>
-
-      <!-- Filter Buttons -->
-      <div
-        class="flex flex-wrap justify-center gap-2 sm:gap-3 mb-8 px-2"
-        id="filter-buttons"
-      >
-        <button
-          data-filter="all"
-          class="filter-btn active px-3 sm:px-4 py-1.5 sm:py-2 rounded-full border-2 border-neutral-700 bg-neutral-800 text-white font-mono text-xs sm:text-sm transition-all duration-300 hover:border-white"
-        >
-          all
-        </button>
-        <button
-          data-filter="frontend"
-          class="filter-btn px-3 sm:px-4 py-1.5 sm:py-2 rounded-full border-2 border-pink-500/50 bg-neutral-800 text-pink-400 font-mono text-xs sm:text-sm transition-all duration-300 hover:border-pink-500 hover:bg-pink-500/20"
-        >
-          frontend
-        </button>
-        <button
-          data-filter="backend"
-          class="filter-btn px-3 sm:px-4 py-1.5 sm:py-2 rounded-full border-2 border-blue-500/50 bg-neutral-800 text-blue-400 font-mono text-xs sm:text-sm transition-all duration-300 hover:border-blue-500 hover:bg-blue-500/20"
-        >
-          backend
-        </button>
-        <button
-          data-filter="uiux"
-          class="filter-btn px-3 sm:px-4 py-1.5 sm:py-2 rounded-full border-2 border-lime-500/50 bg-neutral-800 text-lime-400 font-mono text-xs sm:text-sm transition-all duration-300 hover:border-lime-500 hover:bg-lime-500/20"
-        >
-          ui/ux
-        </button>
-        <button
-          data-filter="ai"
-          class="filter-btn px-3 sm:px-4 py-1.5 sm:py-2 rounded-full border-2 border-yellow-500/50 bg-neutral-800 text-yellow-400 font-mono text-xs sm:text-sm transition-all duration-300 hover:border-yellow-500 hover:bg-yellow-500/20"
-        >
-          ai
-        </button>
-      </div>
-
-      <div
-        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 grid-flow-row gap-4"
-        id="projects-grid"
-      >
-<!-- tamil-tokenizer -->
+    <main id="main">
+      <!-- Hero -->
+      <section id="hero" class="w-full flex flex-col">
         <div
-          class="project-card w-full h-full flex flex-col p-5 sm:p-6 border-2 border-neutral-800 rounded-lg bg-neutral-900 gap-5 transition-all duration-500 hover:border-neutral-700"
-          data-categories="ai,backend"
-          data-project="tamil-tokenizer"
+          class="bg-[#0f0f0f] min-h-screen md:h-screen flex justify-center items-center"
         >
-          <div class="flex items-center gap-3">
-            <!-- tile icon: pixelarticons "code" (MIT) -->
-            <div
-              class="w-9 h-9 shrink-0 rounded-lg bg-blue-500/15 border border-blue-500/40 grid place-items-center"
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="w-5 h-5 text-blue-400" style="image-rendering:pixelated" aria-hidden="true"><path d="M11 18H9v-4h2v4Zm-4-1H5v-2h2v2Zm12-2v2h-2v-2h2ZM5 15H3v-2h2v2Zm16 0h-2v-2h2v2Zm-8-1h-2v-4h2v4ZM3 13H1v-2h2v2Zm20 0h-2v-2h2v2ZM5 11H3V9h2v2Zm16 0h-2V9h2v2Zm-6-1h-2V6h2v4ZM7 9H5V7h2v2Zm12 0h-2V7h2v2Z"/></svg>
-            </div>
-            <h3 class="text-white text-lg sm:text-xl leading-tight">
-              tamil tokenizer
-            </h3>
-          </div>
-          <div class="flex flex-wrap gap-2">
-            <span
-              class="text-xs px-2 py-1 rounded-full bg-yellow-500/20 text-yellow-400 border border-yellow-500/30"
-              >ai</span
-            >
-            <span
-              class="text-xs px-2 py-1 rounded-full bg-blue-500/20 text-blue-400 border border-blue-500/30"
-              >backend</span
-            >
-          </div>
-          <dl class="pt">
-            <div class="pt-row">
-              <dt>problem</dt>
-              <dd>
-                general-purpose subword vocabularies shatter tamil into far too
-                many pieces, so tamil corpora cost more tokens and train slower
-                than english ones.
-              </dd>
-            </div>
-            <div class="pt-row">
-              <dt>tradeoff</dt>
-              <dd>
-                hand-writing bpe in rust instead of building on sentencepiece or
-                huggingface tokenizers. that bought the speed and cost me the
-                ready-made training loop.
-              </dd>
-            </div>
-            <div class="pt-row">
-              <dt>solution</dt>
-              <dd>
-                247 tamil character clusters as base tokens, aho-corasick
-                multi-pattern encoding, rayon-parallel bpe training. 11-16x
-                faster than sentencepiece, 32k vocab on huggingface, 23 tests on
-                every merge.
-              </dd>
-            </div>
-          </dl>
           <div
-            class="mt-auto pt-5 border-t border-neutral-800 flex flex-wrap gap-x-5 gap-y-2"
+            class="grid grid-cols-1 md:grid-cols-2 md:gap-8 w-full items-center pt-28 md:pt-16 pb-10 px-6 sm:px-8 mx-auto max-w-7xl"
           >
-            <a
-              href="https://github.com/barryallen16/tamil-tokenizer"
-              target="_blank"
-              class="inline-flex items-center gap-2 font-mono text-xs text-white/60 hover:text-white transition-colors"
-              ><img
-                src="https://static.cdnlogo.com/logos/g/69/github-icon.svg"
-                alt=""
-                class="w-3.5 invert"
-              />
-              source</a
-            >
-            <a
-              href="https://huggingface.co/barryallen16/tamil-tokenizer-wiki"
-              target="_blank"
-              class="inline-flex items-center gap-2 font-mono text-xs text-white/60 hover:text-white transition-colors"
-              ><img
-                src="https://huggingface.co/datasets/huggingface/brand-assets/resolve/main/hf-logo.svg"
-                alt=""
-                class="w-3.5 saturate-0"
-              />
-              weights</a
-            >
-          </div>
-        </div>
-
-        <!-- sivabharani-comments -->
-        <div
-          class="project-card w-full h-full flex flex-col p-5 sm:p-6 border-2 border-neutral-800 rounded-lg bg-neutral-900 gap-5 transition-all duration-500 hover:border-neutral-700"
-          data-categories="ai,backend"
-          data-project="sivabharani-comments"
-        >
-          <div class="flex items-center gap-3">
-            <!-- tile icon: pixelarticons "video" (MIT) -->
-            <div
-              class="w-9 h-9 shrink-0 rounded-lg bg-yellow-500/15 border border-yellow-500/40 grid place-items-center"
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="w-5 h-5 text-yellow-400" style="image-rendering:pixelated" aria-hidden="true"><path d="M16 19H4v-2h12v2ZM4 17H2V7h2v10Zm14-8h2V7h2v10h-2v-2h-2v2h-2V7h2v2Zm-2-2H4V5h12v2Z"/></svg>
-            </div>
-            <h3 class="text-white text-lg sm:text-xl leading-tight">
-              sivabharani comments
-            </h3>
-          </div>
-          <div class="flex flex-wrap gap-2">
-            <span
-              class="text-xs px-2 py-1 rounded-full bg-yellow-500/20 text-yellow-400 border border-yellow-500/30"
-              >ai</span
-            >
-            <span
-              class="text-xs px-2 py-1 rounded-full bg-blue-500/20 text-blue-400 border border-blue-500/30"
-              >backend</span
-            >
-          </div>
-          <dl class="pt">
-            <div class="pt-row">
-              <dt>problem</dt>
-              <dd>
-                the channel answers subscriber questions inside 2,000+ youtube
-                videos.
-                nobody could search their own name to find the one video where
-                he answered them.
-              </dd>
-            </div>
-            <div class="pt-row">
-              <dt>tradeoff</dt>
-              <dd>
-                an llm pass over every transcript chunk instead of search alone.
-                that narrows the index and costs a full run over 1.18m chunks,
-                and youtube's english auto-transcripts were too broken to trust,
-                so the model had to carry the work.
-              </dd>
-            </div>
-            <div class="pt-row">
-              <dt>solution</dt>
-              <dd>
-                2,755 videos scraped, 1,185,665 chunks run through local gemma
-                4-bit inference to keep only the ones naming a person. search a
-                name, get the video and the timestamp. dataset on huggingface.
-              </dd>
-            </div>
-          </dl>
-          <div
-            class="mt-auto pt-5 border-t border-neutral-800 flex flex-wrap gap-x-5 gap-y-2"
-          >
-            <a
-              href="https://github.com/barryallen16/sivabharani-comments"
-              target="_blank"
-              class="inline-flex items-center gap-2 font-mono text-xs text-white/60 hover:text-white transition-colors"
-              ><img
-                src="https://static.cdnlogo.com/logos/g/69/github-icon.svg"
-                alt=""
-                class="w-3.5 invert"
-              />
-              source</a
-            >
-          </div>
-        </div>
-
-        <!-- ats-resume-creation-skill -->
-        <div
-          class="project-card w-full h-full flex flex-col p-5 sm:p-6 border-2 border-neutral-800 rounded-lg bg-neutral-900 gap-5 transition-all duration-500 hover:border-neutral-700"
-          data-categories="ai"
-          data-project="ats-skill"
-        >
-          <div class="flex items-center gap-3">
-            <!-- tile icon: pixelarticons "file-text" (MIT) -->
-            <div
-              class="w-9 h-9 shrink-0 rounded-lg bg-yellow-500/15 border border-yellow-500/40 grid place-items-center"
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="w-5 h-5 text-yellow-400" style="image-rendering:pixelated" aria-hidden="true"><path d="M18 22H6v-2h12v2ZM6 20H4V4h2v16ZM16 4h-2v4h4V6h2v14h-2V10h-6V4H6V2h10v2Zm0 14H8v-2h8v2Zm0-4H8v-2h8v2Zm-6-4H8V8h2v2Zm8-4h-2V4h2v2Z"/></svg>
-            </div>
-            <h3 class="text-white text-lg sm:text-xl leading-tight">
-              resume agent skill
-            </h3>
-          </div>
-          <div class="flex flex-wrap gap-2">
-            <span
-              class="text-xs px-2 py-1 rounded-full bg-yellow-500/20 text-yellow-400 border border-yellow-500/30"
-              >ai</span
-            >
-          </div>
-          <dl class="pt">
-            <div class="pt-row">
-              <dt>problem</dt>
-              <dd>
-                rewriting the same resume for every job, then fighting word
-                processors to ship a docx and a pdf that parse cleanly.
-              </dd>
-            </div>
-            <div class="pt-row">
-              <dt>tradeoff</dt>
-              <dd>
-                generation over hand-editing. formatting stays consistent across
-                applications, and every resume reads like the same person wrote
-                it.
-              </dd>
-            </div>
-            <div class="pt-row">
-              <dt>solution</dt>
-              <dd>
-                an agent skill that reads a job description, writes the tailored
-                content, exports docx and pdf, and logs the application so
-                nothing goes out untracked. this site's resume came out of it.
-              </dd>
-            </div>
-          </dl>
-          <div
-            class="mt-auto pt-5 border-t border-neutral-800 flex flex-wrap gap-x-5 gap-y-2"
-          >
-            <a
-              href="https://github.com/barryallen16/ats-resume-creation-skill"
-              target="_blank"
-              class="inline-flex items-center gap-2 font-mono text-xs text-white/60 hover:text-white transition-colors"
-              ><img
-                src="https://static.cdnlogo.com/logos/g/69/github-icon.svg"
-                alt=""
-                class="w-3.5 invert"
-              />
-              source</a
-            >
-          </div>
-        </div>
-
-        <!-- VulnChecker-Java -->
-        <div
-          class="project-card w-full h-full flex flex-col p-5 sm:p-6 border-2 border-neutral-800 rounded-lg bg-neutral-900 gap-5 transition-all duration-500 hover:border-neutral-700"
-          data-categories="ai,backend"
-          data-project="java-vul"
-        >
-          <div class="flex items-center gap-3">
-            <!-- tile icon: pixelarticons "shield" (MIT) -->
-            <div
-              class="w-9 h-9 shrink-0 rounded-lg bg-blue-500/15 border border-blue-500/40 grid place-items-center"
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="w-5 h-5 text-blue-400" style="image-rendering:pixelated" aria-hidden="true"><path d="M14 22h-4v-2h4v2Zm-4-4v2H8v-2h2Zm6 2h-2v-2h2v2Zm-8-2H6v-2h2v2Zm10 0h-2v-2h2v2ZM6 16H4v-2h2v2Zm14 0h-2v-2h2v2ZM4 14H2V4h2v10Zm18 0h-2V4h2v10ZM20 4H4V2h16v2Z"/></svg>
-            </div>
-            <h3 class="text-white text-lg sm:text-xl leading-tight">
-              java vulnerability checker
-            </h3>
-          </div>
-          <div class="flex flex-wrap gap-2">
-            <span
-              class="text-xs px-2 py-1 rounded-full bg-yellow-500/20 text-yellow-400 border border-yellow-500/30"
-              >ai</span
-            >
-            <span
-              class="text-xs px-2 py-1 rounded-full bg-blue-500/20 text-blue-400 border border-blue-500/30"
-              >backend</span
-            >
-          </div>
-          <dl class="pt">
-            <div class="pt-row">
-              <dt>problem</dt>
-              <dd>
-                static analyzers miss sql injection, xss and insecure
-                deserialization, and general code models had no idea what a
-                vulnerable java pattern looks like.
-              </dd>
-            </div>
-            <div class="pt-row">
-              <dt>tradeoff</dt>
-              <dd>
-                budget on dedup instead of parameters. the 7b beat my 14b run,
-                80.39% against 78.43% on the same 102 cases, which says the
-                merged corpora were dirtier than they needed to be.
-              </dd>
-            </div>
-            <div class="pt-row">
-              <dt>solution</dt>
-              <dd>
-                seven pipeline stages from raw jsonl to conversation-formatted
-                sft, sha256 dedup on normalized lines, lora fine-tune, then a
-                fixed 102-case eval any checkpoint runs through one function
-                call. weights on huggingface.
-              </dd>
-            </div>
-          </dl>
-          <div
-            class="mt-auto pt-5 border-t border-neutral-800 flex flex-wrap gap-x-5 gap-y-2"
-          >
-            <a
-              href="https://github.com/barryallen16/VulnChecker-Java"
-              target="_blank"
-              class="inline-flex items-center gap-2 font-mono text-xs text-white/60 hover:text-white transition-colors"
-              ><img
-                src="https://static.cdnlogo.com/logos/g/69/github-icon.svg"
-                alt=""
-                class="w-3.5 invert"
-              />
-              source</a
-            >
-            <a
-              href="https://huggingface.co/barryallen16/Qwen2.5_7B_java_vul_final"
-              target="_blank"
-              class="inline-flex items-center gap-2 font-mono text-xs text-white/60 hover:text-white transition-colors"
-              ><img
-                src="https://huggingface.co/datasets/huggingface/brand-assets/resolve/main/hf-logo.svg"
-                alt=""
-                class="w-3.5 saturate-0"
-              />
-              weights</a
-            >
-          </div>
-        </div>
-
-        <!-- Kaggle Automation -->
-        <div
-          class="project-card w-full h-full flex flex-col p-5 sm:p-6 border-2 border-neutral-800 rounded-lg bg-neutral-900 gap-5 transition-all duration-500 hover:border-neutral-700"
-          data-categories="backend,ai"
-          data-project="kaggle-automation"
-        >
-          <div class="flex items-center gap-3">
-            <div
-              class="w-9 h-9 shrink-0 rounded-lg bg-yellow-500/15 border border-yellow-500/40 grid place-items-center"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="w-5 h-5 text-yellow-400"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                stroke-width="2"
+            <div class="flex flex-col">
+              <h1 class="text-white text-3xl sm:text-4xl">
+                hi i'm
+                <span
+                  class="block text-4xl sm:text-5xl text-white underline decoration-lime-500 underline-offset-4 mt-1 font-normal"
+                >
+                  jayadithya
+                </span>
+              </h1>
+              <p class="text-xl sm:text-2xl text-white/90 mt-2">
+                AI / ML engineer
+              </p>
+              <p class="text-white/80 font-mono mt-4 text-sm sm:text-base leading-relaxed">
+                i build ai systems bottom-up, from tokenizers and pipelines to inference and eval.
+              </p>
+              <p class="text-white/60 font-mono text-xs sm:text-sm mt-1">
+                chennai, tamil nadu, india.
+              </p>
+              <a
+                href="./resume/"
+                target="_blank"
+                class="mt-6 self-start px-5 py-2.5 rounded-full border-2 border-lime-500/60 bg-lime-500/10 text-lime-400 font-mono text-xs sm:text-sm hover:bg-lime-500/20 transition-all duration-300 flex items-center gap-2 min-h-[44px]"
               >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-4 h-4"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  aria-hidden="true"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
+                  />
+                </svg>
+                view resume
+              </a>
+            </div>
+            <div class="relative mt-8 md:mt-0 flex justify-center md:justify-end">
+              <div class="relative rounded-xl overflow-hidden border border-white/10 shadow-xl shadow-black/50">
+                <img
+                  src="./images/profile.webp"
+                  alt="jayadithya profile"
+                  width="384"
+                  height="384"
+                  class="h-64 sm:h-80 md:h-96 w-auto object-cover object-bottom"
+                  onerror="
+                    this.style.display = 'none';
+                    document.getElementById('hero-fallback').style.display = 'flex';
+                  "
                 />
-              </svg>
+                <div
+                  id="hero-fallback"
+                  style="display: none"
+                  class="h-64 sm:h-80 md:h-96 w-52 sm:w-60 md:w-72 bg-gradient-to-br from-lime-500/70 via-emerald-600/70 to-neutral-800 items-center justify-center select-none"
+                >
+                  <span
+                    class="text-white/90 text-[7rem] sm:text-[8rem] md:text-[10rem] leading-none"
+                    >J</span
+                  >
+                </div>
+                <div
+                  class="absolute inset-0 grid grid-cols-8 grid-rows-8 pointer-events-none"
+                  id="pixelated-container"
+                ></div>
+              </div>
             </div>
-            <h3 class="text-white text-lg sm:text-xl leading-tight">
-              kaggle automation
-            </h3>
-          </div>
-          <div class="flex flex-wrap gap-2">
-            <span
-              class="text-xs px-2 py-1 rounded-full bg-blue-500/20 text-blue-400 border border-blue-500/30"
-              >backend</span
-            >
-            <span
-              class="text-xs px-2 py-1 rounded-full bg-yellow-500/20 text-yellow-400 border border-yellow-500/30"
-              >ai</span
-            >
-          </div>
-          <dl class="pt">
-            <div class="pt-row">
-              <dt>problem</dt>
-              <dd>
-                kaggle sessions expire after 12 hours, so a training run that
-                outlasts one is gone, and watching that by hand means babysitting
-                a browser tab.
-              </dd>
-            </div>
-            <div class="pt-row">
-              <dt>tradeoff</dt>
-              <dd>
-                pooling nineteen accounts and sharding one job across them
-                instead of waiting out a single session. 223 runs' worth of gpu
-                hours, paid for in credential handling and retry logic.
-              </dd>
-            </div>
-            <div class="pt-row">
-              <dt>solution</dt>
-              <dd>
-                a dockerized fastapi control plane on ec2 that pools api keys,
-                shards jobs across accounts, and alerts on the 12-hour cutoff.
-                github actions runs uv sync, ruff and pytest over 12 test suites.
-              </dd>
-            </div>
-          </dl>
-          <div
-            class="mt-auto pt-5 border-t border-neutral-800 flex flex-wrap gap-x-5 gap-y-2"
-          >
-            <a
-              href="https://github.com/barryallen16/kaggle-automation"
-              target="_blank"
-              class="inline-flex items-center gap-2 font-mono text-xs text-white/60 hover:text-white transition-colors"
-              ><img
-                src="https://static.cdnlogo.com/logos/g/69/github-icon.svg"
-                alt=""
-                class="w-3.5 invert"
-              />
-              source</a
-            >
           </div>
         </div>
+      </section>
 
-        <!-- FitCheck -->
-        <div
-          class="project-card w-full h-full flex flex-col p-5 sm:p-6 border-2 border-neutral-800 rounded-lg bg-neutral-900 gap-5 transition-all duration-500 hover:border-neutral-700"
-          data-categories="frontend,ai,uiux"
-          data-project="fitcheck"
-        >
-          <div class="flex items-center gap-3">
-            <img
-              src="./images/fitcheck-logo-v3.webp"
-              loading="lazy"
-              alt="FitCheck logo"
-              class="w-9 h-9 object-contain"
-            />
-            <h3 class="text-white text-lg sm:text-xl leading-tight">fitcheck</h3>
-          </div>
-          <div class="flex flex-wrap gap-2">
-            <span
-              class="text-xs px-2 py-1 rounded-full bg-pink-500/20 text-pink-400 border border-pink-500/30"
-              >frontend</span
-            >
-            <span
-              class="text-xs px-2 py-1 rounded-full bg-yellow-500/20 text-yellow-400 border border-yellow-500/30"
-              >ai</span
-            >
-            <span
-              class="text-xs px-2 py-1 rounded-full bg-lime-500/20 text-lime-400 border border-lime-500/30"
-              >ui/ux</span
-            >
-          </div>
-          <dl class="pt">
-            <div class="pt-row">
-              <dt>problem</dt>
-              <dd>
-                fashionclip runs in the browser but it can't reason about an
-                outfit, only match an image to a garment. a shopping site needs
-                the reasoning and can't afford a server-side model doing it.
-              </dd>
-            </div>
-            <div class="pt-row">
-              <dt>tradeoff</dt>
-              <dd>
-                distilling two teachers into a student that still runs
-                client-side. the student keeps 91.6% of the teacher's judged
-                recommendation quality on a 1,000-image bench, generates 39%
-                more tokens per second on 3.14x less vram, and reasoning that
-                came free from the 120b teacher now comes from a 2.9k-example
-                tuning run.
-              </dd>
-            </div>
-            <div class="pt-row">
-              <dt>solution</dt>
-              <dd>
-                qwen3-vl-8b labeled 106k fashion photos, which became 538k
-                caption-and-qa pairs for perception tuning, then gpt-oss-120b
-                wrote 2,923 outfit recommendations with color and silhouette
-                rationales for reasoning tuning. evaluated two ways: a 1,000-image
-                bench and a blind human study over 297 ratings. first-author ieee
-                paper, model and three datasets on huggingface.
-              </dd>
-            </div>
-          </dl>
-          <div
-            class="mt-auto pt-5 border-t border-neutral-800 flex flex-wrap gap-x-5 gap-y-2"
-          >
-            <a
-              href="https://doi.org/10.1109/TQCEBT67648.2026.11681836"
-              target="_blank"
-              class="inline-flex items-center gap-2 font-mono text-xs text-lime-400/80 hover:text-lime-400 transition-colors"
-              ><svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                stroke-width="2"
-                class="w-3.5"
-                aria-hidden="true"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M12 6.03A9 9 0 003 9.74M15 3.75A9 9 0 0120.25 9M12 18v4m-4-8h8m-8 4h5"
-                />
-              </svg>
-              paper</a
-            >
-            <a
-              href="./fitcheck-journal-paper.pdf"
-              target="_blank"
-              class="inline-flex items-center gap-2 font-mono text-xs text-white/60 hover:text-white transition-colors"
-              ><svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                stroke-width="2"
-                class="w-3.5"
-                aria-hidden="true"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M12 3v12m0 0l-4-4m4 4l4-4M4 17v2a2 2 0 002 2h12a2 2 0 002-2v-2"
-                />
-              </svg>
-              pdf</a
-            >
-            <a
-              href="https://github.com/barryallen16/fitcheck-website"
-              target="_blank"
-              class="inline-flex items-center gap-2 font-mono text-xs text-white/60 hover:text-white transition-colors"
-              ><img
-                src="https://static.cdnlogo.com/logos/g/69/github-icon.svg"
-                alt=""
-                class="w-3.5 invert"
-              />
-              source</a
-            >
-            <a
-              href="https://huggingface.co/collections/barryallen16/fitcheck"
-              target="_blank"
-              class="inline-flex items-center gap-2 font-mono text-xs text-white/60 hover:text-white transition-colors"
-              ><img
-                src="https://huggingface.co/datasets/huggingface/brand-assets/resolve/main/hf-logo.svg"
-                alt=""
-                class="w-3.5 saturate-0"
-              />
-              models</a
-            >
-          </div>
-        </div>
-
-        <!-- MoviesMod Scraper -->
-        <div
-          class="project-card w-full h-full flex flex-col p-5 sm:p-6 border-2 border-neutral-800 rounded-lg bg-neutral-900 gap-5 transition-all duration-500 hover:border-neutral-700 hidden"
-          data-categories="backend"
-          data-project="moviemod"
-          data-extra="true"
-        >
-          <div class="flex items-center gap-3">
-            <img
-              src="./images/mm.webp"
-              loading="lazy"
-              alt="MoviesMod scraper logo"
-              class="w-9 h-9 object-contain"
-            />
-            <h3 class="text-white text-lg sm:text-xl leading-tight">
-              moviemod scraper
-            </h3>
-          </div>
-          <div class="flex flex-wrap gap-2">
-            <span
-              class="text-xs px-2 py-1 rounded-full bg-blue-500/20 text-blue-400 border border-blue-500/30"
-              >backend</span
-            >
-          </div>
-          <dl class="pt">
-            <div class="pt-row">
-              <dt>problem</dt>
-              <dd>
-                a site that rotates its domain and hands out per-access download
-                tokens, so a scraper works for a week and any link it stores is
-                dead by evening.
-              </dd>
-            </div>
-            <div class="pt-row">
-              <dt>tradeoff</dt>
-              <dd>
-                selenium plus a mysql mirror over a plain http fetch. heavier to
-                run and to maintain, and the stored rows are a snapshot of one
-                afternoon, not a permanent copy.
-              </dd>
-            </div>
-            <div class="pt-row">
-              <dt>solution</dt>
-              <dd>
-                resolves the live domain on each run, multiprocess workers with
-                retry and backoff, mysql dedup so a re-run doesn't duplicate rows,
-                docker compose, and telegram alerts on failure. a stored link
-                that 404s gets re-scraped instead of debugged.
-              </dd>
-            </div>
-          </dl>
-          <div
-            class="mt-auto pt-5 border-t border-neutral-800 flex flex-wrap gap-x-5 gap-y-2"
-          >
-            <a
-              href="https://github.com/barryallen16/moviemod-scraper"
-              target="_blank"
-              class="inline-flex items-center gap-2 font-mono text-xs text-white/60 hover:text-white transition-colors"
-              ><img
-                src="https://static.cdnlogo.com/logos/g/69/github-icon.svg"
-                alt=""
-                class="w-3.5 invert"
-              />
-              source</a
-            >
-          </div>
-        </div>
-
-        <!-- Memory -->
-        <div
-          class="project-card w-full h-full flex flex-col p-5 sm:p-6 border-2 border-neutral-800 rounded-lg bg-neutral-900 gap-5 transition-all duration-500 hover:border-neutral-700 hidden"
-          data-categories="frontend,uiux"
-          data-project="memory"
-          data-extra="true"
-        >
-          <div class="flex items-center gap-3">
-            <img
-              src="./images/memory-logo.svg"
-              loading="lazy"
-              alt="Memory logo"
-              class="w-9 h-9 object-contain"
-            />
-            <h3 class="text-white text-lg sm:text-xl leading-tight">memory</h3>
-          </div>
-          <div class="flex flex-wrap gap-2">
-            <span
-              class="text-xs px-2 py-1 rounded-full bg-pink-500/20 text-pink-400 border border-pink-500/30"
-              >frontend</span
-            >
-            <span
-              class="text-xs px-2 py-1 rounded-full bg-lime-500/20 text-lime-400 border border-lime-500/30"
-              >ui/ux</span
-            >
-          </div>
-          <dl class="pt">
-            <div class="pt-row">
-              <dt>problem</dt>
-              <dd>
-                filling the same google forms over and over, field by field, for a
-                task that took real minutes each time.
-              </dd>
-            </div>
-            <div class="pt-row">
-              <dt>tradeoff</dt>
-              <dd>
-                a bookmarklet instead of an extension. nothing to install and
-                nothing to approve, and it breaks the day google changes how forms
-                set their values.
-              </dd>
-            </div>
-            <div class="pt-row">
-              <dt>solution</dt>
-              <dd>
-                fuzzy-matches labels to values, then writes through react's own
-                value setter so controlled inputs register the change. about a
-                second per form.
-              </dd>
-            </div>
-          </dl>
-          <div
-            class="mt-auto pt-5 border-t border-neutral-800 flex flex-wrap gap-x-5 gap-y-2"
-          >
-            <a
-              href="https://barryallen16.github.io/Memory/"
-              target="_blank"
-              class="inline-flex items-center gap-2 font-mono text-xs text-white/60 hover:text-white transition-colors"
-            >
-              <!-- icon: pixelarticons "open" (MIT) -->
-              <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="w-3.5 text-white/50" style="image-rendering:pixelated" aria-hidden="true"><path d="M17 21H5v-2h12v2ZM5 19H3V7h2v12Zm14 0h-2v-6h2v6Zm-8-6v2H9v-2h2Zm2 0h-2v-2h2v2Zm2-2h-2V9h2v2Zm6 0h-2V7h-2V5h-4V3h8v8Zm-4-2h-2V7h2v2Zm-6-2H5V5h6v2Z"/></svg>
-              landing page</a
-            >
-          </div>
-        </div>
-
-        <!-- unshortenBuddy -->
-        <div
-          class="project-card w-full h-full flex flex-col p-5 sm:p-6 border-2 border-neutral-800 rounded-lg bg-neutral-900 gap-5 transition-all duration-500 hover:border-neutral-700 hidden"
-          data-categories="backend"
-          data-project="unshorten"
-          data-extra="true"
-        >
-          <div class="flex items-center gap-3">
-            <img
-              src="./images/ub.webp"
-              loading="lazy"
-              alt="unshortenBuddy logo"
-              class="w-9 h-9 object-contain"
-            />
-            <h3 class="text-white text-lg sm:text-xl leading-tight">
-              unshorten buddy
-            </h3>
-          </div>
-          <div class="flex flex-wrap gap-2">
-            <span
-              class="text-xs px-2 py-1 rounded-full bg-blue-500/20 text-blue-400 border border-blue-500/30"
-              >backend</span
-            >
-          </div>
-<dl class="pt">
-            <div class="pt-row">
-              <dt>problem</dt>
-              <dd>
-                short links hide the destination behind ad walls and timers, so
-                clicking one means sitting through a page of ads first.
-              </dd>
-            </div>
-            <div class="pt-row">
-              <dt>tradeoff</dt>
-              <dd>
-                headless chrome instead of a plain http request. it follows the
-                ads and timers that a request library can't, at the cost of a
-                browser process per link.
-              </dd>
-            </div>
-            <div class="pt-row">
-              <dt>solution</dt>
-              <dd>
-                a telegram bot that walks the redirect chain in a real browser,
-                caches every resolved link in postgres, and gates access behind
-                admin approval so the instance stays private.
-              </dd>
-            </div>
-          </dl>
-          <div
-            class="mt-auto pt-5 border-t border-neutral-800 flex flex-wrap gap-x-5 gap-y-2"
-          >
-            <a
-              href="https://github.com/barryallen16/unshortenBuddy"
-              target="_blank"
-              class="inline-flex items-center gap-2 font-mono text-xs text-white/60 hover:text-white transition-colors"
-              ><img
-                src="https://static.cdnlogo.com/logos/g/69/github-icon.svg"
-                alt=""
-                class="w-3.5 invert"
-              />
-              source</a
-            >
-          </div>
-        </div>
-      </div>
-
-      <!-- Show more -->
-      <button
-        id="show-more-projects"
-        aria-expanded="false"
-        aria-controls="projects-grid"
-        class="place-self-center mt-10 px-5 py-2.5 rounded-full border-2 border-lime-500/60 bg-neutral-900 text-lime-400 font-mono text-xs sm:text-sm transition-all duration-300 hover:border-lime-400 hover:bg-lime-500/15"
+      <!-- T-Shaped Engineer -->
+      <section
+        id="t-shape"
+        class="w-full bg-[#0e0e0e] flex flex-col items-center px-4 pt-24 pb-28 sm:pb-16"
       >
-        show more (3)
-      </button>
-
-      <!-- No results message -->
-      <div id="no-results" class="hidden text-center py-16">
-        <p class="text-white/50 font-mono text-xl">
-          no projects found in this category... yet!
+        <h2 class="text-white text-3xl sm:text-4xl mb-3 text-center">
+          the
+          <span class="underline decoration-lime-500 underline-offset-4"
+            >t-shaped</span
+          >
+          engineer
+        </h2>
+        <p
+          class="font-mono text-white/60 text-xs sm:text-sm mb-16 sm:mb-20 text-center max-w-md"
+        >
+          broad across the bar. deep down the stem.
         </p>
-      </div>
-    </section>
 
-    <!-- Experience -->
-    <section
-      id="experience"
-      class="w-screen bg-[#0e0e0e] flex flex-col items-center px-4 sm:px-8 py-16 sm:py-24"
-    >
-      <h2 class="text-white text-3xl sm:text-4xl mb-10 text-center">
-        where i've
-        <span class="underline decoration-lime-500 underline-offset-4"
-          >been</span
-        >
-      </h2>
-      <div class="w-full max-w-3xl flex flex-col gap-4">
         <div
-          class="p-5 sm:p-8 border-2 border-neutral-800 rounded-lg bg-neutral-900"
+          class="relative w-full max-w-xl sm:max-w-2xl flex flex-col items-center"
         >
-          <div class="flex flex-wrap justify-between items-baseline gap-2">
-            <h2 class="text-white text-lg sm:text-xl">ai research intern</h2>
-            <span class="font-mono text-white/40 text-xs sm:text-sm"
-              >07/2025 - 10/2025</span
-            >
-          </div>
-          <p class="font-mono text-white/60 text-xs sm:text-sm mt-1">
-            blubridge technologies · chennai
-          </p>
-          <ul
-            class="font-mono text-white/80 text-sm sm:text-base mt-4 flex flex-col gap-2 list-disc list-inside"
+          <!-- breadth chips sitting on top of the bar -->
+          <div
+            class="relative z-10 w-full flex justify-between items-end gap-1 px-1 sm:px-2 mb-2 sm:mb-3"
           >
-            <li>
-              built operator-fusion passes in mlir, cutting kernel launch
-              overhead ~20%.
-            </li>
-            <li>
-              lowered dialect ops to llvm ir with shape inference for dynamic
-              tensors.
-            </li>
-            <li>hardened passes with 40+ lit tests wired into ci.</li>
-          </ul>
-        </div>
-        <div
-          class="p-5 sm:p-8 border-2 border-neutral-800 rounded-lg bg-neutral-900"
-        >
-          <div class="flex flex-wrap justify-between items-baseline gap-2">
-            <h2 class="text-white text-lg sm:text-xl">
-              b.tech, artificial intelligence and data science
-            </h2>
-            <span class="font-mono text-white/40 text-xs sm:text-sm"
-              >2026</span
+            <span
+              class="t-broad font-mono text-xs px-2.5 sm:px-3 py-1.5 rounded-lg border border-neutral-700 bg-neutral-900 text-white/90 whitespace-nowrap"
+              >frontend</span
+            >
+            <span
+              class="t-broad font-mono text-xs px-2.5 sm:px-3 py-1.5 rounded-lg border border-neutral-700 bg-neutral-900 text-white/90 whitespace-nowrap"
+              >ui/ux</span
+            >
+            <span
+              class="t-broad font-mono text-xs px-2.5 sm:px-3 py-1.5 rounded-lg border border-neutral-700 bg-neutral-900 text-white/90 whitespace-nowrap"
+              >backend</span
+            >
+            <span
+              class="t-broad font-mono text-xs px-2.5 sm:px-3 py-1.5 rounded-lg border border-neutral-700 bg-neutral-900 text-white/90 whitespace-nowrap"
+              >scraping</span
+            >
+            <span
+              class="t-broad font-mono text-xs px-2.5 sm:px-3 py-1.5 rounded-lg border border-neutral-700 bg-neutral-900 text-white/90 whitespace-nowrap"
+              >devops</span
             >
           </div>
-          <p class="font-mono text-white/60 text-xs sm:text-sm mt-1">
-            dr. m.g.r. educational and research institute · chennai · 8.0/10
-          </p>
-        </div>
-        <div
-          class="p-5 sm:p-8 border-2 border-neutral-800 rounded-lg bg-neutral-900"
-        >
-          <div class="flex flex-wrap justify-between items-baseline gap-2">
-            <h2 class="text-white text-lg sm:text-xl">
-              first author, ieee tqcebt 2026
-            </h2>
-            <span class="font-mono text-white/40 text-xs sm:text-sm"
-              >2026</span
-            >
-          </div>
-          <p class="font-mono text-white/60 text-xs sm:text-sm mt-1">
-            "FitCheck: A Multi-Modular AI Framework for Cross-Cultural Fashion
-            Recommendation via Black-Box Data Distillation" · pune, india
-          </p>
-          <p class="font-mono text-white/60 text-xs sm:text-sm mt-4 flex flex-wrap items-center gap-x-4 gap-y-2">
-            <a
-              href="./fitcheck-journal-paper.pdf"
-              target="_blank"
-              class="text-lime-400/80 hover:text-lime-400 transition-colors"
-              >read the paper (pdf)</a
-            >
-            <span class="text-white/20">·</span>
-            <a
-              href="https://doi.org/10.1109/TQCEBT67648.2026.11681836"
-              target="_blank"
-              class="text-white/60 hover:text-white transition-colors"
-              >doi 10.1109/tqcebt67648.2026.11681836</a
-            >
-          </p>
-        </div>
-      </div>
-    </section>
 
-    <!-- GitHub stat cards -->
-    <section
-      id="contributions"
-      class="w-screen bg-[#0e0e0e] flex flex-col items-center px-4 sm:px-8 py-16 sm:py-24"
-    >
-      <h2 class="text-white text-3xl sm:text-4xl mb-3 text-center">
-        where i
-        <span class="underline decoration-lime-500 underline-offset-4"
-          >commit</span
-        >
-      </h2>
-      <p class="font-mono text-white/50 text-xs sm:text-sm mb-8 text-center max-w-md">
-        stats, languages and streak — pixel cards redrawn straight from the
-        github api every day.
-      </p>
+          <!-- the T, traced by scroll -->
+          <svg
+            id="t-svg"
+            viewBox="0 0 800 500"
+            fill="none"
+            class="w-full h-auto block overflow-visible"
+            style="filter: drop-shadow(0 0 8px rgba(163, 230, 53, 0.2))"
+            aria-hidden="true"
+          >
+            <!-- blueprint dot guides -->
+            <path
+              id="t-bar-ghost"
+              d="M16 20 H784"
+              stroke="#52525b"
+              stroke-width="10"
+              stroke-linecap="round"
+              stroke-dasharray="0 30"
+              opacity="0"
+            />
+            <path
+              id="t-stem-ghost"
+              d="M400 26 V470"
+              stroke="#52525b"
+              stroke-width="10"
+              stroke-linecap="round"
+              stroke-dasharray="0 30"
+              opacity="0"
+            />
+            <!-- ink -->
+            <path
+              id="t-bar-path"
+              d="M16 20 H784"
+              stroke="#a3e635"
+              stroke-width="16"
+              stroke-linecap="round"
+            />
+            <path
+              id="t-stem-path"
+              d="M400 26 V470"
+              stroke="#a3e635"
+              stroke-width="16"
+              stroke-linecap="round"
+            />
+            <!-- flash where the stem meets the bar -->
+            <circle
+              id="t-junction"
+              cx="400"
+              cy="22"
+              r="14"
+              stroke="#d9f99d"
+              stroke-width="4"
+              fill="none"
+              opacity="0"
+            />
+            <!-- glowing pen tip -->
+            <circle
+              id="t-spark-bar"
+              r="9"
+              cx="0"
+              cy="0"
+              fill="#ecfccb"
+              opacity="0"
+              style="filter: drop-shadow(0 0 6px rgba(163, 230, 53, 0.7))"
+            />
+            <circle
+              id="t-spark-stem"
+              r="9"
+              cx="0"
+              cy="0"
+              fill="#ecfccb"
+              opacity="0"
+              style="filter: drop-shadow(0 0 6px rgba(163, 230, 53, 0.7))"
+            />
+          </svg>
 
-      <!-- cards served live from the profile repo's assets/ folder;
-           its daily workflow refreshes them, so this section never goes stale -->
-      <div
-        id="stat-cards"
-        class="w-full max-w-4xl grid grid-cols-1 sm:grid-cols-2 gap-4"
+          <!-- deep expertise at the bottom of the stem -->
+          <span
+            id="t-deep"
+            class="-mt-2 px-5 py-2.5 rounded-full bg-lime-500 text-black font-semibold text-sm sm:text-base whitespace-nowrap shadow-md shadow-lime-500/20"
+          >
+            ai / llm systems
+          </span>
+        </div>
+      </section>
+
+      <!-- Skills Matrix -->
+      <section
+        id="skills"
+        class="w-full relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 p-4 sm:p-8 max-w-7xl mx-auto"
       >
-        <img
-          src="https://raw.githubusercontent.com/barryallen16/barryallen16/main/assets/stats-dark.svg"
-          alt="GitHub stats for barryallen16: stars earned, commits this year, pull requests, issues and repositories contributed to"
-          width="430"
-          height="323"
-          loading="lazy"
-          decoding="async"
-          class="block w-full h-auto border-2 border-neutral-800 rounded-lg transition-all duration-500 hover:border-neutral-700"
-        />
-        <img
-          src="https://raw.githubusercontent.com/barryallen16/barryallen16/main/assets/top-langs-dark.svg"
-          alt="Most used languages on GitHub for barryallen16, listed with percentages"
-          width="430"
-          height="323"
-          loading="lazy"
-          decoding="async"
-          class="block w-full h-auto border-2 border-neutral-800 rounded-lg transition-all duration-500 hover:border-neutral-700"
-        />
-        <img
-          src="https://raw.githubusercontent.com/barryallen16/barryallen16/main/assets/streak-dark.svg"
-          alt="Contribution streak for barryallen16: total contributions, current streak and longest streak"
-          width="860"
-          height="411"
-          loading="lazy"
-          decoding="async"
-          class="col-span-full block w-full h-auto border-2 border-neutral-800 rounded-lg transition-all duration-500 hover:border-neutral-700"
-        />
-      </div>
-    </section>
+        <div
+          class="bg-[#141414] border border-pink-500/30 hover:border-pink-500/70 p-6 sm:p-8 rounded-2xl flex flex-col justify-between min-h-[260px] sm:min-h-[300px] transition-all duration-300"
+        >
+          <div>
+            <span class="text-xs font-mono uppercase tracking-wider text-pink-400 bg-pink-500/10 border border-pink-500/20 px-2.5 py-1 rounded-full">
+              Frontend
+            </span>
+            <h3 class="mt-6 text-2xl sm:text-3xl text-white font-sans">
+              Frontend venuma?<br />
+              <span class="text-pink-400">Frontend iruku.</span>
+            </h3>
+          </div>
+          <a
+            href="#showcase"
+            data-skill-filter="frontend"
+            class="skill-link font-mono text-sm text-pink-400 hover:text-pink-300 underline underline-offset-4 decoration-pink-500/50 hover:decoration-pink-400 min-h-[44px] flex items-center"
+          >
+            view projects &rarr;
+          </a>
+        </div>
+        <div
+          class="bg-[#141414] border border-blue-500/30 hover:border-blue-500/70 p-6 sm:p-8 rounded-2xl flex flex-col justify-between min-h-[260px] sm:min-h-[300px] transition-all duration-300"
+        >
+          <div>
+            <span class="text-xs font-mono uppercase tracking-wider text-blue-400 bg-blue-500/10 border border-blue-500/20 px-2.5 py-1 rounded-full">
+              Backend
+            </span>
+            <h3 class="mt-6 text-2xl sm:text-3xl text-white font-sans">
+              Backend venuma?<br />
+              <span class="text-blue-400">Backend iruku.</span>
+            </h3>
+          </div>
+          <a
+            href="#showcase"
+            data-skill-filter="backend"
+            class="skill-link font-mono text-sm text-blue-400 hover:text-blue-300 underline underline-offset-4 decoration-blue-500/50 hover:decoration-blue-400 min-h-[44px] flex items-center"
+          >
+            view projects &rarr;
+          </a>
+        </div>
+        <div
+          class="bg-[#141414] border border-lime-500/30 hover:border-lime-500/70 p-6 sm:p-8 rounded-2xl flex flex-col justify-between min-h-[260px] sm:min-h-[300px] transition-all duration-300"
+        >
+          <div>
+            <span class="text-xs font-mono uppercase tracking-wider text-lime-400 bg-lime-500/10 border border-lime-500/20 px-2.5 py-1 rounded-full">
+              UI / UX
+            </span>
+            <h3 class="mt-6 text-2xl sm:text-3xl text-white font-sans">
+              UI/UX venuma?<br />
+              <span class="text-lime-400">UI/UX iruku.</span>
+            </h3>
+          </div>
+          <a
+            href="#showcase"
+            data-skill-filter="uiux"
+            class="skill-link font-mono text-sm text-lime-400 hover:text-lime-300 underline underline-offset-4 decoration-lime-500/50 hover:decoration-lime-400 min-h-[44px] flex items-center"
+          >
+            view projects &rarr;
+          </a>
+        </div>
+        <div
+          class="bg-[#141414] border border-yellow-500/30 hover:border-yellow-500/70 p-6 sm:p-8 rounded-2xl flex flex-col justify-between min-h-[260px] sm:min-h-[300px] transition-all duration-300"
+        >
+          <div>
+            <span class="text-xs font-mono uppercase tracking-wider text-yellow-400 bg-yellow-500/10 border border-yellow-500/20 px-2.5 py-1 rounded-full">
+              AI / ML
+            </span>
+            <h3 class="mt-6 text-2xl sm:text-3xl text-white font-sans">
+              AI venuma?<br />
+              <span class="text-yellow-400">AI iruku.</span>
+            </h3>
+          </div>
+          <a
+            href="#showcase"
+            data-skill-filter="ai"
+            class="skill-link font-mono text-sm text-yellow-400 hover:text-yellow-300 underline underline-offset-4 decoration-yellow-500/50 hover:decoration-yellow-400 min-h-[44px] flex items-center"
+          >
+            view projects &rarr;
+          </a>
+        </div>
+      </section>
 
-    <!-- Des/Dev banner -->
-    <section
-      id="des-dev"
-      class="w-full min-h-[60vh] sm:min-h-screen bg-pink-500 flex flex-col p-4 sm:p-8 pb-0 relative overflow-hidden"
-    >
-      <div class="flex flex-col mt-auto items-start">
-        <img
-          src="./images/des-img-left-pink.webp"
-          loading="lazy"
-          alt=""
-          aria-hidden="true"
-          class="des-img-left max-w-[75%] sm:max-w-[55%] lg:max-w-[40%] h-auto self-start"
-        />
-        <img
-          src="./images/dev-na-than.webp"
-          loading="lazy"
-          alt=""
-          aria-hidden="true"
-          class="des-img-right max-w-[75%] sm:max-w-[55%] lg:max-w-[40%] h-auto self-end"
-        />
-      </div>
-    </section>
+      <!-- Projects -->
+      <section
+        id="showcase"
+        class="w-full bg-[#0e0e0e] flex flex-col p-4 sm:p-8 scroll-mt-24 sm:scroll-mt-32 max-w-7xl mx-auto"
+      >
+        <h2
+          class="place-self-center text-white text-3xl sm:text-4xl mb-3 mt-16 sm:mt-24"
+        >
+          Projects
+        </h2>
+        <p
+          class="place-self-center font-mono text-white/60 text-xs sm:text-sm mb-8 text-center max-w-md"
+        >
+          every project below answers three questions: what problem it solves,
+          what i gave up to solve it, how it works.
+        </p>
+
+        <!-- Filter Buttons -->
+        <div
+          class="flex flex-wrap justify-center gap-2 sm:gap-3 mb-8 px-2"
+          id="filter-buttons"
+          role="group"
+          aria-label="Filter projects by domain"
+        >
+          <button
+            data-filter="all"
+            aria-pressed="true"
+            class="filter-btn is-active px-4 py-2 rounded-full border-2 border-neutral-700 bg-neutral-800 text-white font-mono text-xs sm:text-sm hover:border-white min-h-[44px] cursor-pointer"
+          >
+            all
+          </button>
+          <button
+            data-filter="frontend"
+            aria-pressed="false"
+            class="filter-btn px-4 py-2 rounded-full border-2 border-pink-500/50 bg-neutral-800 text-pink-400 font-mono text-xs sm:text-sm hover:border-pink-500 hover:bg-pink-500/20 min-h-[44px] cursor-pointer"
+          >
+            frontend
+          </button>
+          <button
+            data-filter="backend"
+            aria-pressed="false"
+            class="filter-btn px-4 py-2 rounded-full border-2 border-blue-500/50 bg-neutral-800 text-blue-400 font-mono text-xs sm:text-sm hover:border-blue-500 hover:bg-blue-500/20 min-h-[44px] cursor-pointer"
+          >
+            backend
+          </button>
+          <button
+            data-filter="uiux"
+            aria-pressed="false"
+            class="filter-btn px-4 py-2 rounded-full border-2 border-lime-500/50 bg-neutral-800 text-lime-400 font-mono text-xs sm:text-sm hover:border-lime-500 hover:bg-lime-500/20 min-h-[44px] cursor-pointer"
+          >
+            ui/ux
+          </button>
+          <button
+            data-filter="ai"
+            aria-pressed="false"
+            class="filter-btn px-4 py-2 rounded-full border-2 border-yellow-500/50 bg-neutral-800 text-yellow-400 font-mono text-xs sm:text-sm hover:border-yellow-500 hover:bg-yellow-500/20 min-h-[44px] cursor-pointer"
+          >
+            ai
+          </button>
+        </div>
+
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 grid-flow-row gap-4"
+          id="projects-grid"
+        >
+          <!-- tamil-tokenizer -->
+          <div
+            class="project-card w-full h-full flex flex-col p-5 sm:p-6 border border-neutral-800 rounded-xl bg-neutral-900/90 gap-5 transition-all duration-300 hover:border-neutral-700"
+            data-categories="ai,backend"
+            data-project="tamil-tokenizer"
+          >
+            <div class="flex items-center gap-3">
+              <div
+                class="w-9 h-9 shrink-0 rounded-lg bg-blue-500/15 border border-blue-500/40 grid place-items-center"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="w-5 h-5 text-blue-400" style="image-rendering:pixelated" aria-hidden="true"><path d="M11 18H9v-4h2v4Zm-4-1H5v-2h2v2Zm12-2v2h-2v-2h2ZM5 15H3v-2h2v2Zm16 0h-2v-2h2v2Zm-8-1h-2v-4h2v4ZM3 13H1v-2h2v2Zm20 0h-2v-2h2v2ZM5 11H3V9h2v2Zm16 0h-2V9h2v2Zm-6-1h-2V6h2v4ZM7 9H5V7h2v2Zm12 0h-2V7h2v2Z"/></svg>
+              </div>
+              <h3 class="text-white text-lg sm:text-xl leading-tight font-sans">
+                tamil tokenizer
+              </h3>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span
+                class="text-xs px-2 py-1 rounded-full bg-yellow-500/20 text-yellow-400 border border-yellow-500/30"
+                >ai</span
+              >
+              <span
+                class="text-xs px-2 py-1 rounded-full bg-blue-500/20 text-blue-400 border border-blue-500/30"
+                >backend</span
+              >
+            </div>
+            <dl class="pt">
+              <div class="pt-row">
+                <dt>problem</dt>
+                <dd>
+                  general-purpose subword vocabularies shatter tamil into far too
+                  many pieces, so tamil corpora cost more tokens and train slower
+                  than english ones.
+                </dd>
+              </div>
+              <div class="pt-row">
+                <dt>tradeoff</dt>
+                <dd>
+                  hand-writing bpe in rust instead of building on sentencepiece or
+                  huggingface tokenizers. that bought the speed and cost me the
+                  ready-made training loop.
+                </dd>
+              </div>
+              <div class="pt-row">
+                <dt>solution</dt>
+                <dd>
+                  247 tamil character clusters as base tokens, aho-corasick
+                  multi-pattern encoding, rayon-parallel bpe training. 11-16x
+                  faster than sentencepiece, 32k vocab on huggingface, 23 tests on
+                  every merge.
+                </dd>
+              </div>
+            </dl>
+            <div
+              class="mt-auto pt-5 border-t border-neutral-800 flex flex-wrap gap-x-5 gap-y-2 items-center"
+            >
+              <a
+                href="https://github.com/barryallen16/tamil-tokenizer"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-2 font-mono text-xs text-white/70 hover:text-white transition-colors min-h-[44px]"
+              >
+                <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+                source
+              </a>
+              <a
+                href="https://huggingface.co/barryallen16/tamil-tokenizer-wiki"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-2 font-mono text-xs text-white/70 hover:text-white transition-colors min-h-[44px]"
+              >
+                <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm-3.5 7.5a1.5 1.5 0 1 1-1.5 1.5 1.5 1.5 0 0 1 1.5-1.5Zm7 0a1.5 1.5 0 1 1-1.5 1.5 1.5 1.5 0 0 1 1.5-1.5Zm-7.4 6.7a.75.75 0 0 1 1.05-.22 4.49 4.49 0 0 0 5.7 0 .75.75 0 1 1 .9 1.2 5.99 5.99 0 0 1-7.65 0 .75.75 0 0 1 0-.98Z"/></svg>
+                weights
+              </a>
+            </div>
+          </div>
+
+          <!-- sivabharani-comments -->
+          <div
+            class="project-card w-full h-full flex flex-col p-5 sm:p-6 border border-neutral-800 rounded-xl bg-neutral-900/90 gap-5 transition-all duration-300 hover:border-neutral-700"
+            data-categories="ai,backend"
+            data-project="sivabharani-comments"
+          >
+            <div class="flex items-center gap-3">
+              <div
+                class="w-9 h-9 shrink-0 rounded-lg bg-yellow-500/15 border border-yellow-500/40 grid place-items-center"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="w-5 h-5 text-yellow-400" style="image-rendering:pixelated" aria-hidden="true"><path d="M16 19H4v-2h12v2ZM4 17H2V7h2v10Zm14-8h2V7h2v10h-2v-2h-2v2h-2V7h2v2Zm-2-2H4V5h12v2Z"/></svg>
+              </div>
+              <h3 class="text-white text-lg sm:text-xl leading-tight font-sans">
+                sivabharani comments
+              </h3>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span
+                class="text-xs px-2 py-1 rounded-full bg-yellow-500/20 text-yellow-400 border border-yellow-500/30"
+                >ai</span
+              >
+              <span
+                class="text-xs px-2 py-1 rounded-full bg-blue-500/20 text-blue-400 border border-blue-500/30"
+                >backend</span
+              >
+            </div>
+            <dl class="pt">
+              <div class="pt-row">
+                <dt>problem</dt>
+                <dd>
+                  the channel answers subscriber questions inside 2,000+ youtube
+                  videos.
+                  nobody could search their own name to find the one video where
+                  he answered them.
+                </dd>
+              </div>
+              <div class="pt-row">
+                <dt>tradeoff</dt>
+                <dd>
+                  an llm pass over every transcript chunk instead of search alone.
+                  that narrows the index and costs a full run over 1.18m chunks,
+                  and youtube's english auto-transcripts were too broken to trust,
+                  so the model had to carry the work.
+                </dd>
+              </div>
+              <div class="pt-row">
+                <dt>solution</dt>
+                <dd>
+                  2,755 videos scraped, 1,185,665 chunks run through local gemma
+                  4-bit inference to keep only the ones naming a person. search a
+                  name, get the video and the timestamp. dataset on huggingface.
+                </dd>
+              </div>
+            </dl>
+            <div
+              class="mt-auto pt-5 border-t border-neutral-800 flex flex-wrap gap-x-5 gap-y-2 items-center"
+            >
+              <a
+                href="https://github.com/barryallen16/sivabharani-comments"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-2 font-mono text-xs text-white/70 hover:text-white transition-colors min-h-[44px]"
+              >
+                <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+                source
+              </a>
+            </div>
+          </div>
+
+          <!-- ats-resume-creation-skill -->
+          <div
+            class="project-card w-full h-full flex flex-col p-5 sm:p-6 border border-neutral-800 rounded-xl bg-neutral-900/90 gap-5 transition-all duration-300 hover:border-neutral-700"
+            data-categories="ai"
+            data-project="ats-skill"
+          >
+            <div class="flex items-center gap-3">
+              <div
+                class="w-9 h-9 shrink-0 rounded-lg bg-yellow-500/15 border border-yellow-500/40 grid place-items-center"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="w-5 h-5 text-yellow-400" style="image-rendering:pixelated" aria-hidden="true"><path d="M18 22H6v-2h12v2ZM6 20H4V4h2v16ZM16 4h-2v4h4V6h2v14h-2V10h-6V4H6V2h10v2Zm0 14H8v-2h8v2Zm0-4H8v-2h8v2Zm-6-4H8V8h2v2Zm8-4h-2V4h2v2Z"/></svg>
+              </div>
+              <h3 class="text-white text-lg sm:text-xl leading-tight font-sans">
+                resume agent skill
+              </h3>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span
+                class="text-xs px-2 py-1 rounded-full bg-yellow-500/20 text-yellow-400 border border-yellow-500/30"
+                >ai</span
+              >
+            </div>
+            <dl class="pt">
+              <div class="pt-row">
+                <dt>problem</dt>
+                <dd>
+                  rewriting the same resume for every job, then fighting word
+                  processors to ship a docx and a pdf that parse cleanly.
+                </dd>
+              </div>
+              <div class="pt-row">
+                <dt>tradeoff</dt>
+                <dd>
+                  generation over hand-editing. formatting stays consistent across
+                  applications, and every resume reads like the same person wrote
+                  it.
+                </dd>
+              </div>
+              <div class="pt-row">
+                <dt>solution</dt>
+                <dd>
+                  an agent skill that reads a job description, writes the tailored
+                  content, exports docx and pdf, and logs the application so
+                  nothing goes out untracked. this site's resume came out of it.
+                </dd>
+              </div>
+            </dl>
+            <div
+              class="mt-auto pt-5 border-t border-neutral-800 flex flex-wrap gap-x-5 gap-y-2 items-center"
+            >
+              <a
+                href="https://github.com/barryallen16/ats-resume-creation-skill"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-2 font-mono text-xs text-white/70 hover:text-white transition-colors min-h-[44px]"
+              >
+                <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+                source
+              </a>
+            </div>
+          </div>
+
+          <!-- VulnChecker-Java -->
+          <div
+            class="project-card w-full h-full flex flex-col p-5 sm:p-6 border border-neutral-800 rounded-xl bg-neutral-900/90 gap-5 transition-all duration-300 hover:border-neutral-700"
+            data-categories="ai,backend"
+            data-project="java-vul"
+          >
+            <div class="flex items-center gap-3">
+              <div
+                class="w-9 h-9 shrink-0 rounded-lg bg-blue-500/15 border border-blue-500/40 grid place-items-center"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="w-5 h-5 text-blue-400" style="image-rendering:pixelated" aria-hidden="true"><path d="M14 22h-4v-2h4v2Zm-4-4v2H8v-2h2Zm6 2h-2v-2h2v2Zm-8-2H6v-2h2v2Zm10 0h-2v-2h2v2ZM6 16H4v-2h2v2Zm14 0h-2v-2h2v2ZM4 14H2V4h2v10Zm18 0h-2V4h2v10ZM20 4H4V2h16v2Z"/></svg>
+              </div>
+              <h3 class="text-white text-lg sm:text-xl leading-tight font-sans">
+                java vulnerability checker
+              </h3>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span
+                class="text-xs px-2 py-1 rounded-full bg-yellow-500/20 text-yellow-400 border border-yellow-500/30"
+                >ai</span
+              >
+              <span
+                class="text-xs px-2 py-1 rounded-full bg-blue-500/20 text-blue-400 border border-blue-500/30"
+                >backend</span
+              >
+            </div>
+            <dl class="pt">
+              <div class="pt-row">
+                <dt>problem</dt>
+                <dd>
+                  static analyzers miss sql injection, xss and insecure
+                  deserialization, and general code models had no idea what a
+                  vulnerable java pattern looks like.
+                </dd>
+              </div>
+              <div class="pt-row">
+                <dt>tradeoff</dt>
+                <dd>
+                  budget on dedup instead of parameters. the 7b beat my 14b run,
+                  80.39% against 78.43% on the same 102 cases, which says the
+                  merged corpora were dirtier than they needed to be.
+                </dd>
+              </div>
+              <div class="pt-row">
+                <dt>solution</dt>
+                <dd>
+                  seven pipeline stages from raw jsonl to conversation-formatted
+                  sft, sha256 dedup on normalized lines, lora fine-tune, then a
+                  fixed 102-case eval any checkpoint runs through one function
+                  call. weights on huggingface.
+                </dd>
+              </div>
+            </dl>
+            <div
+              class="mt-auto pt-5 border-t border-neutral-800 flex flex-wrap gap-x-5 gap-y-2 items-center"
+            >
+              <a
+                href="https://github.com/barryallen16/VulnChecker-Java"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-2 font-mono text-xs text-white/70 hover:text-white transition-colors min-h-[44px]"
+              >
+                <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+                source
+              </a>
+              <a
+                href="https://huggingface.co/barryallen16/Qwen2.5_7B_java_vul_final"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-2 font-mono text-xs text-white/70 hover:text-white transition-colors min-h-[44px]"
+              >
+                <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm-3.5 7.5a1.5 1.5 0 1 1-1.5 1.5 1.5 1.5 0 0 1 1.5-1.5Zm7 0a1.5 1.5 0 1 1-1.5 1.5 1.5 1.5 0 0 1 1.5-1.5Zm-7.4 6.7a.75.75 0 0 1 1.05-.22 4.49 4.49 0 0 0 5.7 0 .75.75 0 1 1 .9 1.2 5.99 5.99 0 0 1-7.65 0 .75.75 0 0 1 0-.98Z"/></svg>
+                weights
+              </a>
+            </div>
+          </div>
+
+          <!-- Kaggle Automation -->
+          <div
+            class="project-card w-full h-full flex flex-col p-5 sm:p-6 border border-neutral-800 rounded-xl bg-neutral-900/90 gap-5 transition-all duration-300 hover:border-neutral-700"
+            data-categories="backend,ai"
+            data-project="kaggle-automation"
+          >
+            <div class="flex items-center gap-3">
+              <div
+                class="w-9 h-9 shrink-0 rounded-lg bg-yellow-500/15 border border-yellow-500/40 grid place-items-center"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-5 h-5 text-yellow-400"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  aria-hidden="true"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                  />
+                </svg>
+              </div>
+              <h3 class="text-white text-lg sm:text-xl leading-tight font-sans">
+                kaggle automation
+              </h3>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span
+                class="text-xs px-2 py-1 rounded-full bg-blue-500/20 text-blue-400 border border-blue-500/30"
+                >backend</span
+              >
+              <span
+                class="text-xs px-2 py-1 rounded-full bg-yellow-500/20 text-yellow-400 border border-yellow-500/30"
+                >ai</span
+              >
+            </div>
+            <dl class="pt">
+              <div class="pt-row">
+                <dt>problem</dt>
+                <dd>
+                  kaggle sessions expire after 12 hours, so a training run that
+                  outlasts one is gone, and watching that by hand means babysitting
+                  a browser tab.
+                </dd>
+              </div>
+              <div class="pt-row">
+                <dt>tradeoff</dt>
+                <dd>
+                  pooling nineteen accounts and sharding one job across them
+                  instead of waiting out a single session. 223 runs' worth of gpu
+                  hours, paid for in credential handling and retry logic.
+                </dd>
+              </div>
+              <div class="pt-row">
+                <dt>solution</dt>
+                <dd>
+                  a dockerized fastapi control plane on ec2 that pools api keys,
+                  shards jobs across accounts, and alerts on the 12-hour cutoff.
+                  github actions runs uv sync, ruff and pytest over 12 test suites.
+                </dd>
+              </div>
+            </dl>
+            <div
+              class="mt-auto pt-5 border-t border-neutral-800 flex flex-wrap gap-x-5 gap-y-2 items-center"
+            >
+              <a
+                href="https://github.com/barryallen16/kaggle-automation"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-2 font-mono text-xs text-white/70 hover:text-white transition-colors min-h-[44px]"
+              >
+                <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+                source
+              </a>
+            </div>
+          </div>
+
+          <!-- FitCheck -->
+          <div
+            class="project-card w-full h-full flex flex-col p-5 sm:p-6 border border-neutral-800 rounded-xl bg-neutral-900/90 gap-5 transition-all duration-300 hover:border-neutral-700"
+            data-categories="frontend,ai,uiux"
+            data-project="fitcheck"
+          >
+            <div class="flex items-center gap-3">
+              <img
+                src="./images/fitcheck-logo-v3.webp"
+                loading="lazy"
+                alt="FitCheck logo"
+                width="36"
+                height="36"
+                class="w-9 h-9 object-contain"
+              />
+              <h3 class="text-white text-lg sm:text-xl leading-tight font-sans">fitcheck</h3>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span
+                class="text-xs px-2 py-1 rounded-full bg-pink-500/20 text-pink-400 border border-pink-500/30"
+                >frontend</span
+              >
+              <span
+                class="text-xs px-2 py-1 rounded-full bg-yellow-500/20 text-yellow-400 border border-yellow-500/30"
+                >ai</span
+              >
+              <span
+                class="text-xs px-2 py-1 rounded-full bg-lime-500/20 text-lime-400 border border-lime-500/30"
+                >ui/ux</span
+              >
+            </div>
+            <dl class="pt">
+              <div class="pt-row">
+                <dt>problem</dt>
+                <dd>
+                  fashionclip runs in the browser but it can't reason about an
+                  outfit, only match an image to a garment. a shopping site needs
+                  the reasoning and can't afford a server-side model doing it.
+                </dd>
+              </div>
+              <div class="pt-row">
+                <dt>tradeoff</dt>
+                <dd>
+                  distilling two teachers into a student that still runs
+                  client-side. the student keeps 91.6% of the teacher's judged
+                  recommendation quality on a 1,000-image bench, generates 39%
+                  more tokens per second on 3.14x less vram, and reasoning that
+                  came free from the 120b teacher now comes from a 2.9k-example
+                  tuning run.
+                </dd>
+              </div>
+              <div class="pt-row">
+                <dt>solution</dt>
+                <dd>
+                  qwen3-vl-8b labeled 106k fashion photos, which became 538k
+                  caption-and-qa pairs for perception tuning, then gpt-oss-120b
+                  wrote 2,923 outfit recommendations with color and silhouette
+                  rationales for reasoning tuning. evaluated two ways: a 1,000-image
+                  bench and a blind human study over 297 ratings. first-author ieee
+                  paper, model and three datasets on huggingface.
+                </dd>
+              </div>
+            </dl>
+            <div
+              class="mt-auto pt-5 border-t border-neutral-800 flex flex-wrap gap-x-5 gap-y-2 items-center"
+            >
+              <a
+                href="https://doi.org/10.1109/TQCEBT67648.2026.11681836"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-2 font-mono text-xs text-lime-400 hover:text-lime-300 transition-colors min-h-[44px]"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  class="w-3.5 h-3.5"
+                  aria-hidden="true"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M12 6.03A9 9 0 003 9.74M15 3.75A9 9 0 0120.25 9M12 18v4m-4-8h8m-8 4h5"
+                  />
+                </svg>
+                paper
+              </a>
+              <a
+                href="./fitcheck-journal-paper.pdf"
+                target="_blank"
+                class="inline-flex items-center gap-2 font-mono text-xs text-white/70 hover:text-white transition-colors min-h-[44px]"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  class="w-3.5 h-3.5"
+                  aria-hidden="true"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M12 3v12m0 0l-4-4m4 4l4-4M4 17v2a2 2 0 002 2h12a2 2 0 002-2v-2"
+                  />
+                </svg>
+                pdf
+              </a>
+              <a
+                href="https://github.com/barryallen16/fitcheck-website"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-2 font-mono text-xs text-white/70 hover:text-white transition-colors min-h-[44px]"
+              >
+                <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+                source
+              </a>
+              <a
+                href="https://huggingface.co/collections/barryallen16/fitcheck"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-2 font-mono text-xs text-white/70 hover:text-white transition-colors min-h-[44px]"
+              >
+                <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm-3.5 7.5a1.5 1.5 0 1 1-1.5 1.5 1.5 1.5 0 0 1 1.5-1.5Zm7 0a1.5 1.5 0 1 1-1.5 1.5 1.5 1.5 0 0 1 1.5-1.5Zm-7.4 6.7a.75.75 0 0 1 1.05-.22 4.49 4.49 0 0 0 5.7 0 .75.75 0 1 1 .9 1.2 5.99 5.99 0 0 1-7.65 0 .75.75 0 0 1 0-.98Z"/></svg>
+                models
+              </a>
+            </div>
+          </div>
+
+          <!-- MoviesMod Scraper -->
+          <div
+            class="project-card w-full h-full flex flex-col p-5 sm:p-6 border border-neutral-800 rounded-xl bg-neutral-900/90 gap-5 transition-all duration-300 hover:border-neutral-700 hidden"
+            data-categories="backend"
+            data-project="moviemod"
+            data-extra="true"
+          >
+            <div class="flex items-center gap-3">
+              <img
+                src="./images/mm.webp"
+                loading="lazy"
+                alt="MoviesMod scraper logo"
+                width="36"
+                height="36"
+                class="w-9 h-9 object-contain"
+              />
+              <h3 class="text-white text-lg sm:text-xl leading-tight font-sans">
+                moviemod scraper
+              </h3>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span
+                class="text-xs px-2 py-1 rounded-full bg-blue-500/20 text-blue-400 border border-blue-500/30"
+                >backend</span
+              >
+            </div>
+            <dl class="pt">
+              <div class="pt-row">
+                <dt>problem</dt>
+                <dd>
+                  a site that rotates its domain and hands out per-access download
+                  tokens, so a scraper works for a week and any link it stores is
+                  dead by evening.
+                </dd>
+              </div>
+              <div class="pt-row">
+                <dt>tradeoff</dt>
+                <dd>
+                  selenium plus a mysql mirror over a plain http fetch. heavier to
+                  run and to maintain, and the stored rows are a snapshot of one
+                  afternoon, not a permanent copy.
+                </dd>
+              </div>
+              <div class="pt-row">
+                <dt>solution</dt>
+                <dd>
+                  resolves the live domain on each run, multiprocess workers with
+                  retry and backoff, mysql dedup so a re-run doesn't duplicate rows,
+                  docker compose, and telegram alerts on failure. a stored link
+                  that 404s gets re-scraped instead of debugged.
+                </dd>
+              </div>
+            </dl>
+            <div
+              class="mt-auto pt-5 border-t border-neutral-800 flex flex-wrap gap-x-5 gap-y-2 items-center"
+            >
+              <a
+                href="https://github.com/barryallen16/moviemod-scraper"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-2 font-mono text-xs text-white/70 hover:text-white transition-colors min-h-[44px]"
+              >
+                <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+                source
+              </a>
+            </div>
+          </div>
+
+          <!-- Memory -->
+          <div
+            class="project-card w-full h-full flex flex-col p-5 sm:p-6 border border-neutral-800 rounded-xl bg-neutral-900/90 gap-5 transition-all duration-300 hover:border-neutral-700 hidden"
+            data-categories="frontend,uiux"
+            data-project="memory"
+            data-extra="true"
+          >
+            <div class="flex items-center gap-3">
+              <img
+                src="./images/memory-logo.svg"
+                loading="lazy"
+                alt="Memory logo"
+                width="36"
+                height="36"
+                class="w-9 h-9 object-contain"
+              />
+              <h3 class="text-white text-lg sm:text-xl leading-tight font-sans">memory</h3>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span
+                class="text-xs px-2 py-1 rounded-full bg-pink-500/20 text-pink-400 border border-pink-500/30"
+                >frontend</span
+              >
+              <span
+                class="text-xs px-2 py-1 rounded-full bg-lime-500/20 text-lime-400 border border-lime-500/30"
+                >ui/ux</span
+              >
+            </div>
+            <dl class="pt">
+              <div class="pt-row">
+                <dt>problem</dt>
+                <dd>
+                  filling the same google forms over and over, field by field, for a
+                  task that took real minutes each time.
+                </dd>
+              </div>
+              <div class="pt-row">
+                <dt>tradeoff</dt>
+                <dd>
+                  a bookmarklet instead of an extension. nothing to install and
+                  nothing to approve, and it breaks the day google changes how forms
+                  set their values.
+                </dd>
+              </div>
+              <div class="pt-row">
+                <dt>solution</dt>
+                <dd>
+                  fuzzy-matches labels to values, then writes through react's own
+                  value setter so controlled inputs register the change. about a
+                  second per form.
+                </dd>
+              </div>
+            </dl>
+            <div
+              class="mt-auto pt-5 border-t border-neutral-800 flex flex-wrap gap-x-5 gap-y-2 items-center"
+            >
+              <a
+                href="https://barryallen16.github.io/Memory/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-2 font-mono text-xs text-white/70 hover:text-white transition-colors min-h-[44px]"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="w-3.5 h-3.5 text-white/70" style="image-rendering:pixelated" aria-hidden="true"><path d="M17 21H5v-2h12v2ZM5 19H3V7h2v12Zm14 0h-2v-6h2v6Zm-8-6v2H9v-2h2Zm2 0h-2v-2h2v2Zm2-2h-2V9h2v2Zm6 0h-2V7h-2V5h-4V3h8v8Zm-4-2h-2V7h2v2Zm-6-2H5V5h6v2Z"/></svg>
+                landing page
+              </a>
+            </div>
+          </div>
+
+          <!-- unshortenBuddy -->
+          <div
+            class="project-card w-full h-full flex flex-col p-5 sm:p-6 border border-neutral-800 rounded-xl bg-neutral-900/90 gap-5 transition-all duration-300 hover:border-neutral-700 hidden"
+            data-categories="backend"
+            data-project="unshorten"
+            data-extra="true"
+          >
+            <div class="flex items-center gap-3">
+              <img
+                src="./images/ub.webp"
+                loading="lazy"
+                alt="unshortenBuddy logo"
+                width="36"
+                height="36"
+                class="w-9 h-9 object-contain"
+              />
+              <h3 class="text-white text-lg sm:text-xl leading-tight font-sans">
+                unshorten buddy
+              </h3>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span
+                class="text-xs px-2 py-1 rounded-full bg-blue-500/20 text-blue-400 border border-blue-500/30"
+                >backend</span
+              >
+            </div>
+            <dl class="pt">
+              <div class="pt-row">
+                <dt>problem</dt>
+                <dd>
+                  short links hide the destination behind ad walls and timers, so
+                  clicking one means sitting through a page of ads first.
+                </dd>
+              </div>
+              <div class="pt-row">
+                <dt>tradeoff</dt>
+                <dd>
+                  headless chrome instead of a plain http request. it follows the
+                  ads and timers that a request library can't, at the cost of a
+                  browser process per link.
+                </dd>
+              </div>
+              <div class="pt-row">
+                <dt>solution</dt>
+                <dd>
+                  a telegram bot that walks the redirect chain in a real browser,
+                  caches every resolved link in postgres, and gates access behind
+                  admin approval so the instance stays private.
+                </dd>
+              </div>
+            </dl>
+            <div
+              class="mt-auto pt-5 border-t border-neutral-800 flex flex-wrap gap-x-5 gap-y-2 items-center"
+            >
+              <a
+                href="https://github.com/barryallen16/unshortenBuddy"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-2 font-mono text-xs text-white/70 hover:text-white transition-colors min-h-[44px]"
+              >
+                <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+                source
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Show more -->
+        <button
+          id="show-more-projects"
+          aria-expanded="false"
+          aria-controls="projects-grid"
+          class="place-self-center mt-10 px-5 py-2.5 rounded-full border-2 border-lime-500/60 bg-neutral-900 text-lime-400 font-mono text-xs sm:text-sm transition-all duration-300 hover:border-lime-400 hover:bg-lime-500/15 min-h-[44px] cursor-pointer"
+        >
+          show more (3)
+        </button>
+
+        <!-- No results message -->
+        <div id="no-results" class="hidden text-center py-16">
+          <p class="text-white/60 font-mono text-xl">
+            no projects found in this category... yet!
+          </p>
+        </div>
+      </section>
+
+      <!-- Experience -->
+      <section
+        id="experience"
+        class="w-full bg-[#0e0e0e] flex flex-col items-center px-4 sm:px-8 py-16 sm:py-24"
+      >
+        <h2 class="text-white text-3xl sm:text-4xl mb-10 text-center">
+          where i've
+          <span class="underline decoration-lime-500 underline-offset-4"
+            >been</span
+          >
+        </h2>
+        <div class="w-full max-w-3xl flex flex-col gap-4">
+          <div
+            class="p-5 sm:p-8 border border-neutral-800 rounded-xl bg-neutral-900/90"
+          >
+            <div class="flex flex-wrap justify-between items-baseline gap-2">
+              <h3 class="text-white text-lg sm:text-xl font-sans">ai research intern</h3>
+              <span class="font-mono text-white/60 text-xs sm:text-sm"
+                >07/2025 - 10/2025</span
+              >
+            </div>
+            <p class="font-mono text-white/70 text-xs sm:text-sm mt-1">
+              blubridge technologies · chennai
+            </p>
+            <ul
+              class="font-mono text-white/80 text-sm sm:text-base mt-4 flex flex-col gap-2 list-disc list-inside"
+            >
+              <li>
+                built operator-fusion passes in mlir, cutting kernel launch
+                overhead ~20%.
+              </li>
+              <li>
+                lowered dialect ops to llvm ir with shape inference for dynamic
+                tensors.
+              </li>
+              <li>hardened passes with 40+ lit tests wired into ci.</li>
+            </ul>
+          </div>
+          <div
+            class="p-5 sm:p-8 border border-neutral-800 rounded-xl bg-neutral-900/90"
+          >
+            <div class="flex flex-wrap justify-between items-baseline gap-2">
+              <h3 class="text-white text-lg sm:text-xl font-sans">
+                b.tech, artificial intelligence and data science
+              </h3>
+              <span class="font-mono text-white/60 text-xs sm:text-sm"
+                >2026</span
+              >
+            </div>
+            <p class="font-mono text-white/70 text-xs sm:text-sm mt-1">
+              dr. m.g.r. educational and research institute · chennai · 8.0/10
+            </p>
+          </div>
+          <div
+            class="p-5 sm:p-8 border border-neutral-800 rounded-xl bg-neutral-900/90"
+          >
+            <div class="flex flex-wrap justify-between items-baseline gap-2">
+              <h3 class="text-white text-lg sm:text-xl font-sans">
+                first author, ieee tqcebt 2026
+              </h3>
+              <span class="font-mono text-white/60 text-xs sm:text-sm"
+                >2026</span
+              >
+            </div>
+            <p class="font-mono text-white/70 text-xs sm:text-sm mt-1 leading-relaxed">
+              "FitCheck: A Multi-Modular AI Framework for Cross-Cultural Fashion
+              Recommendation via Black-Box Data Distillation" · pune, india
+            </p>
+            <p class="font-mono text-white/70 text-xs sm:text-sm mt-4 flex flex-wrap items-center gap-x-4 gap-y-2">
+              <a
+                href="./fitcheck-journal-paper.pdf"
+                target="_blank"
+                class="text-lime-400 hover:text-lime-300 transition-colors min-h-[44px] flex items-center"
+                >read the paper (pdf)</a
+              >
+              <span class="text-white/20">·</span>
+              <a
+                href="https://doi.org/10.1109/TQCEBT67648.2026.11681836"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-white/70 hover:text-white transition-colors min-h-[44px] flex items-center"
+                >doi 10.1109/tqcebt67648.2026.11681836</a
+              >
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- GitHub stat cards -->
+      <section
+        id="contributions"
+        class="w-full bg-[#0e0e0e] flex flex-col items-center px-4 sm:px-8 py-16 sm:py-24"
+      >
+        <h2 class="text-white text-3xl sm:text-4xl mb-3 text-center">
+          where i
+          <span class="underline decoration-lime-500 underline-offset-4"
+            >commit</span
+          >
+        </h2>
+        <p class="font-mono text-white/60 text-xs sm:text-sm mb-8 text-center max-w-md">
+          stats, languages and streak - pixel cards redrawn straight from the
+          github api every day.
+        </p>
+
+        <div
+          id="stat-cards"
+          class="w-full max-w-4xl grid grid-cols-1 sm:grid-cols-2 gap-4"
+        >
+          <img
+            src="https://raw.githubusercontent.com/barryallen16/barryallen16/main/assets/stats-dark.svg"
+            alt="GitHub stats for barryallen16: stars earned, commits this year, pull requests, issues and repositories contributed to"
+            width="430"
+            height="323"
+            loading="lazy"
+            decoding="async"
+            class="block w-full h-auto border border-neutral-800 rounded-xl transition-all duration-300 hover:border-neutral-700 bg-neutral-900"
+          />
+          <img
+            src="https://raw.githubusercontent.com/barryallen16/barryallen16/main/assets/top-langs-dark.svg"
+            alt="Most used languages on GitHub for barryallen16, listed with percentages"
+            width="430"
+            height="323"
+            loading="lazy"
+            decoding="async"
+            class="block w-full h-auto border border-neutral-800 rounded-xl transition-all duration-300 hover:border-neutral-700 bg-neutral-900"
+          />
+          <img
+            src="https://raw.githubusercontent.com/barryallen16/barryallen16/main/assets/streak-dark.svg"
+            alt="Contribution streak for barryallen16: total contributions, current streak and longest streak"
+            width="860"
+            height="411"
+            loading="lazy"
+            decoding="async"
+            class="col-span-full block w-full h-auto border border-neutral-800 rounded-xl transition-all duration-300 hover:border-neutral-700 bg-neutral-900"
+          />
+        </div>
+      </section>
+
+      <!-- Des/Dev banner -->
+      <section
+        id="des-dev"
+        class="w-full min-h-[60vh] sm:min-h-screen bg-pink-500 flex flex-col px-4 sm:px-12 lg:px-24 pt-4 sm:pt-8 pb-0 sm:pb-0 relative overflow-hidden"
+      >
+        <h2 class="sr-only">Design and Development Craft</h2>
+        <div class="flex flex-col mt-auto items-start w-full">
+          <img
+            src="./images/des-img-left-pink.webp"
+            alt="AI Engineer um nanthan"
+            width="821"
+            height="369"
+            class="des-img-left max-w-[75%] sm:max-w-[55%] lg:max-w-[42%] h-auto self-start block"
+          />
+          <img
+            src="./images/dev-na-than.webp"
+            alt="Backend Dev um nanthan"
+            width="759"
+            height="348"
+            class="des-img-right max-w-[75%] sm:max-w-[55%] lg:max-w-[42%] h-auto self-end block"
+          />
+        </div>
+      </section>
+    </main>
 
     <!-- Footer -->
     <footer
-      class="w-full bg-neutral-900 border-t border-neutral-800 py-8 px-4 sm:px-8"
+      class="w-full bg-neutral-950 border-t border-neutral-800/80 py-8 px-4 sm:px-8"
     >
       <div
-        class="max-w-6xl mx-auto flex justify-center items-center gap-4 sm:gap-6"
+        class="max-w-6xl mx-auto flex flex-wrap justify-center items-center gap-4 sm:gap-6"
       >
         <a
           href="./resume/"
           target="_blank"
-          class="text-white/40 hover:text-white transition-colors font-mono text-xs sm:text-sm"
+          class="text-white/70 hover:text-white transition-colors font-mono text-xs sm:text-sm min-h-[44px] flex items-center"
           >resume</a
         >
-        <span class="text-white/20">·</span>
+        <span class="text-white/30" aria-hidden="true">·</span>
         <a
           href="mailto:rjayadithya11@gmail.com"
-          class="text-white/40 hover:text-white transition-colors font-mono text-xs sm:text-sm"
+          class="text-white/70 hover:text-white transition-colors font-mono text-xs sm:text-sm min-h-[44px] flex items-center"
           >email</a
         >
-        <span class="text-white/20">·</span>
+        <span class="text-white/30" aria-hidden="true">·</span>
         <a
           href="https://www.linkedin.com/in/jayadithya-r/"
           target="_blank"
-          class="text-white/40 hover:text-white transition-colors font-mono text-xs sm:text-sm"
+          rel="noopener noreferrer"
+          class="text-white/70 hover:text-white transition-colors font-mono text-xs sm:text-sm min-h-[44px] flex items-center"
           >linkedin</a
         >
-        <span class="text-white/20">·</span>
+        <span class="text-white/30" aria-hidden="true">·</span>
         <a
           href="https://github.com/barryallen16"
           target="_blank"
-          class="text-white/40 hover:text-white transition-colors font-mono text-xs sm:text-sm"
+          rel="noopener noreferrer"
+          class="text-white/70 hover:text-white transition-colors font-mono text-xs sm:text-sm min-h-[44px] flex items-center"
           >github</a
         >
-        <span class="text-white/20">·</span>
+        <span class="text-white/30" aria-hidden="true">·</span>
         <a
           href="./llms.txt"
           id="agent-view-link"
-          class="text-white/40 hover:text-white transition-colors font-mono text-xs sm:text-sm"
+          class="text-white/70 hover:text-white transition-colors font-mono text-xs sm:text-sm min-h-[44px] flex items-center"
           >agents</a
         >
       </div>
