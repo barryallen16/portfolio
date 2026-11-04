@@ -44,31 +44,31 @@ document.addEventListener("DOMContentLoaded", () => {
   // Des-Dev Image Animations (slide in from opposite sides)
   // ========================================
 
-  gsap.set(".des-img-left", { x: () => -window.innerWidth * 0.6 });
-  gsap.set(".des-img-right", { x: () => window.innerWidth * 0.6 });
+  gsap.set(".des-img-left", { xPercent: -130 });
+  gsap.set(".des-img-right", { xPercent: 130 });
 
   const desTl = gsap.timeline({
     scrollTrigger: {
-      trigger: "#des-dev",
-      start: "top 75%",
+      trigger: "#des-dev-content",
+      start: "top 85%",
       toggleActions: "play none none reverse",
     },
   });
 
   desTl
     .to(".des-img-left", {
-      x: 0,
-      duration: 1,
+      xPercent: 0,
+      duration: 0.9,
       ease: "power3.out",
     })
     .to(
       ".des-img-right",
       {
-        x: 0,
-        duration: 1,
+        xPercent: 0,
+        duration: 0.9,
         ease: "power3.out",
       },
-      "-=0.7"
+      "-=0.6"
     );
 
   // ========================================
@@ -222,6 +222,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Recalculate scroll positions once everything has loaded
   window.addEventListener("load", () => ScrollTrigger.refresh());
+  document.querySelectorAll("img").forEach((img) => {
+    if (!img.complete) {
+      img.addEventListener("load", () => ScrollTrigger.refresh(), { once: true });
+    }
+  });
 
   setupFiltering();
   setupAgentView();
