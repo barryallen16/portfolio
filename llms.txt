@@ -1,57 +1,85 @@
 # Jayadithya R
 
-> Portfolio of Jayadithya R, an AI/ML engineer in Chennai, India. He builds AI systems bottom-up: tokenizers, data pipelines, open-model inference, products, and human eval.
+> Portfolio of Jayadithya R, an AI/ML systems engineer in Chennai, India.
+> He builds production AI systems bottom-up: custom BPE tokenizers in Rust, MLIR compiler optimization passes, local SLM inference under 15ms, and verifiable RAG pipelines.
 
 Live site: https://jayadithya.is-a.dev
-Last updated: 2026-10-19
+Last updated: 2026-11-06
 
 ## In short
 
-- Who is Jayadithya R? An AI/ML engineer in Chennai, India working on LLM systems.
-- What does he build? Tamil tokenizers, Qwen fine-tunes for vuln detection, data pipelines, and browser AI apps.
-- How to contact him? rjayadithya11@gmail.com or https://www.linkedin.com/in/jayadithya-r/
+- Who is Jayadithya R?
+An AI/ML systems engineer in Chennai, India working on LLM systems, compiler passes, and local inference.
+- What does he build?
+Rust BPE tokenizers, hybrid SSM exploitability triage engines, Dockerized batch schedulers, and edge VLM recommenders.
+- How to contact him?
+rjayadithya11@gmail.com or https://www.linkedin.com/in/jayadithya-r/
 
 ## Contact
 
 - Email: rjayadithya11@gmail.com
+- Phone: +91 63696 05616
 - GitHub: https://github.com/barryallen16
 - LinkedIn: https://www.linkedin.com/in/jayadithya-r/
-- Resume (PDF): https://jayadithya.is-a.dev/resume/Jayadithya_R_Master_Resume.pdf
+- Hugging Face: https://huggingface.co/barryallen16
+- Resume (PDF): https://jayadithya.is-a.dev/resume/Jayadithya_R_Resume.pdf
 
 ## Projects
 
-- tamil-tokenizer: BPE tokenizer for Tamil written in Rust. It runs 11-16x faster than SentencePiece, has a 32K vocab on Hugging Face, and 23 tests. https://github.com/barryallen16/tamil-tokenizer
-- VulnChecker-Java: LoRA fine-tune of Qwen2.5-Coder for Java vulnerability detection. The 7B model scored 80.39% on a 102-case eval, above the 14B base. https://github.com/barryallen16/VulnChecker-Java
-- sivabharani-comments: pipeline over 2,755 Tamil videos. It ran 1,185,665 transcript chunks through local Gemma 4-bit inference and published the dataset on Hugging Face. https://github.com/barryallen16/sivabharani-comments
-- kaggle-automation: FastAPI control plane that pools Kaggle accounts, shards GPU jobs across them, and watches 12-hour sessions with Telegram alerts. https://github.com/barryallen16/kaggle-automation
-- fitcheck-website: outfit recommender distilled down to a 2B student that runs client-side. Qwen3-VL-8B labeled 106K IndoFashion images into 538K caption-and-QA pairs for perception tuning; gpt-oss-120b then wrote 2,923 outfit recommendations with color and silhouette rationales for reasoning tuning. The student keeps 91.6% of the teacher's judged recommendation quality, generates 39% more tokens per second, and uses 3.14x less VRAM. First author, IEEE TQCEBT 2026. Code: https://github.com/barryallen16/fitcheck-website · Model and datasets: https://huggingface.co/collections/barryallen16/fitcheck
-- ats-resume-creation-skill: agent skill that writes ATS-friendly resumes as docx and PDF, with an application tracker. The resume on this site came out of it. https://github.com/barryallen16/ats-resume-creation-skill
-- moviemod-scraper: distributed Selenium scraper with domain rotation, multiprocess workers, MySQL dedup, and Telegram alerts. https://github.com/barryallen16/moviemod-scraper
-- Memory: bookmarklet that fuzzy-matches Google Forms fields and autofills them. https://barryallen16.github.io/Memory/
-- unshortenBuddy: Telegram bot that resolves ad-walled short links with headless Chrome and caches results in Postgres. https://github.com/barryallen16/unshortenBuddy
+- tamil-tokenizer: Rust BPE tokenizer for Tamil with Aho-Corasick encoder and 1,135-token Tamil-aware base vocabulary.
+Outperforms mBERT compression by 36.9% on Tamil wiki with 100% decode fidelity assertions.
+Models published on Hugging Face.
+https://github.com/barryallen16/tamil-tokenizer
+
+- triagemate: Local SAST alert triage engine that ranks Semgrep findings by exploitability in 12-14 ms on Nvidia T4 using Liquid AI d1-3B hybrid SSM.
+Contrastive LoRA on 416 real pre/post-fix diffs reaches 0.6594 within-rule AUC.
+Model weights and benchmark dataset published on Hugging Face.
+https://github.com/barryallen16/triagemate
+
+- kaggle-automation: Dockerized FastAPI control plane sharding sweeps across Kaggle GPU/TPU kernels with 12-hour session boundary tracking and Telegram alerts.
+Eliminated quota exhaustion across 220+ production runs.
+Benchmarked speculative decoding on dual T4s with a 0.5567 draft acceptance rate.
+https://github.com/barryallen16/kaggle-automation
+
+- fitcheck: Offline-first AI wardrobe assistant and outfit recommendation app in React Native and Expo with local SQLite storage.
+Distilled an 8B vision-language teacher into a 2B student using LoRA across 538K caption-QA pairs, saving 3.1x VRAM at 92% quality.
+Validated in a blind human study (297 ratings, r=0.303, p<0.05) and published as first author in IEEE TQCEBT 2026.
+https://barryallen16.github.io/fitcheck-website
+
+- sivabharani-comments: High-throughput extraction pipeline and instant search indexing name mentions across 1,400+ Tamil tech videos (1.18M chunks).
+27-key worker pool with dynamic rate-limit header parsing, 65s windowing, and Meilisearch sub-second search.
+https://barryallen16.github.io/sivabharani-comments
+
+- txt: Data-free Android payment and transfer app transmitting photos, QR codes, GPS locations, and UPI requests over standard SMS.
+Chunked base36 protocol with CRC32 verification and native Kotlin ContentObserver module for sub-100ms SMS arrival detection.
+https://github.com/barryallen16/txt
+
+- resume-builder-skill: Autonomous agent skill generating tailored ATS-friendly resumes in docx and headless LibreOffice PDF.
+Features deterministic 1-page layout validation with zero vision tokens, TOON compact tabular encoding (saving 25-65% tokens), and Grey Matter tracker integration.
+https://github.com/barryallen16/resume-builder-skill
+
+- all-is-well: Voice journaling app pairing local faster-whisper speech transcription with a deterministic negation-aware safety engine that surfaces Indian emergency helplines.
+Evaluated against 1,170 CSSR-S Reddit benchmark posts.
+https://github.com/barryallen16/all-is-well
+
+- hr-rag-agent: Local-first HR assistant answering policy questions over ChromaDB embeddings and booking leave in SQLite via typed JSON schemas.
+Scored 9/9 on tool selection and answer matching in an automated 9-case eval harness.
+https://github.com/barryallen16/hr-rag-agent
 
 ## Experience
 
-- AI Research Intern, Blubridge Technologies, Chennai, 07/2025 - 10/2025. Built operator-fusion passes in MLIR that cut kernel launch overhead around 20%. Lowered dialect ops to LLVM IR with shape inference for dynamic tensors. Added 40+ lit tests wired into CI.
+- AI Research Intern, Blubridge Technologies, Chennai, 07/2025 - 10/2025.
+Implemented operator-fusion passes in MLIR for custom tensor dialect, cutting kernel launch overhead by ~20%.
+Lowered dialect operations down to LLVM IR with shape inference and dynamic bufferization.
+Added 40+ lit tests wired into CI.
 
 ## Publications
 
-- First author, IEEE TQCEBT 2026: "FitCheck: A Multi-Modular AI Framework for Cross-Cultural Fashion Recommendation via Black-Box Data Distillation". Dr. M.G.R. Educational and Research Institute, Chennai. DOI 10.1109/TQCEBT67648.2026.11681836. Paper PDF: https://jayadithya.is-a.dev/fitcheck-journal-paper.pdf
+- First author, IEEE TQCEBT 2026: "FitCheck: A Multi-Modular AI Framework for Cross-Cultural Fashion Recommendation via Black-Box Data Distillation", Pune, India.
+DOI 10.1109/TQCEBT67648.2026.11681836.
+Paper PDF: https://jayadithya.is-a.dev/fitcheck-journal-paper.pdf
 
 ## Education
 
-- B.Tech, Artificial Intelligence and Data Science, Dr. M.G.R. Educational and Research Institute, Chennai, 2026. GPA 8.0/10.
-
-## Projects in brief
-
-Each project below is described by the problem it solves, the tradeoff made, and how it was built.
-
-- tamil-tokenizer - Problem: general-purpose subword vocabularies shatter Tamil into too many pieces, so Tamil corpora cost more tokens and train slower than English ones. Tradeoff: hand-writing BPE in Rust instead of building on SentencePiece or Hugging Face tokenizers. Solution: 247 Tamil character clusters as base tokens, Aho-Corasick encoding, rayon-parallel BPE training. 11-16x faster than SentencePiece, 32K vocab, 23 tests.
-- VulnChecker-Java - Problem: static analyzers miss SQL injection, XSS, and insecure deserialization in Java. Tradeoff: budget on dedup rather than parameters; the 7B beat the 14B (80.39% vs 78.43% on 102 cases). Solution: seven pipeline stages to conversation-formatted SFT, SHA-256 dedup, LoRA fine-tune, fixed 102-case eval harness.
-- sivabharani-comments - Problem: a Tamil YouTuber answers subscriber questions across 2,000+ videos and nobody could find the one answering theirs. Tradeoff: an LLM pass over all 1.18M transcript chunks instead of plain search. Solution: 2,755 videos scraped, chunks filtered through local Gemma 4-bit to keep name mentions. Dataset on Hugging Face.
-- kaggle-automation - Problem: Kaggle sessions expire after 12 hours, killing long training runs. Tradeoff: sharding one job across several accounts, at the cost of coordination and retry handling. Solution: FastAPI control plane, session monitoring, Telegram alerts.
-- fitcheck-website - Problem: recommenders trained on Western wardrobes fail on Indian ethnic wear, and the models that reason well about outfits are too large to run where a shopper checks them. Tradeoff: black-box distillation from two teachers, Qwen3-VL-8B for perception and gpt-oss-120b for reasoning, into a single Qwen3-VL-2B student. The student keeps 91.6% of the teacher's judged recommendation quality. Solution: 106K labeled images became 538K caption-and-QA pairs, then 2,923 recommendation records carrying color and silhouette rationales. Evaluated on a 1,000-image automated bench and a blind human study of 297 ratings.
-- ats-resume-creation-skill - Problem: rewriting the same resume per job and hand-building docx/pdf output. Tradeoff: generation over hand-editing, at the cost of a consistent voice across applications. Solution: agent skill reads a job description, writes tailored content, exports docx and pdf, tracks applications.
-- moviemod-scraper - Problem: a site that rotates domains and expires download links within hours. Tradeoff: Selenium plus a MySQL mirror over plain HTTP. Solution: live-domain resolution, multiprocess workers, MySQL dedup, Telegram alerts.
-- Memory - Problem: filling the same Google Forms repeatedly by hand. Tradeoff: a bookmarklet over a browser extension, which breaks when Google changes form internals. Solution: fuzzy label matching plus writes through React's value setter.
-- unshortenBuddy - Problem: short links hide destinations behind ad walls and timers. Tradeoff: headless Chrome per link instead of a plain HTTP request. Solution: Telegram bot walks the redirect chain, caches results in Postgres, admin-gated access.
+- B.Tech, Artificial Intelligence and Data Science, Dr. M.G.R. Educational and Research Institute, Chennai, 2026.
+GPA 8.0 / 10.0.

@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (typeof window.gsap === "undefined" || typeof window.ScrollTrigger === "undefined") {
     setupFiltering();
     setupAgentView();
+    setupCopyEmail();
     return;
   }
 
@@ -41,35 +42,38 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // ========================================
-  // Des-Dev Image Animations (slide in from opposite sides)
+  // Des-Dev Image Animations (slide in from opposite sides if present)
   // ========================================
 
-  gsap.set(".des-img-left", { xPercent: -130 });
-  gsap.set(".des-img-right", { xPercent: 130 });
+  const desContent = document.querySelector("#des-dev-content");
+  if (desContent && document.querySelector(".des-img-left")) {
+    gsap.set(".des-img-left", { xPercent: -130 });
+    gsap.set(".des-img-right", { xPercent: 130 });
 
-  const desTl = gsap.timeline({
-    scrollTrigger: {
-      trigger: "#des-dev-content",
-      start: "top 85%",
-      toggleActions: "play none none reverse",
-    },
-  });
+    const desTl = gsap.timeline({
+      scrollTrigger: {
+        trigger: "#des-dev-content",
+        start: "top 85%",
+        toggleActions: "play none none reverse",
+      },
+    });
 
-  desTl
-    .to(".des-img-left", {
-      xPercent: 0,
-      duration: 0.9,
-      ease: "power3.out",
-    })
-    .to(
-      ".des-img-right",
-      {
+    desTl
+      .to(".des-img-left", {
         xPercent: 0,
         duration: 0.9,
         ease: "power3.out",
-      },
-      "-=0.6"
-    );
+      })
+      .to(
+        ".des-img-right",
+        {
+          xPercent: 0,
+          duration: 0.9,
+          ease: "power3.out",
+        },
+        "-=0.6"
+      );
+  }
 
   // ========================================
   // T-Shaped Engineer - scroll-scrubbed pen draw
@@ -209,16 +213,18 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  projectCards.forEach((card) => {
-    card.addEventListener("mouseenter", () => {
-      if (card.style.display !== "none") {
-        gsap.to(card, { y: -4, duration: 0.25, ease: "power2.out" });
-      }
+  if (window.matchMedia("(hover: hover)").matches) {
+    projectCards.forEach((card) => {
+      card.addEventListener("mouseenter", () => {
+        if (card.style.display !== "none") {
+          gsap.to(card, { y: -4, duration: 0.25, ease: "power2.out" });
+        }
+      });
+      card.addEventListener("mouseleave", () => {
+        gsap.to(card, { y: 0, duration: 0.25, ease: "power2.out" });
+      });
     });
-    card.addEventListener("mouseleave", () => {
-      gsap.to(card, { y: 0, duration: 0.25, ease: "power2.out" });
-    });
-  });
+  }
 
   // Recalculate scroll positions once everything has loaded
   window.addEventListener("load", () => ScrollTrigger.refresh());
@@ -230,6 +236,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   setupFiltering();
   setupAgentView();
+  setupCopyEmail();
 
   // ========================================
   // Project Filtering System
@@ -441,6 +448,45 @@ document.addEventListener("DOMContentLoaded", () => {
       document.body.appendChild(overlay);
       document.body.style.overflow = "hidden";
       back.focus();
+    });
+  }
+
+  // ========================================
+  // 1-Click Copy Email interaction
+  // ========================================
+
+  function setupCopyEmail() {
+    const copyBtn = document.getElementById("copy-email-btn");
+    if (!copyBtn) return;
+
+    copyBtn.addEventListener("click", async () => {
+      const email = "rjayadithya11@gmail.com";
+      try {
+        if (navigator.clipboard && window.isSecureContext) {
+          await navigator.clipboard.writeText(email);
+        } else {
+          const textArea = document.createElement("textarea");
+          textArea.value = email;
+          textArea.style.position = "fixed";
+          textArea.style.opacity = "0";
+          document.body.appendChild(textArea);
+          textArea.focus();
+          textArea.select();
+          document.execCommand("copy");
+          textArea.remove();
+        }
+
+        const originalHtml = copyBtn.innerHTML;
+        copyBtn.innerHTML = `<span class="text-lime-400 font-mono text-[11px] font-semibold">copied</span>`;
+        copyBtn.setAttribute("aria-label", "email copied to clipboard");
+
+        setTimeout(() => {
+          copyBtn.innerHTML = originalHtml;
+          copyBtn.setAttribute("aria-label", "copy email address");
+        }, 2200);
+      } catch (err) {
+        console.error("Failed to copy:", err);
+      }
     });
   }
 });
