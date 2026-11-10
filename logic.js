@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // If gsap failed to load, keep the site usable with static content
   if (typeof window.gsap === "undefined" || typeof window.ScrollTrigger === "undefined") {
     setupFiltering();
+    setupProofAnchors();
     setupAgentView();
     setupCopyEmail();
     return;
@@ -235,6 +236,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   setupFiltering();
+  setupProofAnchors();
   setupAgentView();
   setupCopyEmail();
 
@@ -328,11 +330,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function updateActiveButton(category) {
       const colors = {
-        all: { bg: "rgb(38, 38, 38)", border: "white", text: "white" },
-        frontend: { bg: "rgba(236, 72, 153, 0.3)", border: "rgb(236, 72, 153)", text: "#f472b6" },
-        backend: { bg: "rgba(59, 130, 246, 0.3)", border: "rgb(59, 130, 246)", text: "#60a5fa" },
-        uiux: { bg: "rgba(132, 204, 22, 0.3)", border: "rgb(132, 204, 22)", text: "#a3e635" },
-        ai: { bg: "rgba(234, 179, 8, 0.3)", border: "rgb(234, 179, 8)", text: "#facc15" },
+        all: { bg: "#09318D", border: "#fd91cc", text: "#ffffff" },
+        frontend: { bg: "rgba(253, 145, 204, 0.25)", border: "#fd91cc", text: "#fd91cc" },
+        backend: { bg: "rgba(9, 49, 141, 0.5)", border: "#4978e8", text: "#bfdbfe" },
+        uiux: { bg: "rgba(253, 145, 204, 0.2)", border: "#fd91cc", text: "#ffffff" },
+        ai: { bg: "rgba(9, 49, 141, 0.65)", border: "#fd91cc", text: "#fd91cc" },
       };
 
       filterButtons.forEach((btn) => {
@@ -376,6 +378,61 @@ document.addEventListener("DOMContentLoaded", () => {
 
     updateActiveButton("all");
     syncShowMore();
+
+    window.showProjectCard = function (card) {
+      if (!card) return;
+      const categories = card.dataset.categories ? card.dataset.categories.split(",") : [];
+      if (activeCategory !== "all" && !categories.includes(activeCategory)) {
+        filterProjects("all");
+      }
+      if (card.dataset.extra && !expanded) {
+        expanded = true;
+        filterProjects(activeCategory);
+      }
+      card.style.display = "flex";
+      card.style.opacity = "1";
+    };
+  }
+
+  // ========================================
+  // Proof Anchor Cards Navigation
+  // ========================================
+
+  function setupProofAnchors() {
+    const proofCards = document.querySelectorAll(".proof-anchor-card");
+    proofCards.forEach((link) => {
+      link.addEventListener("click", (e) => {
+        e.preventDefault();
+        const targetSlug = link.dataset.targetProject;
+        if (!targetSlug) return;
+        const targetCard = document.querySelector(`[data-project="${targetSlug}"]`);
+        if (!targetCard) return;
+
+        if (typeof window.showProjectCard === "function") {
+          window.showProjectCard(targetCard);
+        }
+
+        const navOffset = 90;
+        const cardRect = targetCard.getBoundingClientRect();
+        const targetY = window.pageYOffset + cardRect.top - navOffset;
+
+        window.scrollTo({
+          top: Math.max(0, targetY),
+          behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth",
+        });
+
+        targetCard.classList.remove("target-highlight-pulse");
+        void targetCard.offsetWidth;
+        targetCard.classList.add("target-highlight-pulse");
+
+        setTimeout(() => {
+          targetCard.classList.remove("target-highlight-pulse");
+        }, 2600);
+
+        targetCard.setAttribute("tabindex", "-1");
+        targetCard.focus({ preventScroll: true });
+      });
+    });
   }
 
   // ========================================
@@ -403,7 +460,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const y = window.scrollY;
       const overlay = document.createElement("div");
       overlay.className =
-        "fixed inset-0 overflow-y-auto bg-[#0e0e0e]/95 backdrop-blur-md px-4 sm:px-8 py-8 z-50 flex flex-col items-center";
+        "fixed inset-0 overflow-y-auto bg-[#040817]/95 backdrop-blur-md px-4 sm:px-8 py-8 z-50 flex flex-col items-center";
       overlay.setAttribute("role", "dialog");
       overlay.setAttribute("aria-modal", "true");
       overlay.setAttribute("aria-label", "LLM Agent Instructions");
@@ -413,7 +470,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const back = document.createElement("button");
       back.className =
-        "font-mono text-xs sm:text-sm text-lime-400 hover:underline transition-colors mb-6 flex items-center gap-1 cursor-pointer min-h-[44px] min-w-[44px]";
+        "font-mono text-xs sm:text-sm text-[#fd91cc] hover:underline transition-colors mb-6 flex items-center gap-1 cursor-pointer min-h-[44px] min-w-[44px]";
       back.textContent = "< back to site";
 
       function closeOverlay() {
@@ -440,7 +497,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const pre = document.createElement("pre");
       pre.className =
-        "font-mono text-white/80 text-xs sm:text-sm whitespace-pre-wrap break-words bg-neutral-900 p-6 rounded-xl border border-neutral-800";
+        "font-mono text-white/85 text-xs sm:text-sm whitespace-pre-wrap break-words bg-[#081330] p-6 rounded-xl border border-[#09318D]/70";
       pre.textContent = text;
 
       inner.append(back, pre);
@@ -477,7 +534,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         const originalHtml = copyBtn.innerHTML;
-        copyBtn.innerHTML = `<span class="text-lime-400 font-mono text-[11px] font-semibold">copied</span>`;
+        copyBtn.innerHTML = `<span class="text-[#fd91cc] font-mono text-[11px] font-semibold">copied</span>`;
         copyBtn.setAttribute("aria-label", "email copied to clipboard");
 
         setTimeout(() => {
