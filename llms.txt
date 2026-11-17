@@ -4,7 +4,7 @@
 > He builds production AI systems bottom-up: custom BPE tokenizers in Rust, MLIR compiler optimization passes, local SLM inference under 15ms, and verifiable RAG pipelines.
 
 Live site: https://jayadithya.is-a.dev
-Last updated: 2026-11-06
+Last updated: 2026-11-17
 
 ## In short
 
@@ -28,13 +28,15 @@ rjayadithya11@gmail.com or https://www.linkedin.com/in/jayadithya-r/
 
 - tamil-tokenizer: Rust BPE tokenizer for Tamil with Aho-Corasick encoder and 1,135-token Tamil-aware base vocabulary.
 Outperforms mBERT compression by 36.9% on Tamil wiki with 100% decode fidelity assertions.
-Models published on Hugging Face.
+Interactive playground live at https://partha.isroot.in/.
+Models published on Hugging Face at https://huggingface.co/barryallen16/partha-tamil-tokenizer.
 https://github.com/barryallen16/tamil-tokenizer
 
-- triagemate: Local SAST alert triage engine that ranks Semgrep findings by exploitability in 12-14 ms on Nvidia T4 using Liquid AI d1-3B hybrid SSM.
-Contrastive LoRA on 416 real pre/post-fix diffs reaches 0.6594 within-rule AUC.
+- d1-triage: Local SAST alert triage engine that ranks Semgrep findings by exploitability in 12-14 ms on Nvidia T4 using Liquid AI d1-3B hybrid SSM.
+Fine-tuned on 416 real pre/post-fix diffs, reaching 0.8372 AUC on verified fix hunks and 0.6594 within-rule AUC across 174 real alerts.
+Interactive demo at https://barryallen16.github.io/d1-triage/.
 Model weights and benchmark dataset published on Hugging Face.
-https://github.com/barryallen16/triagemate
+https://github.com/barryallen16/d1-triage
 
 - kaggle-automation: Dockerized FastAPI control plane sharding sweeps across Kaggle GPU/TPU kernels with 12-hour session boundary tracking and Telegram alerts.
 Eliminated quota exhaustion across 220+ production runs.
@@ -44,7 +46,8 @@ https://github.com/barryallen16/kaggle-automation
 - fitcheck: Offline-first AI wardrobe assistant and outfit recommendation app in React Native and Expo with local SQLite storage.
 Distilled an 8B vision-language teacher into a 2B student using LoRA across 538K caption-QA pairs, saving 3.1x VRAM at 92% quality.
 Validated in a blind human study (297 ratings, r=0.303, p<0.05) and published as first author in IEEE TQCEBT 2026.
-https://barryallen16.github.io/fitcheck-website
+App repository: https://github.com/barryallen16/fitcheck.
+Website: https://barryallen16.github.io/fitcheck-website.
 
 - sivabharani-comments: High-throughput extraction pipeline and instant search indexing name mentions across 1,400+ Tamil tech videos (1.18M chunks).
 27-key worker pool with dynamic rate-limit header parsing, 65s windowing, and Meilisearch sub-second search.
@@ -52,6 +55,8 @@ https://barryallen16.github.io/sivabharani-comments
 
 - txt: Data-free Android payment and transfer app transmitting photos, QR codes, GPS locations, and UPI requests over standard SMS.
 Chunked base36 protocol with CRC32 verification and native Kotlin ContentObserver module for sub-100ms SMS arrival detection.
+Live web companion at https://txt.runs-on.dev/.
+Releases and APKs at https://github.com/barryallen16/txt/releases.
 https://github.com/barryallen16/txt
 
 - resume-builder-skill: Autonomous agent skill generating tailored ATS-friendly resumes in docx and headless LibreOffice PDF.
