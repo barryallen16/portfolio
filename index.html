@@ -26,20 +26,59 @@
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "Person",
-        "name": "Jayadithya R",
-        "url": "https://jayadithya.is-a.dev/",
-        "jobTitle": "AI/ML Systems Engineer",
-        "address": { "@type": "PostalAddress", "addressLocality": "Chennai", "addressRegion": "Tamil Nadu", "addressCountry": "IN" },
-        "sameAs": [
-          "https://github.com/barryallen16",
-          "https://www.linkedin.com/in/jayadithya-r/",
-          "https://huggingface.co/barryallen16"
-        ],
-        "knowsAbout": ["LLM systems", "BPE tokenizers", "MLIR compiler passes", "fine-tuning", "data pipelines", "eval harnesses"]
+        "@graph": [
+          {
+            "@type": "Person",
+            "@id": "https://jayadithya.is-a.dev/#person",
+            "name": "Jayadithya R",
+            "url": "https://jayadithya.is-a.dev/",
+            "jobTitle": "AI/ML Systems Engineer",
+            "image": "https://jayadithya.is-a.dev/images/profile.webp",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Chennai",
+              "addressRegion": "Tamil Nadu",
+              "addressCountry": "IN"
+            },
+            "alumniOf": {
+              "@type": "EducationalOrganization",
+              "name": "Dr. M.G.R. Educational and Research Institute"
+            },
+            "sameAs": [
+              "https://github.com/barryallen16",
+              "https://www.linkedin.com/in/jayadithya-r/",
+              "https://huggingface.co/barryallen16"
+            ],
+            "knowsAbout": [
+              "LLM systems",
+              "BPE tokenizers",
+              "MLIR compiler passes",
+              "fine-tuning",
+              "data pipelines",
+              "eval harnesses",
+              "hybrid SSM inference"
+            ]
+          },
+          {
+            "@type": "ProfilePage",
+            "@id": "https://jayadithya.is-a.dev/#webpage",
+            "url": "https://jayadithya.is-a.dev/",
+            "name": "Jayadithya R - AI/ML Systems Engineer",
+            "mainEntity": { "@id": "https://jayadithya.is-a.dev/#person" }
+          }
+        ]
       }
     </script>
     <meta name="theme-color" content="#09318D" />
+    <!-- Resource hints for critical 3rd party domains and LCP candidate -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+    <link
+      rel="preload"
+      as="image"
+      href="./images/profile.webp"
+      type="image/webp"
+      fetchpriority="high"
+    />
     <!-- Fonts: optimized WOFF2 subsets -->
     <link
       rel="preload"
@@ -138,6 +177,65 @@
         color: #fd91cc;
         text-transform: uppercase;
       }
+      .pt dt[data-tip] {
+        position: relative;
+        cursor: help;
+        text-decoration: underline dotted rgb(253 145 204 / 0.55);
+        text-underline-offset: 3px;
+        width: fit-content;
+      }
+      .pt dt[data-tip]::after {
+        content: attr(data-tip);
+        position: absolute;
+        bottom: calc(100% + 6px);
+        left: 0;
+        z-index: 50;
+        width: max-content;
+        max-width: 15rem;
+        padding: 0.375rem 0.625rem;
+        background: #060e22;
+        border: 1px solid rgb(253 145 204 / 0.45);
+        border-radius: 6px;
+        color: #f3f4f6;
+        font-family: "GeistMono", ui-monospace, monospace;
+        font-size: 0.6875rem;
+        font-weight: 400;
+        line-height: 1.4;
+        text-transform: none;
+        letter-spacing: normal;
+        white-space: normal;
+        pointer-events: none;
+        opacity: 0;
+        transform: translateY(4px);
+        transition: opacity 0.15s ease, transform 0.15s ease;
+        box-shadow: 0 4px 16px rgb(0 0 0 / 0.7), 0 0 10px rgb(253 145 204 / 0.15);
+      }
+      .pt dt[data-tip]::before {
+        content: "";
+        position: absolute;
+        bottom: calc(100% + 2px);
+        left: 0.75rem;
+        z-index: 51;
+        border-width: 4px;
+        border-style: solid;
+        border-color: #060e22 transparent transparent transparent;
+        pointer-events: none;
+        opacity: 0;
+        transform: translateY(4px);
+        transition: opacity 0.15s ease, transform 0.15s ease;
+      }
+      .pt dt[data-tip]:hover::after,
+      .pt dt[data-tip]:hover::before,
+      .pt dt[data-tip]:focus-visible::after,
+      .pt dt[data-tip]:focus-visible::before {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .pt dt[data-tip]:focus-visible {
+        outline: 1px solid #fd91cc;
+        outline-offset: 2px;
+        border-radius: 2px;
+      }
       .pt dd {
         font-family: "GeistMono", ui-monospace, monospace;
         font-size: 0.8125rem;
@@ -188,6 +286,34 @@
         border-color: #fd91cc;
         color: #fd91cc;
       }
+      .tabular-nums {
+        font-variant-numeric: tabular-nums;
+      }
+      /* Custom brand scrollbar (Impeccable craft floor) */
+      ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #050b1a;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #09318D;
+        border-radius: 4px;
+        border: 1px solid rgba(253, 145, 204, 0.3);
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #fd91cc;
+      }
+      /* Motion accessibility: instant transitions when reduced motion is requested */
+      @media (prefers-reduced-motion: reduce) {
+        *, ::before, ::after {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.01ms !important;
+          scroll-behavior: auto !important;
+        }
+      }
     </style>
   </head>
   <body class="overflow-x-hidden bg-[#050b1a] text-white">
@@ -203,6 +329,8 @@
         <img
           src="./favicon/favicon-32x32.png"
           alt="site logo"
+          width="28"
+          height="28"
           class="h-6 w-6 sm:h-7 sm:w-7"
         />
       </a>
@@ -377,6 +505,7 @@
                   alt="jayadithya profile"
                   width="384"
                   height="384"
+                  fetchpriority="high"
                   class="h-64 sm:h-80 md:h-96 w-auto object-cover object-bottom"
                   onerror="
                     this.style.display = 'none';
@@ -736,6 +865,8 @@
                     src="./images/partha-logo.svg"
                     loading="lazy"
                     alt="Partha logo"
+                    width="24"
+                    height="24"
                     class="w-6 h-6 object-contain"
                   />
                 </div>
@@ -750,7 +881,7 @@
                   </div>
                 </div>
               </div>
-              <span class="shrink-0 px-2.5 py-1 rounded-md border border-[#fd91cc]/40 bg-[#09318D]/50 text-[#fd91cc] font-mono text-xs font-medium whitespace-nowrap self-start">
+              <span class="shrink-0 px-2.5 py-1 rounded-md border border-[#fd91cc]/40 bg-[#09318D]/50 text-[#fd91cc] font-mono text-xs font-medium whitespace-nowrap self-start tabular-nums">
                 +36.9% vs mBERT
               </span>
             </div>
@@ -823,6 +954,8 @@
                     src="./images/d1-logo.svg"
                     loading="lazy"
                     alt="d1-triage logo"
+                    width="24"
+                    height="24"
                     class="w-6 h-6 object-contain"
                   />
                 </div>
@@ -837,7 +970,7 @@
                   </div>
                 </div>
               </div>
-              <span class="shrink-0 px-2.5 py-1 rounded-md border border-[#fd91cc]/40 bg-[#09318D]/50 text-[#fd91cc] font-mono text-xs font-medium whitespace-nowrap self-start">
+              <span class="shrink-0 px-2.5 py-1 rounded-md border border-[#fd91cc]/40 bg-[#09318D]/50 text-[#fd91cc] font-mono text-xs font-medium whitespace-nowrap self-start tabular-nums">
                 12ms &middot; 0.8372 AUC
               </span>
             </div>
@@ -849,7 +982,7 @@
                 </dd>
               </div>
               <div class="pt-row">
-                <dt>why ai</dt>
+                <dt tabindex="0" data-tip="Why an AI model was chosen instead of deterministic code">why ai</dt>
                 <dd>
                   Static AST rules lack execution reachability context. Determining whether tainted user input reaches an exploitable sink requires reasoning over method logic, sanitizers, and control flow.
                 </dd>
@@ -925,6 +1058,8 @@
                     src="./images/kaggle-auto-logo.png"
                     loading="lazy"
                     alt="Kaggle Automation logo"
+                    width="24"
+                    height="24"
                     class="w-6 h-6 object-contain"
                   />
                 </div>
@@ -939,7 +1074,7 @@
                   </div>
                 </div>
               </div>
-              <span class="shrink-0 px-2.5 py-1 rounded-md border border-[#fd91cc]/40 bg-[#09318D]/50 text-[#fd91cc] font-mono text-xs font-medium whitespace-nowrap self-start">
+              <span class="shrink-0 px-2.5 py-1 rounded-md border border-[#fd91cc]/40 bg-[#09318D]/50 text-[#fd91cc] font-mono text-xs font-medium whitespace-nowrap self-start tabular-nums">
                 220+ runs &middot; 0 errors
               </span>
             </div>
@@ -1010,7 +1145,7 @@
                   </div>
                 </div>
               </div>
-              <span class="shrink-0 px-2.5 py-1 rounded-md border border-[#fd91cc]/40 bg-[#09318D]/50 text-[#fd91cc] font-mono text-xs font-medium whitespace-nowrap self-start">
+              <span class="shrink-0 px-2.5 py-1 rounded-md border border-[#fd91cc]/40 bg-[#09318D]/50 text-[#fd91cc] font-mono text-xs font-medium whitespace-nowrap self-start tabular-nums">
                 IEEE 2026 &middot; 3.1x VRAM
               </span>
             </div>
@@ -1022,7 +1157,7 @@
                 </dd>
               </div>
               <div class="pt-row">
-                <dt>why ai</dt>
+                <dt tabindex="0" data-tip="Why an AI model was chosen instead of deterministic code">why ai</dt>
                 <dd>
                   Aesthetic harmony, color theory, seasonal weather compatibility, and cultural styling cannot be encoded in rigid if/else trees; they require vision-language embeddings to score visual cohesion.
                 </dd>
@@ -1107,7 +1242,7 @@
                   </div>
                 </div>
               </div>
-              <span class="shrink-0 px-2.5 py-1 rounded-md border border-[#fd91cc]/40 bg-[#09318D]/50 text-[#fd91cc] font-mono text-xs font-medium whitespace-nowrap self-start">
+              <span class="shrink-0 px-2.5 py-1 rounded-md border border-[#fd91cc]/40 bg-[#09318D]/50 text-[#fd91cc] font-mono text-xs font-medium whitespace-nowrap self-start tabular-nums">
                 1.18M chunks &middot; 27 keys
               </span>
             </div>
@@ -1119,7 +1254,7 @@
                 </dd>
               </div>
               <div class="pt-row">
-                <dt>why ai</dt>
+                <dt tabindex="0" data-tip="Why an AI model was chosen instead of deterministic code">why ai</dt>
                 <dd>
                   YouTube transcripts feature Tanglish (Tamil spoken in English script), conversational digressions, and colloquial name mentions that standard regex and named-entity recognizers fail to parse.
                 </dd>
@@ -1186,6 +1321,8 @@
                     src="./images/txt-logo.svg"
                     loading="lazy"
                     alt="txt logo"
+                    width="24"
+                    height="24"
                     class="w-6 h-6 object-contain"
                   />
                 </div>
@@ -1200,7 +1337,7 @@
                   </div>
                 </div>
               </div>
-              <span class="shrink-0 px-2.5 py-1 rounded-md border border-[#fd91cc]/40 bg-[#09318D]/50 text-[#fd91cc] font-mono text-xs font-medium whitespace-nowrap self-start">
+              <span class="shrink-0 px-2.5 py-1 rounded-md border border-[#fd91cc]/40 bg-[#09318D]/50 text-[#fd91cc] font-mono text-xs font-medium whitespace-nowrap self-start tabular-nums">
                 0 data &middot; &lt;100ms
               </span>
             </div>
@@ -1283,7 +1420,7 @@
                   </div>
                 </div>
               </div>
-              <span class="shrink-0 px-2.5 py-1 rounded-md border border-[#fd91cc]/40 bg-[#09318D]/50 text-[#fd91cc] font-mono text-xs font-medium whitespace-nowrap self-start">
+              <span class="shrink-0 px-2.5 py-1 rounded-md border border-[#fd91cc]/40 bg-[#09318D]/50 text-[#fd91cc] font-mono text-xs font-medium whitespace-nowrap self-start tabular-nums">
                 1-page &middot; -65% tokens
               </span>
             </div>
@@ -1339,6 +1476,8 @@
                     src="./images/all-is-well-logo.png"
                     loading="lazy"
                     alt="all is well logo"
+                    width="24"
+                    height="24"
                     class="w-6 h-6 object-contain"
                   />
                 </div>
@@ -1353,7 +1492,7 @@
                   </div>
                 </div>
               </div>
-              <span class="shrink-0 px-2.5 py-1 rounded-md border border-[#fd91cc]/40 bg-[#09318D]/50 text-[#fd91cc] font-mono text-xs font-medium whitespace-nowrap self-start">
+              <span class="shrink-0 px-2.5 py-1 rounded-md border border-[#fd91cc]/40 bg-[#09318D]/50 text-[#fd91cc] font-mono text-xs font-medium whitespace-nowrap self-start tabular-nums">
                 1,170 eval &middot; local
               </span>
             </div>
@@ -1365,7 +1504,7 @@
                 </dd>
               </div>
               <div class="pt-row">
-                <dt>why ai</dt>
+                <dt tabindex="0" data-tip="Why an AI model was chosen instead of deterministic code">why ai</dt>
                 <dd>
                   faster-whisper is required for local speech-to-text on informal audio, while crisis detection pairs deterministic contextual rules because generative LLMs can hallucinate safety approvals.
                 </dd>
@@ -1415,6 +1554,8 @@
                     src="./images/hr-rag-logo.svg"
                     loading="lazy"
                     alt="hr rag agent logo"
+                    width="24"
+                    height="24"
                     class="w-6 h-6 object-contain"
                   />
                 </div>
@@ -1429,7 +1570,7 @@
                   </div>
                 </div>
               </div>
-              <span class="shrink-0 px-2.5 py-1 rounded-md border border-[#fd91cc]/40 bg-[#09318D]/50 text-[#fd91cc] font-mono text-xs font-medium whitespace-nowrap self-start">
+              <span class="shrink-0 px-2.5 py-1 rounded-md border border-[#fd91cc]/40 bg-[#09318D]/50 text-[#fd91cc] font-mono text-xs font-medium whitespace-nowrap self-start tabular-nums">
                 9/9 eval &middot; offline
               </span>
             </div>
@@ -1441,7 +1582,7 @@
                 </dd>
               </div>
               <div class="pt-row">
-                <dt>why ai</dt>
+                <dt tabindex="0" data-tip="Why an AI model was chosen instead of deterministic code">why ai</dt>
                 <dd>
                   Employees ask ambiguous policy questions in natural language. Semantic search over ChromaDB embeddings paired with an LLM synthesizes grounded answers from policy handbooks.
                 </dd>
