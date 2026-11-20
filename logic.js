@@ -199,17 +199,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const projectCards = document.querySelectorAll(".project-card");
 
-  projectCards.forEach((card, index) => {
+  projectCards.forEach((card) => {
     gsap.from(card, {
       scrollTrigger: {
-        trigger: "#projects-grid",
-        start: "top 85%",
+        trigger: card,
+        start: "top 88%",
         toggleActions: "play none none none",
       },
       opacity: 0,
-      y: 30,
-      duration: 0.4,
-      delay: (index % 3) * 0.08,
+      y: 24,
+      duration: 0.45,
       ease: "power2.out",
     });
   });
@@ -279,7 +278,7 @@ document.addEventListener("DOMContentLoaded", () => {
       let visibleCount = 0;
 
       projectCards.forEach((card) => {
-        const categories = card.dataset.categories.split(",");
+        const categories = (card.dataset.categories || "").split(",");
         const matchesCategory =
           category === "all" || categories.includes(category);
         const shouldShow =
@@ -288,12 +287,12 @@ document.addEventListener("DOMContentLoaded", () => {
         if (shouldShow) {
           visibleCount++;
           if (card.style.display === "none") {
-            card.style.display = "flex";
+            card.style.display = "";
             if (typeof gsap !== "undefined" && !prefersReducedMotion) {
               gsap.fromTo(
                 card,
-                { opacity: 0, scale: 0.96 },
-                { opacity: 1, scale: 1, duration: 0.25, ease: "power2.out" }
+                { opacity: 0, y: 8 },
+                { opacity: 1, y: 0, duration: 0.25, ease: "power2.out" }
               );
             } else {
               card.style.opacity = "1";
@@ -305,8 +304,8 @@ document.addEventListener("DOMContentLoaded", () => {
             if (typeof gsap !== "undefined" && !prefersReducedMotion) {
               gsap.to(card, {
                 opacity: 0,
-                scale: 0.96,
-                duration: 0.2,
+                y: -6,
+                duration: 0.18,
                 ease: "power2.in",
                 onComplete: () => {
                   card.style.display = "none";
@@ -319,6 +318,21 @@ document.addEventListener("DOMContentLoaded", () => {
           }
         }
       });
+
+      const featuredTier = document.getElementById("featured-work-container");
+      const secondaryTier = document.getElementById("secondary-work-container");
+      if (featuredTier) {
+        const hasVisible = Array.from(featuredTier.querySelectorAll(".project-card")).some(
+          (c) => c.style.display !== "none"
+        );
+        featuredTier.classList.toggle("hidden", !hasVisible);
+      }
+      if (secondaryTier) {
+        const hasVisible = Array.from(secondaryTier.querySelectorAll(".project-card")).some(
+          (c) => c.style.display !== "none"
+        );
+        secondaryTier.classList.toggle("hidden", !hasVisible);
+      }
 
       if (noResults) {
         noResults.classList.toggle("hidden", visibleCount > 0);
@@ -389,7 +403,7 @@ document.addEventListener("DOMContentLoaded", () => {
         expanded = true;
         filterProjects(activeCategory);
       }
-      card.style.display = "flex";
+      card.style.display = "";
       card.style.opacity = "1";
     };
   }
