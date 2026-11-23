@@ -272,25 +272,25 @@
         border-color: #fd91cc;
         color: #ffffff;
       }
-      .filter-btn.is-active[data-filter="frontend"] {
-        background-color: rgba(253, 145, 204, 0.25);
-        border-color: #fd91cc;
-        color: #fd91cc;
-      }
-      .filter-btn.is-active[data-filter="backend"] {
-        background-color: rgba(9, 49, 141, 0.5);
-        border-color: #4978e8;
-        color: #bfdbfe;
-      }
-      .filter-btn.is-active[data-filter="uiux"] {
-        background-color: rgba(253, 145, 204, 0.2);
-        border-color: #fd91cc;
-        color: #ffffff;
-      }
       .filter-btn.is-active[data-filter="ai"] {
         background-color: rgba(9, 49, 141, 0.65);
         border-color: #fd91cc;
         color: #fd91cc;
+      }
+      .filter-btn.is-active[data-filter="systems"] {
+        background-color: rgba(9, 49, 141, 0.5);
+        border-color: #4978e8;
+        color: #bfdbfe;
+      }
+      .filter-btn.is-active[data-filter="agents"] {
+        background-color: rgba(253, 145, 204, 0.25);
+        border-color: #fd91cc;
+        color: #fd91cc;
+      }
+      .filter-btn.is-active[data-filter="apps"] {
+        background-color: rgba(9, 49, 141, 0.4);
+        border-color: #fd91cc;
+        color: #ffffff;
       }
       .tabular-nums {
         font-variant-numeric: tabular-nums;
@@ -311,12 +311,9 @@
       ::-webkit-scrollbar-thumb:hover {
         background: #fd91cc;
       }
-      /* Motion accessibility: instant transitions when reduced motion is requested */
+      /* Motion accessibility: respect instant scroll behavior */
       @media (prefers-reduced-motion: reduce) {
-        *, ::before, ::after {
-          animation-duration: 0.01ms !important;
-          animation-iteration-count: 1 !important;
-          transition-duration: 0.01ms !important;
+        html {
           scroll-behavior: auto !important;
         }
       }
@@ -458,7 +455,7 @@
                     <span class="text-[#fd91cc] font-semibold text-xs sm:text-sm group-hover:underline decoration-[#fd91cc]">100% Decode Fidelity</span>
                     <span class="text-white/40 group-hover:text-[#fd91cc] group-hover:translate-x-0.5 transition-all text-xs" aria-hidden="true">&rarr;</span>
                   </div>
-                  <div class="text-white/70 text-[11px] sm:text-xs mt-0.5 leading-snug">Rust Tamil tokenizer (+36.9% vs mBERT)</div>
+                  <div class="text-white/70 text-[11px] sm:text-xs mt-0.5 leading-snug">Rust Tamil tokenizer (-50.2% vs OpenAI o200k)</div>
                 </a>
                 <a
                   href="#project-d1-triage"
@@ -541,128 +538,187 @@
       <!-- T-Shaped Engineer Animation -->
       <section
         id="t-shape"
-        class="w-full bg-[#040817] flex flex-col items-center px-4 pt-20 pb-24 sm:pb-16"
+        class="w-full bg-[#040817] flex flex-col items-center px-2 min-[380px]:px-4 pt-16 pb-20 scroll-mt-24 relative overflow-hidden"
       >
-        <h2 class="text-white text-3xl sm:text-4xl mb-3 text-center">
+        <h2 class="text-white text-3xl sm:text-4xl mb-2 text-center">
           the
           <span class="underline decoration-[#fd91cc] underline-offset-4"
             >t-shaped</span
           >
           engineer
         </h2>
-        <p
-          class="font-mono text-white/60 text-xs sm:text-sm mb-16 sm:mb-20 text-center max-w-md"
-        >
-          broad across the bar. deep down the stem.
-        </p>
+        <div class="flex items-center gap-2.5 mb-8 sm:mb-12">
+          <p class="font-mono text-white/60 text-xs sm:text-sm text-center">
+            broad across the bar. deep down the stem.
+          </p>
+          <button
+            id="replay-t-anim"
+            class="font-mono text-[10px] sm:text-xs text-[#fd91cc] hover:text-white flex items-center gap-1 cursor-pointer px-2 py-0.5 rounded-full border border-[#09318D]/70 bg-[#081330]/80 hover:border-[#fd91cc] transition-colors"
+            title="Replay drawing animation"
+            aria-label="Replay diagram animation"
+          >
+            <svg class="w-2.5 h-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg>replay
+          </button>
+        </div>
 
         <div
           class="relative w-full max-w-xl sm:max-w-2xl flex flex-col items-center"
         >
           <!-- breadth chips sitting on top of the bar -->
           <div
-            class="relative z-10 w-full flex justify-between items-end gap-0.5 sm:gap-1 px-0.5 sm:px-2 mb-2 sm:mb-3"
+            class="relative z-10 w-full flex justify-between items-end gap-0.5 min-[380px]:gap-1 px-1 sm:px-3 mb-2 sm:mb-2.5"
           >
             <span
-              class="t-broad font-mono text-[9px] min-[360px]:text-[10px] sm:text-xs px-1 min-[360px]:px-1.5 sm:px-3 py-0.5 min-[360px]:py-1 sm:py-1.5 rounded-md sm:rounded-lg border border-[#09318D]/70 bg-[#0a1638] text-white/90 whitespace-nowrap"
+              class="t-broad font-mono text-[8.5px] min-[360px]:text-[9.5px] sm:text-xs px-1 min-[360px]:px-1.5 sm:px-2.5 py-0.5 sm:py-1 rounded-md sm:rounded-lg border border-[#09318D]/70 bg-[#0a1638] text-white/90 whitespace-nowrap shadow-sm shadow-[#09318D]/40"
               >compilers</span
             >
             <span
-              class="t-broad font-mono text-[9px] min-[360px]:text-[10px] sm:text-xs px-1 min-[360px]:px-1.5 sm:px-3 py-0.5 min-[360px]:py-1 sm:py-1.5 rounded-md sm:rounded-lg border border-[#09318D]/70 bg-[#0a1638] text-white/90 whitespace-nowrap"
+              class="t-broad font-mono text-[8.5px] min-[360px]:text-[9.5px] sm:text-xs px-1 min-[360px]:px-1.5 sm:px-2.5 py-0.5 sm:py-1 rounded-md sm:rounded-lg border border-[#09318D]/70 bg-[#0a1638] text-white/90 whitespace-nowrap shadow-sm shadow-[#09318D]/40"
               >tokenizers</span
             >
             <span
-              class="t-broad font-mono text-[9px] min-[360px]:text-[10px] sm:text-xs px-1 min-[360px]:px-1.5 sm:px-3 py-0.5 min-[360px]:py-1 sm:py-1.5 rounded-md sm:rounded-lg border border-[#09318D]/70 bg-[#0a1638] text-white/90 whitespace-nowrap"
+              class="t-broad font-mono text-[8.5px] min-[360px]:text-[9.5px] sm:text-xs px-1 min-[360px]:px-1.5 sm:px-2.5 py-0.5 sm:py-1 rounded-md sm:rounded-lg border border-[#09318D]/70 bg-[#0a1638] text-white/90 whitespace-nowrap shadow-sm shadow-[#09318D]/40"
               >pipelines</span
             >
             <span
-              class="t-broad font-mono text-[9px] min-[360px]:text-[10px] sm:text-xs px-1 min-[360px]:px-1.5 sm:px-3 py-0.5 min-[360px]:py-1 sm:py-1.5 rounded-md sm:rounded-lg border border-[#09318D]/70 bg-[#0a1638] text-white/90 whitespace-nowrap"
+              class="t-broad font-mono text-[8.5px] min-[360px]:text-[9.5px] sm:text-xs px-1 min-[360px]:px-1.5 sm:px-2.5 py-0.5 sm:py-1 rounded-md sm:rounded-lg border border-[#09318D]/70 bg-[#0a1638] text-white/90 whitespace-nowrap shadow-sm shadow-[#09318D]/40"
               >distillation</span
             >
             <span
-              class="t-broad font-mono text-[9px] min-[360px]:text-[10px] sm:text-xs px-1 min-[360px]:px-1.5 sm:px-3 py-0.5 min-[360px]:py-1 sm:py-1.5 rounded-md sm:rounded-lg border border-[#09318D]/70 bg-[#0a1638] text-white/90 whitespace-nowrap"
+              class="t-broad font-mono text-[8.5px] min-[360px]:text-[9.5px] sm:text-xs px-1 min-[360px]:px-1.5 sm:px-2.5 py-0.5 sm:py-1 rounded-md sm:rounded-lg border border-[#09318D]/70 bg-[#0a1638] text-white/90 whitespace-nowrap shadow-sm shadow-[#09318D]/40"
               ><span class="sm:hidden">evals</span><span class="hidden sm:inline">eval harnesses</span></span
             >
           </div>
 
-          <!-- the T, traced by scroll -->
-          <svg
-            id="t-svg"
-            viewBox="0 0 800 500"
-            fill="none"
-            class="w-full h-auto block overflow-visible"
-            style="filter: drop-shadow(0 0 10px rgba(253, 145, 204, 0.35))"
-            aria-hidden="true"
-          >
-            <path
-              id="t-bar-ghost"
-              d="M16 20 H784"
-              stroke="#1a3578"
-              stroke-width="10"
-              stroke-linecap="round"
-              stroke-dasharray="0 30"
-              opacity="0"
-            />
-            <path
-              id="t-stem-ghost"
-              d="M400 26 V470"
-              stroke="#1a3578"
-              stroke-width="10"
-              stroke-linecap="round"
-              stroke-dasharray="0 30"
-              opacity="0"
-            />
-            <path
-              id="t-bar-path"
-              d="M16 20 H784"
-              stroke="#fd91cc"
-              stroke-width="16"
-              stroke-linecap="round"
-            />
-            <path
-              id="t-stem-path"
-              d="M400 26 V470"
-              stroke="#fd91cc"
-              stroke-width="16"
-              stroke-linecap="round"
-            />
-            <circle
-              id="t-junction"
-              cx="400"
-              cy="22"
-              r="14"
-              stroke="#ffffff"
-              stroke-width="4"
+          <!-- the T container with stem milestones -->
+          <div class="relative w-full">
+            <!-- the T, traced by scroll -->
+            <svg
+              id="t-svg"
+              viewBox="0 0 800 560"
               fill="none"
-              opacity="0"
-            />
-            <circle
-              id="t-spark-bar"
-              r="9"
-              cx="0"
-              cy="0"
-              fill="#ffffff"
-              opacity="0"
-              style="filter: drop-shadow(0 0 8px rgba(253, 145, 204, 0.9))"
-            />
-            <circle
-              id="t-spark-stem"
-              r="9"
-              cx="0"
-              cy="0"
-              fill="#ffffff"
-              opacity="0"
-              style="filter: drop-shadow(0 0 8px rgba(253, 145, 204, 0.9))"
-            />
-          </svg>
+              class="w-full h-auto block overflow-visible"
+              style="filter: drop-shadow(0 0 10px rgba(253, 145, 204, 0.35))"
+              aria-hidden="true"
+            >
+              <path
+                id="t-bar-ghost"
+                d="M16 20 H784"
+                stroke="#1a3578"
+                stroke-width="10"
+                stroke-linecap="round"
+                stroke-dasharray="0 30"
+                opacity="0.6"
+              />
+              <path
+                id="t-stem-ghost"
+                d="M400 26 V490"
+                stroke="#1a3578"
+                stroke-width="10"
+                stroke-linecap="round"
+                stroke-dasharray="0 30"
+                opacity="0.6"
+              />
+              <path
+                id="t-bar-path"
+                d="M16 20 H784"
+                stroke="#fd91cc"
+                stroke-width="16"
+                stroke-linecap="round"
+              />
+              <path
+                id="t-stem-path"
+                d="M400 26 V490"
+                stroke="#fd91cc"
+                stroke-width="16"
+                stroke-linecap="round"
+              />
+              <circle
+                id="t-junction"
+                cx="400"
+                cy="22"
+                r="14"
+                stroke="#ffffff"
+                stroke-width="4"
+                fill="none"
+                opacity="0"
+              />
+              <circle
+                id="t-spark-bar"
+                r="9"
+                cx="0"
+                cy="0"
+                fill="#ffffff"
+                opacity="0"
+                style="filter: drop-shadow(0 0 8px rgba(253, 145, 204, 0.9))"
+              />
+              <circle
+                id="t-spark-stem"
+                r="9"
+                cx="0"
+                cy="0"
+                fill="#ffffff"
+                opacity="0"
+                style="filter: drop-shadow(0 0 8px rgba(253, 145, 204, 0.9))"
+              />
+
+              <!-- Stem Milestone Connectors & Anchor Rings -->
+              <g id="node-1-svg" class="t-node-marker opacity-0 transition-opacity">
+                <line x1="280" y1="125" x2="390" y2="125" stroke="#fd91cc" stroke-width="2" stroke-dasharray="4 4" opacity="0.6" />
+                <circle cx="400" cy="125" r="6" fill="#fd91cc" stroke="#ffffff" stroke-width="2" />
+              </g>
+              <g id="node-2-svg" class="t-node-marker opacity-0 transition-opacity">
+                <line x1="410" y1="225" x2="520" y2="225" stroke="#fd91cc" stroke-width="2" stroke-dasharray="4 4" opacity="0.6" />
+                <circle cx="400" cy="225" r="6" fill="#fd91cc" stroke="#ffffff" stroke-width="2" />
+              </g>
+              <g id="node-3-svg" class="t-node-marker opacity-0 transition-opacity">
+                <line x1="280" y1="325" x2="390" y2="325" stroke="#fd91cc" stroke-width="2" stroke-dasharray="4 4" opacity="0.6" />
+                <circle cx="400" cy="325" r="6" fill="#fd91cc" stroke="#ffffff" stroke-width="2" />
+              </g>
+              <g id="node-4-svg" class="t-node-marker opacity-0 transition-opacity">
+                <line x1="410" y1="425" x2="520" y2="425" stroke="#fd91cc" stroke-width="2" stroke-dasharray="4 4" opacity="0.6" />
+                <circle cx="400" cy="425" r="6" fill="#fd91cc" stroke="#ffffff" stroke-width="2" />
+              </g>
+            </svg>
+
+            <!-- HTML Milestone Badges flanking the stem -->
+            <div id="badge-1" class="t-stem-badge absolute top-[19%] right-[52%] max-w-[46%] sm:max-w-[42%] text-right font-mono pointer-events-none">
+              <div class="inline-block p-1 min-[360px]:p-1.5 sm:p-2 rounded-lg bg-[#081330]/95 border border-[#09318D]/70 shadow-md shadow-[#02050f]/80">
+                <div class="text-[#fd91cc] font-semibold text-[9px] min-[360px]:text-[10px] sm:text-xs">MLIR Tensor Passes</div>
+                <div class="text-white/60 text-[8px] min-[360px]:text-[9px] sm:text-[11px] leading-tight mt-0.5">Custom dialect &amp; ~20% launch cut</div>
+              </div>
+            </div>
+
+            <div id="badge-2" class="t-stem-badge absolute top-[37%] left-[52%] max-w-[46%] sm:max-w-[42%] text-left font-mono pointer-events-none">
+              <div class="inline-block p-1 min-[360px]:p-1.5 sm:p-2 rounded-lg bg-[#081330]/95 border border-[#09318D]/70 shadow-md shadow-[#02050f]/80">
+                <div class="text-[#fd91cc] font-semibold text-[9px] min-[360px]:text-[10px] sm:text-xs">Rust BPE Engine</div>
+                <div class="text-white/60 text-[8px] min-[360px]:text-[9px] sm:text-[11px] leading-tight mt-0.5">Rayon merges &amp; 100% fidelity</div>
+              </div>
+            </div>
+
+            <div id="badge-3" class="t-stem-badge absolute top-[55%] right-[52%] max-w-[46%] sm:max-w-[42%] text-right font-mono pointer-events-none">
+              <div class="inline-block p-1 min-[360px]:p-1.5 sm:p-2 rounded-lg bg-[#081330]/95 border border-[#09318D]/70 shadow-md shadow-[#02050f]/80">
+                <div class="text-[#fd91cc] font-semibold text-[9px] min-[360px]:text-[10px] sm:text-xs">Model Distillation &amp; SSM</div>
+                <div class="text-white/60 text-[8px] min-[360px]:text-[9px] sm:text-[11px] leading-tight mt-0.5">3.1x VRAM cut &amp; 12ms triage</div>
+              </div>
+            </div>
+
+            <div id="badge-4" class="t-stem-badge absolute top-[73%] left-[52%] max-w-[46%] sm:max-w-[42%] text-left font-mono pointer-events-none">
+              <div class="inline-block p-1 min-[360px]:p-1.5 sm:p-2 rounded-lg bg-[#081330]/95 border border-[#09318D]/70 shadow-md shadow-[#02050f]/80">
+                <div class="text-[#fd91cc] font-semibold text-[9px] min-[360px]:text-[10px] sm:text-xs">Verifiable Tool Evals</div>
+                <div class="text-white/60 text-[8px] min-[360px]:text-[9px] sm:text-[11px] leading-tight mt-0.5">Procedural guards &amp; 0 SQL injection</div>
+              </div>
+            </div>
+          </div>
 
           <!-- deep expertise at the bottom of the stem -->
-          <span
-            id="t-deep"
-            class="-mt-2 px-5 py-2.5 rounded-full bg-[#09318D] text-white font-semibold text-sm sm:text-base whitespace-nowrap border-2 border-[#fd91cc] shadow-lg shadow-[#09318D]/50"
-          >
-            ai / llm systems
-          </span>
+          <div id="t-deep" class="mt-3 sm:mt-4 flex flex-col items-center z-10 font-sans">
+            <span
+              class="px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-full bg-[#09318D] text-white font-semibold text-xs sm:text-base whitespace-nowrap border-2 border-[#fd91cc] shadow-lg shadow-[#09318D]/50"
+            >
+              ai / ml systems engineering
+            </span>
+          </div>
         </div>
       </section>
 
@@ -720,14 +776,14 @@
                 MLIR Passes &amp; Rust Concurrency
               </h3>
               <ul class="mt-4 font-mono text-xs text-white/75 space-y-2 leading-relaxed">
-                <li>&bull; MLIR tensor operator fusion lowering to LLVM IR, cutting launch overhead ~20%.</li>
+                <li>&bull; Nova MLIR compiler (arXiv:2608.00029) progressive lowering to PTX with StableHLO.</li>
                 <li>&bull; Rust BPE tokenizer with rayon parallel merges and Aho-Corasick automaton.</li>
                 <li>&bull; Chunked base36 framing with CRC32 verification over standard SMS payloads.</li>
               </ul>
             </div>
             <a
               href="#showcase"
-              data-skill-filter="backend"
+              data-skill-filter="systems"
               class="skill-link font-mono text-xs text-blue-300 hover:text-white underline underline-offset-4 decoration-blue-400/50 hover:decoration-blue-400 min-h-[44px] flex items-center mt-4"
             >
               filter systems projects &rarr;
@@ -753,7 +809,7 @@
             </div>
             <a
               href="#showcase"
-              data-skill-filter="backend"
+              data-skill-filter="systems"
               class="skill-link font-mono text-xs text-[#fd91cc] hover:text-white underline underline-offset-4 decoration-[#fd91cc]/50 hover:decoration-[#fd91cc] min-h-[44px] flex items-center mt-4"
             >
               filter backend projects &rarr;
@@ -779,10 +835,10 @@
             </div>
             <a
               href="#showcase"
-              data-skill-filter="all"
+              data-skill-filter="agents"
               class="skill-link font-mono text-xs text-[#fd91cc] hover:text-white underline underline-offset-4 decoration-[#fd91cc]/50 hover:decoration-[#fd91cc] min-h-[44px] flex items-center mt-4"
             >
-              view all projects &rarr;
+              filter agents &amp; evals &rarr;
             </a>
           </div>
         </div>
@@ -825,37 +881,37 @@
           <button
             data-filter="all"
             aria-pressed="true"
-            class="filter-btn is-active px-4 py-2 rounded-full border border-[#fd91cc] bg-[#09318D] text-white font-mono text-xs sm:text-sm hover:border-white min-h-[40px] cursor-pointer"
+            class="filter-btn is-active px-3.5 sm:px-4 py-2 rounded-full border border-[#fd91cc] bg-[#09318D] text-white font-mono text-xs sm:text-sm hover:border-white min-h-[40px] cursor-pointer"
           >
-            all
+            all <span class="text-[#fd91cc] font-semibold">(9)</span>
           </button>
           <button
             data-filter="ai"
             aria-pressed="false"
-            class="filter-btn px-4 py-2 rounded-full border border-[#09318D]/80 bg-[#081330] text-[#fd91cc] font-mono text-xs sm:text-sm hover:border-[#fd91cc] hover:bg-[#09318D]/40 min-h-[40px] cursor-pointer"
+            class="filter-btn px-3.5 sm:px-4 py-2 rounded-full border border-[#09318D]/80 bg-[#081330] text-[#fd91cc] font-mono text-xs sm:text-sm hover:border-[#fd91cc] hover:bg-[#09318D]/40 min-h-[40px] cursor-pointer"
           >
-            ai
+            ai / ml <span class="text-white/60 font-semibold">(8)</span>
           </button>
           <button
-            data-filter="backend"
+            data-filter="systems"
             aria-pressed="false"
-            class="filter-btn px-4 py-2 rounded-full border border-[#09318D]/80 bg-[#081330] text-blue-200 font-mono text-xs sm:text-sm hover:border-[#fd91cc] hover:bg-[#09318D]/40 min-h-[40px] cursor-pointer"
+            class="filter-btn px-3.5 sm:px-4 py-2 rounded-full border border-[#09318D]/80 bg-[#081330] text-blue-200 font-mono text-xs sm:text-sm hover:border-[#fd91cc] hover:bg-[#09318D]/40 min-h-[40px] cursor-pointer"
           >
-            systems &amp; backend
+            systems &amp; backend <span class="text-blue-300 font-semibold">(5)</span>
           </button>
           <button
-            data-filter="frontend"
+            data-filter="agents"
             aria-pressed="false"
-            class="filter-btn px-4 py-2 rounded-full border border-[#09318D]/80 bg-[#081330] text-[#fd91cc] font-mono text-xs sm:text-sm hover:border-[#fd91cc] hover:bg-[#09318D]/40 min-h-[40px] cursor-pointer"
+            class="filter-btn px-3.5 sm:px-4 py-2 rounded-full border border-[#09318D]/80 bg-[#081330] text-[#fd91cc] font-mono text-xs sm:text-sm hover:border-[#fd91cc] hover:bg-[#09318D]/40 min-h-[40px] cursor-pointer"
           >
-            frontend
+            agents &amp; rag <span class="text-white/60 font-semibold">(2)</span>
           </button>
           <button
-            data-filter="uiux"
+            data-filter="apps"
             aria-pressed="false"
-            class="filter-btn px-4 py-2 rounded-full border border-[#fd91cc]/60 bg-[#081330] text-white font-mono text-xs sm:text-sm hover:border-[#fd91cc] hover:bg-[#fd91cc]/20 min-h-[40px] cursor-pointer"
+            class="filter-btn px-3.5 sm:px-4 py-2 rounded-full border border-[#09318D]/80 bg-[#081330] text-white/90 font-mono text-xs sm:text-sm hover:border-[#fd91cc] hover:bg-[#09318D]/40 min-h-[40px] cursor-pointer"
           >
-            ui/ux
+            apps &amp; client <span class="text-[#fd91cc] font-semibold">(3)</span>
           </button>
         </div>
 
@@ -866,7 +922,7 @@
           <article
             id="project-tamil-tokenizer"
             class="project-card border-b border-[#09318D]/40 pb-12 sm:pb-16 scroll-mt-28"
-            data-categories="ai,backend"
+            data-categories="ai,systems"
             data-project="tamil-tokenizer"
           >
             <div class="grid gap-6 md:grid-cols-12 md:gap-10 items-start">
@@ -880,7 +936,7 @@
                   Agglutinative BPE tokenizer engine written in Rust
                 </p>
                 <p class="mt-2.5 font-mono text-sm text-[#fd91cc]">
-                  &rarr; +36.9% throughput vs mBERT (0.9193 bits/byte)
+                  &rarr; -50.2% tokens vs OpenAI o200k &middot; +36.9% vs mBERT
                 </p>
                 
                 <div class="mt-4 flex flex-wrap gap-x-5 gap-y-2">
@@ -903,7 +959,7 @@
                   <div class="grid grid-cols-2 gap-2 pt-2.5 border-t border-white/10 text-[11px]">
                     <div class="text-white/60">Base Vocab: <span class="text-white">1,135 stems</span></div>
                     <div class="text-white/60">Fidelity: <span class="text-[#fd91cc]">100% decode</span></div>
-                    <div class="text-white/60 col-span-2">Compression: <span class="text-white">0.9193 bits/byte vs 1.457 mBERT</span></div>
+                    <div class="text-white/60 col-span-2">Compression: <span class="text-white">-50.2% vs o200k &middot; 0.9193 bits/byte</span></div>
                   </div>
                 </div>
               </div>
@@ -919,9 +975,13 @@
                 </p>
                 <p class="text-xs sm:text-sm leading-relaxed text-white/85">
                   <span class="text-[#fd91cc] uppercase tracking-wider font-semibold mr-1.5">[solution]</span>
-                  Constructed a 1,135-token base vocabulary around Tamil conjunct stems, Aho-Corasick parallel merges with Rayon, and CSR indexing. Achieved 0.9193 bits/byte on Tamil wiki (36.9% better than mBERT) with 100% decode fidelity.
+                  Constructed a 1,135-token base vocabulary around Tamil conjunct stems, Aho-Corasick parallel merges with Rayon, and CSR indexing. Yields 50.2% fewer tokens than OpenAI o200k, achieving 0.9193 bits/byte on Tamil wiki (+36.9% vs mBERT) with 100% decode fidelity.
                 </p>
                 <ul class="space-y-2 pt-1 font-mono text-xs sm:text-sm text-white/75">
+                  <li class="flex gap-2.5 leading-relaxed">
+                    <span class="text-[#fd91cc] select-none">&bull;</span>
+                    <span>50.2% fewer tokens vs OpenAI o200k with +16.5 accuracy gain on Tamil classification</span>
+                  </li>
                   <li class="flex gap-2.5 leading-relaxed">
                     <span class="text-[#fd91cc] select-none">&bull;</span>
                     <span>Custom BPE merge table built specifically for Tamil morpho-phonemics</span>
@@ -950,7 +1010,7 @@
           <article
             id="project-fitcheck"
             class="project-card border-b border-[#09318D]/40 pb-12 sm:pb-16 scroll-mt-28"
-            data-categories="frontend,ai,uiux"
+            data-categories="ai,apps"
             data-project="fitcheck"
           >
             <div class="grid gap-6 md:grid-cols-12 md:gap-10 items-start">
@@ -1039,7 +1099,7 @@
           <article
             id="project-d1-triage"
             class="project-card border-b border-[#09318D]/40 pb-12 sm:pb-16 scroll-mt-28"
-            data-categories="ai,backend"
+            data-categories="ai,systems"
             data-project="d1-triage"
           >
             <div class="grid gap-6 md:grid-cols-12 md:gap-10 items-start">
@@ -1128,7 +1188,7 @@
           <article
             id="project-sivabharani-comments"
             class="project-card border-b border-[#09318D]/40 pb-12 sm:pb-16 scroll-mt-28"
-            data-categories="ai,backend"
+            data-categories="ai,systems"
             data-project="sivabharani-comments"
           >
             <div class="grid gap-6 md:grid-cols-12 md:gap-10 items-start">
@@ -1219,7 +1279,7 @@
             <div>
               <h3 class="font-mono text-xs uppercase tracking-[0.2em] text-[#fd91cc]">More engineering projects</h3>
             </div>
-            <span class="font-mono text-xs text-white/40">5 systems</span>
+            <span id="secondary-count" class="font-mono text-xs text-white/40">5 systems</span>
           </div>
 
           <div class="grid grid-cols-1 md:grid-cols-2 gap-5 lg:gap-6">
@@ -1228,7 +1288,7 @@
             <article
               id="project-kaggle-automation"
               class="project-card flex flex-col justify-between p-6 rounded-xl border border-white/10 bg-[#081330]/90 transition-all duration-300 hover:border-[#fd91cc]/70 hover:shadow-lg hover:shadow-[#09318D]/20 scroll-mt-28"
-              data-categories="backend,ai"
+              data-categories="systems,ai"
               data-project="kaggle-automation"
             >
               <div>
@@ -1258,7 +1318,7 @@
             <article
               id="project-txt"
               class="project-card flex flex-col justify-between p-6 rounded-xl border border-white/10 bg-[#081330]/90 transition-all duration-300 hover:border-[#fd91cc]/70 hover:shadow-lg hover:shadow-[#09318D]/20 scroll-mt-28"
-              data-categories="frontend,backend,uiux"
+              data-categories="systems,apps"
               data-project="txt"
             >
               <div>
@@ -1292,7 +1352,7 @@
             <article
               id="project-resume-builder-skill"
               class="project-card flex flex-col justify-between p-6 rounded-xl border border-white/10 bg-[#081330]/90 transition-all duration-300 hover:border-[#fd91cc]/70 hover:shadow-lg hover:shadow-[#09318D]/20 scroll-mt-28"
-              data-categories="ai,backend"
+              data-categories="ai,agents"
               data-project="resume-builder-skill"
             >
               <div>
@@ -1322,7 +1382,7 @@
             <article
               id="project-all-is-well"
               class="project-card flex flex-col justify-between p-6 rounded-xl border border-white/10 bg-[#081330]/90 transition-all duration-300 hover:border-[#fd91cc]/70 hover:shadow-lg hover:shadow-[#09318D]/20 scroll-mt-28"
-              data-categories="frontend,ai,backend"
+              data-categories="ai,apps"
               data-project="all-is-well"
             >
               <div>
@@ -1352,7 +1412,7 @@
             <article
               id="project-hr-rag-agent"
               class="project-card flex flex-col justify-between p-6 rounded-xl border border-white/10 bg-[#081330]/90 transition-all duration-300 hover:border-[#fd91cc]/70 hover:shadow-lg hover:shadow-[#09318D]/20 scroll-mt-28 md:col-span-2 lg:col-span-1"
-              data-categories="ai,backend"
+              data-categories="ai,agents"
               data-project="hr-rag-agent"
             >
               <div>
@@ -1367,13 +1427,13 @@
                     </div>
                   </div>
                 </div>
-                <p class="mt-2.5 font-mono text-xs text-[#fd91cc]">&rarr; 10/10 retrieval &middot; 12/14 tool selection &middot; zero SQL injection</p>
+                <p class="mt-2.5 font-mono text-xs text-[#fd91cc]">&rarr; 10/10 retrieval &middot; 12/14 tool selection &middot; offline SLM (lfm3-1.7b)</p>
                 <p class="mt-3 font-mono text-xs sm:text-sm leading-relaxed text-white/75">
-                  Local-first agent querying ChromaDB policy embeddings and booking leave in SQLite through LM Studio. Replaces generative SQL with typed JSON schemas and strict parameter validation guards.
+                  Local-first agent querying 6 HR policy documents in ChromaDB and booking leave in SQLite offline against Liquid AI lfm3-1.7b. Replaces generative SQL with typed JSON schemas and strict parameter validation guards, verified with a 13-test pytest CI suite.
                 </p>
               </div>
               <div class="mt-5 pt-3 border-t border-white/10 flex items-center justify-between">
-                <span class="font-mono text-[11px] text-white/50">ChromaDB &middot; LM Studio &middot; SQLite</span>
+                <span class="font-mono text-[11px] text-white/50">ChromaDB &middot; Liquid AI lfm3-1.7b &middot; SQLite &middot; pytest CI</span>
                 <a href="https://github.com/barryallen16/clerk" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center gap-1.5 font-mono text-xs uppercase tracking-wider text-white hover:text-[#fd91cc] transition-colors py-1"><span class="border-b border-transparent group-hover:border-[#fd91cc]">Source</span><svg class="w-3.5 h-3.5 inline-block shrink-0 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 text-[#fd91cc]" style="image-rendering:pixelated" aria-hidden="true"><use href="#pixel-arrow-diagonal"></use></svg></a>
               </div>
             </article>
@@ -1406,7 +1466,7 @@
             class="p-5 sm:p-8 border border-[#09318D]/60 rounded-xl bg-[#081330]/95 hover:border-[#fd91cc]/60 transition-all duration-200"
           >
             <div class="flex flex-wrap justify-between items-baseline gap-2">
-              <h3 class="text-white text-lg sm:text-xl font-sans">AI Research Intern</h3>
+              <h3 class="text-white text-lg sm:text-xl font-sans">AI Research Intern (Compiler Team)</h3>
               <span class="font-mono text-[#fd91cc] text-xs sm:text-sm"
                 >07/2025 - 10/2025</span
               >
@@ -1414,16 +1474,35 @@
             <p class="font-mono text-white/70 text-xs sm:text-sm mt-1">
               Blubridge Technologies &middot; Chennai, India
             </p>
+            <div class="mt-3 flex flex-wrap items-center gap-2">
+              <a
+                href="https://arxiv.org/abs/2608.00029"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#09318D]/40 border border-[#fd91cc]/50 font-mono text-[11px] text-[#fd91cc] hover:bg-[#09318D] hover:text-white transition-colors"
+              >
+                <span>Nova Compiler (arXiv:2608.00029)</span>
+                <span aria-hidden="true">&nearr;</span>
+              </a>
+              <span class="inline-flex items-center px-2.5 py-1 rounded-full bg-[#0a1638] border border-[#09318D]/60 font-mono text-[11px] text-white/75">
+                BluTrain Framework
+              </span>
+            </div>
             <ul
-              class="font-mono text-white/80 text-sm sm:text-base mt-4 flex flex-col gap-2 list-disc list-inside"
+              class="font-mono text-white/80 text-xs sm:text-sm mt-4 flex flex-col gap-2.5 list-disc list-inside leading-relaxed"
             >
               <li>
-                Implemented operator-fusion passes in MLIR for custom tensor dialect, cutting kernel launch overhead by ~20%.
+                Early compiler engineer on Nova, evaluating StableHLO trade-offs to define a value-semantic MLIR dialect unifying forward and backward passes.
               </li>
               <li>
-                Lowered dialect operations down to LLVM IR with shape inference and bufferization for dynamic tensors.
+                Researched progressive lowering chains (nova &rarr; linalg &rarr; vector &rarr; nvgpu &rarr; NVVM &rarr; PTX) and cross-operator fusions for transformer architectures.
               </li>
-              <li>Hardened pass pipeline with 40+ lit tests wired directly into CI.</li>
+              <li>
+                Mentored a sub-team of 4 incoming engineers on compiler concepts, torch.fx graph capture, and dialect lowering patterns.
+              </li>
+              <li>
+                Authored 170+ pages of first-principles technical notes covering CPU/GPU memory hierarchies, SSA form, and compiler passes.
+              </li>
             </ul>
           </div>
           

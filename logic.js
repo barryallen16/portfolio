@@ -77,7 +77,8 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // ========================================
-  // T-Shaped Engineer - scroll-scrubbed pen draw
+  // ========================================
+  // T-Shaped Engineer - Scroll-driven diagram
   // ========================================
 
   const tSvg = document.querySelector("#t-svg");
@@ -88,17 +89,22 @@ document.addEventListener("DOMContentLoaded", () => {
     const barLen = barPath.getTotalLength();
     const stemLen = stemPath.getTotalLength();
 
-    // ink hidden, waiting to be traced by scroll
-    gsap.set(barPath, { strokeDasharray: barLen, strokeDashoffset: barLen });
-    gsap.set(stemPath, { strokeDasharray: stemLen, strokeDashoffset: stemLen });
-
     const barGhost = document.querySelector("#t-bar-ghost");
     const stemGhost = document.querySelector("#t-stem-ghost");
     const sparkBar = document.querySelector("#t-spark-bar");
     const sparkStem = document.querySelector("#t-spark-stem");
     const junction = document.querySelector("#t-junction");
+    const replayBtn = document.querySelector("#replay-t-anim");
 
-    // ambient: blueprint dots slowly march along their guides
+    // Prepared state: ink primed, markers and chips ready
+    gsap.set(barPath, { strokeDasharray: barLen, strokeDashoffset: barLen });
+    gsap.set(stemPath, { strokeDasharray: stemLen, strokeDashoffset: stemLen });
+    gsap.set(".t-broad", { opacity: 0, y: -10 });
+    gsap.set(".t-stem-badge", { opacity: 0, scale: 0.9 });
+    gsap.set(".t-node-marker", { opacity: 0 });
+    gsap.set("#t-deep", { opacity: 0, scale: 0.85 });
+
+    // Ambient blueprint dots marching along guides
     if (barGhost && stemGhost) {
       gsap.to([barGhost, stemGhost], {
         strokeDashoffset: 120,
@@ -108,89 +114,77 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     }
 
+    // Choreographed diagram drawing timeline
     const tTl = gsap.timeline({
-      defaults: { ease: "none" },
-      scrollTrigger: {
-        trigger: "#t-shape",
-        start: "top 65%",
-        end: () => "+=" + Math.round(Math.min(1100, tSvg.parentElement.offsetHeight * 1.15)),
-        scrub: 1,
-      },
+      paused: true,
+      defaults: { ease: "power2.out" },
     });
 
-    // blueprint dots surface first
-    tTl.to([barGhost, stemGhost], { opacity: 1, duration: 0.06 }, 0);
-
-    // glowing tip traces the bar left to right
-    tTl.to(barPath, {
-      strokeDashoffset: 0,
-      duration: 0.36,
-    }, 0.06);
+    // 1. Draw horizontal bar & drop breadth chips
+    tTl.to(barPath, { strokeDashoffset: 0, duration: 0.38 }, 0);
 
     if (sparkBar && typeof MotionPathPlugin !== "undefined") {
       gsap.registerPlugin(MotionPathPlugin);
-      tTl
-        .to(sparkBar, { opacity: 1, duration: 0.02 }, 0.06)
-        .to(sparkBar, {
-          motionPath: "#t-bar-path",
-          duration: 0.36,
-        }, 0.06)
-        .to(sparkBar, { opacity: 0, duration: 0.03 }, 0.42);
+      tTl.to(sparkBar, { opacity: 1, duration: 0.02 }, 0)
+         .to(sparkBar, { motionPath: "#t-bar-path", duration: 0.38, ease: "power2.out" }, 0)
+         .to(sparkBar, { opacity: 0, duration: 0.02 }, 0.38);
     }
 
-    // breadth chips drop onto the bar as it passes under them
-    tTl.from(".t-broad", {
-      opacity: 0,
-      y: -14,
-      stagger: 0.04,
-      duration: 0.08,
-      ease: "back.out(1.7)",
-    }, 0.38);
+    tTl.to(".t-broad", {
+      opacity: 1,
+      y: 0,
+      stagger: 0.05,
+      duration: 0.18,
+      ease: "back.out(1.5)",
+    }, 0.16);
 
-    // flash where the stem meets the bar
+    // 2. Center junction flash
     if (junction) {
-      tTl
-        .fromTo(junction, {
-          opacity: 0,
-          scale: 0.3,
-          transformOrigin: "50% 50%",
-        }, {
-          opacity: 0.9,
-          scale: 1,
-          duration: 0.04,
-          ease: "power2.out",
-        }, 0.44)
-        .to(junction, {
-          opacity: 0,
-          scale: 2.4,
-          duration: 0.08,
-          ease: "power2.out",
-        }, 0.48);
+      tTl.fromTo(junction, { opacity: 0, scale: 0.3 }, { opacity: 1, scale: 1, duration: 0.06 }, 0.34)
+         .to(junction, { opacity: 0, scale: 2.2, duration: 0.08 }, 0.40);
     }
 
-    // tip pulls the stem downward
-    tTl.to(stemPath, {
-      strokeDashoffset: 0,
-      duration: 0.4,
-    }, 0.46);
+    // 3. Draw stem downward & reveal depth milestones
+    tTl.to(stemPath, { strokeDashoffset: 0, duration: 0.52 }, 0.40);
 
     if (sparkStem && typeof MotionPathPlugin !== "undefined") {
-      tTl
-        .to(sparkStem, { opacity: 1, duration: 0.02 }, 0.46)
-        .to(sparkStem, {
-          motionPath: "#t-stem-path",
-          duration: 0.4,
-        }, 0.46)
-        .to(sparkStem, { opacity: 0, duration: 0.03 }, 0.86);
+      tTl.to(sparkStem, { opacity: 1, duration: 0.02 }, 0.40)
+         .to(sparkStem, { motionPath: "#t-stem-path", duration: 0.52, ease: "power2.out" }, 0.40)
+         .to(sparkStem, { opacity: 0, duration: 0.02 }, 0.92);
     }
 
-    // deep expertise lands at the tip of the stem
-    tTl.from("#t-deep", {
-      opacity: 0,
-      scale: 0.5,
-      duration: 0.12,
-      ease: "back.out(2)",
-    }, 0.88);
+    tTl.to(["#node-1-svg", "#badge-1"], { opacity: 1, scale: 1, duration: 0.12 }, 0.52);
+    tTl.to(["#node-2-svg", "#badge-2"], { opacity: 1, scale: 1, duration: 0.12 }, 0.64);
+    tTl.to(["#node-3-svg", "#badge-3"], { opacity: 1, scale: 1, duration: 0.12 }, 0.76);
+    tTl.to(["#node-4-svg", "#badge-4"], { opacity: 1, scale: 1, duration: 0.12 }, 0.86);
+
+    // 4. Base anchor pill lands cleanly
+    tTl.to("#t-deep", {
+      opacity: 1,
+      scale: 1,
+      duration: 0.22,
+      ease: "back.out(1.7)",
+    }, 0.94);
+
+    // ScrollTrigger: play when entering view, rewind on scrolling back up
+    ScrollTrigger.create({
+      trigger: "#t-shape",
+      start: "top 65%",
+      onEnter: () => tTl.play(),
+      onLeaveBack: () => tTl.reverse(),
+    });
+
+    // Replay interaction
+    if (replayBtn) {
+      replayBtn.addEventListener("click", () => {
+        tTl.restart();
+      });
+    }
+    tSvg.style.cursor = "pointer";
+    tSvg.setAttribute("title", "Click diagram to replay animation");
+    tSvg.addEventListener("click", () => {
+      tTl.restart();
+    });
   }
 
   // ========================================
@@ -321,6 +315,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const featuredTier = document.getElementById("featured-work-container");
       const secondaryTier = document.getElementById("secondary-work-container");
+      const secondaryCountEl = document.getElementById("secondary-count");
       if (featuredTier) {
         const hasVisible = Array.from(featuredTier.querySelectorAll(".project-card")).some(
           (c) => c.style.display !== "none"
@@ -328,10 +323,13 @@ document.addEventListener("DOMContentLoaded", () => {
         featuredTier.classList.toggle("hidden", !hasVisible);
       }
       if (secondaryTier) {
-        const hasVisible = Array.from(secondaryTier.querySelectorAll(".project-card")).some(
+        const visibleSecondary = Array.from(secondaryTier.querySelectorAll(".project-card")).filter(
           (c) => c.style.display !== "none"
         );
-        secondaryTier.classList.toggle("hidden", !hasVisible);
+        secondaryTier.classList.toggle("hidden", visibleSecondary.length === 0);
+        if (secondaryCountEl) {
+          secondaryCountEl.textContent = `${visibleSecondary.length} system${visibleSecondary.length === 1 ? "" : "s"}`;
+        }
       }
 
       if (noResults) {
@@ -345,10 +343,10 @@ document.addEventListener("DOMContentLoaded", () => {
     function updateActiveButton(category) {
       const colors = {
         all: { bg: "#09318D", border: "#fd91cc", text: "#ffffff" },
-        frontend: { bg: "rgba(253, 145, 204, 0.25)", border: "#fd91cc", text: "#fd91cc" },
-        backend: { bg: "rgba(9, 49, 141, 0.5)", border: "#4978e8", text: "#bfdbfe" },
-        uiux: { bg: "rgba(253, 145, 204, 0.2)", border: "#fd91cc", text: "#ffffff" },
         ai: { bg: "rgba(9, 49, 141, 0.65)", border: "#fd91cc", text: "#fd91cc" },
+        systems: { bg: "rgba(9, 49, 141, 0.5)", border: "#4978e8", text: "#bfdbfe" },
+        agents: { bg: "rgba(253, 145, 204, 0.25)", border: "#fd91cc", text: "#ffffff" },
+        apps: { bg: "rgba(9, 49, 141, 0.4)", border: "#fd91cc", text: "#ffffff" },
       };
 
       filterButtons.forEach((btn) => {

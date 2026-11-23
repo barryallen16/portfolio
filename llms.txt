@@ -27,7 +27,7 @@ rjayadithya11@gmail.com or https://www.linkedin.com/in/jayadithya-r/
 ## Projects
 
 - partha-tamil-tokenizer: Rust BPE tokenizer for Tamil with Aho-Corasick encoder and 1,135-token Tamil-aware base vocabulary.
-Outperforms mBERT compression by 36.9% on Tamil wiki with 100% decode fidelity assertions.
+Yields 50.2% fewer tokens than OpenAI o200k and outperforms mBERT compression by 36.9% on Tamil wiki with 100% decode fidelity assertions.
 Interactive playground live at https://partha.isroot.in/.
 Models published on Hugging Face at https://huggingface.co/barryallen16/partha-tamil-tokenizer.
 https://github.com/barryallen16/partha-tamil-tokenizer
@@ -68,16 +68,18 @@ https://github.com/barryallen16/resume-builder-skill
 Evaluated against 1,170 CSSR-S Reddit benchmark posts.
 https://github.com/barryallen16/all-is-well
 
-- clerk: Local-first HR assistant answering policy questions over ChromaDB embeddings and booking leave in SQLite via typed JSON schemas.
-Scored 10/10 on policy retrieval and 12/14 on tool selection against local SLM inference (lfm3-1.7b).
+- clerk: Local-first HR assistant answering policy questions over 6 ChromaDB policy documents and booking leave in SQLite via typed JSON schemas.
+Scored 10/10 on policy retrieval and 12/14 on tool selection against offline Liquid AI lfm3-1.7b SLM inference, backed by a 13-test pytest CI suite.
 https://github.com/barryallen16/clerk
 
 ## Experience
 
-- AI Research Intern, Blubridge Technologies, Chennai, 07/2025 - 10/2025.
-Implemented operator-fusion passes in MLIR for custom tensor dialect, cutting kernel launch overhead by ~20%.
-Lowered dialect operations down to LLVM IR with shape inference and dynamic bufferization.
-Added 40+ lit tests wired into CI.
+- AI Research Intern (Compiler Team), Blubridge Technologies, Chennai, 07/2025 - 10/2025.
+Early compiler team member working on Nova (arXiv:2608.00029), an end-to-end MLIR deep learning compiler powering the BluTrain framework.
+Contributed to early architecture development, evaluating StableHLO trade-offs to define a value-semantic dialect unifying forward and backward passes.
+Researched progressive lowering chains (nova to linalg, vector, nvgpu, NVVM, and PTX) and cross-operator fusions for transformer architectures.
+Mentored a sub-team of 4 incoming engineers on compiler concepts, torch.fx graph capture, and dialect lowering patterns.
+Authored 170+ pages of first-principles technical notes covering CPU/GPU memory hierarchies, SSA form, and compiler passes.
 
 ## Publications
 
