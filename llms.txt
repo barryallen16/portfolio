@@ -1,7 +1,7 @@
 # Jayadithya R
 
 > Portfolio of Jayadithya R, an AI/ML systems engineer in Chennai, India.
-> He builds production AI systems bottom-up: custom BPE tokenizers in Rust, MLIR compiler optimization passes, local SLM inference under 15ms, and verifiable RAG pipelines.
+> He builds production AI systems bottom-up: custom BPE tokenizers in Rust, deep learning MLIR compilers (Nova), local SLM inference under 15ms, and verifiable RAG pipelines.
 
 Live site: https://jayadithya.is-a.dev
 Last updated: 2026-11-23
@@ -9,7 +9,7 @@ Last updated: 2026-11-23
 ## In short
 
 - Who is Jayadithya R?
-An AI/ML systems engineer in Chennai, India working on LLM systems, compiler passes, and local inference.
+An AI/ML systems engineer in Chennai, India working on LLM systems, deep learning MLIR compilers, and local inference.
 - What does he build?
 Rust BPE tokenizers, hybrid SSM exploitability triage engines, Dockerized batch schedulers, and edge VLM recommenders.
 - How to contact him?
