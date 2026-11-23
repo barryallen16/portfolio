@@ -32,7 +32,7 @@ Interactive playground live at https://partha.isroot.in/.
 Models published on Hugging Face at https://huggingface.co/barryallen16/partha-tamil-tokenizer.
 https://github.com/barryallen16/partha-tamil-tokenizer
 
-- d1-triage: Local SAST alert triage engine that ranks Semgrep findings by exploitability in 12-14 ms on Nvidia T4 using Liquid AI d1-3B hybrid SSM.
+- d1-triage: Local SAST alert triage engine that ranks Semgrep findings by exploitability in 12-14 ms on Nvidia T4 and under 1 second on standard CPU (Q8_0 GGUF) using Liquid AI d1-3B hybrid SSM.
 Fine-tuned on 416 real pre/post-fix diffs, reaching 0.8372 AUC on verified fix hunks and 0.6594 within-rule AUC across 174 real alerts.
 Interactive demo at https://barryallen16.github.io/d1-triage/.
 Model weights and benchmark dataset published on Hugging Face.

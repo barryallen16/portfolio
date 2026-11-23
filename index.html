@@ -1110,10 +1110,10 @@
                   </h3>
                 </div>
                 <p class="mt-1 font-mono text-xs sm:text-sm text-white/70 leading-normal">
-                  Sub-15ms Java vulnerability triage using Liquid AI Hybrid SSM
+                  12-14ms GPU / &lt;1s CPU Java vulnerability triage using Liquid AI Hybrid SSM
                 </p>
                 <p class="mt-2.5 font-mono text-sm text-[#fd91cc]">
-                  &rarr; 12ms inference &middot; 0.8372 AUC on verified fixes
+                  &rarr; 12-14ms (T4) / &lt;1s (CPU) &middot; 0.8372 AUC on verified fixes
                 </p>
                 
                 <div class="mt-4 flex flex-wrap gap-x-5 gap-y-2">
@@ -1135,7 +1135,7 @@
                     </div>
                   </div>
                   <div class="grid grid-cols-2 gap-2 pt-2.5 border-t border-white/10 text-[11px]">
-                    <div class="text-white/60">Latency: <span class="text-[#fd91cc]">12-14 ms</span></div>
+                    <div class="text-white/60">Latency: <span class="text-[#fd91cc]">12-14 ms (T4) &middot; &lt;1s (CPU)</span></div>
                     <div class="text-white/60">Fix AUC: <span class="text-white">0.8372 vs 0.7167 Kev-4B</span></div>
                     <div class="text-white/60 col-span-2">Benchmark: <span class="text-white">174 Java CVEs &middot; 416 verified diffs</span></div>
                   </div>
@@ -1157,7 +1157,7 @@
                 </p>
                 <p class="text-xs sm:text-sm leading-relaxed text-white/85">
                   <span class="text-[#fd91cc] uppercase tracking-wider font-semibold mr-1.5">[solution]</span>
-                  Fine-tuned Liquid AI d1-3B hybrid SSM to classify alert exploitability in 12-14 ms on an Nvidia T4 using 6.25 GiB VRAM. Achieved 0.8372 AUC on verified fix hunks (exceeding Kev-4B's 0.7167) and 0.6594 within-rule AUC across 174 real-world Java advisories.
+                  Fine-tuned Liquid AI d1-3B hybrid SSM to classify alert exploitability in 12-14 ms on an Nvidia T4 (6.25 GiB VRAM) and under 1 second on CPU (Q8_0 GGUF). Achieved 0.8372 AUC on verified fix hunks (exceeding Kev-4B's 0.7167) and 0.6594 within-rule AUC across 174 real-world Java advisories.
                 </p>
                 <ul class="space-y-2 pt-1 font-mono text-xs sm:text-sm text-white/75">
                   <li class="flex gap-2.5 leading-relaxed">
@@ -1166,7 +1166,7 @@
                   </li>
                   <li class="flex gap-2.5 leading-relaxed">
                     <span class="text-[#fd91cc] select-none">&bull;</span>
-                    <span>12-14 ms latency on single T4 GPU with 6.25 GiB VRAM footprint</span>
+                    <span>12-14 ms on Nvidia T4; &lt;1s on standard CPU with zero-GPU CI runner support</span>
                   </li>
                   <li class="flex gap-2.5 leading-relaxed">
                     <span class="text-[#fd91cc] select-none">&bull;</span>
