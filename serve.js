@@ -4,7 +4,11 @@ const server = Bun.serve({
     const url = new URL(req.url);
     let pathname = decodeURIComponent(url.pathname);
     if (pathname === "/" || pathname === "") pathname = "/index.html";
-    const file = Bun.file("." + pathname);
+    if (pathname.endsWith("/")) pathname += "index.html";
+    let file = Bun.file("." + pathname);
+    if (!(await file.exists())) {
+      file = Bun.file("." + pathname + "/index.html");
+    }
     if (await file.exists()) {
       return new Response(file);
     }

@@ -72,13 +72,6 @@
     <meta name="theme-color" content="#09318D" />
     <!-- Resource hints for critical 3rd party domains and LCP candidate -->
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
-    <link
-      rel="preload"
-      as="image"
-      href="./images/profile.webp"
-      type="image/webp"
-      fetchpriority="high"
-    />
     <!-- Fonts: optimized WOFF2 subsets -->
     <link
       rel="preload"
@@ -345,14 +338,8 @@
           projects
         </a>
         <a
-          href="#depth"
-          class="hidden md:flex px-2.5 sm:px-3.5 py-2 text-xs sm:text-sm bg-[#0c1b40] border border-[#09318D]/60 rounded-full text-white/85 hover:text-white hover:border-[#fd91cc] transition-colors min-h-[44px] items-center justify-center font-mono"
-        >
-          depth
-        </a>
-        <a
           href="#experience"
-          class="hidden lg:flex px-2.5 sm:px-3.5 py-2 text-xs sm:text-sm bg-[#0c1b40] border border-[#09318D]/60 rounded-full text-white/85 hover:text-white hover:border-[#fd91cc] transition-colors min-h-[44px] items-center justify-center font-mono"
+          class="hidden sm:flex px-2.5 sm:px-3.5 py-2 text-xs sm:text-sm bg-[#0c1b40] border border-[#09318D]/60 rounded-full text-white/85 hover:text-white hover:border-[#fd91cc] transition-colors min-h-[44px] items-center justify-center font-mono"
         >
           experience
         </a>
@@ -397,91 +384,37 @@
           class="bg-[#050b1a] bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#09318D]/40 via-[#050b1a] to-[#030612] min-h-screen flex justify-center items-center"
         >
           <div
-            class="grid grid-cols-1 md:grid-cols-2 md:gap-8 w-full items-center pt-28 md:pt-20 pb-16 px-6 sm:px-8 mx-auto max-w-7xl"
+            class="w-full max-w-4xl pt-28 md:pt-24 pb-16 px-6 sm:px-8 mx-auto flex flex-col justify-center"
           >
             <div class="flex flex-col">
               <h1 class="text-white text-3xl sm:text-4xl">
                 hi i'm
                 <span
-                  class="block text-4xl sm:text-5xl text-white underline decoration-[#fd91cc] underline-offset-4 mt-1 font-normal"
+                  class="block text-4xl sm:text-6xl text-white underline decoration-[#fd91cc] underline-offset-8 mt-1 font-normal tracking-wide"
                 >
                   jayadithya
                 </span>
               </h1>
-              <p class="text-xl sm:text-2xl text-white/95 mt-2 font-sans font-medium">
+              <p class="text-xl sm:text-2xl text-[#fd91cc] mt-2 font-sans font-medium tracking-wide">
                 AI / ML Systems Engineer
               </p>
               
-              <!-- What do you do? -->
-              <p class="text-white/85 font-mono mt-3 text-sm sm:text-base leading-relaxed max-w-xl">
-                I build production AI systems bottom-up: custom BPE tokenizers in Rust, deep learning MLIR compilers, local SLM inference under 15ms, and verifiable RAG pipelines.
-              </p>
-              
-              <!-- Who is it for? -->
-              <p class="text-white/60 font-mono text-xs sm:text-sm mt-2 leading-normal max-w-xl">
-                Built for engineering teams and AI startups that need high-throughput data processing, on-device model efficiency, and zero hallucinated metrics.
+              <p class="text-white/85 font-mono text-base sm:text-lg leading-relaxed mt-4 max-w-2xl">
+                Production AI systems from the metal up: custom Rust BPE tokenizers, deep learning MLIR compilers, and sub-15ms SLM inference for teams requiring zero hallucinated metrics.
               </p>
 
-              <!-- WHY SHOULD I TRUST YOU? (Proof Anchors) -->
-              <div class="grid grid-cols-1 min-[380px]:grid-cols-2 gap-2.5 sm:gap-3 mt-6 max-w-xl font-mono">
-                <a
-                  href="#project-fitcheck"
-                  data-target-project="fitcheck"
-                  class="proof-anchor-card group p-2.5 sm:p-3 rounded-lg bg-[#0a1638]/90 border border-[#09318D]/70 hover:border-[#fd91cc] transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-[#09318D]/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#fd91cc] block text-left"
-                >
-                  <div class="flex items-center justify-between">
-                    <span class="text-[#fd91cc] font-semibold text-xs sm:text-sm group-hover:underline decoration-[#fd91cc]">1st Author, IEEE 2026</span>
-                    <span class="text-white/40 group-hover:text-[#fd91cc] group-hover:translate-x-0.5 transition-all text-xs" aria-hidden="true">&rarr;</span>
-                  </div>
-                  <div class="text-white/70 text-[11px] sm:text-xs mt-0.5 leading-snug">VLM distillation with blind human eval (p &lt; 0.05)</div>
-                </a>
-                <a
-                  href="#project-sivabharani-comments"
-                  data-target-project="sivabharani-comments"
-                  class="proof-anchor-card group p-2.5 sm:p-3 rounded-lg bg-[#0a1638]/90 border border-[#09318D]/70 hover:border-[#fd91cc] transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-[#09318D]/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#fd91cc] block text-left"
-                >
-                  <div class="flex items-center justify-between">
-                    <span class="text-[#fd91cc] font-semibold text-xs sm:text-sm group-hover:underline decoration-[#fd91cc]">1.18M Chunks Processed</span>
-                    <span class="text-white/40 group-hover:text-[#fd91cc] group-hover:translate-x-0.5 transition-all text-xs" aria-hidden="true">&rarr;</span>
-                  </div>
-                  <div class="text-white/70 text-[11px] sm:text-xs mt-0.5 leading-snug">27-key worker pool across 1,400+ videos</div>
-                </a>
-                <a
-                  href="#project-tamil-tokenizer"
-                  data-target-project="tamil-tokenizer"
-                  class="proof-anchor-card group p-2.5 sm:p-3 rounded-lg bg-[#0a1638]/90 border border-[#09318D]/70 hover:border-[#fd91cc] transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-[#09318D]/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#fd91cc] block text-left"
-                >
-                  <div class="flex items-center justify-between">
-                    <span class="text-[#fd91cc] font-semibold text-xs sm:text-sm group-hover:underline decoration-[#fd91cc]">100% Decode Fidelity</span>
-                    <span class="text-white/40 group-hover:text-[#fd91cc] group-hover:translate-x-0.5 transition-all text-xs" aria-hidden="true">&rarr;</span>
-                  </div>
-                  <div class="text-white/70 text-[11px] sm:text-xs mt-0.5 leading-snug">Rust Tamil tokenizer (-50.2% vs OpenAI o200k)</div>
-                </a>
-                <a
-                  href="#project-d1-triage"
-                  data-target-project="d1-triage"
-                  class="proof-anchor-card group p-2.5 sm:p-3 rounded-lg bg-[#0a1638]/90 border border-[#09318D]/70 hover:border-[#fd91cc] transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-[#09318D]/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#fd91cc] block text-left"
-                >
-                  <div class="flex items-center justify-between">
-                    <span class="text-[#fd91cc] font-semibold text-xs sm:text-sm group-hover:underline decoration-[#fd91cc]">12ms Exploit Triage</span>
-                    <span class="text-white/40 group-hover:text-[#fd91cc] group-hover:translate-x-0.5 transition-all text-xs" aria-hidden="true">&rarr;</span>
-                  </div>
-                  <div class="text-white/70 text-[11px] sm:text-xs mt-0.5 leading-snug">Liquid AI SSM ranking alerts on Nvidia T4</div>
-                </a>
-              </div>
-
-              <!-- WHAT HAPPENS NEXT? (Clear Conversion Path) -->
-              <div class="mt-7 flex flex-col sm:flex-row sm:items-center gap-3">
+              <!-- Primary Conversion Actions -->
+              <div class="mt-8 flex flex-col sm:flex-row sm:items-center gap-3.5">
                 <a
                   href="#showcase"
-                  class="w-full sm:w-auto justify-center text-center px-5 py-2.5 rounded-full bg-[#09318D] text-white font-mono text-xs sm:text-sm font-semibold border-2 border-[#fd91cc] hover:bg-[#fd91cc] hover:text-[#09318D] transition-all duration-200 flex items-center gap-2 min-h-[44px] shadow-lg shadow-[#09318D]/40"
+                  class="w-full sm:w-auto justify-center text-center px-6 py-3 rounded-full bg-[#09318D] text-white font-mono text-xs sm:text-sm font-semibold border-2 border-[#fd91cc] hover:bg-[#fd91cc] hover:text-[#09318D] transition-all duration-200 flex items-center gap-2 min-h-[46px] shadow-lg shadow-[#09318D]/40"
                 >
-                  explore projects &darr;
+                  explore systems &darr;
                 </a>
                 <a
                   href="./resume/"
                   target="_blank"
-                  class="w-full sm:w-auto justify-center text-center px-5 py-2.5 rounded-full border-2 border-[#09318D]/80 bg-[#0c1b40] text-white/90 font-mono text-xs sm:text-sm hover:border-[#fd91cc] transition-all duration-200 flex items-center gap-2 min-h-[44px]"
+                  class="w-full sm:w-auto justify-center text-center px-6 py-3 rounded-full border-2 border-[#09318D]/80 bg-[#0c1b40]/80 text-white/90 font-mono text-xs sm:text-sm hover:border-[#fd91cc] transition-all duration-200 flex items-center gap-2 min-h-[46px]"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -491,45 +424,14 @@
                     style="image-rendering:pixelated"
                     aria-hidden="true"
                   ><path d="M4 2h12v2h-12zM4 4h2v16h-2zM16 4h2v2h-2zM18 6h2v14h-2zM11 8h2v10h-2zM9 14h2v2h-2zM13 14h2v2h-2zM6 20h12v2h-12z"/></svg>
-                  view 1-page resume (pdf) &nearr;
+                  view resume &nearr;
                 </a>
               </div>
-              <p class="text-white/50 font-mono text-xs mt-3 flex flex-wrap items-center gap-2">
+              <p class="text-white/50 font-mono text-xs mt-4 flex flex-wrap items-center gap-2">
                 <span>chennai, india &middot; open to remote and relocation</span>
                 <span>&middot;</span>
                 <a href="mailto:rjayadithya11@gmail.com" class="text-[#fd91cc] hover:underline">rjayadithya11@gmail.com</a>
               </p>
-            </div>
-            
-            <div class="relative mt-8 md:mt-0 flex justify-center md:justify-end">
-              <div class="relative rounded-xl overflow-hidden border border-[#09318D]/60 shadow-xl shadow-[#02050f]/70">
-                <img
-                  src="./images/profile.webp"
-                  alt="jayadithya profile"
-                  width="384"
-                  height="384"
-                  fetchpriority="high"
-                  class="h-64 sm:h-80 md:h-96 w-auto object-cover object-bottom"
-                  onerror="
-                    this.style.display = 'none';
-                    document.getElementById('hero-fallback').style.display = 'flex';
-                  "
-                />
-                <div
-                  id="hero-fallback"
-                  style="display: none"
-                  class="h-64 sm:h-80 md:h-96 w-52 sm:w-60 md:w-72 bg-gradient-to-br from-[#09318D] via-[#0c235c] to-[#fd91cc]/40 items-center justify-center select-none"
-                >
-                  <span
-                    class="text-white/90 text-[7rem] sm:text-[8rem] md:text-[10rem] leading-none"
-                    >J</span
-                  >
-                </div>
-                <div
-                  class="absolute inset-0 grid grid-cols-8 grid-rows-8 pointer-events-none"
-                  id="pixelated-container"
-                ></div>
-              </div>
             </div>
           </div>
         </div>
@@ -869,6 +771,54 @@
           <p class="font-mono text-white/60 text-xs sm:text-sm max-w-lg leading-relaxed">
             Every project defends why deep learning was strictly required over deterministic code.
           </p>
+        </div>
+
+        <!-- Proof Anchors / Key Benchmark Receipts -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 mb-8 font-mono">
+          <a
+            href="#project-fitcheck"
+            data-target-project="fitcheck"
+            class="proof-anchor-card group p-3 rounded-xl bg-[#0a1638]/90 border border-[#09318D]/70 hover:border-[#fd91cc] transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-[#09318D]/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#fd91cc] block text-left"
+          >
+            <div class="flex items-center justify-between">
+              <span class="text-[#fd91cc] font-semibold text-xs sm:text-sm group-hover:underline decoration-[#fd91cc]">1st Author, IEEE 2026</span>
+              <span class="text-white/40 group-hover:text-[#fd91cc] group-hover:translate-x-0.5 transition-all text-xs" aria-hidden="true">&rarr;</span>
+            </div>
+            <div class="text-white/70 text-[11px] sm:text-xs mt-1 leading-snug">VLM distillation with blind human eval (p &lt; 0.05)</div>
+          </a>
+          <a
+            href="#project-sivabharani-comments"
+            data-target-project="sivabharani-comments"
+            class="proof-anchor-card group p-3 rounded-xl bg-[#0a1638]/90 border border-[#09318D]/70 hover:border-[#fd91cc] transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-[#09318D]/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#fd91cc] block text-left"
+          >
+            <div class="flex items-center justify-between">
+              <span class="text-[#fd91cc] font-semibold text-xs sm:text-sm group-hover:underline decoration-[#fd91cc]">1.18M Chunks Processed</span>
+              <span class="text-white/40 group-hover:text-[#fd91cc] group-hover:translate-x-0.5 transition-all text-xs" aria-hidden="true">&rarr;</span>
+            </div>
+            <div class="text-white/70 text-[11px] sm:text-xs mt-1 leading-snug">27-key worker pool across 1,400+ videos</div>
+          </a>
+          <a
+            href="#project-tamil-tokenizer"
+            data-target-project="tamil-tokenizer"
+            class="proof-anchor-card group p-3 rounded-xl bg-[#0a1638]/90 border border-[#09318D]/70 hover:border-[#fd91cc] transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-[#09318D]/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#fd91cc] block text-left"
+          >
+            <div class="flex items-center justify-between">
+              <span class="text-[#fd91cc] font-semibold text-xs sm:text-sm group-hover:underline decoration-[#fd91cc]">100% Decode Fidelity</span>
+              <span class="text-white/40 group-hover:text-[#fd91cc] group-hover:translate-x-0.5 transition-all text-xs" aria-hidden="true">&rarr;</span>
+            </div>
+            <div class="text-white/70 text-[11px] sm:text-xs mt-1 leading-snug">Rust Tamil tokenizer (-50.2% vs OpenAI o200k)</div>
+          </a>
+          <a
+            href="#project-d1-triage"
+            data-target-project="d1-triage"
+            class="proof-anchor-card group p-3 rounded-xl bg-[#0a1638]/90 border border-[#09318D]/70 hover:border-[#fd91cc] transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-[#09318D]/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#fd91cc] block text-left"
+          >
+            <div class="flex items-center justify-between">
+              <span class="text-[#fd91cc] font-semibold text-xs sm:text-sm group-hover:underline decoration-[#fd91cc]">12ms Exploit Triage</span>
+              <span class="text-white/40 group-hover:text-[#fd91cc] group-hover:translate-x-0.5 transition-all text-xs" aria-hidden="true">&rarr;</span>
+            </div>
+            <div class="text-white/70 text-[11px] sm:text-xs mt-1 leading-snug">Liquid AI SSM ranking alerts on Nvidia T4</div>
+          </a>
         </div>
 
         <!-- Filter Buttons -->
@@ -1663,7 +1613,7 @@
                 target="_blank"
                 class="inline-flex items-center justify-center px-4 py-2.5 rounded-full border border-[#09318D] bg-[#0c1b40] text-white text-xs hover:border-[#fd91cc] hover:text-[#fd91cc] transition-colors min-h-[44px]"
               >
-                view resume (pdf) &nearr;
+                view resume &nearr;
               </a>
             </div>
 

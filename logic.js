@@ -16,33 +16,6 @@ document.addEventListener("DOMContentLoaded", () => {
   gsap.registerPlugin(ScrollTrigger);
 
   // ========================================
-  // Pixel Animation for Hero Section
-  // ========================================
-
-  const pixelsContainer = document.querySelector("#pixelated-container");
-
-  if (pixelsContainer) {
-    for (let i = 0; i < 64; i++) {
-      const pixel = document.createElement("div");
-      pixel.className = "pixel bg-[#0e0e0e]";
-      pixelsContainer.appendChild(pixel);
-    }
-
-    const pixelTl = gsap.timeline({
-      onComplete: () => {
-        if (pixelsContainer && pixelsContainer.parentNode) {
-          pixelsContainer.remove();
-        }
-      },
-    });
-    pixelTl.to(".pixel", {
-      opacity: 0,
-      duration: 0.1,
-      stagger: { amount: 0.5, from: "random" },
-    });
-  }
-
-  // ========================================
   // Des-Dev Image Animations (slide in from opposite sides if present)
   // ========================================
 
