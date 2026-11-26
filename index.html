@@ -1,26 +1,26 @@
 <!doctype html>
-<html lang="en" class="scroll-smooth overflow-x-hidden">
+<html lang="en" class="dark scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Jayadithya R - AI/ML Systems Engineer</title>
+    <title>Jayadithya R - AI/ML systems engineer</title>
     <meta
       name="description"
-      content="Jayadithya R - AI/ML systems engineer from Chennai building custom tokenizers, deep learning MLIR compilers, local model inference, and verifiable RAG pipelines."
+      content="Jayadithya R - AI/ML systems engineer in Chennai building custom tokenizers, MLIR compiler passes, local model inference, and offline voice AI."
     />
-    <meta property="og:title" content="Jayadithya R - AI/ML Systems Engineer" />
+    <meta property="og:title" content="Jayadithya R - AI/ML systems engineer" />
     <meta
       property="og:description"
-      content="Production AI systems, custom tokenizers, deep learning MLIR compilers, and local inference tooling. Chennai, India."
+      content="AI/ML systems, custom tokenizers, MLIR compiler passes, and local inference tooling. Chennai, India."
     />
     <meta property="og:type" content="profile" />
     <meta property="og:url" content="https://jayadithya.is-a.dev/" />
-    <meta property="og:image" content="https://jayadithya.is-a.dev/images/profile.webp" />
+    <meta property="og:image" content="https://jayadithya.is-a.dev/images/og-banner.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Jayadithya R - AI Engineer and Systems Dev banner" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta
-      name="robots"
-      content="index, follow, max-image-preview:large"
-    />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
     <meta name="google-site-verification" content="ZsTdrmr6wVCVJX30i-GSEnTVApW7dUwY9PnD2KNx1WY" />
     <link rel="canonical" href="https://jayadithya.is-a.dev/" />
     <script type="application/ld+json">
@@ -53,10 +53,8 @@
               "LLM systems",
               "BPE tokenizers",
               "Deep learning MLIR compilers",
-              "fine-tuning",
-              "data pipelines",
-              "eval harnesses",
-              "hybrid SSM inference"
+              "On-device speech and extraction",
+              "Hybrid SSM inference"
             ]
           },
           {
@@ -69,1648 +67,810 @@
         ]
       }
     </script>
-    <meta name="theme-color" content="#09318D" />
-    <!-- Resource hints for critical 3rd party domains and LCP candidate -->
-    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
-    <!-- Fonts: optimized WOFF2 subsets -->
-    <link
-      rel="preload"
-      href="./fonts/brunson-display.woff2"
-      as="font"
-      type="font/woff2"
-      crossorigin
-    />
-    <link
-      rel="preload"
-      href="./fonts/geistmono-regular.woff2"
-      as="font"
-      type="font/woff2"
-      crossorigin
-    />
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <link
-      rel="shortcut icon"
-      href="./favicon/favicon.ico"
-      type="image/x-icon"
-    />
-    <script src="./vendor/gsap.min.js" defer></script>
-    <script src="./vendor/ScrollTrigger.min.js" defer></script>
-    <script src="./vendor/MotionPathPlugin.min.js" defer></script>
+    <meta name="theme-color" content="#09090b" />
+    <link rel="preload" href="./fonts/satoshi-regular.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="./fonts/mononoki-regular.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="icon" href="./favicon/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png" />
+    <link rel="stylesheet" href="./styles.css" />
     <script src="./logic.js" defer></script>
-    <style type="text/tailwindcss">
-      @font-face {
-        font-family: "Brunson";
-        src: url("./fonts/brunson-display.woff2") format("woff2");
-        font-display: swap;
-      }
-      @font-face {
-        font-family: "GeistMono";
-        src: url("./fonts/geistmono-regular.woff2") format("woff2");
-        font-weight: 400;
-        font-style: normal;
-        font-display: swap;
-      }
-      html, body {
-        overflow-x: hidden;
-        max-width: 100vw;
-      }
-      /* Brunson letter spacing throughout the page */
-      h1, h2, h3, h4, h5, h6,
-      .font-sans,
-      [class*="font-sans"] {
-        letter-spacing: 0.05em;
-      }
-      @theme {
-        --font-sans: "Brunson", ui-sans-serif, system-ui, sans-serif;
-        --font-mono: "GeistMono", ui-monospace, SFMono-Regular, monospace;
-        --color-brand-blue: #09318D;
-        --color-brand-pink: #fd91cc;
-        --color-brand-white: #ffffff;
-      }
-      ::selection {
-        background: #fd91cc;
-        color: #09318D;
-      }
-      :focus-visible {
-        outline: 2px solid #fd91cc !important;
-        outline-offset: 2px !important;
-      }
-      @keyframes targetHighlight {
-        0% {
-          box-shadow: 0 0 0 0 rgba(253, 145, 204, 0.9), 0 0 35px rgba(9, 49, 141, 0.9);
-          border-color: #fd91cc;
-          transform: translateY(-4px) scale(1.02);
-        }
-        40% {
-          box-shadow: 0 0 0 8px rgba(253, 145, 204, 0.45), 0 0 45px rgba(253, 145, 204, 0.55);
-          border-color: #fd91cc;
-          transform: translateY(-4px) scale(1.02);
-        }
-        100% {
-          box-shadow: 0 0 0 0 rgba(253, 145, 204, 0), 0 0 0 rgba(9, 49, 141, 0);
-          border-color: rgba(9, 49, 141, 0.6);
-          transform: translateY(0) scale(1);
-        }
-      }
-      .target-highlight-pulse {
-        animation: targetHighlight 2.4s cubic-bezier(0.16, 1, 0.3, 1) forwards !important;
-        position: relative;
-        z-index: 25;
-      }
-      .pt {
-        display: flex;
-        flex-direction: column;
-        gap: 0.75rem;
-      }
-      .pt-row {
-        display: grid;
-        grid-template-columns: 4.75rem 1fr;
-        gap: 0.75rem;
-        align-items: start;
-      }
-      .pt dt {
-        font-family: "GeistMono", ui-monospace, monospace;
-        font-size: 0.6875rem;
-        letter-spacing: 0.03em;
-        padding-top: 0.2rem;
-        color: #fd91cc;
-        text-transform: uppercase;
-      }
-      .pt dt[data-tip] {
-        position: relative;
-        cursor: help;
-        text-decoration: underline dotted rgb(253 145 204 / 0.55);
-        text-underline-offset: 3px;
-        width: fit-content;
-      }
-      .pt dt[data-tip]::after {
-        content: attr(data-tip);
-        position: absolute;
-        bottom: calc(100% + 6px);
-        left: 0;
-        z-index: 50;
-        width: max-content;
-        max-width: 15rem;
-        padding: 0.375rem 0.625rem;
-        background: #060e22;
-        border: 1px solid rgb(253 145 204 / 0.45);
-        border-radius: 6px;
-        color: #f3f4f6;
-        font-family: "GeistMono", ui-monospace, monospace;
-        font-size: 0.6875rem;
-        font-weight: 400;
-        line-height: 1.4;
-        text-transform: none;
-        letter-spacing: normal;
-        white-space: normal;
-        pointer-events: none;
-        opacity: 0;
-        transform: translateY(4px);
-        transition: opacity 0.15s ease, transform 0.15s ease;
-        box-shadow: 0 4px 16px rgb(0 0 0 / 0.7), 0 0 10px rgb(253 145 204 / 0.15);
-      }
-      .pt dt[data-tip]::before {
-        content: "";
-        position: absolute;
-        bottom: calc(100% + 2px);
-        left: 0.75rem;
-        z-index: 51;
-        border-width: 4px;
-        border-style: solid;
-        border-color: #060e22 transparent transparent transparent;
-        pointer-events: none;
-        opacity: 0;
-        transform: translateY(4px);
-        transition: opacity 0.15s ease, transform 0.15s ease;
-      }
-      .pt dt[data-tip]:hover::after,
-      .pt dt[data-tip]:hover::before,
-      .pt dt[data-tip]:focus-visible::after,
-      .pt dt[data-tip]:focus-visible::before {
-        opacity: 1;
-        transform: translateY(0);
-      }
-      .pt dt[data-tip]:focus-visible {
-        outline: 1px solid #fd91cc;
-        outline-offset: 2px;
-        border-radius: 2px;
-      }
-      .pt dd {
-        font-family: "GeistMono", ui-monospace, monospace;
-        font-size: 0.8125rem;
-        line-height: 1.55;
-        color: rgb(255 255 255 / 0.85);
-        overflow-wrap: break-word;
-        word-break: break-word;
-      }
-      @media (max-width: 380px) {
-        .pt-row {
-          grid-template-columns: 4.25rem 1fr;
-          gap: 0.5rem;
-        }
-      }
-      @media (min-width: 640px) {
-        .pt dd {
-          font-size: 0.875rem;
-        }
-      }
-      .filter-btn {
-        transition: all 0.2s ease;
-      }
-      .filter-btn:active {
-        transform: scale(0.96);
-      }
-      .filter-btn.is-active[data-filter="all"] {
-        background-color: #09318D;
-        border-color: #fd91cc;
-        color: #ffffff;
-      }
-      .filter-btn.is-active[data-filter="ai"] {
-        background-color: rgba(9, 49, 141, 0.65);
-        border-color: #fd91cc;
-        color: #fd91cc;
-      }
-      .filter-btn.is-active[data-filter="systems"] {
-        background-color: rgba(9, 49, 141, 0.5);
-        border-color: #4978e8;
-        color: #bfdbfe;
-      }
-      .filter-btn.is-active[data-filter="agents"] {
-        background-color: rgba(253, 145, 204, 0.25);
-        border-color: #fd91cc;
-        color: #fd91cc;
-      }
-      .filter-btn.is-active[data-filter="apps"] {
-        background-color: rgba(9, 49, 141, 0.4);
-        border-color: #fd91cc;
-        color: #ffffff;
-      }
-      .tabular-nums {
-        font-variant-numeric: tabular-nums;
-      }
-      /* Custom brand scrollbar (Impeccable craft floor) */
-      ::-webkit-scrollbar {
-        width: 8px;
-        height: 8px;
-      }
-      ::-webkit-scrollbar-track {
-        background: #050b1a;
-      }
-      ::-webkit-scrollbar-thumb {
-        background: #09318D;
-        border-radius: 4px;
-        border: 1px solid rgba(253, 145, 204, 0.3);
-      }
-      ::-webkit-scrollbar-thumb:hover {
-        background: #fd91cc;
-      }
-      /* Motion accessibility: respect instant scroll behavior */
-      @media (prefers-reduced-motion: reduce) {
-        html {
-          scroll-behavior: auto !important;
-        }
-      }
-    </style>
   </head>
-  <body class="overflow-x-hidden bg-[#050b1a] text-white">
-    <!-- Nav -->
-    <header
-      class="bg-[#08122c]/85 backdrop-blur-md px-2 min-[380px]:px-3 sm:px-6 py-2 sm:py-2.5 w-[96%] sm:w-[90%] max-w-5xl rounded-full fixed top-2.5 sm:top-6 z-40 left-1/2 -translate-x-1/2 flex justify-between items-center border border-[#09318D]/50 shadow-lg shadow-[#02050f]/80"
+  <body id="top" class="min-h-[100dvh] bg-rail-gutter text-[#e6e7eb] antialiased">
+    <!-- Pixelarticons SVG Sprite (24x24 grid) -->
+    <svg class="hidden" aria-hidden="true">
+      <symbol id="px-mail" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M6 8h2v2H6zm2 2h2v2H8zm10-2h-2v2h2zm-2 2h-2v2h2zm-6 2h4v2h-4zM2 6h2v12H2zm18 0h2v12h-2zM4 4h16v2H4zm0 14h16v2H4z"/>
+      </symbol>
+      <symbol id="px-copy" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M8 6h12v2H8zM4 2h12v2H4zm2 6h2v12H6zM2 4h2v12H2zm6 16h12v2H8zM20 8h2v12h-2zm-4-4h2v2h-2zM4 16h2v2H4z"/>
+      </symbol>
+      <symbol id="px-file" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M6 4H4v16h2zm10-2H6v2h10zm4 4h-2v14h2zm-2 14H6v2h12zM16 4h2v2h-2zm-4 0h2v6h-2z"/>
+        <path d="M12 8h6v2h-6zm-4 8h8v2H8zm0-4h8v2H8zm0-4h2v2H8z"/>
+      </symbol>
+      <symbol id="px-terminal" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M4 2h16v2H4zm0 18h16v2H4zM2 4h2v16H2zm18 0h2v16h-2zM6 16h2v2H6zm2-2h2v2H8zm-2-2h2v2H6z"/>
+      </symbol>
+      <symbol id="px-ext" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12 4h8v2h-8zM16 6h4v2h-4zM14 8h2v2h-2zM18 8h2v4h-2zM12 10h2v2h-2zM10 12h2v2h-2zM8 14h2v2h-2zM6 16h2v2h-2zM4 18h2v2h-2z"/>
+      </symbol>
+      <symbol id="px-close" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M7 19H5V17H7V19ZM19 19H17V17H19V19ZM9 15V17H7V15H9ZM17 17H15V15H17V17ZM11 15H9V13H11V15ZM15 15H13V13H15V15ZM13 13H11V11H13V13ZM11 11H9V9H11V11ZM15 11H13V9H15V11ZM9 9H7V7H9V9ZM17 9H15V7H17V9ZM7 7H5V5H7V7ZM19 7H17V5H19V7Z"/>
+      </symbol>
+      <symbol id="px-chevron-down" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M13 16h-2v-2h2v2Zm-2-2H9v-2h2v2Zm4 0h-2v-2h2v2Zm-6-2H7v-2h2v2Zm8 0h-2v-2h2v2ZM7 10H5V8h2v2Zm12 0h-2V8h2v2Z"/>
+      </symbol>
+    </svg>
+
+    <a
+      href="#main-content"
+      class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50 focus:px-4 focus:py-2 focus:rounded-lg focus:bg-[#fd91cc] focus:text-[#09090b] focus:font-medium"
     >
-      <a
-        href="#hero"
-        aria-label="home"
-        class="p-1 rounded-full flex items-center justify-center min-w-[38px] sm:min-w-[44px] min-h-[38px] sm:min-h-[44px] focus-visible:outline-[#fd91cc]"
-      >
-        <img
-          src="./favicon/favicon-32x32.png"
-          alt="site logo"
-          width="28"
-          height="28"
-          class="h-6 w-6 sm:h-7 sm:w-7"
-        />
-      </a>
-      <nav class="flex justify-center items-center gap-1 sm:gap-2" aria-label="Main Navigation">
-        <a
-          href="#showcase"
-          class="px-2 min-[380px]:px-2.5 sm:px-3.5 py-1.5 sm:py-2 text-[11px] min-[380px]:text-xs sm:text-sm bg-[#0c1b40] border border-[#09318D]/60 rounded-full text-white/85 hover:text-white hover:border-[#fd91cc] transition-colors min-h-[38px] sm:min-h-[44px] flex items-center justify-center font-mono"
-        >
-          projects
+      Skip to main content
+    </a>
+
+    <!-- Top Sticky Bar -->
+    <header class="sticky top-0 z-40 border-b border-white/[0.08] bg-[#09090b]/90 backdrop-blur-md">
+      <div class="max-w-[740px] mx-auto px-4 sm:px-6 h-14 flex items-center justify-between border-x border-white/[0.08]">
+        <a href="#top" class="flex items-center gap-2.5 text-sm font-semibold tracking-tight text-white hover:text-[#fd91cc] transition-colors min-h-[44px] px-1">
+          <img src="./favicon/favicon-32x32.png" alt="" width="20" height="20" class="w-5 h-5 rounded" />
+          <span>Jayadithya R</span>
         </a>
-        <a
-          href="#experience"
-          class="hidden sm:flex px-2.5 sm:px-3.5 py-2 text-xs sm:text-sm bg-[#0c1b40] border border-[#09318D]/60 rounded-full text-white/85 hover:text-white hover:border-[#fd91cc] transition-colors min-h-[44px] items-center justify-center font-mono"
-        >
-          experience
-        </a>
-        <a
-          href="./resume/"
-          target="_blank"
-          class="px-2 min-[380px]:px-2.5 sm:px-3.5 py-1.5 sm:py-2 text-[11px] min-[380px]:text-xs sm:text-sm bg-[#0c1b40] border border-[#09318D]/60 rounded-full text-white/85 hover:text-white hover:border-[#fd91cc] transition-colors min-h-[38px] sm:min-h-[44px] flex items-center justify-center font-mono"
-        >
-          resume
-        </a>
-        <a
-          href="#contact"
-          class="px-2 min-[380px]:px-2.5 sm:px-3.5 py-1.5 sm:py-2 text-[11px] min-[380px]:text-xs sm:text-sm bg-[#09318D]/60 border border-[#fd91cc]/70 rounded-full text-[#fd91cc] hover:bg-[#09318D] hover:text-white transition-colors min-h-[38px] sm:min-h-[44px] flex items-center justify-center font-mono"
-        >
-          contact
-        </a>
-        <a
-          href="https://www.linkedin.com/in/jayadithya-r/"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="linkedin"
-          class="hidden sm:flex p-2.5 bg-[#0c1b40] border border-[#09318D]/60 rounded-full text-white/85 hover:text-white hover:border-[#fd91cc] transition-colors min-h-[44px] min-w-[44px] items-center justify-center"
-        >
-          <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="w-4 h-4" aria-hidden="true"><path d="M20 22H4v-2h16v2ZM4 20H2V4h2v16Zm18 0h-2V4h2v16ZM9 17H7v-6h2v6Zm6-6v2h-2v4h-2v-6h4Zm2 6h-2v-4h2v4ZM9 9H7V7h2v2Zm11-5H4V2h16v2Z"/></svg>
-        </a>
-        <a
-          href="https://github.com/barryallen16"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="github"
-          class="p-2 sm:p-2.5 bg-[#0c1b40] border border-[#09318D]/60 rounded-full text-white/85 hover:text-white hover:border-[#fd91cc] transition-colors min-h-[38px] min-w-[38px] sm:min-h-[44px] sm:min-w-[44px] flex items-center justify-center"
-        >
-          <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="w-4 h-4" aria-hidden="true"><path d="M5 2h4v2H7v2H5V2Zm0 10H3V6h2v6Zm2 2H5v-2h2v2Zm2 2v-2H7v2H3v-2H1v2h2v2h4v4h2v-4h2v-2H9Zm0 0v2H7v-2h2Zm6-12v2H9V4h6Zm4 2h-2V4h-2V2h4v4Zm0 6V6h2v6h-2Zm-2 2v-2h2v2h-2Zm-2 2v-2h2v2h-2Zm0 2h-2v-2h2v2Zm0 0h2v4h-2v-4Z"/></svg>
-        </a>
-      </nav>
+        <nav class="flex items-center gap-1 sm:gap-2" aria-label="Main navigation">
+          <a href="#experience" class="hidden sm:inline-flex items-center px-2.5 py-2 text-xs font-medium text-zinc-400 hover:text-white transition-colors min-h-[44px]">Experience</a>
+          <a href="#projects" class="inline-flex items-center px-2.5 py-2 text-xs font-medium text-zinc-400 hover:text-white transition-colors min-h-[44px]">Projects</a>
+          <a href="./resume/" class="inline-flex items-center px-2.5 py-2 text-xs font-medium text-zinc-400 hover:text-[#fd91cc] transition-colors min-h-[44px]">Résumé</a>
+          <a href="#contact" class="hidden sm:inline-flex items-center px-2.5 py-2 text-xs font-medium text-zinc-400 hover:text-white transition-colors min-h-[44px]">Contact</a>
+          <button
+            id="cmd-trigger"
+            type="button"
+            aria-label="Open command palette"
+            class="group inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-md border border-white/[0.1] bg-zinc-900/70 text-xs font-mono text-zinc-400 hover:border-[#fd91cc]/60 hover:text-white active:translate-y-px transition-colors min-h-[44px] cursor-pointer"
+          >
+            <svg class="w-4 h-4 px-icon text-zinc-400 group-hover:text-[#fd91cc] transition-colors" aria-hidden="true"><use href="#px-terminal"></use></svg>
+            <span>⌘K</span>
+          </button>
+        </nav>
+      </div>
     </header>
 
-    <main id="main">
-      <!-- Hero (The 5-Second Clarity Test) -->
-      <section id="hero" class="w-full flex flex-col">
-        <div
-          class="bg-[#050b1a] bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#09318D]/40 via-[#050b1a] to-[#030612] min-h-screen flex justify-center items-center"
-        >
-          <div
-            class="w-full max-w-4xl pt-28 md:pt-24 pb-16 px-6 sm:px-8 mx-auto flex flex-col justify-center"
-          >
-            <div class="flex flex-col">
-              <h1 class="text-white text-3xl sm:text-4xl">
-                hi i'm
-                <span
-                  class="block text-4xl sm:text-6xl text-white underline decoration-[#fd91cc] underline-offset-8 mt-1 font-normal tracking-wide"
-                >
-                  jayadithya
-                </span>
-              </h1>
-              <p class="text-xl sm:text-2xl text-[#fd91cc] mt-2 font-sans font-medium tracking-wide">
-                AI / ML Systems Engineer
-              </p>
-              
-              <p class="text-white/85 font-mono text-base sm:text-lg leading-relaxed mt-4 max-w-2xl">
-                Production AI systems from the metal up: custom Rust BPE tokenizers, deep learning MLIR compilers, and sub-15ms SLM inference for teams requiring zero hallucinated metrics.
-              </p>
+    <!-- Main Framed Editorial Rail -->
+    <main id="main-content" class="max-w-[740px] mx-auto bg-[#09090b] border-x border-white/[0.08] divide-y divide-white/[0.08]">
 
-              <!-- Primary Conversion Actions -->
-              <div class="mt-8 flex flex-col sm:flex-row sm:items-center gap-3.5">
-                <a
-                  href="#showcase"
-                  class="w-full sm:w-auto justify-center text-center px-6 py-3 rounded-full bg-[#09318D] text-white font-mono text-xs sm:text-sm font-semibold border-2 border-[#fd91cc] hover:bg-[#fd91cc] hover:text-[#09318D] transition-all duration-200 flex items-center gap-2 min-h-[46px] shadow-lg shadow-[#09318D]/40"
-                >
-                  explore systems &darr;
-                </a>
-                <a
-                  href="./resume/"
-                  target="_blank"
-                  class="w-full sm:w-auto justify-center text-center px-6 py-3 rounded-full border-2 border-[#09318D]/80 bg-[#0c1b40]/80 text-white/90 font-mono text-xs sm:text-sm hover:border-[#fd91cc] transition-all duration-200 flex items-center gap-2 min-h-[46px]"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                    class="w-4 h-4 text-[#fd91cc]"
-                    style="image-rendering:pixelated"
-                    aria-hidden="true"
-                  ><path d="M4 2h12v2h-12zM4 4h2v16h-2zM16 4h2v2h-2zM18 6h2v14h-2zM11 8h2v10h-2zM9 14h2v2h-2zM13 14h2v2h-2zM6 20h12v2h-12z"/></svg>
-                  view resume &nearr;
-                </a>
-              </div>
-              <p class="text-white/50 font-mono text-xs mt-4 flex flex-wrap items-center gap-2">
-                <span>chennai, india &middot; open to remote and relocation</span>
-                <span>&middot;</span>
-                <a href="mailto:rjayadithya11@gmail.com" class="text-[#fd91cc] hover:underline">rjayadithya11@gmail.com</a>
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- T-Shaped Engineer Animation -->
-      <section
-        id="t-shape"
-        class="w-full bg-[#040817] flex flex-col items-center px-2 min-[380px]:px-4 pt-16 pb-20 scroll-mt-24 relative overflow-hidden"
-      >
-        <h2 class="text-white text-3xl sm:text-4xl mb-2 text-center">
-          the
-          <span class="underline decoration-[#fd91cc] underline-offset-4"
-            >t-shaped</span
-          >
-          engineer
-        </h2>
-        <div class="flex items-center gap-2.5 mb-8 sm:mb-12">
-          <p class="font-mono text-white/60 text-xs sm:text-sm text-center">
-            broad across the bar. deep down the stem.
-          </p>
-          <button
-            id="replay-t-anim"
-            class="font-mono text-[10px] sm:text-xs text-[#fd91cc] hover:text-white flex items-center gap-1 cursor-pointer px-2 py-0.5 rounded-full border border-[#09318D]/70 bg-[#081330]/80 hover:border-[#fd91cc] transition-colors"
-            title="Replay drawing animation"
-            aria-label="Replay diagram animation"
-          >
-            <svg class="w-2.5 h-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg>replay
-          </button>
+      <!-- Banner + Profile Header -->
+      <section aria-label="Profile">
+        <!-- Subtle Dot-Grid Banner -->
+        <div class="h-20 sm:h-24 w-full bg-banner-grid border-b border-white/[0.08] relative overflow-hidden flex items-end justify-end">
+          <span class="font-mono text-xs text-zinc-400">chennai, in &middot; 13.0827° N</span>
         </div>
 
-        <div
-          class="relative w-full max-w-xl sm:max-w-2xl flex flex-col items-center"
-        >
-          <!-- breadth chips sitting on top of the bar -->
-          <div
-            class="relative z-10 w-full flex justify-between items-end gap-0.5 min-[380px]:gap-1 px-1 sm:px-3 mb-2 sm:mb-2.5"
-          >
-            <span
-              class="t-broad font-mono text-[8.5px] min-[360px]:text-[9.5px] sm:text-xs px-1 min-[360px]:px-1.5 sm:px-2.5 py-0.5 sm:py-1 rounded-md sm:rounded-lg border border-[#09318D]/70 bg-[#0a1638] text-white/90 whitespace-nowrap shadow-sm shadow-[#09318D]/40"
-              >compilers</span
-            >
-            <span
-              class="t-broad font-mono text-[8.5px] min-[360px]:text-[9.5px] sm:text-xs px-1 min-[360px]:px-1.5 sm:px-2.5 py-0.5 sm:py-1 rounded-md sm:rounded-lg border border-[#09318D]/70 bg-[#0a1638] text-white/90 whitespace-nowrap shadow-sm shadow-[#09318D]/40"
-              >tokenizers</span
-            >
-            <span
-              class="t-broad font-mono text-[8.5px] min-[360px]:text-[9.5px] sm:text-xs px-1 min-[360px]:px-1.5 sm:px-2.5 py-0.5 sm:py-1 rounded-md sm:rounded-lg border border-[#09318D]/70 bg-[#0a1638] text-white/90 whitespace-nowrap shadow-sm shadow-[#09318D]/40"
-              >pipelines</span
-            >
-            <span
-              class="t-broad font-mono text-[8.5px] min-[360px]:text-[9.5px] sm:text-xs px-1 min-[360px]:px-1.5 sm:px-2.5 py-0.5 sm:py-1 rounded-md sm:rounded-lg border border-[#09318D]/70 bg-[#0a1638] text-white/90 whitespace-nowrap shadow-sm shadow-[#09318D]/40"
-              >distillation</span
-            >
-            <span
-              class="t-broad font-mono text-[8.5px] min-[360px]:text-[9.5px] sm:text-xs px-1 min-[360px]:px-1.5 sm:px-2.5 py-0.5 sm:py-1 rounded-md sm:rounded-lg border border-[#09318D]/70 bg-[#0a1638] text-white/90 whitespace-nowrap shadow-sm shadow-[#09318D]/40"
-              ><span class="sm:hidden">evals</span><span class="hidden sm:inline">eval harnesses</span></span
-            >
-          </div>
-
-          <!-- the T container with stem milestones -->
-          <div class="relative w-full">
-            <!-- the T, traced by scroll -->
-            <svg
-              id="t-svg"
-              viewBox="0 0 800 560"
-              fill="none"
-              class="w-full h-auto block overflow-visible"
-              style="filter: drop-shadow(0 0 10px rgba(253, 145, 204, 0.35))"
-              aria-hidden="true"
-            >
-              <path
-                id="t-bar-ghost"
-                d="M16 20 H784"
-                stroke="#1a3578"
-                stroke-width="10"
-                stroke-linecap="round"
-                stroke-dasharray="0 30"
-                opacity="0.6"
-              />
-              <path
-                id="t-stem-ghost"
-                d="M400 26 V490"
-                stroke="#1a3578"
-                stroke-width="10"
-                stroke-linecap="round"
-                stroke-dasharray="0 30"
-                opacity="0.6"
-              />
-              <path
-                id="t-bar-path"
-                d="M16 20 H784"
-                stroke="#fd91cc"
-                stroke-width="16"
-                stroke-linecap="round"
-              />
-              <path
-                id="t-stem-path"
-                d="M400 26 V490"
-                stroke="#fd91cc"
-                stroke-width="16"
-                stroke-linecap="round"
-              />
-              <circle
-                id="t-junction"
-                cx="400"
-                cy="22"
-                r="14"
-                stroke="#ffffff"
-                stroke-width="4"
-                fill="none"
-                opacity="0"
-              />
-              <circle
-                id="t-spark-bar"
-                r="9"
-                cx="0"
-                cy="0"
-                fill="#ffffff"
-                opacity="0"
-                style="filter: drop-shadow(0 0 8px rgba(253, 145, 204, 0.9))"
-              />
-              <circle
-                id="t-spark-stem"
-                r="9"
-                cx="0"
-                cy="0"
-                fill="#ffffff"
-                opacity="0"
-                style="filter: drop-shadow(0 0 8px rgba(253, 145, 204, 0.9))"
-              />
-
-              <!-- Stem Milestone Connectors & Anchor Rings -->
-              <g id="node-1-svg" class="t-node-marker opacity-0 transition-opacity">
-                <line x1="280" y1="125" x2="390" y2="125" stroke="#fd91cc" stroke-width="2" stroke-dasharray="4 4" opacity="0.6" />
-                <circle cx="400" cy="125" r="6" fill="#fd91cc" stroke="#ffffff" stroke-width="2" />
-              </g>
-              <g id="node-2-svg" class="t-node-marker opacity-0 transition-opacity">
-                <line x1="410" y1="225" x2="520" y2="225" stroke="#fd91cc" stroke-width="2" stroke-dasharray="4 4" opacity="0.6" />
-                <circle cx="400" cy="225" r="6" fill="#fd91cc" stroke="#ffffff" stroke-width="2" />
-              </g>
-              <g id="node-3-svg" class="t-node-marker opacity-0 transition-opacity">
-                <line x1="280" y1="325" x2="390" y2="325" stroke="#fd91cc" stroke-width="2" stroke-dasharray="4 4" opacity="0.6" />
-                <circle cx="400" cy="325" r="6" fill="#fd91cc" stroke="#ffffff" stroke-width="2" />
-              </g>
-              <g id="node-4-svg" class="t-node-marker opacity-0 transition-opacity">
-                <line x1="410" y1="425" x2="520" y2="425" stroke="#fd91cc" stroke-width="2" stroke-dasharray="4 4" opacity="0.6" />
-                <circle cx="400" cy="425" r="6" fill="#fd91cc" stroke="#ffffff" stroke-width="2" />
-              </g>
-            </svg>
-
-            <!-- HTML Milestone Badges flanking the stem -->
-            <div id="badge-1" class="t-stem-badge absolute top-[19%] right-[52%] max-w-[46%] sm:max-w-[42%] text-right font-mono pointer-events-none">
-              <div class="inline-block p-1 min-[360px]:p-1.5 sm:p-2 rounded-lg bg-[#081330]/95 border border-[#09318D]/70 shadow-md shadow-[#02050f]/80">
-                <div class="text-[#fd91cc] font-semibold text-[9px] min-[360px]:text-[10px] sm:text-xs">Nova MLIR Compiler</div>
-                <div class="text-white/60 text-[8px] min-[360px]:text-[9px] sm:text-[11px] leading-tight mt-0.5">StableHLO &amp; PTX lowering</div>
-              </div>
-            </div>
-
-            <div id="badge-2" class="t-stem-badge absolute top-[37%] left-[52%] max-w-[46%] sm:max-w-[42%] text-left font-mono pointer-events-none">
-              <div class="inline-block p-1 min-[360px]:p-1.5 sm:p-2 rounded-lg bg-[#081330]/95 border border-[#09318D]/70 shadow-md shadow-[#02050f]/80">
-                <div class="text-[#fd91cc] font-semibold text-[9px] min-[360px]:text-[10px] sm:text-xs">Rust BPE Engine</div>
-                <div class="text-white/60 text-[8px] min-[360px]:text-[9px] sm:text-[11px] leading-tight mt-0.5">-50.2% vs o200k &amp; 100% decode</div>
-              </div>
-            </div>
-
-            <div id="badge-3" class="t-stem-badge absolute top-[55%] right-[52%] max-w-[46%] sm:max-w-[42%] text-right font-mono pointer-events-none">
-              <div class="inline-block p-1 min-[360px]:p-1.5 sm:p-2 rounded-lg bg-[#081330]/95 border border-[#09318D]/70 shadow-md shadow-[#02050f]/80">
-                <div class="text-[#fd91cc] font-semibold text-[9px] min-[360px]:text-[10px] sm:text-xs">Model Distillation &amp; SSM</div>
-                <div class="text-white/60 text-[8px] min-[360px]:text-[9px] sm:text-[11px] leading-tight mt-0.5">3.1x VRAM cut &amp; 12ms triage</div>
-              </div>
-            </div>
-
-            <div id="badge-4" class="t-stem-badge absolute top-[73%] left-[52%] max-w-[46%] sm:max-w-[42%] text-left font-mono pointer-events-none">
-              <div class="inline-block p-1 min-[360px]:p-1.5 sm:p-2 rounded-lg bg-[#081330]/95 border border-[#09318D]/70 shadow-md shadow-[#02050f]/80">
-                <div class="text-[#fd91cc] font-semibold text-[9px] min-[360px]:text-[10px] sm:text-xs">Verifiable Tool Evals</div>
-                <div class="text-white/60 text-[8px] min-[360px]:text-[9px] sm:text-[11px] leading-tight mt-0.5">10/10 retrieval &amp; lfm3-1.7b SLM</div>
-              </div>
-            </div>
-          </div>
-
-          <!-- deep expertise at the bottom of the stem -->
-          <div id="t-deep" class="mt-3 sm:mt-4 flex flex-col items-center z-10 font-sans">
-            <span
-              class="px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-full bg-[#09318D] text-white font-semibold text-xs sm:text-base whitespace-nowrap border-2 border-[#fd91cc] shadow-lg shadow-[#09318D]/50 tracking-[0.18em]"
-            >
-              ai / ml systems engineering
+        <div class="px-4 sm:px-6 pb-7">
+          <!-- Avatar + Status -->
+          <div class="flex items-end justify-between gap-4">
+            <img
+              src="./images/profile.webp"
+              alt="Jayadithya R"
+              width="88"
+              height="88"
+              fetchpriority="high"
+              class="-mt-10 relative z-10 w-20 h-20 rounded-xl object-cover border-4 border-[#09090b] ring-1 ring-white/15 bg-zinc-900 shrink-0"
+            />
+            <span class="inline-flex items-center gap-1.5 font-mono text-xs text-zinc-400 pb-1">
+              <span class="w-1.5 h-1.5 rounded-full bg-[#fd91cc]" aria-hidden="true"></span>
+              Open to full-time roles
             </span>
           </div>
-        </div>
-      </section>
 
-      <!-- Engineering Depth (Replaces Superficial Cards) -->
-      <section
-        id="depth"
-        class="w-full relative p-4 sm:p-8 max-w-7xl mx-auto scroll-mt-24"
-      >
-        <div class="text-center mb-10">
-          <h2 class="text-white text-3xl sm:text-4xl mb-2">
-            engineering
-            <span class="underline decoration-[#fd91cc] underline-offset-4">depth</span>
-          </h2>
-          <p class="font-mono text-white/60 text-xs sm:text-sm max-w-lg mx-auto">
-            four technical pillars backed by production code, peer-reviewed research, and measured benchmarks.
-          </p>
-        </div>
+          <div class="mt-4">
+            <h1 class="text-2xl sm:text-3xl font-semibold tracking-tight leading-[1.15] text-white">Jayadithya R</h1>
+            <p class="mt-1 text-base sm:text-lg font-medium tracking-[-0.015em] text-zinc-200">
+              I build ML systems across the stack: compilers, Rust tokenizers, and on-device inference.
+            </p>
+            <p class="mt-2.5 text-sm sm:text-base text-zinc-400 leading-relaxed max-w-[58ch]">
+              I worked on the <a href="https://arxiv.org/abs/2608.00029" target="_blank" rel="noopener noreferrer" class="text-zinc-200 underline decoration-white/25 underline-offset-4 hover:text-[#fd91cc]">Nova MLIR</a> compiler at Blubridge and published first-author VLM distillation research at <a href="https://doi.org/10.1109/TQCEBT67648.2026.11681836" target="_blank" rel="noopener noreferrer" class="text-zinc-200 underline decoration-white/25 underline-offset-4 hover:text-[#fd91cc]">IEEE TQCEBT 2026</a>. Now I mostly ship local RAG agents, LoRA fine-tunes, and eval harnesses in Python, Rust, C++, and Kotlin.
+            </p>
+          </div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          <!-- Pillar 1: AI/ML Systems -->
-          <div
-            class="bg-[#081330] border border-[#09318D]/60 hover:border-[#fd91cc]/80 p-6 rounded-2xl flex flex-col justify-between min-h-[320px] transition-all duration-300 hover:shadow-xl hover:shadow-[#09318D]/30"
-          >
-            <div>
-              <span class="text-xs font-mono uppercase tracking-wider text-[#fd91cc] bg-[#09318D]/50 border border-[#fd91cc]/30 px-2.5 py-1 rounded-full">
-                AI / ML Systems
-              </span>
-              <h3 class="mt-4 text-xl sm:text-2xl text-white font-sans">
-                Model Distillation &amp; LoRA Tuning
-              </h3>
-              <ul class="mt-4 font-mono text-xs text-white/75 space-y-2 leading-relaxed">
-                <li>&bull; Distilled 8B VLM to 2B student (Qwen3-VL) saving 3.1x VRAM at 92% quality.</li>
-                <li>&bull; Contrastive LoRA on 416 real pre/post-fix diffs (Liquid AI d1-3B hybrid SSM).</li>
-                <li>&bull; Speculative decoding on dual T4s (0.5567 draft acceptance, 8.11s TTFT).</li>
-              </ul>
-            </div>
+          <!-- Primary CTA + Secondary Actions -->
+          <div class="mt-5 flex flex-wrap items-center gap-2.5">
             <a
-              href="#showcase"
-              data-skill-filter="ai"
-              class="skill-link font-mono text-xs text-[#fd91cc] hover:text-white underline underline-offset-4 decoration-[#fd91cc]/50 hover:decoration-[#fd91cc] min-h-[44px] flex items-center mt-4"
+              href="mailto:rjayadithya11@gmail.com"
+              class="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-lg bg-[#fd91cc] text-[#09090b] text-sm font-semibold tracking-tight hover:bg-white active:translate-y-px transition-colors min-h-[44px]"
             >
-              filter ai projects &rarr;
+              <svg class="w-4 h-4 px-icon shrink-0" aria-hidden="true"><use href="#px-mail"></use></svg>
+              <span>Send email</span>
+            </a>
+            <button
+              id="copy-email-btn"
+              type="button"
+              aria-label="Copy email address"
+              class="inline-flex items-center justify-center gap-2 min-w-[132px] px-3.5 py-2 rounded-lg border border-white/[0.12] bg-zinc-900 text-sm font-medium text-zinc-200 hover:border-[#fd91cc]/70 hover:text-white active:translate-y-px transition-colors min-h-[44px] cursor-pointer"
+            >
+              <svg class="w-4 h-4 px-icon shrink-0 text-zinc-400" aria-hidden="true"><use href="#px-copy"></use></svg>
+              <span data-copy-label>Copy email</span>
+            </button>
+            <span id="copy-status" class="sr-only" aria-live="polite"></span>
+            <a
+              href="./resume/"
+              class="inline-flex items-center justify-center gap-2 px-3.5 py-2 rounded-lg border border-white/[0.12] bg-zinc-900 text-sm font-medium text-zinc-200 hover:border-[#fd91cc]/70 hover:text-white active:translate-y-px transition-colors min-h-[44px]"
+            >
+              <svg class="w-4 h-4 px-icon shrink-0 text-zinc-400" aria-hidden="true"><use href="#px-file"></use></svg>
+              <span>Résumé</span>
             </a>
           </div>
 
-          <!-- Pillar 2: Compilers & Low-Level Systems -->
-          <div
-            class="bg-[#081330] border border-[#09318D]/60 hover:border-[#fd91cc]/80 p-6 rounded-2xl flex flex-col justify-between min-h-[320px] transition-all duration-300 hover:shadow-xl hover:shadow-[#09318D]/30"
-          >
-            <div>
-              <span class="text-xs font-mono uppercase tracking-wider text-blue-200 bg-[#09318D]/50 border border-blue-400/30 px-2.5 py-1 rounded-full">
-                Compilers &amp; Systems
-              </span>
-              <h3 class="mt-4 text-xl sm:text-2xl text-white font-sans">
-                MLIR Compilers &amp; Rust Systems
-              </h3>
-              <ul class="mt-4 font-mono text-xs text-white/75 space-y-2 leading-relaxed">
-                <li>&bull; Nova MLIR compiler (arXiv:2608.00029) progressive lowering to PTX with StableHLO.</li>
-                <li>&bull; Rust BPE tokenizer (-50.2% vs o200k) with rayon parallel merges and Aho-Corasick automaton.</li>
-                <li>&bull; Chunked base36 framing with CRC32 verification over standard SMS payloads.</li>
-              </ul>
-            </div>
-            <a
-              href="#showcase"
-              data-skill-filter="systems"
-              class="skill-link font-mono text-xs text-blue-300 hover:text-white underline underline-offset-4 decoration-blue-400/50 hover:decoration-blue-400 min-h-[44px] flex items-center mt-4"
-            >
-              filter systems projects &rarr;
+          <!-- Quiet Inline Profile Links -->
+          <div class="mt-3.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-zinc-400">
+            <a href="https://github.com/barryallen16" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center gap-1 hover:text-white transition-colors min-h-[44px]">
+              <span>GitHub</span>
+              <svg class="w-4 h-4 px-icon text-zinc-400 group-hover:text-[#fd91cc] transition-colors" aria-hidden="true"><use href="#px-ext"></use></svg>
             </a>
-          </div>
-
-          <!-- Pillar 3: High-Throughput Backends -->
-          <div
-            class="bg-[#081330] border border-[#09318D]/60 hover:border-[#fd91cc]/80 p-6 rounded-2xl flex flex-col justify-between min-h-[320px] transition-all duration-300 hover:shadow-xl hover:shadow-[#09318D]/30"
-          >
-            <div>
-              <span class="text-xs font-mono uppercase tracking-wider text-[#fd91cc] bg-[#09318D]/50 border border-[#fd91cc]/30 px-2.5 py-1 rounded-full">
-                Pipelines &amp; Scale
-              </span>
-              <h3 class="mt-4 text-xl sm:text-2xl text-white font-sans">
-                Distributed Workers &amp; Streaming
-              </h3>
-              <ul class="mt-4 font-mono text-xs text-white/75 space-y-2 leading-relaxed">
-                <li>&bull; 27-key worker pool with dynamic reset-header parsing across 1.18M chunks.</li>
-                <li>&bull; Dockerized FastAPI control plane for Kaggle sweeps with WebSocket logs.</li>
-                <li>&bull; Native Android Kotlin ContentObserver detecting inbound SMS in &lt;100ms.</li>
-              </ul>
-            </div>
-            <a
-              href="#showcase"
-              data-skill-filter="systems"
-              class="skill-link font-mono text-xs text-[#fd91cc] hover:text-white underline underline-offset-4 decoration-[#fd91cc]/50 hover:decoration-[#fd91cc] min-h-[44px] flex items-center mt-4"
-            >
-              filter backend projects &rarr;
+            <a href="https://www.linkedin.com/in/jayadithya-r/" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center gap-1 hover:text-white transition-colors min-h-[44px]">
+              <span>LinkedIn</span>
+              <svg class="w-4 h-4 px-icon text-zinc-400 group-hover:text-[#fd91cc] transition-colors" aria-hidden="true"><use href="#px-ext"></use></svg>
             </a>
-          </div>
-
-          <!-- Pillar 4: Empirical Eval & Safety -->
-          <div
-            class="bg-[#081330] border border-[#09318D]/60 hover:border-[#fd91cc]/80 p-6 rounded-2xl flex flex-col justify-between min-h-[320px] transition-all duration-300 hover:shadow-xl hover:shadow-[#09318D]/30"
-          >
-            <div>
-              <span class="text-xs font-mono uppercase tracking-wider text-[#fd91cc] bg-[#09318D]/50 border border-[#fd91cc]/30 px-2.5 py-1 rounded-full">
-                Eval &amp; Safety
-              </span>
-              <h3 class="mt-4 text-xl sm:text-2xl text-white font-sans">
-                Empirical Benchmarks &amp; Guards
-              </h3>
-              <ul class="mt-4 font-mono text-xs text-white/75 space-y-2 leading-relaxed">
-                <li>&bull; First-author IEEE study with 297 blind human ratings over 100 images (p &lt; 0.05).</li>
-                <li>&bull; AST statement anchoring lifting within-rule exploitability AUC to 0.6594.</li>
-                <li>&bull; Deterministic crisis engine tested against 1,170 CSSR-S Reddit benchmark posts.</li>
-              </ul>
-            </div>
-            <a
-              href="#showcase"
-              data-skill-filter="agents"
-              class="skill-link font-mono text-xs text-[#fd91cc] hover:text-white underline underline-offset-4 decoration-[#fd91cc]/50 hover:decoration-[#fd91cc] min-h-[44px] flex items-center mt-4"
-            >
-              filter agents &amp; evals &rarr;
+            <a href="https://huggingface.co/barryallen16" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center gap-1 hover:text-white transition-colors min-h-[44px]">
+              <span>Hugging Face</span>
+              <svg class="w-4 h-4 px-icon text-zinc-400 group-hover:text-[#fd91cc] transition-colors" aria-hidden="true"><use href="#px-ext"></use></svg>
+            </a>
+            <a href="./llms.txt" class="inline-flex items-center gap-1 font-mono hover:text-[#fd91cc] transition-colors min-h-[44px] sm:ml-auto">
+              <svg class="w-4 h-4 px-icon text-zinc-400" aria-hidden="true"><use href="#px-terminal"></use></svg>
+              <span>llms.txt</span>
             </a>
           </div>
         </div>
       </section>
 
-      <!-- Projects Showcase -->
-      <section
-        id="showcase"
-        class="w-full bg-[#050b1a] flex flex-col p-4 sm:p-8 md:p-12 scroll-mt-24 sm:scroll-mt-32 max-w-7xl mx-auto"
-      >
-        <!-- Reusable Pixelart Icon Symbol -->
-        <svg class="hidden" aria-hidden="true">
-          <symbol id="pixel-arrow-diagonal" viewBox="0 0 24 24">
-            <path d="M12 4h8v2h-8zM16 6h4v2h-4zM14 8h2v2h-2zM18 8h2v4h-2zM12 10h2v2h-2zM10 12h2v2h-2zM8 14h2v2h-2zM6 16h2v2h-2zM4 18h2v2h-2z" fill="currentColor"/>
-          </symbol>
-        </svg>
+      <!-- Experience & Research -->
+      <section id="experience" class="scroll-mt-16">
+        <div class="p-4 sm:px-6 border-b border-white/[0.08] bg-zinc-950/60 flex items-baseline justify-between">
+          <h2 class="text-lg font-semibold tracking-[-0.02em] text-white">Experience</h2>
+          <span class="font-mono text-xs text-zinc-400 tabular-nums">2025 - 2026</span>
+        </div>
 
-        <!-- Section Header -->
-        <div class="mb-8 border-b border-[#09318D]/40 pb-6 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
-          <div>
-            <div class="mb-2 font-mono text-xs">
-              <span class="uppercase tracking-[0.2em] text-[#fd91cc]">Selected Work</span>
+        <div class="divide-y divide-white/[0.08]">
+          <!-- Blubridge -->
+          <div class="px-4 sm:px-6 py-5">
+            <div class="flex flex-wrap items-baseline justify-between gap-2">
+              <div>
+                <h3 class="text-base font-medium tracking-[-0.01em] text-white">Blubridge Technologies</h3>
+                <p class="text-sm text-zinc-400 mt-0.5">AI research intern, compiler team &middot; Chennai</p>
+              </div>
+              <span class="font-mono text-xs text-zinc-400 tabular-nums">07/2025 - 10/2025</span>
             </div>
-            <h2 class="text-white text-3xl sm:text-4xl lg:text-5xl font-sans tracking-[0.05em]">
-              featured <span class="underline decoration-[#fd91cc] underline-offset-4">work</span>
-            </h2>
+
+            <ul class="mt-3 space-y-1.5 text-sm text-zinc-400 leading-relaxed max-w-prose">
+              <li class="flex gap-2"><span class="text-zinc-400 select-none" aria-hidden="true">&bull;</span><span>Evaluated StableHLO tradeoffs for <a href="https://arxiv.org/abs/2608.00029" target="_blank" rel="noopener noreferrer" class="text-zinc-200 underline decoration-white/25 underline-offset-4 hover:text-[#fd91cc]">Nova</a> (<span class="font-mono text-xs text-zinc-300">arXiv:2608.00029</span>), a value-semantic MLIR dialect unifying forward and backward passes in BluTrain.</span></li>
+              <li class="flex gap-2"><span class="text-zinc-400 select-none" aria-hidden="true">&bull;</span><span>Researched progressive lowering chains (<span class="font-mono text-xs text-zinc-300">nova &rarr; linalg &rarr; vector &rarr; nvgpu &rarr; NVVM &rarr; PTX</span>) and cross-operator transformer fusions.</span></li>
+              <li class="flex gap-2"><span class="text-zinc-400 select-none" aria-hidden="true">&bull;</span><span>Wrote 170+ pages of compiler notes on SSA form and GPU memory hierarchies, and mentored 4 incoming engineers on <span class="font-mono text-xs text-zinc-300">torch.fx</span> capture and dialect lowering.</span></li>
+            </ul>
           </div>
-          <p class="font-mono text-white/60 text-xs sm:text-sm max-w-lg leading-relaxed">
-            Every project defends why deep learning was strictly required over deterministic code.
-          </p>
+
+          <!-- IEEE Publication -->
+          <div class="px-4 sm:px-6 py-5">
+            <div class="flex flex-wrap items-baseline justify-between gap-2">
+              <div>
+                <h3 class="text-base font-medium tracking-[-0.01em] text-white">FitCheck: black-box VLM data distillation</h3>
+                <p class="text-sm text-zinc-400 mt-0.5">First author &middot; IEEE TQCEBT 2026 &middot; Pune</p>
+              </div>
+              <span class="font-mono text-xs text-zinc-400 tabular-nums">2026</span>
+            </div>
+            <p class="mt-2 text-sm text-zinc-400 leading-relaxed max-w-prose">
+              Distilled Qwen3-VL-8B into a 2B student with 3.14x lower VRAM (91.6% teacher quality), backed by 297 blind human ratings (<span class="font-mono text-xs text-zinc-300 whitespace-nowrap">r = 0.303, p &lt; 0.05</span>).
+            </p>
+            <div class="mt-2 flex flex-wrap items-center gap-4 text-xs text-zinc-400">
+              <a href="./fitcheck-journal-paper.pdf" target="_blank" rel="noopener noreferrer" class="group hover:text-[#fd91cc] underline underline-offset-4 decoration-white/20 inline-flex items-center gap-1 min-h-[44px]">
+                <span>Paper PDF</span>
+                <svg class="w-4 h-4 px-icon text-zinc-400 group-hover:text-[#fd91cc] transition-colors" aria-hidden="true"><use href="#px-ext"></use></svg>
+              </a>
+              <a href="https://doi.org/10.1109/TQCEBT67648.2026.11681836" target="_blank" rel="noopener noreferrer" class="group hover:text-white underline underline-offset-4 decoration-white/20 inline-flex items-center gap-1 px-1 min-h-[44px]">
+                <span>DOI</span>
+                <svg class="w-4 h-4 px-icon text-zinc-400 group-hover:text-[#fd91cc] transition-colors" aria-hidden="true"><use href="#px-ext"></use></svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Education -->
+          <div class="px-4 sm:px-6 py-5">
+            <div class="flex flex-wrap items-baseline justify-between gap-2">
+              <div>
+                <h3 class="text-base font-medium tracking-[-0.01em] text-white">Dr. M.G.R. Educational and Research Institute</h3>
+                <p class="text-sm text-zinc-400 mt-0.5">B.Tech, Artificial Intelligence and Data Science &middot; Chennai</p>
+              </div>
+              <span class="font-mono text-xs text-zinc-400 tabular-nums">2026 &middot; GPA 8.0/10</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Projects (Scannable Rail Rows + Deep Modal) -->
+      <section id="projects" class="scroll-mt-16">
+        <div class="p-4 sm:px-6 border-b border-white/[0.08] bg-zinc-950/60 flex flex-wrap items-center justify-between gap-2">
+          <h2 class="text-lg font-semibold tracking-[-0.02em] text-white">Projects</h2>
+          <div class="flex flex-wrap gap-1.5" id="filter-buttons" role="group" aria-label="Filter projects by domain">
+            <button data-filter="all" aria-pressed="true" class="filter-btn is-active px-3 py-1 rounded-md border border-[#fd91cc]/60 bg-zinc-900 text-xs font-medium text-white active:translate-y-px min-h-[44px] cursor-pointer">
+              All <span class="font-mono text-zinc-400">(9)</span>
+            </button>
+            <button data-filter="ai" aria-pressed="false" class="filter-btn px-3 py-1 rounded-md border border-white/[0.08] bg-transparent text-xs font-medium text-zinc-300 hover:text-white active:translate-y-px min-h-[44px] cursor-pointer">
+              AI/ML <span class="font-mono text-zinc-400">(8)</span>
+            </button>
+            <button data-filter="systems" aria-pressed="false" class="filter-btn px-3 py-1 rounded-md border border-white/[0.08] bg-transparent text-xs font-medium text-zinc-300 hover:text-white active:translate-y-px min-h-[44px] cursor-pointer">
+              Systems <span class="font-mono text-zinc-400">(5)</span>
+            </button>
+            <button data-filter="apps,agents" aria-pressed="false" class="filter-btn px-3 py-1 rounded-md border border-white/[0.08] bg-transparent text-xs font-medium text-zinc-300 hover:text-white active:translate-y-px min-h-[44px] cursor-pointer">
+              Apps &amp; agents <span class="font-mono text-zinc-400">(5)</span>
+            </button>
+          </div>
         </div>
 
-        <!-- Proof Anchors / Key Benchmark Receipts -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 mb-8 font-mono">
-          <a
-            href="#project-fitcheck"
-            data-target-project="fitcheck"
-            class="proof-anchor-card group p-3 rounded-xl bg-[#0a1638]/90 border border-[#09318D]/70 hover:border-[#fd91cc] transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-[#09318D]/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#fd91cc] block text-left"
-          >
-            <div class="flex items-center justify-between">
-              <span class="text-[#fd91cc] font-semibold text-xs sm:text-sm group-hover:underline decoration-[#fd91cc]">1st Author, IEEE 2026</span>
-              <span class="text-white/40 group-hover:text-[#fd91cc] group-hover:translate-x-0.5 transition-all text-xs" aria-hidden="true">&rarr;</span>
-            </div>
-            <div class="text-white/70 text-[11px] sm:text-xs mt-1 leading-snug">VLM distillation with blind human eval (p &lt; 0.05)</div>
-          </a>
-          <a
-            href="#project-sivabharani-comments"
-            data-target-project="sivabharani-comments"
-            class="proof-anchor-card group p-3 rounded-xl bg-[#0a1638]/90 border border-[#09318D]/70 hover:border-[#fd91cc] transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-[#09318D]/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#fd91cc] block text-left"
-          >
-            <div class="flex items-center justify-between">
-              <span class="text-[#fd91cc] font-semibold text-xs sm:text-sm group-hover:underline decoration-[#fd91cc]">1.18M Chunks Processed</span>
-              <span class="text-white/40 group-hover:text-[#fd91cc] group-hover:translate-x-0.5 transition-all text-xs" aria-hidden="true">&rarr;</span>
-            </div>
-            <div class="text-white/70 text-[11px] sm:text-xs mt-1 leading-snug">27-key worker pool across 1,400+ videos</div>
-          </a>
-          <a
-            href="#project-tamil-tokenizer"
-            data-target-project="tamil-tokenizer"
-            class="proof-anchor-card group p-3 rounded-xl bg-[#0a1638]/90 border border-[#09318D]/70 hover:border-[#fd91cc] transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-[#09318D]/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#fd91cc] block text-left"
-          >
-            <div class="flex items-center justify-between">
-              <span class="text-[#fd91cc] font-semibold text-xs sm:text-sm group-hover:underline decoration-[#fd91cc]">100% Decode Fidelity</span>
-              <span class="text-white/40 group-hover:text-[#fd91cc] group-hover:translate-x-0.5 transition-all text-xs" aria-hidden="true">&rarr;</span>
-            </div>
-            <div class="text-white/70 text-[11px] sm:text-xs mt-1 leading-snug">Rust Tamil tokenizer (-50.2% vs OpenAI o200k)</div>
-          </a>
-          <a
-            href="#project-d1-triage"
-            data-target-project="d1-triage"
-            class="proof-anchor-card group p-3 rounded-xl bg-[#0a1638]/90 border border-[#09318D]/70 hover:border-[#fd91cc] transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-[#09318D]/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#fd91cc] block text-left"
-          >
-            <div class="flex items-center justify-between">
-              <span class="text-[#fd91cc] font-semibold text-xs sm:text-sm group-hover:underline decoration-[#fd91cc]">12ms Exploit Triage</span>
-              <span class="text-white/40 group-hover:text-[#fd91cc] group-hover:translate-x-0.5 transition-all text-xs" aria-hidden="true">&rarr;</span>
-            </div>
-            <div class="text-white/70 text-[11px] sm:text-xs mt-1 leading-snug">Liquid AI SSM ranking alerts on Nvidia T4</div>
-          </a>
-        </div>
+        <div id="projects-grid" class="divide-y divide-white/[0.08]">
 
-        <!-- Filter Buttons -->
-        <div
-          class="flex flex-wrap justify-center sm:justify-start gap-2 sm:gap-3 mb-10"
-          id="filter-buttons"
-          role="group"
-          aria-label="Filter projects by domain"
-        >
-          <button
-            data-filter="all"
-            aria-pressed="true"
-            class="filter-btn is-active px-3.5 sm:px-4 py-2 rounded-full border border-[#fd91cc] bg-[#09318D] text-white font-mono text-xs sm:text-sm hover:border-white min-h-[40px] cursor-pointer"
-          >
-            all <span class="text-[#fd91cc] font-semibold">(9)</span>
-          </button>
-          <button
-            data-filter="ai"
-            aria-pressed="false"
-            class="filter-btn px-3.5 sm:px-4 py-2 rounded-full border border-[#09318D]/80 bg-[#081330] text-[#fd91cc] font-mono text-xs sm:text-sm hover:border-[#fd91cc] hover:bg-[#09318D]/40 min-h-[40px] cursor-pointer"
-          >
-            ai / ml <span class="text-white/60 font-semibold">(8)</span>
-          </button>
-          <button
-            data-filter="systems"
-            aria-pressed="false"
-            class="filter-btn px-3.5 sm:px-4 py-2 rounded-full border border-[#09318D]/80 bg-[#081330] text-blue-200 font-mono text-xs sm:text-sm hover:border-[#fd91cc] hover:bg-[#09318D]/40 min-h-[40px] cursor-pointer"
-          >
-            systems &amp; backend <span class="text-blue-300 font-semibold">(5)</span>
-          </button>
-          <button
-            data-filter="agents"
-            aria-pressed="false"
-            class="filter-btn px-3.5 sm:px-4 py-2 rounded-full border border-[#09318D]/80 bg-[#081330] text-[#fd91cc] font-mono text-xs sm:text-sm hover:border-[#fd91cc] hover:bg-[#09318D]/40 min-h-[40px] cursor-pointer"
-          >
-            agents &amp; rag <span class="text-white/60 font-semibold">(2)</span>
-          </button>
-          <button
-            data-filter="apps"
-            aria-pressed="false"
-            class="filter-btn px-3.5 sm:px-4 py-2 rounded-full border border-[#09318D]/80 bg-[#081330] text-white/90 font-mono text-xs sm:text-sm hover:border-[#fd91cc] hover:bg-[#09318D]/40 min-h-[40px] cursor-pointer"
-          >
-            apps &amp; client <span class="text-[#fd91cc] font-semibold">(3)</span>
-          </button>
-        </div>
-
-        <!-- Tier 1: Featured Flagship Projects (Editorial Split Rows) -->
-        <div id="featured-work-container" class="space-y-12 sm:space-y-16">
-          
           <!-- 1. Partha Tamil Tokenizer -->
-          <article
-            id="project-tamil-tokenizer"
-            class="project-card border-b border-[#09318D]/40 pb-12 sm:pb-16 scroll-mt-28"
-            data-categories="ai,systems"
-            data-project="tamil-tokenizer"
-          >
-            <div class="grid gap-6 md:grid-cols-12 md:gap-10 items-start">
-              <div class="md:col-span-5">
-                <div>
-                  <h3 class="text-2xl sm:text-3xl font-medium tracking-[0.05em] text-white font-sans">
-                    Partha Tamil Tokenizer
-                  </h3>
+          <article class="project-card px-4 sm:px-6 py-4 sm:py-5 hover:bg-zinc-950/50 transition-colors" data-categories="ai,systems" data-project="tamil-tokenizer">
+            <div class="project-head flex flex-wrap items-start justify-between gap-3">
+              <div class="flex items-center gap-3 min-w-0">
+                <div class="w-8 h-8 rounded-lg border border-white/[0.1] bg-zinc-900 grid place-items-center shrink-0">
+                  <img src="./images/partha-logo.svg" alt="" width="20" height="20" class="w-5 h-5 object-contain" />
                 </div>
-                <p class="mt-1 font-mono text-xs sm:text-sm text-white/70 leading-normal">
-                  Agglutinative BPE tokenizer engine written in Rust
-                </p>
-                <p class="mt-2.5 font-mono text-sm text-[#fd91cc]">
-                  &rarr; -50.2% tokens vs OpenAI o200k &middot; +36.9% vs mBERT
-                </p>
-                
-                <div class="mt-4 flex flex-wrap gap-x-5 gap-y-2">
-                  <a href="https://partha.isroot.in/" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center gap-1.5 font-mono text-xs uppercase tracking-wider text-white hover:text-[#fd91cc] transition-colors py-1"><span class="border-b border-transparent group-hover:border-[#fd91cc]">Playground</span><svg class="w-3.5 h-3.5 inline-block shrink-0 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 text-[#fd91cc]" style="image-rendering:pixelated" aria-hidden="true"><use href="#pixel-arrow-diagonal"></use></svg></a>
-                  <a href="https://github.com/barryallen16/partha-tamil-tokenizer" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center gap-1.5 font-mono text-xs uppercase tracking-wider text-white hover:text-[#fd91cc] transition-colors py-1"><span class="border-b border-transparent group-hover:border-[#fd91cc]">Source</span><svg class="w-3.5 h-3.5 inline-block shrink-0 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 text-[#fd91cc]" style="image-rendering:pixelated" aria-hidden="true"><use href="#pixel-arrow-diagonal"></use></svg></a>
-                  <a href="https://huggingface.co/barryallen16/partha-tamil-tokenizer" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center gap-1.5 font-mono text-xs uppercase tracking-wider text-white hover:text-[#fd91cc] transition-colors py-1"><span class="border-b border-transparent group-hover:border-[#fd91cc]">Weights</span><svg class="w-3.5 h-3.5 inline-block shrink-0 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 text-[#fd91cc]" style="image-rendering:pixelated" aria-hidden="true"><use href="#pixel-arrow-diagonal"></use></svg></a>
-                </div>
-
-                <!-- Preview container -->
-                <div class="mt-5 p-4 rounded-xl border border-white/10 bg-[#081330]/90 flex flex-col gap-3 font-mono">
-                  <div class="flex items-center gap-3">
-                    <div class="w-10 h-10 shrink-0 rounded-lg bg-[#0c1b40] border border-[#09318D]/70 grid place-items-center">
-                      <img src="./images/partha-logo.svg" loading="lazy" alt="Partha logo" width="24" height="24" class="w-6 h-6 object-contain" />
-                    </div>
-                    <div>
-                      <div class="text-xs text-white/90 font-medium tracking-wide">Partha Engine Core</div>
-                      <div class="text-[11px] text-[#fd91cc]">Rust &middot; Rayon &middot; CSR Index</div>
-                    </div>
-                  </div>
-                  <div class="grid grid-cols-2 gap-2 pt-2.5 border-t border-white/10 text-[11px]">
-                    <div class="text-white/60">Base Vocab: <span class="text-white">1,135 stems</span></div>
-                    <div class="text-white/60">Fidelity: <span class="text-[#fd91cc]">100% decode</span></div>
-                    <div class="text-white/60 col-span-2">Compression: <span class="text-white">-50.2% vs o200k &middot; 0.9193 bits/byte</span></div>
+                <div class="min-w-0">
+                  <div class="flex items-center gap-2">
+                    <h3 class="text-base font-medium tracking-[-0.01em] text-white">Partha</h3>
+                    <span class="inline-flex items-center gap-1.5 font-mono text-xs text-zinc-400">
+                      <span class="w-1.5 h-1.5 rounded-full bg-[#fd91cc]" aria-hidden="true"></span>Live
+                    </span>
                   </div>
                 </div>
               </div>
-
-              <div class="md:col-span-7 space-y-3.5 font-mono">
-                <p class="text-xs sm:text-sm leading-relaxed text-white/85">
-                  <span class="text-[#fd91cc] uppercase tracking-wider font-semibold mr-1.5">[problem]</span>
-                  General subword tokenizers (mBERT, Llama-3) fragment agglutinative Tamil into arbitrary byte shards, tripling sequence length, blowing KV-cache budgets, and corrupting 52% of Latin-1 decodes.
-                </p>
-                <p class="text-xs sm:text-sm leading-relaxed text-white/85">
-                  <span class="text-[#fd91cc] uppercase tracking-wider font-semibold mr-1.5">[tradeoff]</span>
-                  Writing a custom BPE training engine in Rust gained raw training speed, but required engineering merge tracking, CSR matrix indexing, and Hugging Face export tooling from scratch.
-                </p>
-                <p class="text-xs sm:text-sm leading-relaxed text-white/85">
-                  <span class="text-[#fd91cc] uppercase tracking-wider font-semibold mr-1.5">[solution]</span>
-                  Constructed a 1,135-token base vocabulary around Tamil conjunct stems, Aho-Corasick parallel merges with Rayon, and CSR indexing. Yields 50.2% fewer tokens than OpenAI o200k, achieving 0.9193 bits/byte on Tamil wiki (+36.9% vs mBERT) with 100% decode fidelity.
-                </p>
-                <ul class="space-y-2 pt-1 font-mono text-xs sm:text-sm text-white/75">
-                  <li class="flex gap-2.5 leading-relaxed">
-                    <span class="text-[#fd91cc] select-none">&bull;</span>
-                    <span>50.2% fewer tokens vs OpenAI o200k with +16.5 accuracy gain on Tamil classification</span>
-                  </li>
-                  <li class="flex gap-2.5 leading-relaxed">
-                    <span class="text-[#fd91cc] select-none">&bull;</span>
-                    <span>Custom BPE merge table built specifically for Tamil morpho-phonemics</span>
-                  </li>
-                  <li class="flex gap-2.5 leading-relaxed">
-                    <span class="text-[#fd91cc] select-none">&bull;</span>
-                    <span>Aho-Corasick multi-pattern merge tracking with Rayon data parallelism</span>
-                  </li>
-                  <li class="flex gap-2.5 leading-relaxed">
-                    <span class="text-[#fd91cc] select-none">&bull;</span>
-                    <span>CSR (Compressed Sparse Row) matrix indexing for memory-bounded vocabulary compaction</span>
-                  </li>
-                </ul>
-                <div class="pt-2 flex flex-wrap gap-2">
-                  <span class="rounded-full border border-white/10 bg-[#081330] px-3 py-0.5 font-mono text-xs text-white/70">Rust</span>
-                  <span class="rounded-full border border-white/10 bg-[#081330] px-3 py-0.5 font-mono text-xs text-white/70">Rayon</span>
-                  <span class="rounded-full border border-white/10 bg-[#081330] px-3 py-0.5 font-mono text-xs text-white/70">Aho-Corasick</span>
-                  <span class="rounded-full border border-white/10 bg-[#081330] px-3 py-0.5 font-mono text-xs text-white/70">BPE</span>
-                  <span class="rounded-full border border-white/10 bg-[#081330] px-3 py-0.5 font-mono text-xs text-white/70">HuggingFace</span>
-                </div>
+              <div class="text-left sm:text-right font-mono text-xs tabular-nums">
+                <span class="text-zinc-200">-50.2% vs o200k</span>
+                <span class="text-zinc-400"> &middot; 100% decode</span>
               </div>
             </div>
+            <p class="project-summary mt-2 text-sm text-zinc-400 leading-relaxed max-w-prose">
+              Rust BPE tokenizer with character seeding, promotion merges, and bitset-guarded CSR merge tables. Uses 50.2% fewer tokens than OpenAI o200k and hits 0.9193 bits/byte (+36.9% vs mBERT) with 100% ByteFallback decode fidelity.
+            </p>
+            <img src="./images/partha-demo.webp" loading="lazy" decoding="async" width="1200" height="692" class="project-media" alt="Partha Tamil 120K tokenizer comparing 11 tokens vs 17 tokens in OpenAI o200k_base on a Thirukkural verse" />
+            <div class="project-actions mt-2.5 flex flex-wrap items-center justify-between gap-2">
+              <div class="flex flex-wrap items-center gap-4 text-xs text-zinc-400">
+                <a href="https://partha.isroot.in/" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center gap-1 text-zinc-300 hover:text-white min-h-[44px]">
+                  <span>Playground</span>
+                  <svg class="w-4 h-4 px-icon text-zinc-400 group-hover:text-[#fd91cc] transition-colors" aria-hidden="true"><use href="#px-ext"></use></svg>
+                </a>
+                <a href="https://github.com/barryallen16/partha-tamil-tokenizer" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center gap-1 hover:text-white min-h-[44px]">
+                  <span>Source</span>
+                  <svg class="w-4 h-4 px-icon text-zinc-400 group-hover:text-[#fd91cc] transition-colors" aria-hidden="true"><use href="#px-ext"></use></svg>
+                </a>
+                <a href="https://huggingface.co/barryallen16/partha-tamil-tokenizer" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center gap-1 hover:text-white min-h-[44px]">
+                  <span>Weights</span>
+                  <svg class="w-4 h-4 px-icon text-zinc-400 group-hover:text-[#fd91cc] transition-colors" aria-hidden="true"><use href="#px-ext"></use></svg>
+                </a>
+              </div>
+              <button type="button" data-toggle-project="tamil-tokenizer" aria-expanded="false" aria-controls="notes-tamil-tokenizer" class="group inline-flex items-center gap-1.5 text-xs font-mono text-zinc-300 hover:text-[#fd91cc] px-2 py-1 min-h-[44px] cursor-pointer">
+                <span>Notes</span>
+                <svg class="w-4 h-4 px-icon text-zinc-400 group-hover:text-[#fd91cc] transition-transform duration-150" data-chevron aria-hidden="true"><use href="#px-chevron-down"></use></svg>
+              </button>
+            </div>
+            <div id="notes-tamil-tokenizer" data-project-notes="tamil-tokenizer" hidden class="mt-3 pt-3.5 border-t border-white/[0.06] space-y-2.5 text-sm text-zinc-400 leading-relaxed"></div>
           </article>
 
           <!-- 2. FitCheck -->
-          <article
-            id="project-fitcheck"
-            class="project-card border-b border-[#09318D]/40 pb-12 sm:pb-16 scroll-mt-28"
-            data-categories="ai,apps"
-            data-project="fitcheck"
-          >
-            <div class="grid gap-6 md:grid-cols-12 md:gap-10 items-start">
-              <div class="md:col-span-5">
-                <div>
-                  <h3 class="text-2xl sm:text-3xl font-medium tracking-[0.05em] text-white font-sans">
-                    FitCheck
-                  </h3>
+          <article class="project-card px-4 sm:px-6 py-4 sm:py-5 hover:bg-zinc-950/50 transition-colors" data-categories="ai,apps" data-project="fitcheck">
+            <div class="project-head flex flex-wrap items-start justify-between gap-3">
+              <div class="flex items-center gap-3 min-w-0">
+                <div class="w-8 h-8 rounded-lg border border-white/[0.1] bg-zinc-900 grid place-items-center shrink-0 overflow-hidden">
+                  <img src="./images/fitcheck-logo-v3.webp" alt="" width="20" height="20" class="w-5 h-5 object-contain" />
                 </div>
-                <p class="mt-1 font-mono text-xs sm:text-sm text-white/70 leading-normal">
-                  Local VLM outfit recommendation and weather intelligence
-                </p>
-                <p class="mt-2.5 font-mono text-sm text-[#fd91cc]">
-                  &rarr; IEEE TQCEBT 2026 &middot; 3.1x VRAM reduction
-                </p>
-                
-                <div class="mt-4 flex flex-wrap gap-x-5 gap-y-2">
-                  <a href="https://barryallen16.github.io/fitcheck-website" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center gap-1.5 font-mono text-xs uppercase tracking-wider text-white hover:text-[#fd91cc] transition-colors py-1"><span class="border-b border-transparent group-hover:border-[#fd91cc]">Showcase</span><svg class="w-3.5 h-3.5 inline-block shrink-0 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 text-[#fd91cc]" style="image-rendering:pixelated" aria-hidden="true"><use href="#pixel-arrow-diagonal"></use></svg></a>
-                  <a href="https://doi.org/10.1109/TQCEBT67648.2026.11681836" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center gap-1.5 font-mono text-xs uppercase tracking-wider text-white hover:text-[#fd91cc] transition-colors py-1"><span class="border-b border-transparent group-hover:border-[#fd91cc]">Paper</span><svg class="w-3.5 h-3.5 inline-block shrink-0 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 text-[#fd91cc]" style="image-rendering:pixelated" aria-hidden="true"><use href="#pixel-arrow-diagonal"></use></svg></a>
-                  <a href="./fitcheck-journal-paper.pdf" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center gap-1.5 font-mono text-xs uppercase tracking-wider text-white hover:text-[#fd91cc] transition-colors py-1"><span class="border-b border-transparent group-hover:border-[#fd91cc]">PDF</span><svg class="w-3.5 h-3.5 inline-block shrink-0 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 text-[#fd91cc]" style="image-rendering:pixelated" aria-hidden="true"><use href="#pixel-arrow-diagonal"></use></svg></a>
-                  <a href="https://github.com/barryallen16/fitcheck" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center gap-1.5 font-mono text-xs uppercase tracking-wider text-white hover:text-[#fd91cc] transition-colors py-1"><span class="border-b border-transparent group-hover:border-[#fd91cc]">Source</span><svg class="w-3.5 h-3.5 inline-block shrink-0 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 text-[#fd91cc]" style="image-rendering:pixelated" aria-hidden="true"><use href="#pixel-arrow-diagonal"></use></svg></a>
-                  <a href="https://huggingface.co/collections/barryallen16/fitcheck" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center gap-1.5 font-mono text-xs uppercase tracking-wider text-white hover:text-[#fd91cc] transition-colors py-1"><span class="border-b border-transparent group-hover:border-[#fd91cc]">Models</span><svg class="w-3.5 h-3.5 inline-block shrink-0 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 text-[#fd91cc]" style="image-rendering:pixelated" aria-hidden="true"><use href="#pixel-arrow-diagonal"></use></svg></a>
-                </div>
-
-                <!-- Preview container -->
-                <div class="mt-5 p-4 rounded-xl border border-white/10 bg-[#081330]/90 flex flex-col gap-3 font-mono">
-                  <div class="flex items-center gap-3">
-                    <div class="w-10 h-10 shrink-0 rounded-lg bg-[#0c1b40] border border-[#09318D]/70 grid place-items-center overflow-hidden">
-                      <img src="./images/fitcheck-logo-v3.webp" loading="lazy" alt="FitCheck logo" width="32" height="32" class="w-8 h-8 object-contain" />
-                    </div>
-                    <div>
-                      <div class="text-xs text-white/90 font-medium tracking-wide">IEEE Peer-Reviewed System</div>
-                      <div class="text-[11px] text-[#fd91cc]">DOI: 10.1109/TQCEBT67648.2026.11681836</div>
-                    </div>
-                  </div>
-                  <div class="grid grid-cols-2 gap-2 pt-2.5 border-t border-white/10 text-[11px]">
-                    <div class="text-white/60">Study: <span class="text-white">297 human ratings</span></div>
-                    <div class="text-white/60">Significance: <span class="text-[#fd91cc]">r=0.303, p&lt;0.05</span></div>
-                    <div class="text-white/60 col-span-2">Distillation: <span class="text-white">8B teacher &rarr; 2B student (28K LoRA steps)</span></div>
+                <div class="min-w-0">
+                  <div class="flex items-center gap-2">
+                    <h3 class="text-base font-medium tracking-[-0.01em] text-white">FitCheck</h3>
+                    <span class="font-mono text-xs text-zinc-400">IEEE 2026</span>
                   </div>
                 </div>
               </div>
-
-              <div class="md:col-span-7 space-y-3.5 font-mono">
-                <p class="text-xs sm:text-sm leading-relaxed text-white/85">
-                  <span class="text-[#fd91cc] uppercase tracking-wider font-semibold mr-1.5">[problem]</span>
-                  Multimodal outfit recommendation models require heavy cloud GPUs, but uploading personal wardrobe photos violates user privacy and fails without internet access.
-                </p>
-                <p class="text-xs sm:text-sm leading-relaxed text-white/85">
-                  <span class="text-[#fd91cc] uppercase tracking-wider font-semibold mr-1.5">[why ai]</span>
-                  Aesthetic harmony, color theory, seasonal weather compatibility, and cultural styling cannot be encoded in rigid if/else trees; they require vision-language embeddings to score visual cohesion.
-                </p>
-                <p class="text-xs sm:text-sm leading-relaxed text-white/85">
-                  <span class="text-[#fd91cc] uppercase tracking-wider font-semibold mr-1.5">[tradeoff]</span>
-                  Distilling an 8B vision-language teacher into an on-device 2B student saved 3.1x VRAM, but required 28K LoRA steps across 538K caption-QA pairs to preserve 92% scoring quality.
-                </p>
-                <p class="text-xs sm:text-sm leading-relaxed text-white/85">
-                  <span class="text-[#fd91cc] uppercase tracking-wider font-semibold mr-1.5">[solution]</span>
-                  Offline-first React Native Android app with local SQLite, Open-Meteo weather scoring, and on-device GGUF inference via LM Studio. Validated in a blind human study (297 ratings, r=0.303, p&lt;0.05) and published in IEEE TQCEBT 2026.
-                </p>
-                <ul class="space-y-2 pt-1 font-mono text-xs sm:text-sm text-white/75">
-                  <li class="flex gap-2.5 leading-relaxed">
-                    <span class="text-[#fd91cc] select-none">&bull;</span>
-                    <span>Teacher-student LoRA distillation (8B VLM to 2B student) saving 3.1x VRAM</span>
-                  </li>
-                  <li class="flex gap-2.5 leading-relaxed">
-                    <span class="text-[#fd91cc] select-none">&bull;</span>
-                    <span>Offline SQLite schema with weather-adaptive scoring heuristics</span>
-                  </li>
-                  <li class="flex gap-2.5 leading-relaxed">
-                    <span class="text-[#fd91cc] select-none">&bull;</span>
-                    <span>Validated in a peer-reviewed blind human study published in IEEE</span>
-                  </li>
-                </ul>
-                <div class="pt-2 flex flex-wrap gap-2">
-                  <span class="rounded-full border border-white/10 bg-[#081330] px-3 py-0.5 font-mono text-xs text-white/70">React Native</span>
-                  <span class="rounded-full border border-white/10 bg-[#081330] px-3 py-0.5 font-mono text-xs text-white/70">LoRA Distillation</span>
-                  <span class="rounded-full border border-white/10 bg-[#081330] px-3 py-0.5 font-mono text-xs text-white/70">GGUF / LM Studio</span>
-                  <span class="rounded-full border border-white/10 bg-[#081330] px-3 py-0.5 font-mono text-xs text-white/70">SQLite</span>
-                  <span class="rounded-full border border-white/10 bg-[#081330] px-3 py-0.5 font-mono text-xs text-white/70">IEEE Publication</span>
-                </div>
+              <div class="text-left sm:text-right font-mono text-xs tabular-nums">
+                <span class="text-zinc-200">3.14x VRAM cut</span>
+                <span class="text-zinc-400"> &middot; 91.6% quality</span>
               </div>
             </div>
+            <div class="project-summary mt-2 space-y-2.5 text-sm text-zinc-400 leading-relaxed max-w-prose">
+              <p>
+                Offline React Native outfit recommender built on a two-stage LoRA-distilled Qwen3-VL-2B student (538K caption-QA + 2.92K rationale pairs), Q4_K_M GGUF local weights, and Open-Meteo weather filtering.
+              </p>
+              <ul class="space-y-1 text-zinc-300">
+                <li class="flex gap-2"><span class="text-zinc-400 font-mono select-none" aria-hidden="true">&bull;</span><span>Peak VRAM dropped 3.14x (7.23 to 2.30 GB) at 39% higher throughput.</span></li>
+                <li class="flex gap-2"><span class="text-zinc-400 font-mono select-none" aria-hidden="true">&bull;</span><span>First-author IEEE TQCEBT 2026 paper backed by 297 blind human ratings.</span></li>
+              </ul>
+            </div>
+            <video autoplay loop muted playsinline preload="metadata" poster="./images/fitcheck-demo.webp" width="540" height="1200" class="project-media project-media--portrait" aria-hidden="true">
+              <source src="./images/fitcheck-walkthrough.mp4" type="video/mp4" />
+            </video>
+            <div class="project-actions mt-2.5 flex flex-wrap items-center justify-between gap-2">
+              <div class="flex flex-wrap items-center gap-4 text-xs text-zinc-400">
+                <a href="https://barryallen16.github.io/fitcheck-website" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center gap-1 text-zinc-300 hover:text-white min-h-[44px]">
+                  <span>Showcase</span>
+                  <svg class="w-4 h-4 px-icon text-zinc-400 group-hover:text-[#fd91cc] transition-colors" aria-hidden="true"><use href="#px-ext"></use></svg>
+                </a>
+                <a href="https://doi.org/10.1109/TQCEBT67648.2026.11681836" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center gap-1 hover:text-white min-h-[44px]">
+                  <span>Paper</span>
+                  <svg class="w-4 h-4 px-icon text-zinc-400 group-hover:text-[#fd91cc] transition-colors" aria-hidden="true"><use href="#px-ext"></use></svg>
+                </a>
+                <a href="https://github.com/barryallen16/fitcheck" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center gap-1 hover:text-white min-h-[44px]">
+                  <span>Source</span>
+                  <svg class="w-4 h-4 px-icon text-zinc-400 group-hover:text-[#fd91cc] transition-colors" aria-hidden="true"><use href="#px-ext"></use></svg>
+                </a>
+              </div>
+              <button type="button" data-toggle-project="fitcheck" aria-expanded="false" aria-controls="notes-fitcheck" class="group inline-flex items-center gap-1.5 text-xs font-mono text-zinc-300 hover:text-[#fd91cc] px-2 py-1 min-h-[44px] cursor-pointer">
+                <span>Notes</span>
+                <svg class="w-4 h-4 px-icon text-zinc-400 group-hover:text-[#fd91cc] transition-transform duration-150" data-chevron aria-hidden="true"><use href="#px-chevron-down"></use></svg>
+              </button>
+            </div>
+            <div id="notes-fitcheck" data-project-notes="fitcheck" hidden class="mt-3 pt-3.5 border-t border-white/[0.06] space-y-2.5 text-sm text-zinc-400 leading-relaxed"></div>
           </article>
 
           <!-- 3. D1-Triage -->
-          <article
-            id="project-d1-triage"
-            class="project-card border-b border-[#09318D]/40 pb-12 sm:pb-16 scroll-mt-28"
-            data-categories="ai,systems"
-            data-project="d1-triage"
-          >
-            <div class="grid gap-6 md:grid-cols-12 md:gap-10 items-start">
-              <div class="md:col-span-5">
-                <div>
-                  <h3 class="text-2xl sm:text-3xl font-medium tracking-[0.05em] text-white font-sans">
-                    D1-Triage
-                  </h3>
+          <article class="project-card px-4 sm:px-6 py-4 sm:py-5 hover:bg-zinc-950/50 transition-colors" data-categories="ai,systems" data-project="d1-triage">
+            <div class="project-head flex flex-wrap items-start justify-between gap-3">
+              <div class="flex items-center gap-3 min-w-0">
+                <div class="w-8 h-8 rounded-lg border border-white/[0.1] bg-zinc-900 grid place-items-center shrink-0">
+                  <img src="./images/d1-logo.svg" alt="" width="20" height="20" class="w-5 h-5 object-contain" />
                 </div>
-                <p class="mt-1 font-mono text-xs sm:text-sm text-white/70 leading-normal">
-                  12-14ms GPU / &lt;1s CPU Java vulnerability triage using Liquid AI Hybrid SSM
-                </p>
-                <p class="mt-2.5 font-mono text-sm text-[#fd91cc]">
-                  &rarr; 12-14ms (T4) / &lt;1s (CPU) &middot; 0.8372 AUC on verified fixes
-                </p>
-                
-                <div class="mt-4 flex flex-wrap gap-x-5 gap-y-2">
-                  <a href="https://barryallen16.github.io/d1-triage/" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center gap-1.5 font-mono text-xs uppercase tracking-wider text-white hover:text-[#fd91cc] transition-colors py-1"><span class="border-b border-transparent group-hover:border-[#fd91cc]">Demo</span><svg class="w-3.5 h-3.5 inline-block shrink-0 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 text-[#fd91cc]" style="image-rendering:pixelated" aria-hidden="true"><use href="#pixel-arrow-diagonal"></use></svg></a>
-                  <a href="https://github.com/barryallen16/d1-triage" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center gap-1.5 font-mono text-xs uppercase tracking-wider text-white hover:text-[#fd91cc] transition-colors py-1"><span class="border-b border-transparent group-hover:border-[#fd91cc]">Source</span><svg class="w-3.5 h-3.5 inline-block shrink-0 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 text-[#fd91cc]" style="image-rendering:pixelated" aria-hidden="true"><use href="#pixel-arrow-diagonal"></use></svg></a>
-                  <a href="https://huggingface.co/barryallen16/d1-3B-java-vuln-triage" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center gap-1.5 font-mono text-xs uppercase tracking-wider text-white hover:text-[#fd91cc] transition-colors py-1"><span class="border-b border-transparent group-hover:border-[#fd91cc]">Weights</span><svg class="w-3.5 h-3.5 inline-block shrink-0 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 text-[#fd91cc]" style="image-rendering:pixelated" aria-hidden="true"><use href="#pixel-arrow-diagonal"></use></svg></a>
-                  <a href="https://huggingface.co/datasets/barryallen16/d1-triage" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center gap-1.5 font-mono text-xs uppercase tracking-wider text-white hover:text-[#fd91cc] transition-colors py-1"><span class="border-b border-transparent group-hover:border-[#fd91cc]">Dataset</span><svg class="w-3.5 h-3.5 inline-block shrink-0 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 text-[#fd91cc]" style="image-rendering:pixelated" aria-hidden="true"><use href="#pixel-arrow-diagonal"></use></svg></a>
-                </div>
-
-                <!-- Preview container -->
-                <div class="mt-5 p-4 rounded-xl border border-white/10 bg-[#081330]/90 flex flex-col gap-3 font-mono">
-                  <div class="flex items-center gap-3">
-                    <div class="w-10 h-10 shrink-0 rounded-lg bg-[#0c1b40] border border-[#09318D]/70 grid place-items-center">
-                      <img src="./images/d1-logo.svg" loading="lazy" alt="d1-triage logo" width="24" height="24" class="w-6 h-6 object-contain" />
-                    </div>
-                    <div>
-                      <div class="text-xs text-white/90 font-medium tracking-wide">Liquid AI SSM Classifier</div>
-                      <div class="text-[11px] text-[#fd91cc]">d1-3B &middot; 6.25 GiB VRAM on T4</div>
-                    </div>
-                  </div>
-                  <div class="grid grid-cols-2 gap-2 pt-2.5 border-t border-white/10 text-[11px]">
-                    <div class="text-white/60">Latency: <span class="text-[#fd91cc]">12-14 ms (T4) &middot; &lt;1s (CPU)</span></div>
-                    <div class="text-white/60">Fix AUC: <span class="text-white">0.8372 vs 0.7167 Kev-4B</span></div>
-                    <div class="text-white/60 col-span-2">Benchmark: <span class="text-white">174 Java CVEs &middot; 416 verified diffs</span></div>
+                <div class="min-w-0">
+                  <div class="flex items-center gap-2">
+                    <h3 class="text-base font-medium tracking-[-0.01em] text-white">D1-Triage</h3>
+                    <span class="inline-flex items-center gap-1.5 font-mono text-xs text-zinc-400">
+                      <span class="w-1.5 h-1.5 rounded-full bg-[#fd91cc]" aria-hidden="true"></span>Live
+                    </span>
                   </div>
                 </div>
               </div>
-
-              <div class="md:col-span-7 space-y-3.5 font-mono">
-                <p class="text-xs sm:text-sm leading-relaxed text-white/85">
-                  <span class="text-[#fd91cc] uppercase tracking-wider font-semibold mr-1.5">[problem]</span>
-                  Static analysis scanners like Semgrep emit hundreds of unranked alerts per repository, with false-positive rates exceeding 70% and burying real vulnerabilities under low-priority warnings.
-                </p>
-                <p class="text-xs sm:text-sm leading-relaxed text-white/85">
-                  <span class="text-[#fd91cc] uppercase tracking-wider font-semibold mr-1.5">[why ai]</span>
-                  Static AST rules lack execution reachability context. Determining whether tainted user input reaches an exploitable sink requires reasoning over method logic, sanitizers, and control flow.
-                </p>
-                <p class="text-xs sm:text-sm leading-relaxed text-white/85">
-                  <span class="text-[#fd91cc] uppercase tracking-wider font-semibold mr-1.5">[tradeoff]</span>
-                  Fine-tuning on synthetic benchmarks caused distribution collapse, dropping within-rule AUC to 0.449. Training on 416 real pre/post-fix diffs prevented collapse, but required statement-level sink anchoring to align unnumbered method snippets with reported scanner line numbers.
-                </p>
-                <p class="text-xs sm:text-sm leading-relaxed text-white/85">
-                  <span class="text-[#fd91cc] uppercase tracking-wider font-semibold mr-1.5">[solution]</span>
-                  Fine-tuned Liquid AI d1-3B hybrid SSM to classify alert exploitability in 12-14 ms on an Nvidia T4 (6.25 GiB VRAM) and under 1 second on CPU (Q8_0 GGUF). Achieved 0.8372 AUC on verified fix hunks (exceeding Kev-4B's 0.7167) and 0.6594 within-rule AUC across 174 real-world Java advisories.
-                </p>
-                <ul class="space-y-2 pt-1 font-mono text-xs sm:text-sm text-white/75">
-                  <li class="flex gap-2.5 leading-relaxed">
-                    <span class="text-[#fd91cc] select-none">&bull;</span>
-                    <span>Statement-level sink anchoring across 416 real diffs preventing collapse</span>
-                  </li>
-                  <li class="flex gap-2.5 leading-relaxed">
-                    <span class="text-[#fd91cc] select-none">&bull;</span>
-                    <span>12-14 ms on Nvidia T4; &lt;1s on standard CPU with zero-GPU CI runner support</span>
-                  </li>
-                  <li class="flex gap-2.5 leading-relaxed">
-                    <span class="text-[#fd91cc] select-none">&bull;</span>
-                    <span>Outperformed Kev-4B by +0.1205 AUC on exploitability classification</span>
-                  </li>
-                </ul>
-                <div class="pt-2 flex flex-wrap gap-2">
-                  <span class="rounded-full border border-white/10 bg-[#081330] px-3 py-0.5 font-mono text-xs text-white/70">Liquid AI d1-3B</span>
-                  <span class="rounded-full border border-white/10 bg-[#081330] px-3 py-0.5 font-mono text-xs text-white/70">Hybrid SSM</span>
-                  <span class="rounded-full border border-white/10 bg-[#081330] px-3 py-0.5 font-mono text-xs text-white/70">PyTorch</span>
-                  <span class="rounded-full border border-white/10 bg-[#081330] px-3 py-0.5 font-mono text-xs text-white/70">Semgrep AST</span>
-                  <span class="rounded-full border border-white/10 bg-[#081330] px-3 py-0.5 font-mono text-xs text-white/70">HuggingFace</span>
-                </div>
+              <div class="text-left sm:text-right font-mono text-xs tabular-nums">
+                <span class="text-zinc-200">12-14ms T4</span>
+                <span class="text-zinc-400"> &middot; 0.8372 AUC</span>
               </div>
             </div>
+            <p class="project-summary mt-2 text-sm text-zinc-400 leading-relaxed max-w-prose">
+              Filters false positives from Semgrep Java alerts (over 70% of raw alerts are false positives) in 12-14 ms on T4 (6.2 GB VRAM) or under a second on CPU, using contrastive LoRA on Liquid AI d1-3B over 416 real diffs with AST statement anchoring.
+            </p>
+            <img src="./images/d1-triage-demo.webp" loading="lazy" decoding="async" width="1200" height="585" class="project-media" alt="D1-Triage interactive Java path-traversal alert marked exploitable at 94.9% probability in 11.2ms" />
+            <div class="project-actions mt-2.5 flex flex-wrap items-center justify-between gap-2">
+              <div class="flex flex-wrap items-center gap-4 text-xs text-zinc-400">
+                <a href="https://barryallen16.github.io/d1-triage/" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center gap-1 text-zinc-300 hover:text-white min-h-[44px]">
+                  <span>Demo</span>
+                  <svg class="w-4 h-4 px-icon text-zinc-400 group-hover:text-[#fd91cc] transition-colors" aria-hidden="true"><use href="#px-ext"></use></svg>
+                </a>
+                <a href="https://github.com/barryallen16/d1-triage" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center gap-1 hover:text-white min-h-[44px]">
+                  <span>Source</span>
+                  <svg class="w-4 h-4 px-icon text-zinc-400 group-hover:text-[#fd91cc] transition-colors" aria-hidden="true"><use href="#px-ext"></use></svg>
+                </a>
+                <a href="https://huggingface.co/barryallen16/d1-3B-java-vuln-triage" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center gap-1 hover:text-white min-h-[44px]">
+                  <span>Weights</span>
+                  <svg class="w-4 h-4 px-icon text-zinc-400 group-hover:text-[#fd91cc] transition-colors" aria-hidden="true"><use href="#px-ext"></use></svg>
+                </a>
+              </div>
+              <button type="button" data-toggle-project="d1-triage" aria-expanded="false" aria-controls="notes-d1-triage" class="group inline-flex items-center gap-1.5 text-xs font-mono text-zinc-300 hover:text-[#fd91cc] px-2 py-1 min-h-[44px] cursor-pointer">
+                <span>Notes</span>
+                <svg class="w-4 h-4 px-icon text-zinc-400 group-hover:text-[#fd91cc] transition-transform duration-150" data-chevron aria-hidden="true"><use href="#px-chevron-down"></use></svg>
+              </button>
+            </div>
+            <div id="notes-d1-triage" data-project-notes="d1-triage" hidden class="mt-3 pt-3.5 border-t border-white/[0.06] space-y-2.5 text-sm text-zinc-400 leading-relaxed"></div>
           </article>
 
-          <!-- 4. Sivabharani Comments -->
-          <article
-            id="project-sivabharani-comments"
-            class="project-card border-b border-[#09318D]/40 pb-12 sm:pb-16 scroll-mt-28"
-            data-categories="ai,systems"
-            data-project="sivabharani-comments"
-          >
-            <div class="grid gap-6 md:grid-cols-12 md:gap-10 items-start">
-              <div class="md:col-span-5">
-                <div>
-                  <h3 class="text-2xl sm:text-3xl font-medium tracking-[0.05em] text-white font-sans">
-                    Sivabharani Comments
-                  </h3>
+          <!-- 4. mono -->
+          <article class="project-card px-4 sm:px-6 py-4 sm:py-5 hover:bg-zinc-950/50 transition-colors" data-categories="ai,apps" data-project="mono">
+            <div class="project-head flex flex-wrap items-start justify-between gap-3">
+              <div class="flex items-center gap-3 min-w-0">
+                <div class="w-8 h-8 rounded-lg border border-white/[0.1] bg-zinc-900 grid place-items-center shrink-0 overflow-hidden">
+                  <img src="./images/mono-icon.png" alt="" width="20" height="20" class="w-5 h-5 object-contain rounded" />
                 </div>
-                <p class="mt-1 font-mono text-xs sm:text-sm text-white/70 leading-normal">
-                  High-throughput Tamil tech video transcript search pipeline
-                </p>
-                <p class="mt-2.5 font-mono text-sm text-[#fd91cc]">
-                  &rarr; 1.18M chunks indexed across 1,400+ videos
-                </p>
-                
-                <div class="mt-4 flex flex-wrap gap-x-5 gap-y-2">
-                  <a href="https://barryallen16.github.io/sivabharani-comments" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center gap-1.5 font-mono text-xs uppercase tracking-wider text-white hover:text-[#fd91cc] transition-colors py-1"><span class="border-b border-transparent group-hover:border-[#fd91cc]">Search</span><svg class="w-3.5 h-3.5 inline-block shrink-0 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 text-[#fd91cc]" style="image-rendering:pixelated" aria-hidden="true"><use href="#pixel-arrow-diagonal"></use></svg></a>
-                  <a href="https://github.com/barryallen16/sivabharani-comments" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center gap-1.5 font-mono text-xs uppercase tracking-wider text-white hover:text-[#fd91cc] transition-colors py-1"><span class="border-b border-transparent group-hover:border-[#fd91cc]">Source</span><svg class="w-3.5 h-3.5 inline-block shrink-0 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 text-[#fd91cc]" style="image-rendering:pixelated" aria-hidden="true"><use href="#pixel-arrow-diagonal"></use></svg></a>
-                  <a href="https://huggingface.co/datasets/barryallen16/sivabharani_comments" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center gap-1.5 font-mono text-xs uppercase tracking-wider text-white hover:text-[#fd91cc] transition-colors py-1"><span class="border-b border-transparent group-hover:border-[#fd91cc]">Dataset</span><svg class="w-3.5 h-3.5 inline-block shrink-0 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 text-[#fd91cc]" style="image-rendering:pixelated" aria-hidden="true"><use href="#pixel-arrow-diagonal"></use></svg></a>
-                </div>
-
-                <!-- Preview container -->
-                <div class="mt-5 p-4 rounded-xl border border-white/10 bg-[#081330]/90 flex flex-col gap-3 font-mono">
-                  <div class="flex items-center gap-3">
-                    <div class="w-10 h-10 shrink-0 rounded-lg bg-[#0c1b40] border border-[#09318D]/70 grid place-items-center">
-                      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="w-5 h-5 text-[#fd91cc]" style="image-rendering:pixelated" aria-hidden="true"><path d="M16 19H4v-2h12v2ZM4 17H2V7h2v10Zm14-8h2V7h2v10h-2v-2h-2v2h-2V7h2v2Zm-2-2H4V5h12v2Z"/></svg>
-                    </div>
-                    <div>
-                      <div class="text-xs text-white/90 font-medium tracking-wide">Distributed Extraction Pipeline</div>
-                      <div class="text-[11px] text-[#fd91cc]">27 Groq Keys &middot; Meilisearch</div>
-                    </div>
-                  </div>
-                  <div class="grid grid-cols-2 gap-2 pt-2.5 border-t border-white/10 text-[11px]">
-                    <div class="text-white/60">Corpus: <span class="text-white">1,400+ videos</span></div>
-                    <div class="text-white/60">Search: <span class="text-[#fd91cc]">&lt;50ms response</span></div>
-                    <div class="text-white/60 col-span-2">Precision: <span class="text-white">Micro-chunk second-accurate pinning</span></div>
+                <div class="min-w-0">
+                  <div class="flex items-center gap-2">
+                    <h3 class="text-base font-medium tracking-[-0.01em] text-white">mono</h3>
+                    <span class="inline-flex items-center gap-1.5 font-mono text-xs text-zinc-400">
+                      <span class="w-1.5 h-1.5 rounded-full bg-[#fd91cc]" aria-hidden="true"></span>v1.2.0
+                    </span>
                   </div>
                 </div>
               </div>
-
-              <div class="md:col-span-7 space-y-3.5 font-mono">
-                <p class="text-xs sm:text-sm leading-relaxed text-white/85">
-                  <span class="text-[#fd91cc] uppercase tracking-wider font-semibold mr-1.5">[problem]</span>
-                  Locating specific community discussions across 1,400+ Tamil tech videos (1.18M transcript chunks) required scrubbing through hundreds of hours of raw audio.
-                </p>
-                <p class="text-xs sm:text-sm leading-relaxed text-white/85">
-                  <span class="text-[#fd91cc] uppercase tracking-wider font-semibold mr-1.5">[why ai]</span>
-                  YouTube transcripts feature Tanglish (Tamil spoken in English script), conversational digressions, and colloquial name mentions that standard regex and named-entity recognizers fail to parse.
-                </p>
-                <p class="text-xs sm:text-sm leading-relaxed text-white/85">
-                  <span class="text-[#fd91cc] uppercase tracking-wider font-semibold mr-1.5">[tradeoff]</span>
-                  Relying on free-tier Groq API instances kept compute costs at zero, but demanded a custom 27-key worker pool with dynamic rate-limit header parsing across 1.18M chunks.
-                </p>
-                <p class="text-xs sm:text-sm leading-relaxed text-white/85">
-                  <span class="text-[#fd91cc] uppercase tracking-wider font-semibold mr-1.5">[solution]</span>
-                  Distributed extraction pipeline with 65-second overlapping conversational windows. Micro-chunk timestamp pinning maps extracted commenter names to exact video seconds, indexed in Meilisearch.
-                </p>
-                <ul class="space-y-2 pt-1 font-mono text-xs sm:text-sm text-white/75">
-                  <li class="flex gap-2.5 leading-relaxed">
-                    <span class="text-[#fd91cc] select-none">&bull;</span>
-                    <span>27-key worker pool with dynamic 429 rate-limit backoff handling</span>
-                  </li>
-                  <li class="flex gap-2.5 leading-relaxed">
-                    <span class="text-[#fd91cc] select-none">&bull;</span>
-                    <span>Overlapping 65-second sliding windows for contextual entity retention</span>
-                  </li>
-                  <li class="flex gap-2.5 leading-relaxed">
-                    <span class="text-[#fd91cc] select-none">&bull;</span>
-                    <span>Micro-chunk timestamp pinning mapping commenters to exact video seconds</span>
-                  </li>
-                </ul>
-                <div class="pt-2 flex flex-wrap gap-2">
-                  <span class="rounded-full border border-white/10 bg-[#081330] px-3 py-0.5 font-mono text-xs text-white/70">Python</span>
-                  <span class="rounded-full border border-white/10 bg-[#081330] px-3 py-0.5 font-mono text-xs text-white/70">Groq API</span>
-                  <span class="rounded-full border border-white/10 bg-[#081330] px-3 py-0.5 font-mono text-xs text-white/70">Meilisearch</span>
-                  <span class="rounded-full border border-white/10 bg-[#081330] px-3 py-0.5 font-mono text-xs text-white/70">Ray / AsyncIO</span>
-                  <span class="rounded-full border border-white/10 bg-[#081330] px-3 py-0.5 font-mono text-xs text-white/70">Tamil NLP</span>
-                </div>
+              <div class="text-left sm:text-right font-mono text-xs tabular-nums">
+                <span class="text-zinc-200">14.71% Svarah WER</span>
+                <span class="text-zinc-400"> &middot; 93.3% task match</span>
               </div>
             </div>
+            <div class="project-summary mt-2 space-y-2.5 text-sm text-zinc-400 leading-relaxed max-w-prose">
+              <p>
+                Offline Android voice notebook that turns audio into saved notes and tasks in expo-sqlite, running Svarah-tuned Whistle ASR (19.21% to 14.71% WER) and Needle 3 W4A8 extraction (0.9444 task F1, 11.1% non-task FP) over Cactus 4.1.4 (libcactus.a C++ JNI).
+              </p>
+              <ul class="space-y-1 text-zinc-300">
+                <li class="flex gap-2"><span class="text-zinc-400 font-mono select-none" aria-hidden="true">&bull;</span><span>Kotlin MediaCodec resamples audio to 16 kHz PCM across 30s sliding windows.</span></li>
+                <li class="flex gap-2"><span class="text-zinc-400 font-mono select-none" aria-hidden="true">&bull;</span><span>93 MB local model cache (Whistle + Needle 3) verified by SHA-256.</span></li>
+              </ul>
+            </div>
+            <video autoplay loop muted playsinline preload="metadata" poster="./images/mono-demo.webp" width="576" height="1280" class="project-media project-media--portrait" aria-hidden="true">
+              <source src="./images/mono-walkthrough.mp4" type="video/mp4" />
+            </video>
+            <div class="project-actions mt-2.5 flex flex-wrap items-center justify-between gap-2">
+              <div class="flex flex-wrap items-center gap-4 text-xs text-zinc-400">
+                <a href="https://barryallen16.github.io/mono/" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center gap-1 text-zinc-300 hover:text-white min-h-[44px]">
+                  <span>Website</span>
+                  <svg class="w-4 h-4 px-icon text-zinc-400 group-hover:text-[#fd91cc] transition-colors" aria-hidden="true"><use href="#px-ext"></use></svg>
+                </a>
+                <a href="https://github.com/barryallen16/mono" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center gap-1 hover:text-white min-h-[44px]">
+                  <span>Source</span>
+                  <svg class="w-4 h-4 px-icon text-zinc-400 group-hover:text-[#fd91cc] transition-colors" aria-hidden="true"><use href="#px-ext"></use></svg>
+                </a>
+                <a href="https://huggingface.co/collections/barryallen16/mono-6b0871a3c601170d2466fe8e" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center gap-1 hover:text-white min-h-[44px]">
+                  <span>Models</span>
+                  <svg class="w-4 h-4 px-icon text-zinc-400 group-hover:text-[#fd91cc] transition-colors" aria-hidden="true"><use href="#px-ext"></use></svg>
+                </a>
+              </div>
+              <button type="button" data-toggle-project="mono" aria-expanded="false" aria-controls="notes-mono" class="group inline-flex items-center gap-1.5 text-xs font-mono text-zinc-300 hover:text-[#fd91cc] px-2 py-1 min-h-[44px] cursor-pointer">
+                <span>Notes</span>
+                <svg class="w-4 h-4 px-icon text-zinc-400 group-hover:text-[#fd91cc] transition-transform duration-150" data-chevron aria-hidden="true"><use href="#px-chevron-down"></use></svg>
+              </button>
+            </div>
+            <div id="notes-mono" data-project-notes="mono" hidden class="mt-3 pt-3.5 border-t border-white/[0.06] space-y-2.5 text-sm text-zinc-400 leading-relaxed"></div>
           </article>
-        </div>
 
-        <!-- Tier 2: More Engineering Projects Grid -->
-        <div id="secondary-work-container" class="mt-16 pt-8 border-t border-[#09318D]/40">
-          <div class="mb-8 flex items-baseline justify-between">
-            <div>
-              <h3 class="font-mono text-xs uppercase tracking-[0.2em] text-[#fd91cc]">More engineering projects</h3>
+          <!-- 5. Kaggle Runner -->
+          <article class="project-card px-4 sm:px-6 py-4 sm:py-5 hover:bg-zinc-950/50 transition-colors" data-categories="systems,ai" data-project="kaggle-automation">
+            <div class="project-head flex flex-wrap items-start justify-between gap-3">
+              <div class="flex items-center gap-3 min-w-0">
+                <div class="w-8 h-8 rounded-lg border border-white/[0.1] bg-zinc-900 grid place-items-center shrink-0 overflow-hidden">
+                  <img src="./images/kaggle-auto-logo.png" loading="lazy" alt="" width="20" height="20" class="w-5 h-5 object-contain" />
+                </div>
+                <div class="flex items-center gap-2">
+                  <h3 class="text-base font-medium tracking-[-0.01em] text-white">Kaggle Runner</h3>
+                  <span class="font-mono text-xs text-zinc-400">OSS</span>
+                </div>
+              </div>
+              <div class="text-left sm:text-right font-mono text-xs tabular-nums">
+                <span class="text-zinc-200">500+ runs</span>
+                <span class="text-zinc-400"> &middot; 154 tests</span>
+              </div>
             </div>
-            <span id="secondary-count" class="font-mono text-xs text-white/40">5 systems</span>
-          </div>
-
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-5 lg:gap-6">
-            
-            <!-- 5. Kaggle Automation -->
-            <article
-              id="project-kaggle-automation"
-              class="project-card flex flex-col justify-between p-6 rounded-xl border border-white/10 bg-[#081330]/90 transition-all duration-300 hover:border-[#fd91cc]/70 hover:shadow-lg hover:shadow-[#09318D]/20 scroll-mt-28"
-              data-categories="systems,ai"
-              data-project="kaggle-automation"
-            >
-              <div>
-                <div class="flex items-start justify-between gap-3">
-                  <div class="flex items-center gap-3">
-                    <div class="w-9 h-9 shrink-0 rounded-lg bg-[#0c1b40] border border-[#09318D]/70 grid place-items-center overflow-hidden">
-                      <img src="./images/kaggle-auto-logo.png" loading="lazy" alt="Kaggle Automation logo" width="24" height="24" class="w-6 h-6 object-contain" />
-                    </div>
-                    <div>
-                      <h4 class="text-lg font-medium text-white tracking-[0.05em] font-sans">Kaggle Automation</h4>
-                      <p class="text-xs font-mono text-white/50">Fault-tolerant GPU/TPU batch orchestration</p>
-                    </div>
-                  </div>
-                </div>
-                <p class="mt-2.5 font-mono text-xs text-[#fd91cc]">&rarr; 220+ runs &middot; 0 quota errors</p>
-                <p class="mt-3 font-mono text-xs sm:text-sm leading-relaxed text-white/75">
-                  Dockerized FastAPI control plane sharding sweeps across GPU/TPU kernels, streaming multi-gigabyte zip outputs directly to disk without memory buffers and firing Telegram alerts at the 11-hour mark.
-                </p>
-              </div>
-              <div class="mt-5 pt-3 border-t border-white/10 flex items-center justify-between">
-                <span class="font-mono text-[11px] text-white/50">FastAPI &middot; Docker &middot; WebSockets</span>
-                <a href="https://github.com/barryallen16/kaggle-automation" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center gap-1.5 font-mono text-xs uppercase tracking-wider text-white hover:text-[#fd91cc] transition-colors py-1"><span class="border-b border-transparent group-hover:border-[#fd91cc]">Source</span><svg class="w-3.5 h-3.5 inline-block shrink-0 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 text-[#fd91cc]" style="image-rendering:pixelated" aria-hidden="true"><use href="#pixel-arrow-diagonal"></use></svg></a>
-              </div>
-            </article>
-
-            <!-- 6. Txt -->
-            <article
-              id="project-txt"
-              class="project-card flex flex-col justify-between p-6 rounded-xl border border-white/10 bg-[#081330]/90 transition-all duration-300 hover:border-[#fd91cc]/70 hover:shadow-lg hover:shadow-[#09318D]/20 scroll-mt-28"
-              data-categories="systems,apps"
-              data-project="txt"
-            >
-              <div>
-                <div class="flex items-start justify-between gap-3">
-                  <div class="flex items-center gap-3">
-                    <div class="w-9 h-9 shrink-0 rounded-lg bg-[#0c1b40] border border-[#09318D]/70 grid place-items-center overflow-hidden">
-                      <img src="./images/txt-logo.svg" loading="lazy" alt="txt logo" width="24" height="24" class="w-6 h-6 object-contain" />
-                    </div>
-                    <div>
-                      <h4 class="text-lg font-medium text-white tracking-[0.05em] font-sans">Txt</h4>
-                      <p class="text-xs font-mono text-white/50">Offline GSM-7 SMS transmission protocol &amp; PWA</p>
-                    </div>
-                  </div>
-                </div>
-                <p class="mt-2.5 font-mono text-xs text-[#fd91cc]">&rarr; 0 cellular data &middot; &lt;100ms arrival detection</p>
-                <p class="mt-3 font-mono text-xs sm:text-sm leading-relaxed text-white/75">
-                  Offline React Native Android app serializing photos, QR codes, and UPI requests into chunked base36 packets with CRC32 verification over SMS. Native Kotlin module parses incoming SMS payloads in &lt;100ms.
-                </p>
-              </div>
-              <div class="mt-5 pt-3 border-t border-white/10 flex items-center justify-between flex-wrap gap-2">
-                <span class="font-mono text-[11px] text-white/50">React Native &middot; Kotlin &middot; CRC32</span>
-                <div class="flex gap-3">
-                  <a href="https://github.com/barryallen16/txt" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center gap-1.5 font-mono text-xs uppercase tracking-wider text-white hover:text-[#fd91cc] transition-colors py-1"><span class="border-b border-transparent group-hover:border-[#fd91cc]">Source</span><svg class="w-3.5 h-3.5 inline-block shrink-0 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 text-[#fd91cc]" style="image-rendering:pixelated" aria-hidden="true"><use href="#pixel-arrow-diagonal"></use></svg></a>
-                  <a href="https://txt.runs-on.dev/" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center gap-1.5 font-mono text-xs uppercase tracking-wider text-white hover:text-[#fd91cc] transition-colors py-1"><span class="border-b border-transparent group-hover:border-[#fd91cc]">PWA</span><svg class="w-3.5 h-3.5 inline-block shrink-0 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 text-[#fd91cc]" style="image-rendering:pixelated" aria-hidden="true"><use href="#pixel-arrow-diagonal"></use></svg></a>
-                  <a href="https://github.com/barryallen16/txt/releases" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center gap-1.5 font-mono text-xs uppercase tracking-wider text-white hover:text-[#fd91cc] transition-colors py-1"><span class="border-b border-transparent group-hover:border-[#fd91cc]">Releases</span><svg class="w-3.5 h-3.5 inline-block shrink-0 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 text-[#fd91cc]" style="image-rendering:pixelated" aria-hidden="true"><use href="#pixel-arrow-diagonal"></use></svg></a>
-                </div>
-              </div>
-            </article>
-
-            <!-- 7. Resume Builder Skill -->
-            <article
-              id="project-resume-builder-skill"
-              class="project-card flex flex-col justify-between p-6 rounded-xl border border-white/10 bg-[#081330]/90 transition-all duration-300 hover:border-[#fd91cc]/70 hover:shadow-lg hover:shadow-[#09318D]/20 scroll-mt-28"
-              data-categories="ai,agents"
-              data-project="resume-builder-skill"
-            >
-              <div>
-                <div class="flex items-start justify-between gap-3">
-                  <div class="flex items-center gap-3">
-                    <div class="w-9 h-9 shrink-0 rounded-lg bg-[#0c1b40] border border-[#09318D]/70 grid place-items-center">
-                      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="w-5 h-5 text-[#fd91cc]" style="image-rendering:pixelated" aria-hidden="true"><path d="M14 2H4v20h16V8h-6V2Zm2 8h-4V4h4v6ZM6 18h12v2H6v-2Zm0-4h12v2H6v-2Zm0-4h8v2H6v-2Z"/></svg>
-                    </div>
-                    <div>
-                      <h4 class="text-lg font-medium text-white tracking-[0.05em] font-sans">Resume Builder Skill</h4>
-                      <p class="text-xs font-mono text-white/50">Deterministic 1-page LaTeX agent compiler</p>
-                    </div>
-                  </div>
-                </div>
-                <p class="mt-2.5 font-mono text-xs text-[#fd91cc]">&rarr; Strict 1-page assert &middot; -65% context tokens</p>
-                <p class="mt-3 font-mono text-xs sm:text-sm leading-relaxed text-white/75">
-                  Autonomous agent skill for Claude Code and OpenClaw featuring a 2-step compilation pipeline, TOON compact tabular serialization (saving 25-65% tokens), and deterministic line-budget margin math.
-                </p>
-              </div>
-              <div class="mt-5 pt-3 border-t border-white/10 flex items-center justify-between">
-                <span class="font-mono text-[11px] text-white/50">Claude Code &middot; TOON &middot; LaTeX</span>
-                <a href="https://github.com/barryallen16/resume-builder-skill" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center gap-1.5 font-mono text-xs uppercase tracking-wider text-white hover:text-[#fd91cc] transition-colors py-1"><span class="border-b border-transparent group-hover:border-[#fd91cc]">Source</span><svg class="w-3.5 h-3.5 inline-block shrink-0 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 text-[#fd91cc]" style="image-rendering:pixelated" aria-hidden="true"><use href="#pixel-arrow-diagonal"></use></svg></a>
-              </div>
-            </article>
-
-            <!-- 8. All Is Well -->
-            <article
-              id="project-all-is-well"
-              class="project-card flex flex-col justify-between p-6 rounded-xl border border-white/10 bg-[#081330]/90 transition-all duration-300 hover:border-[#fd91cc]/70 hover:shadow-lg hover:shadow-[#09318D]/20 scroll-mt-28"
-              data-categories="ai,apps"
-              data-project="all-is-well"
-            >
-              <div>
-                <div class="flex items-start justify-between gap-3">
-                  <div class="flex items-center gap-3">
-                    <div class="w-9 h-9 shrink-0 rounded-lg bg-[#0c1b40] border border-[#09318D]/70 grid place-items-center overflow-hidden">
-                      <img src="./images/all-is-well-logo.png" loading="lazy" alt="all is well logo" width="24" height="24" class="w-6 h-6 object-contain" />
-                    </div>
-                    <div>
-                      <h4 class="text-lg font-medium text-white tracking-[0.05em] font-sans">All Is Well</h4>
-                      <p class="text-xs font-mono text-white/50">On-device speech journaling &amp; crisis safety engine</p>
-                    </div>
-                  </div>
-                </div>
-                <p class="mt-2.5 font-mono text-xs text-[#fd91cc]">&rarr; 1,170 CSSR-S eval &middot; 100% on-device</p>
-                <p class="mt-3 font-mono text-xs sm:text-sm leading-relaxed text-white/75">
-                  React Native journal pairing local faster-whisper on-device transcription with a deterministic safety engine surfacing Indian helplines. Calibrated against 1,170 CSSR-S Reddit benchmark posts.
-                </p>
-              </div>
-              <div class="mt-5 pt-3 border-t border-white/10 flex items-center justify-between">
-                <span class="font-mono text-[11px] text-white/50">React Native &middot; faster-whisper &middot; Local</span>
-                <a href="https://github.com/barryallen16/all-is-well" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center gap-1.5 font-mono text-xs uppercase tracking-wider text-white hover:text-[#fd91cc] transition-colors py-1"><span class="border-b border-transparent group-hover:border-[#fd91cc]">Source</span><svg class="w-3.5 h-3.5 inline-block shrink-0 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 text-[#fd91cc]" style="image-rendering:pixelated" aria-hidden="true"><use href="#pixel-arrow-diagonal"></use></svg></a>
-              </div>
-            </article>
-
-            <!-- 9. HR RAG Agent -->
-            <article
-              id="project-hr-rag-agent"
-              class="project-card flex flex-col justify-between p-6 rounded-xl border border-white/10 bg-[#081330]/90 transition-all duration-300 hover:border-[#fd91cc]/70 hover:shadow-lg hover:shadow-[#09318D]/20 scroll-mt-28 md:col-span-2 lg:col-span-1"
-              data-categories="ai,agents"
-              data-project="hr-rag-agent"
-            >
-              <div>
-                <div class="flex items-start justify-between gap-3">
-                  <div class="flex items-center gap-3">
-                    <div class="w-9 h-9 shrink-0 rounded-lg bg-[#0c1b40] border border-[#09318D]/70 grid place-items-center overflow-hidden">
-                      <img src="./images/hr-rag-logo.svg" loading="lazy" alt="hr rag agent logo" width="24" height="24" class="w-6 h-6 object-contain" />
-                    </div>
-                    <div>
-                      <h4 class="text-lg font-medium text-white tracking-[0.05em] font-sans">Clerk (HR Agent)</h4>
-                      <p class="text-xs font-mono text-white/50">Local policy embeddings &amp; verified tool execution</p>
-                    </div>
-                  </div>
-                </div>
-                <p class="mt-2.5 font-mono text-xs text-[#fd91cc]">&rarr; 10/10 retrieval &middot; 12/14 tool selection &middot; offline SLM (lfm3-1.7b)</p>
-                <p class="mt-3 font-mono text-xs sm:text-sm leading-relaxed text-white/75">
-                  Local-first agent querying 6 HR policy documents in ChromaDB and booking leave in SQLite offline against Liquid AI lfm3-1.7b. Replaces generative SQL with typed JSON schemas and strict parameter validation guards, verified with a 13-test pytest CI suite.
-                </p>
-              </div>
-              <div class="mt-5 pt-3 border-t border-white/10 flex items-center justify-between">
-                <span class="font-mono text-[11px] text-white/50">ChromaDB &middot; Liquid AI lfm3-1.7b &middot; SQLite &middot; pytest CI</span>
-                <a href="https://github.com/barryallen16/clerk" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center gap-1.5 font-mono text-xs uppercase tracking-wider text-white hover:text-[#fd91cc] transition-colors py-1"><span class="border-b border-transparent group-hover:border-[#fd91cc]">Source</span><svg class="w-3.5 h-3.5 inline-block shrink-0 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 text-[#fd91cc]" style="image-rendering:pixelated" aria-hidden="true"><use href="#pixel-arrow-diagonal"></use></svg></a>
-              </div>
-            </article>
-
-          </div>
-        </div>
-
-        <!-- No results message -->
-        <div id="no-results" class="hidden text-center py-16">
-          <p class="text-white/60 font-mono text-lg">
-            no projects found in this category... yet!
-          </p>
-        </div>
-      </section>
-
-      <!-- Experience & Research (WHY SHOULD I TRUST YOU?) -->
-      <section
-        id="experience"
-        class="w-full bg-[#040817] flex flex-col items-center px-4 sm:px-8 py-16 sm:py-24 scroll-mt-24"
-      >
-        <h2 class="text-white text-3xl sm:text-4xl mb-10 sm:mb-12 text-center">
-          where i've
-          <span class="underline decoration-[#fd91cc] underline-offset-4"
-            >been</span
-          >
-        </h2>
-
-        <div class="w-full max-w-3xl flex flex-col gap-4">
-          <div
-            class="p-5 sm:p-8 border border-[#09318D]/60 rounded-xl bg-[#081330]/95 hover:border-[#fd91cc]/60 transition-all duration-200"
-          >
-            <div class="flex flex-wrap justify-between items-baseline gap-2">
-              <h3 class="text-white text-lg sm:text-xl font-sans">AI Research Intern (Compiler Team)</h3>
-              <span class="font-mono text-[#fd91cc] text-xs sm:text-sm"
-                >07/2025 - 10/2025</span
-              >
-            </div>
-            <p class="font-mono text-white/70 text-xs sm:text-sm mt-1">
-              Blubridge Technologies &middot; Chennai, India
+            <p class="project-summary mt-2 text-sm text-zinc-400 leading-relaxed max-w-prose">
+              Dockerized FastAPI control plane that shards GPU/TPU sweeps, streams outputs through temp disk, and alerts at the 11-hour session limit.
             </p>
-            <div class="mt-3 flex flex-wrap items-center gap-2">
-              <a
-                href="https://arxiv.org/abs/2608.00029"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#09318D]/40 border border-[#fd91cc]/50 font-mono text-[11px] text-[#fd91cc] hover:bg-[#09318D] hover:text-white transition-colors"
-              >
-                <span>Nova Compiler (arXiv:2608.00029)</span>
-                <span aria-hidden="true">&nearr;</span>
-              </a>
-              <span class="inline-flex items-center px-2.5 py-1 rounded-full bg-[#0a1638] border border-[#09318D]/60 font-mono text-[11px] text-white/75">
-                BluTrain Framework
-              </span>
-            </div>
-            <ul
-              class="font-mono text-white/80 text-xs sm:text-sm mt-4 flex flex-col gap-2.5 list-disc list-inside leading-relaxed"
-            >
-              <li>
-                Early compiler engineer on Nova, evaluating StableHLO trade-offs to define a value-semantic MLIR dialect unifying forward and backward passes.
-              </li>
-              <li>
-                Researched progressive lowering chains (nova &rarr; linalg &rarr; vector &rarr; nvgpu &rarr; NVVM &rarr; PTX) and cross-operator fusions for transformer architectures.
-              </li>
-              <li>
-                Mentored a sub-team of 4 incoming engineers on compiler concepts, torch.fx graph capture, and dialect lowering patterns.
-              </li>
-              <li>
-                Authored 170+ pages of first-principles technical notes covering CPU/GPU memory hierarchies, SSA form, and compiler passes.
-              </li>
-            </ul>
-          </div>
-          
-          <div
-            class="p-5 sm:p-8 border border-[#09318D]/60 rounded-xl bg-[#081330]/95 hover:border-[#fd91cc]/60 transition-all duration-200"
-          >
-            <div class="flex flex-wrap justify-between items-baseline gap-2">
-              <h3 class="text-white text-lg sm:text-xl font-sans">
-                First Author, IEEE TQCEBT 2026
-              </h3>
-              <span class="font-mono text-[#fd91cc] text-xs sm:text-sm"
-                >2026</span
-              >
-            </div>
-            <p class="font-mono text-white/70 text-xs sm:text-sm mt-1 leading-relaxed">
-              "FitCheck: A Multi-Modular AI Framework for Cross-Cultural Fashion
-              Recommendation via Black-Box Data Distillation" &middot; Pune, India
-            </p>
-            <p class="font-mono text-white/70 text-xs sm:text-sm mt-4 flex flex-wrap items-center gap-x-4 gap-y-2">
-              <a
-                href="./fitcheck-journal-paper.pdf"
-                target="_blank"
-                class="text-[#fd91cc] hover:text-white transition-colors min-h-[44px] flex items-center"
-                >read the paper (pdf)</a
-              >
-              <span class="hidden sm:inline text-white/20" aria-hidden="true">&middot;</span>
-              <a
-                href="https://doi.org/10.1109/TQCEBT67648.2026.11681836"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="text-white/70 hover:text-white transition-colors min-h-[44px] flex items-center break-all sm:break-normal"
-                >doi 10.1109/tqcebt67648.2026.11681836</a
-              >
-            </p>
-          </div>
-
-          <div
-            class="p-5 sm:p-8 border border-[#09318D]/60 rounded-xl bg-[#081330]/95 hover:border-[#fd91cc]/60 transition-all duration-200"
-          >
-            <div class="flex flex-wrap justify-between items-baseline gap-2">
-              <h3 class="text-white text-lg sm:text-xl font-sans">
-                B.Tech, Artificial Intelligence and Data Science
-              </h3>
-              <span class="font-mono text-[#fd91cc] text-xs sm:text-sm"
-                >2026</span
-              >
-            </div>
-            <p class="font-mono text-white/70 text-xs sm:text-sm mt-1">
-              Dr. M.G.R. Educational and Research Institute &middot; Chennai &middot; GPA: 8.0 / 10.0
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <!-- GitHub Stat Cards (Track Record & Active Commits) -->
-      <section
-        id="contributions"
-        class="w-full bg-[#050b1a] flex flex-col items-center px-4 sm:px-8 py-16 sm:py-24"
-      >
-        <h2 class="text-white text-3xl sm:text-4xl mb-8 sm:mb-10 text-center">
-          where i
-          <span class="underline decoration-[#fd91cc] underline-offset-4"
-            >commit</span
-          >
-        </h2>
-
-        <div
-          id="stat-cards"
-          class="w-full max-w-4xl grid grid-cols-1 sm:grid-cols-2 gap-4"
-        >
-          <img
-            src="https://raw.githubusercontent.com/barryallen16/barryallen16/main/assets/stats-dark.svg"
-            alt="GitHub stats for barryallen16: stars earned, commits this year, pull requests, issues and repositories contributed to"
-            width="380"
-            height="160"
-            loading="lazy"
-            decoding="async"
-            class="block w-full h-auto border border-[#09318D]/60 rounded-xl transition-all duration-300 hover:border-[#fd91cc]/60 bg-[#081330]"
-          />
-          <img
-            src="https://raw.githubusercontent.com/barryallen16/barryallen16/main/assets/top-langs-dark.svg"
-            alt="Most used languages on GitHub for barryallen16, listed with percentages"
-            width="380"
-            height="160"
-            loading="lazy"
-            decoding="async"
-            class="block w-full h-auto border border-[#09318D]/60 rounded-xl transition-all duration-300 hover:border-[#fd91cc]/60 bg-[#081330]"
-          />
-          <img
-            src="https://raw.githubusercontent.com/barryallen16/barryallen16/main/assets/streak-dark.svg"
-            alt="Contribution streak for barryallen16: total contributions, current streak and longest streak"
-            width="788"
-            height="68"
-            loading="lazy"
-            decoding="async"
-            class="col-span-full block w-full h-auto border border-[#09318D]/60 rounded-xl transition-all duration-300 hover:border-[#fd91cc]/60 bg-[#081330]"
-          />
-        </div>
-      </section>
-
-      <!-- WHAT HAPPENS NEXT? (Conversion Section) -->
-      <section
-        id="contact"
-        class="w-full bg-gradient-to-b from-[#050b1a] via-[#071330] to-[#040817] border-t border-[#09318D]/60 px-4 sm:px-8 py-20 sm:py-28 scroll-mt-20"
-      >
-        <div class="max-w-4xl mx-auto flex flex-col items-center text-center">
-          <span class="text-xs font-mono uppercase tracking-wider text-[#fd91cc] bg-[#09318D]/60 border border-[#fd91cc]/30 px-3 py-1 rounded-full mb-4">
-            Next steps
-          </span>
-          <h2 class="text-white text-3xl sm:text-5xl font-sans mb-4">
-            what happens
-            <span class="underline decoration-[#fd91cc] underline-offset-4">next?</span>
-          </h2>
-          <p class="font-mono text-white/75 text-sm sm:text-base max-w-2xl leading-relaxed mb-10">
-            I am available for full-time AI/ML engineering roles, LLM systems development, and compiler or inference optimization. If your team needs production pipelines with measured latency and zero hand-waving, here is how we start:
-          </p>
-
-          <div class="w-full grid grid-cols-1 md:grid-cols-3 gap-4 text-left font-mono mb-10">
-            <!-- Step 1: Contact -->
-            <div class="p-6 rounded-2xl bg-[#081330] border border-[#09318D]/60 hover:border-[#fd91cc]/60 flex flex-col justify-between transition-all duration-200">
-              <div>
-                <span class="text-[#fd91cc] text-xs font-semibold uppercase tracking-wider block mb-2">01 &middot; Reach Out</span>
-                <h3 class="text-white font-sans text-xl mb-2">Direct Email</h3>
-                <p class="text-white/60 text-xs leading-relaxed mb-4">
-                  Send a message directly to my primary inbox. I review inquiries personally and reply within 24 hours.
-                </p>
-              </div>
-              <div class="flex items-center gap-2">
-                <a
-                  href="mailto:rjayadithya11@gmail.com"
-                  class="flex-1 inline-flex items-center justify-center px-4 py-2.5 rounded-full bg-[#fd91cc] text-[#09318D] text-xs font-bold hover:bg-white hover:text-[#09318D] transition-colors min-h-[44px]"
-                >
-                  email directly
+            <img src="./images/kaggle-demo.webp" loading="lazy" decoding="async" width="1200" height="915" class="project-media" alt="Kaggle Runner multi-account dashboard tracking 513 runs, 1,442.6 GPU-hours, and account quotas" />
+            <div class="project-actions mt-2.5 flex flex-wrap items-center justify-between gap-2">
+              <div class="flex flex-wrap items-center gap-4 text-xs text-zinc-400">
+                <a href="https://github.com/barryallen16/kaggle-automation" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center gap-1 hover:text-white min-h-[44px]">
+                  <span>Source</span>
+                  <svg class="w-4 h-4 px-icon text-zinc-400 group-hover:text-[#fd91cc] transition-colors" aria-hidden="true"><use href="#px-ext"></use></svg>
                 </a>
-                <button
-                  id="copy-email-btn"
-                  type="button"
-                  aria-label="copy email address"
-                  class="px-3.5 py-2.5 rounded-full border border-[#09318D] bg-[#0c1b40] text-white/80 hover:text-white hover:border-[#fd91cc] transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center cursor-pointer text-xs"
-                >
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="w-4 h-4" style="image-rendering:pixelated" aria-hidden="true"><path d="M4 2h11v2H4v14H2V2h2zm4 4h12v16H8V6zm2 2v12h8V8h-8z"/></svg>
-                  <span class="sr-only">copy email</span>
-                </button>
+              </div>
+              <button type="button" data-toggle-project="kaggle-automation" aria-expanded="false" aria-controls="notes-kaggle-automation" class="group inline-flex items-center gap-1.5 text-xs font-mono text-zinc-300 hover:text-[#fd91cc] px-2 py-1 min-h-[44px] cursor-pointer">
+                <span>Notes</span>
+                <svg class="w-4 h-4 px-icon text-zinc-400 group-hover:text-[#fd91cc] transition-transform duration-150" data-chevron aria-hidden="true"><use href="#px-chevron-down"></use></svg>
+              </button>
+            </div>
+            <div id="notes-kaggle-automation" data-project-notes="kaggle-automation" hidden class="mt-3 pt-3.5 border-t border-white/[0.06] space-y-2.5 text-sm text-zinc-400 leading-relaxed"></div>
+          </article>
+
+          <!-- 6. Sivabharani Comments -->
+          <article class="project-card px-4 sm:px-6 py-4 sm:py-5 hover:bg-zinc-950/50 transition-colors" data-categories="ai,systems" data-project="sivabharani-comments" data-extra="true">
+            <div class="project-head flex flex-wrap items-start justify-between gap-3">
+              <div class="flex items-center gap-3 min-w-0">
+                <div class="w-8 h-8 rounded-lg border border-white/[0.1] bg-zinc-900 grid place-items-center shrink-0">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="w-5 h-5 px-icon text-zinc-200" aria-hidden="true"><path d="M16 19H4v-2h12v2ZM4 17H2V7h2v10Zm14-8h2V7h2v10h-2v-2h-2v2h-2V7h2v2Zm-2-2H4V5h12v2Z"/></svg>
+                </div>
+                <div class="min-w-0">
+                  <div class="flex items-center gap-2">
+                    <h3 class="text-base font-medium tracking-[-0.01em] text-white">Sivabharani</h3>
+                    <span class="inline-flex items-center gap-1.5 font-mono text-xs text-zinc-400">
+                      <span class="w-1.5 h-1.5 rounded-full bg-[#fd91cc]" aria-hidden="true"></span>Live
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div class="text-left sm:text-right font-mono text-xs tabular-nums">
+                <span class="text-zinc-200">1.18M chunks</span>
+                <span class="text-zinc-400"> &middot; 15,155 hits</span>
               </div>
             </div>
-
-            <!-- Step 2: Resume Review -->
-            <div class="p-6 rounded-2xl bg-[#081330] border border-[#09318D]/60 hover:border-[#fd91cc]/60 flex flex-col justify-between transition-all duration-200">
-              <div>
-                <span class="text-[#fd91cc] text-xs font-semibold uppercase tracking-wider block mb-2">02 &middot; Verify Background</span>
-                <h3 class="text-white font-sans text-xl mb-2">1-Page Resume</h3>
-                <p class="text-white/60 text-xs leading-relaxed mb-4">
-                  Download the latest ATS-compliant resume with verified metrics, compiler passes, and IEEE publication details.
-                </p>
+            <p class="project-summary mt-2 text-sm text-zinc-400 leading-relaxed max-w-prose">
+              27-key multi-threaded Groq pipeline (Qwen3.8-27B) across 1,400 Tamil tech videos (36,818 65s windows), indexed in Meilisearch so you can jump straight to commenter timestamp mentions.
+            </p>
+            <img src="./images/sivabharani-demo.webp" loading="lazy" decoding="async" width="1200" height="671" class="project-media" alt="Sivabharani search returning 48 timestamped mentions in 34ms via Meilisearch" />
+            <div class="project-actions mt-2.5 flex flex-wrap items-center justify-between gap-2">
+              <div class="flex flex-wrap items-center gap-4 text-xs text-zinc-400">
+                <a href="https://barryallen16.github.io/sivabharani-comments" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center gap-1 text-zinc-300 hover:text-white min-h-[44px]">
+                  <span>Search</span>
+                  <svg class="w-4 h-4 px-icon text-zinc-400 group-hover:text-[#fd91cc] transition-colors" aria-hidden="true"><use href="#px-ext"></use></svg>
+                </a>
+                <a href="https://github.com/barryallen16/sivabharani-comments" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center gap-1 hover:text-white min-h-[44px]">
+                  <span>Source</span>
+                  <svg class="w-4 h-4 px-icon text-zinc-400 group-hover:text-[#fd91cc] transition-colors" aria-hidden="true"><use href="#px-ext"></use></svg>
+                </a>
+                <a href="https://huggingface.co/datasets/barryallen16/sivabharani_comments" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center gap-1 hover:text-white min-h-[44px]">
+                  <span>Dataset</span>
+                  <svg class="w-4 h-4 px-icon text-zinc-400 group-hover:text-[#fd91cc] transition-colors" aria-hidden="true"><use href="#px-ext"></use></svg>
+                </a>
               </div>
-              <a
-                href="./resume/"
-                target="_blank"
-                class="inline-flex items-center justify-center px-4 py-2.5 rounded-full border border-[#09318D] bg-[#0c1b40] text-white text-xs hover:border-[#fd91cc] hover:text-[#fd91cc] transition-colors min-h-[44px]"
-              >
-                view resume &nearr;
+              <button type="button" data-toggle-project="sivabharani-comments" aria-expanded="false" aria-controls="notes-sivabharani-comments" class="group inline-flex items-center gap-1.5 text-xs font-mono text-zinc-300 hover:text-[#fd91cc] px-2 py-1 min-h-[44px] cursor-pointer">
+                <span>Notes</span>
+                <svg class="w-4 h-4 px-icon text-zinc-400 group-hover:text-[#fd91cc] transition-transform duration-150" data-chevron aria-hidden="true"><use href="#px-chevron-down"></use></svg>
+              </button>
+            </div>
+            <div id="notes-sivabharani-comments" data-project-notes="sivabharani-comments" hidden class="mt-3 pt-3.5 border-t border-white/[0.06] space-y-2.5 text-sm text-zinc-400 leading-relaxed"></div>
+          </article>
+
+          <!-- 7. Txt -->
+          <article class="project-card px-4 sm:px-6 py-4 sm:py-5 hover:bg-zinc-950/50 transition-colors" data-categories="systems,apps" data-project="txt" data-extra="true">
+            <div class="project-head flex flex-wrap items-start justify-between gap-3">
+              <div class="flex items-center gap-3 min-w-0">
+                <div class="w-8 h-8 rounded-lg border border-white/[0.1] bg-zinc-900 grid place-items-center shrink-0 overflow-hidden">
+                  <img src="./images/txt-logo.svg" loading="lazy" alt="" width="20" height="20" class="w-5 h-5 object-contain" />
+                </div>
+                <div class="flex items-center gap-2">
+                  <h3 class="text-base font-medium tracking-[-0.01em] text-white">Txt</h3>
+                  <span class="inline-flex items-center gap-1.5 font-mono text-xs text-zinc-400">
+                    <span class="w-1.5 h-1.5 rounded-full bg-[#fd91cc]" aria-hidden="true"></span>Live
+                  </span>
+                </div>
+              </div>
+              <div class="text-left sm:text-right font-mono text-xs tabular-nums">
+                <span class="text-zinc-200">0 cellular data</span>
+                <span class="text-zinc-400"> &middot; 93 bun tests</span>
+              </div>
+            </div>
+            <div class="project-summary mt-2 space-y-2.5 text-sm text-zinc-400 leading-relaxed max-w-prose">
+              <p>
+                Offline Android protocol packing 1.2-2.8 KB photos, QR codes, GPS coordinates, and UPI links into CRC32-checked GSM-7 SMS frames via a Kotlin ContentObserver listener.
+              </p>
+              <ul class="space-y-1 text-zinc-300">
+                <li class="flex gap-2"><span class="text-zinc-400 font-mono select-none" aria-hidden="true">&bull;</span><span>Byte-exact UPI URI passthrough launches installed apps (GPay, PhonePe).</span></li>
+                <li class="flex gap-2"><span class="text-zinc-400 font-mono select-none" aria-hidden="true">&bull;</span><span>WAL-mode SQLite + TRAI 100 SMS/day quota guard; 93 passing bun tests.</span></li>
+              </ul>
+            </div>
+            <video autoplay loop muted playsinline preload="metadata" poster="./images/txt-demo.webp" width="360" height="802" class="project-media project-media--portrait" aria-hidden="true">
+              <source src="./images/txt-walkthrough.mp4" type="video/mp4" />
+            </video>
+            <div class="project-actions mt-2.5 flex flex-wrap items-center justify-between gap-2">
+              <div class="flex flex-wrap items-center gap-4 text-xs text-zinc-400">
+                <a href="https://github.com/barryallen16/txt" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center gap-1 hover:text-white min-h-[44px]">
+                  <span>Source</span>
+                  <svg class="w-4 h-4 px-icon text-zinc-400 group-hover:text-[#fd91cc] transition-colors" aria-hidden="true"><use href="#px-ext"></use></svg>
+                </a>
+                <a href="https://txt.runs-on.dev/" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center gap-1 hover:text-white min-h-[44px]">
+                  <span>PWA</span>
+                  <svg class="w-4 h-4 px-icon text-zinc-400 group-hover:text-[#fd91cc] transition-colors" aria-hidden="true"><use href="#px-ext"></use></svg>
+                </a>
+              </div>
+              <button type="button" data-toggle-project="txt" aria-expanded="false" aria-controls="notes-txt" class="group inline-flex items-center gap-1.5 text-xs font-mono text-zinc-300 hover:text-[#fd91cc] px-2 py-1 min-h-[44px] cursor-pointer">
+                <span>Notes</span>
+                <svg class="w-4 h-4 px-icon text-zinc-400 group-hover:text-[#fd91cc] transition-transform duration-150" data-chevron aria-hidden="true"><use href="#px-chevron-down"></use></svg>
+              </button>
+            </div>
+            <div id="notes-txt" data-project-notes="txt" hidden class="mt-3 pt-3.5 border-t border-white/[0.06] space-y-2.5 text-sm text-zinc-400 leading-relaxed"></div>
+          </article>
+
+          <!-- 8. Resume Skill -->
+          <article class="project-card px-4 sm:px-6 py-4 sm:py-5 hover:bg-zinc-950/50 transition-colors" data-categories="ai,agents" data-project="resume-builder-skill" data-extra="true">
+            <div class="flex flex-wrap items-start justify-between gap-3">
+              <div class="flex items-center gap-3 min-w-0">
+                <div class="w-8 h-8 rounded-lg border border-white/[0.1] bg-zinc-900 grid place-items-center shrink-0">
+                  <svg class="w-5 h-5 px-icon text-zinc-200" aria-hidden="true"><use href="#px-file"></use></svg>
+                </div>
+                <div class="flex items-center gap-2">
+                  <h3 class="text-base font-medium tracking-[-0.01em] text-white">Resume Skill</h3>
+                  <span class="font-mono text-xs text-zinc-400">OSS</span>
+                </div>
+              </div>
+              <div class="text-left sm:text-right font-mono text-xs tabular-nums">
+                <span class="text-zinc-200">1-page fail-closed</span>
+                <span class="text-zinc-400"> &middot; 73 unit tests</span>
+              </div>
+            </div>
+            <p class="mt-2 text-sm text-zinc-400 leading-relaxed max-w-prose">
+              Two-step Python CLI that builds tailored ATS docx and headless LibreOffice PDF resumes with TOON v4.4 serialization (25-65% fewer tokens) and zero vision tokens.
+            </p>
+            <div class="mt-2.5 flex flex-wrap items-center justify-between gap-2">
+              <div class="flex flex-wrap items-center gap-4 text-xs text-zinc-400">
+                <a href="https://github.com/barryallen16/resume-builder-skill" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center gap-1 hover:text-white min-h-[44px]">
+                  <span>Source</span>
+                  <svg class="w-4 h-4 px-icon text-zinc-400 group-hover:text-[#fd91cc] transition-colors" aria-hidden="true"><use href="#px-ext"></use></svg>
+                </a>
+              </div>
+              <button type="button" data-toggle-project="resume-builder-skill" aria-expanded="false" aria-controls="notes-resume-builder-skill" class="group inline-flex items-center gap-1.5 text-xs font-mono text-zinc-300 hover:text-[#fd91cc] px-2 py-1 min-h-[44px] cursor-pointer">
+                <span>Notes</span>
+                <svg class="w-4 h-4 px-icon text-zinc-400 group-hover:text-[#fd91cc] transition-transform duration-150" data-chevron aria-hidden="true"><use href="#px-chevron-down"></use></svg>
+              </button>
+            </div>
+            <div id="notes-resume-builder-skill" data-project-notes="resume-builder-skill" hidden class="mt-3 pt-3.5 border-t border-white/[0.06] space-y-2.5 text-sm text-zinc-400 leading-relaxed"></div>
+          </article>
+
+          <!-- 9. Clerk -->
+          <article class="project-card px-4 sm:px-6 py-4 sm:py-5 hover:bg-zinc-950/50 transition-colors" data-categories="ai,agents" data-project="hr-rag-agent" data-extra="true">
+            <div class="flex flex-wrap items-start justify-between gap-3">
+              <div class="flex items-center gap-3 min-w-0">
+                <div class="w-8 h-8 rounded-lg border border-white/[0.1] bg-zinc-900 grid place-items-center shrink-0 overflow-hidden">
+                  <img src="./images/hr-rag-logo.svg" loading="lazy" alt="" width="20" height="20" class="w-5 h-5 object-contain" />
+                </div>
+                <div class="flex items-center gap-2">
+                  <h3 class="text-base font-medium tracking-[-0.01em] text-white">Clerk</h3>
+                  <span class="font-mono text-xs text-zinc-400">OSS</span>
+                </div>
+              </div>
+              <div class="text-left sm:text-right font-mono text-xs tabular-nums">
+                <span class="text-zinc-200">10/10 retrieval</span>
+                <span class="text-zinc-400"> &middot; 13/14 accuracy</span>
+              </div>
+            </div>
+            <p class="mt-2 text-sm text-zinc-400 leading-relaxed max-w-prose">
+              Local HR agent searching 27 ChromaDB policy chunks and booking SQLite leave via typed JSON schemas on offline SLMs (lfm3-1.7b), with a 19-test pytest CI suite.
+            </p>
+            <video autoplay loop muted playsinline preload="metadata" poster="./images/clerk-demo.webp" width="1000" height="514" class="project-media" aria-hidden="true">
+              <source src="./images/clerk-demo.mp4" type="video/mp4" />
+            </video>
+            <div class="mt-2.5 flex flex-wrap items-center justify-between gap-2">
+              <div class="flex flex-wrap items-center gap-4 text-xs text-zinc-400">
+                <a href="https://github.com/barryallen16/clerk" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center gap-1 hover:text-white min-h-[44px]">
+                  <span>Source</span>
+                  <svg class="w-4 h-4 px-icon text-zinc-400 group-hover:text-[#fd91cc] transition-colors" aria-hidden="true"><use href="#px-ext"></use></svg>
+                </a>
+              </div>
+              <button type="button" data-toggle-project="hr-rag-agent" aria-expanded="false" aria-controls="notes-hr-rag-agent" class="group inline-flex items-center gap-1.5 text-xs font-mono text-zinc-300 hover:text-[#fd91cc] px-2 py-1 min-h-[44px] cursor-pointer">
+                <span>Notes</span>
+                <svg class="w-4 h-4 px-icon text-zinc-400 group-hover:text-[#fd91cc] transition-transform duration-150" data-chevron aria-hidden="true"><use href="#px-chevron-down"></use></svg>
+              </button>
+            </div>
+            <div id="notes-hr-rag-agent" data-project-notes="hr-rag-agent" hidden class="mt-3 pt-3.5 border-t border-white/[0.06] space-y-2.5 text-sm text-zinc-400 leading-relaxed"></div>
+          </article>
+
+        </div>
+
+        <div id="no-results" class="hidden text-center py-8 text-sm text-zinc-400">
+          No projects match this filter.
+        </div>
+
+        <div class="p-4 sm:px-6 border-t border-white/[0.08] flex justify-center">
+          <button
+            id="show-more-projects"
+            type="button"
+            aria-expanded="false"
+            class="group inline-flex items-center gap-2 px-4 py-1.5 rounded-md border border-white/[0.1] bg-zinc-900/60 text-xs font-mono text-zinc-300 hover:border-[#fd91cc]/60 hover:text-white active:translate-y-px transition-colors min-h-[44px] cursor-pointer"
+          >
+            <span data-more-label>View all 9 projects</span>
+            <svg class="w-4 h-4 px-icon text-zinc-400 group-hover:text-[#fd91cc] transition-colors" aria-hidden="true"><use href="#px-chevron-down"></use></svg>
+          </button>
+        </div>
+      </section>
+
+      <!-- Stack (Flush Indexed Rows) -->
+      <section id="stack" class="scroll-mt-16">
+        <div class="p-4 sm:px-6 border-b border-white/[0.08] bg-zinc-950/60">
+          <h2 class="text-lg font-semibold tracking-[-0.02em] text-white">Stack</h2>
+        </div>
+        <div class="divide-y divide-white/[0.08]">
+          <div class="px-4 sm:px-6 py-3.5 flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-6">
+            <span class="font-mono text-xs text-zinc-400 sm:w-44 shrink-0">01 Systems &amp; compilers</span>
+            <p class="text-sm text-zinc-300">MLIR, StableHLO, PTX / NVVM, Rust, C++ / JNI, Kotlin</p>
+          </div>
+          <div class="px-4 sm:px-6 py-3.5 flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-6">
+            <span class="font-mono text-xs text-zinc-400 sm:w-44 shrink-0">02 ML &amp; inference</span>
+            <p class="text-sm text-zinc-300">PyTorch, Unsloth LoRA, Liquid d1-3B SSM, GGUF / llama.cpp, Cactus 4.1.4</p>
+          </div>
+          <div class="px-4 sm:px-6 py-3.5 flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-6">
+            <span class="font-mono text-xs text-zinc-400 sm:w-44 shrink-0">03 Data &amp; product</span>
+            <p class="text-sm text-zinc-300">Python / FastAPI, AWS EC2, ChromaDB, Meilisearch, SQLite, React Native / Expo</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- GitHub Activity -->
+      <section id="contributions" class="scroll-mt-16">
+        <div class="p-4 sm:px-6 border-b border-white/[0.08] bg-zinc-950/60 flex items-center justify-between">
+          <h2 class="text-lg font-semibold tracking-[-0.02em] text-white">GitHub activity</h2>
+          <a href="https://github.com/barryallen16" target="_blank" rel="noopener noreferrer" class="group font-mono text-xs text-zinc-400 hover:text-white min-h-[44px] inline-flex items-center gap-1">
+            <span>@barryallen16</span>
+            <svg class="w-4 h-4 px-icon text-zinc-400 group-hover:text-[#fd91cc] transition-colors" aria-hidden="true"><use href="#px-ext"></use></svg>
+          </a>
+        </div>
+
+        <div class="px-4 sm:px-6 py-5">
+          <div id="gh-card" class="relative rounded-xl border border-white/[0.08] bg-[#0c0c0f] p-4 sm:p-5">
+            <div id="gh-scroll" class="overflow-x-auto pb-1" tabindex="0" role="region" aria-label="GitHub contribution heatmap">
+              <div class="min-w-[540px]">
+                <div id="gh-months" class="mb-2 flex justify-between font-mono text-xs text-zinc-400">
+                  <span>Dec</span><span>Jan</span><span>Feb</span><span>Mar</span><span>Apr</span><span>May</span><span>Jun</span><span>Jul</span><span>Aug</span><span>Sep</span><span>Oct</span><span>Nov</span>
+                </div>
+                <div id="gh-grid" class="grid grid-flow-col grid-rows-7 auto-cols-fr gap-[3px]" role="group" aria-label="GitHub contribution heatmap for barryallen16 over the last year"></div>
+              </div>
+            </div>
+            <div id="gh-tooltip" role="tooltip" aria-hidden="true" class="pointer-events-none absolute left-0 top-0 z-30 w-max max-w-xs rounded-md bg-white px-2.5 py-1 font-mono text-xs font-medium text-[#09090b] shadow-lg opacity-0 will-change-transform">
+              <span data-tip-text></span>
+              <span data-tip-arrow aria-hidden="true" class="absolute size-1.5 rotate-45 bg-white"></span>
+            </div>
+            <div class="mt-3 pt-3 border-t border-white/[0.07] flex flex-wrap items-center justify-between gap-2 text-xs text-zinc-400">
+              <span id="gh-total" class="font-mono text-zinc-300" aria-live="polite">Loading contributions...</span>
+              <div class="flex items-center gap-1.5 font-mono" aria-hidden="true">
+                <span>Less</span>
+                <span class="w-2.5 h-2.5 rounded-[2px] bg-zinc-800"></span>
+                <span class="w-2.5 h-2.5 rounded-[2px] bg-[#fd91cc]/25"></span>
+                <span class="w-2.5 h-2.5 rounded-[2px] bg-[#fd91cc]/45"></span>
+                <span class="w-2.5 h-2.5 rounded-[2px] bg-[#fd91cc]/70"></span>
+                <span class="w-2.5 h-2.5 rounded-[2px] bg-[#fd91cc]"></span>
+                <span>More</span>
+              </div>
+            </div>
+          </div>
+
+          <div id="gh-fallback" class="hidden grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <img
+              src="https://raw.githubusercontent.com/barryallen16/barryallen16/main/assets/stats-dark.svg"
+              alt="GitHub stats for barryallen16"
+              width="380"
+              height="160"
+              loading="lazy"
+              decoding="async"
+              class="w-full h-auto rounded-xl border border-white/[0.08] bg-[#0c0c0f]"
+            />
+            <img
+              src="https://raw.githubusercontent.com/barryallen16/barryallen16/main/assets/top-langs-dark.svg"
+              alt="Top GitHub languages for barryallen16"
+              width="380"
+              height="160"
+              loading="lazy"
+              decoding="async"
+              class="w-full h-auto rounded-xl border border-white/[0.08] bg-[#0c0c0f]"
+            />
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact & Footer -->
+      <footer id="contact" class="scroll-mt-16">
+        <div class="p-4 sm:px-6 border-b border-white/[0.08] bg-zinc-950/60">
+          <h2 class="text-lg font-semibold tracking-[-0.02em] text-white">Contact</h2>
+        </div>
+        <div class="px-4 sm:px-6 py-6 sm:py-8">
+          <p class="text-sm text-zinc-400 leading-relaxed max-w-[58ch]">
+            Looking for full-time AI/ML systems, inference, or compiler engineering roles. I reply to email within a day.
+          </p>
+          <div class="mt-4 flex flex-wrap items-center gap-2.5">
+            <a href="mailto:rjayadithya11@gmail.com" class="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-lg border border-white/[0.14] bg-zinc-900 text-zinc-100 text-sm font-medium hover:border-[#fd91cc]/70 hover:text-white active:translate-y-px transition-colors min-h-[44px]">
+              <svg class="w-4 h-4 px-icon text-[#fd91cc] shrink-0" aria-hidden="true"><use href="#px-mail"></use></svg>
+              <span>rjayadithya11@gmail.com</span>
+            </a>
+            <a href="./resume/" class="inline-flex items-center justify-center gap-2 px-3.5 py-2 rounded-lg border border-white/[0.12] bg-zinc-900 text-sm font-medium text-zinc-200 hover:border-[#fd91cc]/70 active:translate-y-px transition-colors min-h-[44px]">
+              <svg class="w-4 h-4 px-icon shrink-0 text-zinc-400" aria-hidden="true"><use href="#px-file"></use></svg>
+              <span>Résumé</span>
+            </a>
+          </div>
+          <div class="mt-6 pt-4 border-t border-white/[0.07] flex flex-wrap items-center justify-between gap-2 text-xs text-zinc-400">
+            <span>Chennai, India &middot; IST (UTC+5:30) &middot; <span class="font-mono text-zinc-300 whitespace-nowrap">+91 63696 05616</span></span>
+            <div class="flex items-center gap-4">
+              <a href="https://github.com/barryallen16" target="_blank" rel="noopener noreferrer" class="group hover:text-white min-h-[44px] inline-flex items-center gap-1">
+                <span>GitHub</span>
+                <svg class="w-4 h-4 px-icon text-zinc-400 group-hover:text-[#fd91cc] transition-colors" aria-hidden="true"><use href="#px-ext"></use></svg>
+              </a>
+              <a href="https://www.linkedin.com/in/jayadithya-r/" target="_blank" rel="noopener noreferrer" class="group hover:text-white min-h-[44px] inline-flex items-center gap-1">
+                <span>LinkedIn</span>
+                <svg class="w-4 h-4 px-icon text-zinc-400 group-hover:text-[#fd91cc] transition-colors" aria-hidden="true"><use href="#px-ext"></use></svg>
+              </a>
+              <a href="https://huggingface.co/barryallen16" target="_blank" rel="noopener noreferrer" class="group hover:text-white min-h-[44px] inline-flex items-center gap-1">
+                <span>Hugging Face</span>
+                <svg class="w-4 h-4 px-icon text-zinc-400 group-hover:text-[#fd91cc] transition-colors" aria-hidden="true"><use href="#px-ext"></use></svg>
               </a>
             </div>
-
-            <!-- Step 3: Code Audit -->
-            <div class="p-6 rounded-2xl bg-[#081330] border border-[#09318D]/60 hover:border-[#fd91cc]/60 flex flex-col justify-between transition-all duration-200">
-              <div>
-                <span class="text-[#fd91cc] text-xs font-semibold uppercase tracking-wider block mb-2">03 &middot; Inspect Code</span>
-                <h3 class="text-white font-sans text-xl mb-2">GitHub &amp; Hugging Face</h3>
-                <p class="text-white/60 text-xs leading-relaxed mb-4">
-                  Review open-source codebases, test suites, Docker configs, and published model weights with decode assertions.
-                </p>
-              </div>
-              <div class="flex flex-wrap sm:flex-nowrap gap-2">
-                <a
-                  href="https://www.linkedin.com/in/jayadithya-r/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="flex-1 inline-flex items-center justify-center px-2 py-2.5 rounded-full border border-[#09318D] bg-[#0c1b40] text-white text-xs hover:border-[#fd91cc] hover:text-[#fd91cc] transition-colors min-h-[44px]"
-                >
-                  linkedin
-                </a>
-                <a
-                  href="https://github.com/barryallen16"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="flex-1 inline-flex items-center justify-center px-2 py-2.5 rounded-full border border-[#09318D] bg-[#0c1b40] text-white text-xs hover:border-[#fd91cc] hover:text-[#fd91cc] transition-colors min-h-[44px]"
-                >
-                  github
-                </a>
-                <a
-                  href="https://huggingface.co/barryallen16"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="w-full sm:flex-1 inline-flex items-center justify-center px-2 py-2.5 rounded-full border border-[#09318D] bg-[#0c1b40] text-white text-xs hover:border-[#fd91cc] hover:text-[#fd91cc] transition-colors min-h-[44px]"
-                >
-                  hugging face
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Candidate Quick Facts -->
-          <div class="p-4 rounded-xl bg-[#081330]/80 border border-[#09318D]/60 flex flex-col sm:flex-row justify-center items-center gap-2 sm:gap-6 font-mono text-xs text-white/70 text-center">
-            <span>Location: <strong class="text-white/95">Chennai, India</strong> (Open to remote &amp; relocation)</span>
-            <span class="hidden sm:inline text-white/30" aria-hidden="true">&middot;</span>
-            <span>Timezone: <strong class="text-white/95">IST (UTC+5:30)</strong></span>
-            <span class="hidden sm:inline text-white/30" aria-hidden="true">&middot;</span>
-            <span>Phone: <strong class="text-white/95">+91 63696 05616</strong></span>
           </div>
         </div>
-      </section>
+      </footer>
+
     </main>
 
-    <!-- Footer -->
-    <footer
-      class="w-full bg-[#030612] border-t border-[#09318D]/50 py-8 px-4 sm:px-8"
-    >
-      <div
-        class="max-w-6xl mx-auto flex flex-wrap justify-center items-center gap-x-4 sm:gap-x-6 gap-y-2 font-mono text-xs sm:text-sm"
-      >
-        <a
-          href="./resume/"
-          target="_blank"
-          class="text-white/75 hover:text-[#fd91cc] transition-colors min-h-[44px] flex items-center"
-          >resume</a
-        >
-        <span class="hidden sm:inline text-white/30" aria-hidden="true">&middot;</span>
-        <a
-          href="mailto:rjayadithya11@gmail.com"
-          class="text-white/75 hover:text-[#fd91cc] transition-colors min-h-[44px] flex items-center"
-          >email</a
-        >
-        <span class="hidden sm:inline text-white/30" aria-hidden="true">&middot;</span>
-        <a
-          href="https://www.linkedin.com/in/jayadithya-r/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="text-white/75 hover:text-[#fd91cc] transition-colors min-h-[44px] flex items-center"
-          >linkedin</a
-        >
-        <span class="hidden sm:inline text-white/30" aria-hidden="true">&middot;</span>
-        <a
-          href="https://github.com/barryallen16"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="text-white/75 hover:text-[#fd91cc] transition-colors min-h-[44px] flex items-center"
-          >github</a
-        >
-        <span class="hidden sm:inline text-white/30" aria-hidden="true">&middot;</span>
-        <a
-          href="./llms.txt"
-          id="agent-view-link"
-          class="text-white/75 hover:text-[#fd91cc] transition-colors min-h-[44px] flex items-center"
-          >agents</a
-        >
+    <!-- Native Command Palette -->
+    <dialog id="cmd-palette" aria-label="Command palette" class="m-auto mt-20 w-[92%] max-w-lg rounded-xl border border-white/[0.14] bg-[#0d0d11] text-zinc-100 p-0 shadow-2xl shadow-black/80">
+      <div class="flex items-center gap-2.5 px-4 border-b border-white/[0.08] focus-within:border-[#fd91cc]/60 transition-colors">
+        <svg class="w-4 h-4 px-icon text-zinc-400 shrink-0" aria-hidden="true"><use href="#px-terminal"></use></svg>
+        <input id="cmd-input" type="text" aria-label="Command palette filter" placeholder="Jump to project, section, or action..." class="w-full py-3.5 bg-transparent text-sm text-white caret-[#fd91cc] placeholder:text-zinc-400 focus:outline-none" autocomplete="off" />
+        <button id="cmd-close" type="button" aria-label="Close command palette" class="inline-flex items-center gap-1 font-mono text-xs text-zinc-400 hover:text-white px-2 py-1 min-h-[44px] cursor-pointer">
+          <svg class="w-4 h-4 px-icon" aria-hidden="true"><use href="#px-close"></use></svg>
+          <span>ESC</span>
+        </button>
       </div>
-    </footer>
+      <ul id="cmd-list" class="max-h-72 overflow-y-auto p-2 space-y-1 text-sm" role="listbox"></ul>
+    </dialog>
   </body>
 </html>

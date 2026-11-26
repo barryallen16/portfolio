@@ -3,95 +3,140 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Jayadithya R - Resume</title>
+    <title>Jayadithya R - Résumé</title>
     <meta
       name="description"
-      content="Resume of Jayadithya R - AI/ML engineer building LLM systems, tokenizer infrastructure and data pipelines. Chennai, India."
+      content="Résumé of Jayadithya R - AI/ML systems engineer building Rust tokenizers, MLIR compilers, and local inference tooling. Chennai, India."
     />
-    <meta property="og:title" content="Jayadithya R - Resume" />
+    <meta property="og:title" content="Jayadithya R - Résumé" />
     <meta
       property="og:description"
-      content="Resume of Jayadithya R - AI/ML engineer building LLM systems, tokenizer infrastructure and data pipelines."
+      content="Résumé of Jayadithya R - AI/ML systems engineer building Rust tokenizers, MLIR compilers, and local inference tooling."
     />
     <meta property="og:type" content="profile" />
     <meta property="og:url" content="https://jayadithya.is-a.dev/resume" />
+    <meta property="og:image" content="https://jayadithya.is-a.dev/images/og-banner.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://jayadithya.is-a.dev/resume" />
-    <meta name="theme-color" content="#050b1a" />
-    <link
-      rel="shortcut icon"
-      href="/favicon/favicon.ico"
-      type="image/x-icon"
-    />
+    <meta name="theme-color" content="#09090b" />
+    <link rel="icon" href="../favicon/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon/favicon-32x32.png" />
     <style>
       @font-face {
-        font-family: "Brunson";
-        src: url("/fonts/brunson-display.woff2") format("woff2");
+        font-family: "Satoshi";
+        font-style: normal;
+        font-weight: 400;
         font-display: swap;
+        src: url("../fonts/satoshi-regular.woff2") format("woff2");
       }
       @font-face {
-        font-family: "GeistMono";
-        src: url("/fonts/geistmono-regular.woff2") format("woff2");
-        font-weight: 400;
+        font-family: "Satoshi";
         font-style: normal;
+        font-weight: 500;
         font-display: swap;
+        src: url("../fonts/satoshi-medium.woff2") format("woff2");
+      }
+      @font-face {
+        font-family: "Satoshi";
+        font-style: normal;
+        font-weight: 600 700;
+        font-display: swap;
+        src: url("../fonts/satoshi-bold.woff2") format("woff2");
+      }
+      @font-face {
+        font-family: "Mononoki";
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: url("../fonts/mononoki-regular.woff2") format("woff2");
       }
       ::selection {
         background: #fd91cc;
-        color: #09318D;
+        color: #09090b;
+      }
+      :focus-visible {
+        outline: 2px solid #fd91cc;
+        outline-offset: 2px;
       }
       * {
         box-sizing: border-box;
+      }
+      html {
+        scroll-padding-top: 4.5rem;
       }
       html,
       body {
         margin: 0;
         padding: 0;
         min-height: 100%;
-        background: #050b1a;
-        color: rgba(255, 255, 255, 0.75);
-        font-family: "GeistMono", ui-monospace, SFMono-Regular, monospace;
-        font-size: 14px;
+        background: #09090b;
+        color: #e6e7eb;
+        font-family: "Satoshi", ui-sans-serif, system-ui, sans-serif;
+        font-size: 16px;
+        font-size-adjust: from-font;
+        overflow-wrap: break-word;
+      }
+      a {
+        overflow-wrap: anywhere;
+      }
+      .px-icon {
+        width: 16px;
+        height: 16px;
+        image-rendering: pixelated;
+        flex-shrink: 0;
       }
       .bar {
         position: fixed;
         top: 0;
         left: 0;
         right: 0;
-        height: 3.5rem;
+        height: 3.75rem;
         z-index: 20;
         display: flex;
         align-items: center;
         justify-content: space-between;
         gap: 0.75rem;
         padding: 0 1rem;
-        background: rgba(5, 11, 26, 0.9);
+        background: rgba(9, 9, 11, 0.92);
         backdrop-filter: blur(12px);
-        border-bottom: 1px solid rgba(9, 49, 141, 0.5);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
       }
-      .bar a {
+      .bar-inner {
+        width: 100%;
+        max-width: 740px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0.75rem;
+      }
+      .who-link {
+        display: inline-flex;
+        align-items: center;
+        min-height: 44px;
         text-decoration: none;
-        color: rgba(255, 255, 255, 0.6);
-        transition: color 0.15s ease;
+        color: #ffffff;
       }
-      .bar a:hover,
-      .bar a:focus-visible {
+      .who-link:hover .who {
         color: #fd91cc;
       }
       .who {
-        font-family: "Brunson", ui-sans-serif, system-ui, sans-serif;
-        font-size: 1.125rem;
+        font-family: "Satoshi", ui-sans-serif, system-ui, sans-serif;
+        font-weight: 600;
+        font-size: 1rem;
+        letter-spacing: -0.02em;
         color: #ffffff;
         white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
+        transition: color 0.15s ease;
       }
       .who span {
-        font-family: "GeistMono", ui-monospace, monospace;
+        font-family: "Mononoki", ui-monospace, monospace;
         font-size: 0.75rem;
-        color: #fd91cc;
-        margin-left: 0.25rem;
+        color: #a1a1aa;
+        margin-left: 0.35rem;
       }
       .actions {
         display: flex;
@@ -103,47 +148,51 @@
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        padding: 0.45rem 0.85rem;
-        font-size: 0.75rem;
-        font-family: "GeistMono", monospace;
-        border: 1px solid rgba(9, 49, 141, 0.7);
-        border-radius: 9999px;
-        background: #0c1b40;
-        color: rgba(255, 255, 255, 0.85);
+        gap: 0.45rem;
+        padding: 0.5rem 0.9rem;
+        font-size: 0.875rem;
+        font-family: "Satoshi", ui-sans-serif, system-ui, sans-serif;
+        font-weight: 500;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 0.5rem;
+        background: #18181b;
+        color: #e6e7eb;
         text-decoration: none;
         white-space: nowrap;
-        transition: all 0.2s ease;
-        min-height: 36px;
+        transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+        min-height: 44px;
       }
       .btn:hover {
-        border-color: #fd91cc;
+        border-color: rgba(253, 145, 204, 0.7);
         color: #ffffff;
       }
       .btn.primary {
-        background: #09318D;
-        color: #fd91cc;
-        border: 1.5px solid #fd91cc;
+        background: #fd91cc;
+        color: #09090b;
+        border-color: #fd91cc;
+        font-family: "Satoshi", ui-sans-serif, system-ui, sans-serif;
         font-weight: 600;
       }
       .btn.primary:hover,
       .btn.primary:focus-visible {
-        background: #fd91cc;
-        color: #09318D;
+        background: #ffffff;
+        border-color: #ffffff;
+        color: #09090b;
       }
       .frame {
         position: fixed;
-        top: 3.5rem;
+        top: 3.75rem;
         left: 0;
         right: 0;
         bottom: 0;
         width: 100%;
-        height: calc(100% - 3.5rem);
+        height: calc(100% - 3.75rem);
         border: 0;
-        background: #050b1a;
+        background: #09090b;
       }
       .fallback {
         position: fixed;
-        top: 3.5rem;
+        top: 3.75rem;
         left: 0;
         right: 0;
         bottom: 0;
@@ -158,40 +207,43 @@
       .fallback p {
         margin: 0;
         line-height: 1.6;
-        color: rgba(255, 255, 255, 0.7);
+        color: #d4d4d8;
       }
       .mobile-view {
         display: none;
       }
-      @media (max-width: 768px) {
+      @media (max-width: 900px), (pointer: coarse) {
         .frame {
           display: none;
         }
         .mobile-view {
           display: flex;
           flex-direction: column;
-          padding: 5rem 1.25rem 3rem;
-          max-width: 600px;
+          padding: 5.25rem 1.25rem 3rem;
+          max-width: 640px;
           margin: 0 auto;
           gap: 1.5rem;
         }
         .mobile-header h1 {
-          font-family: "Brunson", sans-serif;
-          font-size: 1.75rem;
+          font-family: "Satoshi", ui-sans-serif, system-ui, sans-serif;
+          font-weight: 600;
+          letter-spacing: -0.025em;
+          font-size: 1.875rem;
           color: #ffffff;
           margin: 0 0 0.35rem;
-          letter-spacing: 0.02em;
+          line-height: 1.1;
         }
         .mobile-header .role {
           color: #fd91cc;
-          font-size: 0.875rem;
-          margin: 0 0 0.5rem;
+          font-size: 1rem;
+          margin: 0 0 0.45rem;
           font-weight: 500;
         }
         .mobile-header .meta {
-          color: rgba(255, 255, 255, 0.5);
-          font-size: 0.75rem;
+          color: #a1a1aa;
+          font-size: 0.875rem;
           line-height: 1.5;
+          margin: 0;
         }
         .mobile-actions {
           display: flex;
@@ -200,20 +252,22 @@
         }
         .mobile-actions .btn {
           min-height: 48px;
-          font-size: 0.8125rem;
+          font-size: 0.9375rem;
           width: 100%;
         }
         .mobile-card {
-          background: #081330;
-          border: 1px solid rgba(9, 49, 141, 0.7);
-          border-radius: 1rem;
+          background: #0c0c0f;
+          border: 1px solid rgba(255, 255, 255, 0.08);
+          border-radius: 0.75rem;
           padding: 1.25rem;
         }
         .mobile-card h2 {
-          font-family: "Brunson", sans-serif;
+          font-family: "Satoshi", ui-sans-serif, system-ui, sans-serif;
+          font-weight: 600;
+          letter-spacing: -0.02em;
           font-size: 1.125rem;
           color: #ffffff;
-          margin: 0 0 0.75rem;
+          margin: 0 0 0.9rem;
         }
         .mobile-card ul {
           margin: 0;
@@ -221,70 +275,100 @@
           list-style: none;
           display: flex;
           flex-direction: column;
-          gap: 0.75rem;
-          font-size: 0.75rem;
+          gap: 0.9rem;
+          font-size: 0.9375rem;
           line-height: 1.5;
         }
         .mobile-card li strong {
           color: #fd91cc;
           display: block;
+          font-weight: 500;
         }
         .mobile-card li span {
-          color: rgba(255, 255, 255, 0.65);
+          color: #d4d4d8;
+          letter-spacing: 0.01em;
+          line-height: 1.6;
         }
       }
       @media (max-width: 480px) {
+        .bar {
+          padding: 0 0.75rem;
+        }
+        .who {
+          font-size: 0.9375rem;
+        }
         .who span {
           display: none;
+        }
+        .bar .btn {
+          padding: 0.45rem 0.7rem;
+          font-size: 0.8125rem;
+          min-width: 44px;
+        }
+      }
+      @media (max-width: 420px) {
+        .hide-xs {
+          display: none;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        *, *::before, *::after {
+          transition-duration: 0.01ms !important;
         }
       }
     </style>
   </head>
   <body>
     <header class="bar">
-      <a href="/" aria-label="back to portfolio">
-        <span class="who">Jayadithya R <span>- resume</span></span>
-      </a>
-      <div class="actions">
-        <a class="btn" href="/">portfolio</a>
-        <a
-          class="btn primary"
-          href="/resume/Jayadithya_R_Resume.pdf"
-          download="Jayadithya_R_Resume.pdf"
-          >download pdf &darr;</a
-        >
+      <div class="bar-inner">
+        <a href="../" class="who-link" aria-label="Back to portfolio">
+          <span class="who">Jayadithya R <span>/ Résumé</span></span>
+        </a>
+        <div class="actions">
+          <a class="btn" href="../">Portfolio</a>
+          <a
+            class="btn primary"
+            href="./Jayadithya_R_Resume.pdf"
+            download="Jayadithya_R_Resume.pdf"
+            aria-label="Download PDF"
+          >
+            <span><span class="hide-xs">Download </span>PDF</span>
+            <svg class="px-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13 16h-2v-2h2v2Zm-2-2H9v-2h2v2Zm4 0h-2v-2h2v2Zm-6-2H7v-2h2v2Zm8 0h-2v-2h2v2ZM7 10H5V8h2v2Zm12 0h-2V8h2v2Z"/></svg>
+          </a>
+        </div>
       </div>
     </header>
 
     <!-- Desktop PDF Frame -->
     <object
-      data="/resume/Jayadithya_R_Resume.pdf#view=FitH"
+      data="./Jayadithya_R_Resume.pdf#view=FitH"
       type="application/pdf"
       class="frame"
-      aria-label="Jayadithya R resume (PDF)"
+      aria-label="Jayadithya R Résumé (PDF)"
     >
       <div class="fallback">
         <p>
           Your browser cannot display the PDF inline.<br />
-          Open or download it instead:
+          Open or download the résumé directly:
         </p>
         <a
           class="btn primary"
-          href="/resume/Jayadithya_R_Resume.pdf"
+          href="./Jayadithya_R_Resume.pdf"
           target="_blank"
-          rel="noopener"
-          >open resume (pdf) &nearr;</a
+          rel="noopener noreferrer"
         >
+          Open résumé (PDF)
+        </a>
       </div>
     </object>
 
-    <!-- Mobile Viewport Experience (Foolproof on iOS & Android) -->
+    <!-- Touch & Compact Viewport Experience -->
     <main class="mobile-view">
       <div class="mobile-header">
-        <h1>JAYADITHYA R</h1>
-        <p class="role">AI / ML Systems Engineer</p>
+        <h1>Jayadithya R</h1>
+        <p class="role">AI/ML systems engineer</p>
         <p class="meta">
-          Chennai, India &middot; Open to remote and relocation<br />
+          2026 B.Tech, Chennai &middot; Open to full-time roles, remote or relocation<br />
           <a href="mailto:rjayadithya11@gmail.com" style="color: #fd91cc; text-decoration: none;">rjayadithya11@gmail.com</a>
         </p>
       </div>
@@ -292,45 +376,50 @@
       <div class="mobile-actions">
         <a
           class="btn primary"
-          href="/resume/Jayadithya_R_Resume.pdf"
+          href="./Jayadithya_R_Resume.pdf"
           target="_blank"
-          rel="noopener"
+          rel="noopener noreferrer"
         >
-          open full pdf in new tab &nearr;
+          <span>Open full PDF</span>
+          <svg class="px-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 4h8v2h-8zM16 6h4v2h-4zM14 8h2v2h-2zM18 8h2v4h-2zM12 10h2v2h-2zM10 12h2v2h-2zM8 14h2v2h-2zM6 16h2v2h-2zM4 18h2v2h-2z"/></svg>
         </a>
         <a
           class="btn"
-          href="/resume/Jayadithya_R_Resume.pdf"
+          href="./Jayadithya_R_Resume.pdf"
           download="Jayadithya_R_Resume.pdf"
         >
-          download pdf (106 kb) &darr;
+          Download PDF
         </a>
       </div>
 
       <div class="mobile-card">
-        <h2>CORE CREDENTIALS &amp; RECEIPTS</h2>
+        <h2>Core receipts</h2>
         <ul>
           <li>
-            <strong>1st Author, IEEE 2026</strong>
-            <span>VLM distillation with blind human eval (p &lt; 0.05). Qwen3-VL 8B to 2B student, saving 3.1x VRAM.</span>
+            <strong>Blubridge Technologies (compiler intern)</strong>
+            <span>Early compiler engineer on Nova MLIR (arXiv:2608.00029), lowering passes toward PTX and mentoring 4 engineers.</span>
           </li>
           <li>
-            <strong>Rust Tamil Tokenizer</strong>
-            <span>Custom BPE engine with -50.2% tokens vs OpenAI o200k and 100% Latin-1 decode fidelity.</span>
+            <strong>First author, IEEE TQCEBT 2026</strong>
+            <span>Distilled Qwen3-VL-8B into a 2B student (3.14x VRAM cut, 91.6% quality), backed by 297 blind human ratings (r = 0.303, p &lt; 0.05).</span>
           </li>
           <li>
-            <strong>12ms Exploit Triage</strong>
-            <span>Liquid AI SSM ranking alerts on Nvidia T4 with AST statement anchoring (AUC 0.6594).</span>
+            <strong>Partha Tamil Tokenizer</strong>
+            <span>Custom Rust BPE engine with 50.2% fewer tokens than OpenAI o200k and 100% ByteFallback decode fidelity.</span>
           </li>
           <li>
-            <strong>1.18M Chunks Processed</strong>
-            <span>Distributed 27-key worker pool with dynamic reset-header backoff across 1,400+ videos.</span>
+            <strong>D1-Triage</strong>
+            <span>Liquid AI d1-3B hybrid SSM ranking Semgrep Java alerts in 12-14ms on T4 (0.8372 ground-truth AUC; 0.6594 within-rule AUC).</span>
+          </li>
+          <li>
+            <strong>mono (v1.2.0)</strong>
+            <span>Offline Android voice notebook using Kotlin MediaCodec, libcactus.a C++ JNI, fine-tuned Whistle (14.71% Svarah WER), and Needle 3 (93.3% task exact match).</span>
           </li>
         </ul>
       </div>
 
-      <div style="text-align: center; margin-top: 1rem;">
-        <a href="/" class="btn" style="width: auto; padding: 0.6rem 1.25rem;">&larr; return to portfolio</a>
+      <div style="text-align: center; margin-top: 0.5rem;">
+        <a href="../" class="btn" style="padding: 0.6rem 1.25rem;">&larr; Back to portfolio</a>
       </div>
     </main>
   </body>

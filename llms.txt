@@ -1,93 +1,36 @@
 # Jayadithya R
 
-> Portfolio of Jayadithya R, an AI/ML systems engineer in Chennai, India.
-> He builds production AI systems bottom-up: custom BPE tokenizers in Rust, deep learning MLIR compilers (Nova), local SLM inference under 15ms, and verifiable RAG pipelines.
+> Portfolio of Jayadithya R, a 2026 B.Tech AI and Data Science graduate in Chennai, India looking for full-time AI/ML systems, local inference, or compiler engineering roles (remote or relocation). Ships working AI systems across the stack: Rust BPE tokenizers, Nova MLIR compiler passes, LoRA fine-tunes, sub-15ms SAST triage, offline Android voice AI, and local RAG agents backed by eval harnesses.
 
-Live site: https://jayadithya.is-a.dev
-Last updated: 2026-11-23
+- Site: [jayadithya.is-a.dev](https://jayadithya.is-a.dev/)
+- Updated: 2026-11-27
 
-## In short
+## Contact & profiles
 
-- Who is Jayadithya R?
-An AI/ML systems engineer in Chennai, India working on LLM systems, deep learning MLIR compilers, and local inference.
-- What does he build?
-Rust BPE tokenizers, hybrid SSM exploitability triage engines, Dockerized batch schedulers, and edge VLM recommenders.
-- How to contact him?
-rjayadithya11@gmail.com or https://www.linkedin.com/in/jayadithya-r/
-
-## Contact
-
-- Email: rjayadithya11@gmail.com
-- Phone: +91 63696 05616
-- GitHub: https://github.com/barryallen16
-- LinkedIn: https://www.linkedin.com/in/jayadithya-r/
-- Hugging Face: https://huggingface.co/barryallen16
-- Resume (PDF): https://jayadithya.is-a.dev/resume/Jayadithya_R_Resume.pdf
-
-## Projects
-
-- partha-tamil-tokenizer: Rust BPE tokenizer for Tamil with Aho-Corasick encoder and 1,135-token Tamil-aware base vocabulary.
-Yields 50.2% fewer tokens than OpenAI o200k and outperforms mBERT compression by 36.9% on Tamil wiki with 100% decode fidelity assertions.
-Interactive playground live at https://partha.isroot.in/.
-Models published on Hugging Face at https://huggingface.co/barryallen16/partha-tamil-tokenizer.
-https://github.com/barryallen16/partha-tamil-tokenizer
-
-- d1-triage: Local SAST alert triage engine that ranks Semgrep findings by exploitability in 12-14 ms on Nvidia T4 and under 1 second on standard CPU (Q8_0 GGUF) using Liquid AI d1-3B hybrid SSM.
-Fine-tuned on 416 real pre/post-fix diffs, reaching 0.8372 AUC on verified fix hunks and 0.6594 within-rule AUC across 174 real alerts.
-Interactive demo at https://barryallen16.github.io/d1-triage/.
-Model weights and benchmark dataset published on Hugging Face.
-https://github.com/barryallen16/d1-triage
-
-- kaggle-automation: Dockerized FastAPI control plane sharding sweeps across Kaggle GPU/TPU kernels with 12-hour session boundary tracking and Telegram alerts.
-Eliminated quota exhaustion across 220+ production runs with 154 unit tests passing.
-Benchmarked speculative decoding on dual T4s with a 0.5567 draft acceptance rate.
-https://github.com/barryallen16/kaggle-automation
-
-- fitcheck: Offline-first AI wardrobe assistant and outfit recommendation app in React Native and Expo with local SQLite storage.
-Distilled an 8B vision-language teacher into a 2B student using LoRA across 538K caption-QA pairs, saving 3.1x VRAM at 92% quality.
-Validated in a blind human study (297 ratings, r=0.303, p<0.05) and published as first author in IEEE TQCEBT 2026.
-App repository: https://github.com/barryallen16/fitcheck.
-Website: https://barryallen16.github.io/fitcheck-website/.
-
-- sivabharani-comments: High-throughput extraction pipeline and instant search indexing name mentions across 1,400+ Tamil tech videos (1.18M chunks).
-27-key worker pool with dynamic rate-limit header parsing, 65s windowing, and Meilisearch sub-second search.
-https://barryallen16.github.io/sivabharani-comments
-https://github.com/barryallen16/sivabharani-comments
-
-- txt: Data-free Android payment and transfer app transmitting photos, QR codes, GPS locations, and UPI requests over standard SMS.
-Chunked base36 protocol with CRC32 verification and native Kotlin ContentObserver module for sub-100ms SMS arrival detection.
-Live web companion at https://txt.runs-on.dev/.
-Releases and APKs at https://github.com/barryallen16/txt/releases.
-https://github.com/barryallen16/txt
-
-- resume-builder-skill: Autonomous agent skill generating tailored ATS-friendly resumes in docx and headless LibreOffice PDF.
-Features deterministic 1-page layout validation with zero vision tokens, TOON compact tabular encoding (saving 25-65% tokens), and Grey Matter tracker integration.
-https://github.com/barryallen16/resume-builder-skill
-
-- all-is-well: Voice journaling app pairing local faster-whisper speech transcription with a deterministic negation-aware safety engine that surfaces Indian emergency helplines.
-Evaluated against 1,170 CSSR-S Reddit benchmark posts.
-https://github.com/barryallen16/all-is-well
-
-- clerk: Local-first HR assistant answering policy questions over 6 ChromaDB policy documents and booking leave in SQLite via typed JSON schemas.
-Scored 10/10 on policy retrieval and 12/14 on tool selection against offline Liquid AI lfm3-1.7b SLM inference, backed by a 13-test pytest CI suite.
-https://github.com/barryallen16/clerk
+- [Email](mailto:rjayadithya11@gmail.com): rjayadithya11@gmail.com (replies within a day)
+- Phone: +91 63696 05616 (IST, UTC+5:30)
+- [Resume (PDF)](https://jayadithya.is-a.dev/resume/Jayadithya_R_Resume.pdf): One-page ATS-friendly resume ([web view](https://jayadithya.is-a.dev/resume/))
+- [GitHub](https://github.com/barryallen16): Open-source repositories and benchmarks
+- [LinkedIn](https://www.linkedin.com/in/jayadithya-r/): Work history and updates
+- [Hugging Face](https://huggingface.co/barryallen16): Fine-tuned weights and evaluation datasets
 
 ## Experience
 
-- AI Research Intern (Compiler Team), Blubridge Technologies, Chennai, 07/2025 - 10/2025.
-Early compiler team member working on Nova (arXiv:2608.00029), an end-to-end MLIR deep learning compiler powering the BluTrain framework.
-Contributed to early architecture development, evaluating StableHLO trade-offs to define a value-semantic dialect unifying forward and backward passes.
-Researched progressive lowering chains (nova to linalg, vector, nvgpu, NVVM, and PTX) and cross-operator fusions for transformer architectures.
-Mentored a sub-team of 4 incoming engineers on compiler concepts, torch.fx graph capture, and dialect lowering patterns.
-Authored 170+ pages of first-principles technical notes covering CPU/GPU memory hierarchies, SSA form, and compiler passes.
+- [Blubridge Technologies (Nova MLIR)](https://arxiv.org/abs/2608.00029): AI research intern (compiler team), Chennai, 07/2025 - 10/2025. Evaluated StableHLO tradeoffs to define a value-semantic MLIR dialect unifying forward and backward passes in Nova (BluTrain), researched progressive lowering (`nova -> linalg -> vector -> nvgpu -> NVVM -> PTX`) and cross-operator fusions, wrote 170+ pages of compiler notes, and mentored 4 incoming engineers on `torch.fx` capture and SSA lowering.
 
-## Publications
+## Projects
 
-- First author, IEEE TQCEBT 2026: "FitCheck: A Multi-Modular AI Framework for Cross-Cultural Fashion Recommendation via Black-Box Data Distillation", Pune, India.
-DOI 10.1109/TQCEBT67648.2026.11681836.
-Paper PDF: https://jayadithya.is-a.dev/fitcheck-journal-paper.pdf
+- [Partha Tamil Tokenizer](https://github.com/barryallen16/partha-tamil-tokenizer): Rust BPE tokenizer with character seeding, promotion merges, 1,135 Tamil conjunct-stem base tokens, Rayon document batching, and bitset-guarded CSR merge tables. Uses 50.2% fewer tokens than OpenAI `o200k` and 54.2% fewer than mBERT on Tamil wiki (0.9193 bits/byte, +36.7-36.9% vs mBERT) with 100% ByteFallback decode fidelity across 56 Rust CI tests ([Playground](https://partha.isroot.in/), [Weights](https://huggingface.co/barryallen16/partha-tamil-tokenizer)).
+- [FitCheck](https://github.com/barryallen16/fitcheck): Android AI wardrobe app (React Native, Expo SDK 52, local AsyncStorage) distilling `Qwen3-VL-8B` (538K caption-QA pairs across 106K IndoFashion images) and `gpt-oss-120b` (2.92K pairing rationales) into `Qwen3-VL-2B` via LoRA (3.14x lower VRAM, 7.23 to 2.30 GB, 91.6% teacher quality), paired with Q4_K_M GGUF local weights and 297 blind human ratings (r=0.303, p<0.05) ([Showcase](https://barryallen16.github.io/fitcheck-website), [Paper PDF](https://jayadithya.is-a.dev/fitcheck-journal-paper.pdf), [Models](https://huggingface.co/collections/barryallen16/fitcheck)).
+- [D1-Triage](https://github.com/barryallen16/d1-triage): Local Semgrep alert triage CLI powered by Liquid AI `d1-3B` hybrid SSM with AST statement anchoring (0.4297 to 0.5986 within-rule AUC) and contrastive LoRA over 416 real diffs (0.6594 within-rule AUC). Reaches 0.8372 ground-truth AUC across 174 Java alerts in 12-14 ms on Nvidia T4 (6.2 GB VRAM) and under a second on CPU (`Q8_0` GGUF), with 19 passing tests ([Demo](https://barryallen16.github.io/d1-triage/), [Weights](https://huggingface.co/barryallen16/d1-3B-java-vuln-triage), [Dataset](https://huggingface.co/datasets/barryallen16/d1-triage)).
+- [mono](https://github.com/barryallen16/mono): Offline Android voice notebook (`v1.2.0`, Expo SDK 52) linking Cactus 4.1.4 (`libcactus.a`) via C++ JNI + Kotlin `MediaCodec` Hann-windowed sinc resampling (16 kHz mono PCM), Svarah-tuned Whistle ASR (14.71% 100-clip WER vs 19.21% shipped 2-bit at 156.2 ms latency), and Needle 3 W4A8 `save_note` extraction (0.9444 task F1, 93.3% task exact match, 11.1% non-task false positives vs 72.2% base) into `expo-sqlite` ([Website](https://barryallen16.github.io/mono/), [Models](https://huggingface.co/collections/barryallen16/mono-6b0871a3c601170d2466fe8e), [Releases](https://github.com/barryallen16/mono/releases)).
+- [Sivabharani Comments](https://github.com/barryallen16/sivabharani-comments): Multi-threaded 27-key Groq (`Qwen3.8-27B`) extraction pipeline processing 1.18M transcript chunks across 1,400 Tamil tech videos (36,818 65s windows) into hosted Meilisearch with 15,155 timestamp-pinned commenter hits ([Search](https://barryallen16.github.io/sivabharani-comments), [Dataset](https://huggingface.co/datasets/barryallen16/sivabharani_comments)).
+- [Kaggle Runner](https://github.com/barryallen16/kaggle-automation): Dockerized FastAPI control plane on AWS EC2 sharding GPU/TPU sweeps across 500+ production runs with 11h Telegram alerts, temp-disk ZIP streaming, and 154 pytest unit tests.
+- [Txt](https://github.com/barryallen16/txt): Data-free Android SMS transfer protocol packing 1.2-2.8 KB photos, QR codes, GPS locations, and raw UPI links into GSM-7 base36/base64/CRC32 frames with native Kotlin `ContentObserver` (400ms debounce) and 93 bun tests ([PWA](https://txt.runs-on.dev/), [Releases](https://github.com/barryallen16/txt/releases)).
+- [Resume Skill](https://github.com/barryallen16/resume-builder-skill): Deterministic 2-step resume compiler agent skill (`python-docx` + headless LibreOffice PDF) with TOON v4.4 serialization (25-65% token savings), fail-closed 1-page gate, and 73 unittest tests.
+- [Clerk](https://github.com/barryallen16/clerk): Local-first FastAPI HR agent querying 27 ChromaDB chunks and booking leave in SQLite via typed JSON schemas on offline `lfm3-1.7b` (10/10 retrieval, 12/14 tool selection, 13/14 answer accuracy, 19 pytest CI tests).
 
-## Education
+## Publications & education
 
-- B.Tech, Artificial Intelligence and Data Science, Dr. M.G.R. Educational and Research Institute, Chennai, 2026.
-GPA 8.0 / 10.0.
+- [IEEE TQCEBT 2026](https://doi.org/10.1109/TQCEBT67648.2026.11681836): First author, "FitCheck: A Multi-Modular AI Framework for Cross-Cultural Fashion Recommendation via Black-Box Data Distillation", Pune, India ([Paper PDF](https://jayadithya.is-a.dev/fitcheck-journal-paper.pdf)).
+- Education: B.Tech, Artificial Intelligence and Data Science, Dr. M.G.R. Educational and Research Institute, Chennai, 2026 (GPA 8.0 / 10.0).
