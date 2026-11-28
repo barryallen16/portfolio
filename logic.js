@@ -35,14 +35,14 @@ const PROJECTS = {
     title: "D1-Triage",
     status: "Live",
     notes: [
-      "Semgrep emits unranked Java alerts with over 70% false positives, and raw unnumbered AST snippets misalign what the scanner flagged from what the model sees.",
-      "Adding alert line markers via AST statement anchoring raised within-rule AUC from 0.4297 to 0.5986, and contrastive LoRA over 416 real pre/post-fix diffs pushed within-rule AUC to 0.6594. It ships as a CLI running on T4 in 12-14 ms (6.2 GB VRAM) or under a second on CPU via Q8_0 GGUF.",
+      "Semgrep emits unranked Java alerts with over 70% false positives, and zero-shot d1-3B's 0.8372 L3 AUC relied mostly on rule-name priors (0.4297 L0 within-rule AUC) because unnumbered AST snippets hid the flagged line.",
+      "Tagging matched AST sink lines raised L0 within-rule AUC to 0.5986 (+0.0749 swap delta). Full-method LoRA with a 2-class yes/no logit-readout loss (KL=0.2, 1,643 methods from 465 held-out commits) reached 0.8339 GHSA L3 AUC (vs 0.7167 Kev-4B), 0.6027 L3 within-rule AUC, and 0.3023 P@90R (~12 ms T4 forward pass; 456.4 ms mean loop) with Q8_0 GGUF CPU scoring.",
     ],
     receipts: [
-      "0.8372 ground-truth AUC and 0.8000 on Vul4J real CVEs across 174 alerts (68 GHSA advisories, 126 Vul4J repos).",
-      "Verified across a 19-test suite.",
+      "Evaluated on 174 GHSA alerts (68 advisories, L0-L3 gates) and 14 Vul4J alerts (126 repos); ranks review queues rather than suppressing alerts.",
+      "52 passing pytest unit tests, 19 end-to-end audit checks in CI, plus local HTTP API server and Gradio Space.",
     ],
-    stack: "Liquid AI d1-3B · PyTorch LoRA · Semgrep · Q8_0 GGUF",
+    stack: "Liquid AI d1-3B · PyTorch LoRA · Semgrep · Q8_0 GGUF · Gradio",
     extraLinks: [
       { label: "Dataset", href: "https://huggingface.co/datasets/barryallen16/d1-triage" },
     ],

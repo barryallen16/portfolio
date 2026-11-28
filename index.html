@@ -329,7 +329,7 @@
             <p class="project-summary mt-2 text-sm text-zinc-400 leading-relaxed max-w-prose">
               Rust BPE tokenizer with character seeding, promotion merges, and bitset-guarded CSR merge tables. Uses 50.2% fewer tokens than OpenAI o200k and hits 0.9193 bits/byte (+36.9% vs mBERT) with 100% ByteFallback decode fidelity.
             </p>
-            <img src="./images/partha-demo.webp" loading="lazy" decoding="async" width="1200" height="692" class="project-media" alt="Partha Tamil 120K tokenizer comparing 11 tokens vs 17 tokens in OpenAI o200k_base on a Thirukkural verse" />
+            <img src="./images/partha-demo.webp" loading="lazy" decoding="async" width="1200" height="629" class="project-media" alt="Partha Tamil 120K tokenizer comparing 41 tokens vs 92 tokens in OpenAI o200k_base (-55% tokens) on Tamil Wikipedia text" />
             <div class="project-actions mt-2.5 flex flex-wrap items-center justify-between gap-2">
               <div class="flex flex-wrap items-center gap-4 text-xs text-zinc-400">
                 <a href="https://partha.isroot.in/" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center gap-1 text-zinc-300 hover:text-white min-h-[44px]">
@@ -424,14 +424,14 @@
                 </div>
               </div>
               <div class="text-left sm:text-right font-mono text-xs tabular-nums">
-                <span class="text-zinc-200">12-14ms T4</span>
-                <span class="text-zinc-400"> &middot; 0.8372 AUC</span>
+                <span class="text-zinc-200">~12ms T4 fwd</span>
+                <span class="text-zinc-400"> &middot; 0.8339 L3 AUC</span>
               </div>
             </div>
             <p class="project-summary mt-2 text-sm text-zinc-400 leading-relaxed max-w-prose">
-              Filters false positives from Semgrep Java alerts (over 70% of raw alerts are false positives) in 12-14 ms on T4 (6.2 GB VRAM) or under a second on CPU, using contrastive LoRA on Liquid AI d1-3B over 416 real diffs with AST statement anchoring.
+              Ranks Semgrep Java alerts by exploitability (~12 ms T4 forward pass, 6.2 GB VRAM, or Q8_0 GGUF on CPU) using full-method logit-readout LoRA on Liquid AI d1-3B over 1,643 methods from 465 held-out commits with AST sink grounding.
             </p>
-            <img src="./images/d1-triage-demo.webp" loading="lazy" decoding="async" width="1200" height="585" class="project-media" alt="D1-Triage interactive Java path-traversal alert marked exploitable at 94.9% probability in 11.2ms" />
+            <img src="./images/d1-triage-demo.webp" loading="lazy" decoding="async" width="1200" height="585" class="project-media" alt="D1-Triage landing view showing 0.8339 L3 ROC-AUC, 0.6027 same-rule AUC, ~12 ms T4 forward pass, and 2.87 GB Q8_0 GGUF metrics" />
             <div class="project-actions mt-2.5 flex flex-wrap items-center justify-between gap-2">
               <div class="flex flex-wrap items-center gap-4 text-xs text-zinc-400">
                 <a href="https://barryallen16.github.io/d1-triage/" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center gap-1 text-zinc-300 hover:text-white min-h-[44px]">
